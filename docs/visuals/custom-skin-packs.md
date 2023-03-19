@@ -64,31 +64,6 @@ Here is what is needed:
 
 This file is used to define textures and shortnames for skins. Most of the options are, however, hard-coded or unchangeable.
 
-<CodeHeader>skin_packs/tutorial_skin_pack/skins.json</CodeHeader>
-
-```json
-{
-    "geometry": "geometry.json",
-    "serialize_name": "Tutorial Skin Pack",
-    "localization_name": "tutorial",
-    "skins": [
-        {
-            "localization_name": "tutorial_skin_1",
-            "geometry": "geometry.humanoid.custom",
-            "texture": "goggled_gecko_no_goggles.png",
-            "type": "free"
-        },
-        {
-            "localization_name": "tutorial_skin_2",
-            "geometry": "geometry.humanoid.customSlim",
-            "texture": "goggled_gecko.png",
-            "type": "free"
-        }
-    ]
-}
-```
-
--   The `geometry` object must be the same as on the example code in every object. Mojang removed the ability to add custom geometries via skin packs, because the feature was abused.
 -   `serialize_name` is for marketplace.
 -   `localization_name` is a pack identifier. **Don't use in other skin packs** as it affects translations.
 -   `skins` array, where you define your each skin. The skins will be displayed in the same order in minecraft as they are defined here.
