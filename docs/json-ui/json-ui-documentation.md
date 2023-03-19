@@ -2035,6 +2035,9 @@ Some of them only work in specific screens.
 | crafting_table    |  58  |  3801088   |
 | loom              | -204 | -13369344  |
 | stonecutter_block | -197 | -12910592  |
+| clock		    |  394 |  25821184  |
+| compass	    |  392 |  25690112  |
+| recovery_compass  |  653 |  42795008  |
 
 #### How to calculate block item aux value:
 
