@@ -101,6 +101,8 @@ When we make short-names of this form, we can use a generic "sit" animation cont
 
 ## Functions should be nested
 
+You can put functions in folders to achieve this.
+
 ✔️ `function teleport/zone/hell`
 
 ❌ `function teleport_hellzone`
@@ -156,3 +158,5 @@ Own-line comments can be used for organizational purposes but should not store l
 | BB      | Blockbench                         |
 | BDS     | Bedrock Dedicated Server           |
 | FPV     | First Person View                  |
+| RD      | Render Dragon                      |
+| VSCode  | Visual Studio Code                 |

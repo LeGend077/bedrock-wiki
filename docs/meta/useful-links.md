@@ -8,7 +8,7 @@ Important links have a ⭐.
 
 ## Discord Links
 
--   ⭐ [Bedrock Addons](https://discord.gg/46JUdQb)
+-   ⭐ [Bedrock Add-Ons](https://discord.gg/46JUdQb)
 -   ⭐ [Bedrock OSS](https://discord.gg/XjV87YN)
 -   ⭐ [Minecraft](https://discord.gg/minecraft)
 -   ⭐ [Minecraft Commands](https://discord.gg/QAFXFtZ)
@@ -21,19 +21,21 @@ Important links have a ⭐.
 -   [Minecraft Map Testing](https://discord.gg/QRE99eS)
 -   [Mojang Bug Tracker](https://discord.gg/rpCyfKV)
 -   [MCPECore](https://discord.com/invite/N3e6exUQGs)
--   [Bedrock Commands](https://discord.gg/bedrockcommands)
+-   [Bedrock Commands](https://discord.gg/vV29d6rJcj)
 -   [BDSX](https://discord.gg/8UhbaDwFMh)
 -   [MCBE Realm Hub](https://discord.gg/pCkYPvSGC8)
 -   [Bedrock Server Owners](https://discord.com/invite/Dsq9Ajdj2c)
 -   [MCBE Utilities](https://discord.gg/9S4aKh684W)
--   [Dragonly Server Software](https://discord.gg/62zMCB4h)
+-   [Dragonfly Server Software](https://discord.gg/U4kFWHhTNR)
 -   [Minecraft Education](https://discord.gg/7fSQBdx)
+-   [BC Community & Archive](https://discord.gg/SYstTYx5G5)
 
 ## Software (installed)
 
 -   ⭐ [Blockbench: A boxy 3D model editor](https://blockbench.net/)
 -   ⭐ [bridge. Addon Editor](https://bridge-core.github.io/)
 -   ⭐ [VSCode Editor](https://code.visualstudio.com/)
+-   ⭐ [Regolith](https://github.com/Bedrock-OSS/regolith)
 -   [CoreCoder [Code Editor]](https://hanprog.itch.io/core-coder)
 -   [Feature Rule Generator v2 (paid version)](https://machine-builder.itch.io/frg-v2)
 -   [Feature Rule Generator v2 (free version)](https://drive.google.com/file/d/1rwQTtzgpWiqCS9ecO_j-qcxjdQvWSXgi/view)
@@ -42,15 +44,18 @@ Important links have a ⭐.
 -   [World Converter (paid)](https://www.universalminecraftconverter.com/download)
 -   [Chunker (World Converter)](https://chunker.app/)
 -   [NBT Studio](https://github.com/tryashtar/nbt-studio)
--   [Resource Pack Converter (for Android)](https://play.google.com/store/apps/details?id=net.theluckycoder.resourcepackconverter)
 -   [BedrockLauncher (Bedrock version switcher)](https://bedrocklauncher.github.io/)
 
 ## Bedrock Tools Websites
 
 -   ⭐ [Snowstorm Particle Generator](https://jannisx11.github.io/snowstorm/)
+-   ⭐ [Loot Table Generator](https://bedrock-oss.github.io/bedrock-loot-gen/)
+-   [Apply Loot Tables to Structures](https://mcbe-essentials.github.io/structure-editor/loot-tabler)
+-   [Structure Editor](https://mcbe-essentials.github.io/structure-editor/)
+-   [Convert MCSTRUCTURE to MCFUNCTION](https://mcbe-essentials.github.io/structure-to-function/)
 -   [Crafting Recipe Generator](https://crafting.thedestruc7i0n.ca/)
--   [Loot Table Generator](https://hopper.bedrock.dev/)
 -   [Trade Table Generator](https://mcbe-essentials.github.io/trade-table-editor/)
+-   [World Packager](https://mcbe-essentials.github.io/world-packager/)
 -   [Manifest Generator](https://bedrock-manifest.web.app/)
 -   [Foxynotail Tools](https://www.foxynotail.com/tools/)
 -   [.lang File Generator](https://solveddev.github.io/AnyLanguage/)
@@ -72,7 +77,18 @@ Important links have a ⭐.
 -   [Bedrock Texture Pack Template](https://github.com/Brennian/BedrockTexturesTemplate)
 -   [Documentation Graveyard (removed components)](https://gist.github.com/destruc7i0n/ea1a6a7f97f0986d9326c58246f96fa3)
 
-## Behavior & Resource Packs
+### Getting Started With Your First Add-On
+
+- [Getting Started with Add-On Development for Bedrock Edition](https://learn.microsoft.com/en-us/minecraft/creator/documents/gettingstarted): These guides show you exactly how to build your first resource pack and your first behavior pack from start to finish.
+- [Molang: a Beginner's Guide](https://learn.microsoft.com/en-us/minecraft/creator/documents/molangbeginnersguide): Molang is a Minecraft programming language that can be useful for writing some advanced add-ons.
+- [Introduction to the GameTest Framework](https://learn.microsoft.com/en-us/minecraft/creator/documents/gametestgettingstarted): This is the best way to test games, and it uses JavaScript, the most popular programming language in the world!
+- [Build a gameplay experience with TypeScript](https://learn.microsoft.com/en-us/minecraft/creator/documents/scriptinggettingstarted): TypeScript is Microsoft's copy of JavaScript. Writing add-ons in TypeScript allows you to add any functionality you can imagine!
+- [@minecraft/server Module](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/mojang-minecraft/mojang-minecraft): This module and the others near it are how we can access Minecraft values with our TypeScript code. It's technical, but a great resource.
+- [List and summary of commands (Minecraft fandom)](https://minecraft.fandom.com/wiki/Commands#List_and_summary_of_commands): Most add-ons will run some commands. This community-supported wiki is the best resource for learning each and every command.
+
+## Sample behavior & Resource Packs
+
+These packs are maintained and published by Mojang.
 
 -   ⭐ [Vanilla Resource Pack](https://aka.ms/resourcepacktemplate)
 -   ⭐ [Vanilla Behavior Pack](https://aka.ms/behaviorpacktemplate)
@@ -80,14 +96,16 @@ Important links have a ⭐.
 -   [Vanilla Behavior Pack (BETA)](https://aka.ms/MinecraftBetaBehaviors)
 -   [Pack Archive (old versions)](https://bedrock.dev/packs)
 
+These packs are published by the open-source community
+
+-   [wiki-addon](https://github.com/Bedrock-OSS/wiki-addon)
+-   [Enchantment Details](https://github.com/supercam19/EnchantmentDetails)
+
 ## Scripting Resources
 
 -   [GameTests API Wrapper](https://github.com/notbeer/Framework-Wrapper)
 -   [GameTests Plugin-API-Starter-Pack](https://github.com/MajestikButter/Plugin-API-Starter-Pack)
--   [Timer Utility](https://github.com/WavePlayz/Bedrock-Scripting-API/tree/master/utility/TimerJS)
--   [Get Block Details](https://github.com/WavePlayz/Bedrock-Scripting-API/tree/master/utility/getBlockDetails)
--   [Events](https://gist.github.com/jocopa3/5f718f4198f1ea91a37e3a9da468675c)
--   [build-mc-project GitHub Action](https://github.com/bridge-core/build-mc-project)
+-   [Useful for Block Tags](https://mcpedl.com/debug-stick-addon-1/)
 
 ## Raytracing Resources
 -  ⭐ [Ray Tracing and PBR Texturing guide](https://docs.microsoft.com/en-us/minecraft/creator/documents/rtxgettingstarted)
@@ -121,3 +139,4 @@ Important links have a ⭐.
 -   [Windows 10 Non-renderdragon install](https://support.playhive.com/windows-10-installing-non-renderdragon-clients/)
 -   [Bedrock Edition Realm Protocol](https://github.com/NobUwU/BeRP)
 -   [Java & Bedrock Client](https://github.com/kennyvv/Alex)
+-   [Skin Pack Generator](https://github.com/MedicalJewel105/bedrock-skin-pack-generator)

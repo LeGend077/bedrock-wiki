@@ -1,6 +1,7 @@
 ---
 title: Intro to Blocks
 category: General
+nav_order: 1
 tags:
     - guide
 ---
@@ -65,8 +66,8 @@ Let's create some more blocks in `BP/blocks`. I created these four block for the
 
 ## Block Resource File
 
-The resource definition for blocks differs from entities/items because all the definitions appear in a single file. 
-The only two things we can define for blocks are its sound and its textures. 
+The resource definition for blocks differs from entities/items because all the definitions appear in a single file.
+The only two things we can define for blocks are its sound and its textures.
 
 <CodeHeader>RP/blocks.json</CodeHeader>
 
@@ -103,12 +104,12 @@ The only two things we can define for blocks are its sound and its textures.
 }
 ```
 
-As you can see, every block's identifier is applied with textures and step sounds. 
-When we define the textures, we use their shortnames which we will define in `terrain_texture.json` later on. There are 3 ways we can define the texture of a block: 
+As you can see, every block's identifier is applied with textures and step sounds.
+When we define the textures, we use their shortnames which we will define in `terrain_texture.json` later on. There are 3 ways we can define the texture of a block:
 
--   `"wiki:blocky"` & `"wiki:flashing"` have the same texture on each side of the block. We will be animating the texture for `"wiki:flashing"` later on. 
--   `"wiki:sapp_log"` has 3 different textures; the top of the block, the bottom of the block & the remaining sides of the block. 
--   `"wiki:compass_block"` has a different texture for each side of the block.  
+-   `"wiki:blocky"` & `"wiki:flashing"` have the same texture on each side of the block. We will be animating the texture for `"wiki:flashing"` later on.
+-   `"wiki:sapp_log"` has 3 different textures; the top of the block, the bottom of the block & the remaining sides of the block.
+-   `"wiki:compass_block"` has a different texture for each side of the block.
 
 When we define the sounds, we use their shortnames. For a list of vanilla sound shortnames, you can look [here](/documentation/sound-definitions). If you want to learn about making your own custom sounds, you can look [here](/concepts/sounds).
 
@@ -203,11 +204,14 @@ As you might have already guessed, flipbook texture shortnames are defined in a 
 -   `"atlas_tile"` is the shortname definition. As you know, we already applied `"flashing"` texture shortname to the `wiki:flashing` block in `RP/blocks.json`.
 -   `"ticks_per_frame"` defines how quickly the different textures will fade into the block, in other words, the speed of the animation.
 
+You can read more about flipbook textures [here](/blocks/flipbook-textures).
+
 A **flipbook texture** file is created like this:
 
 -   The image width is 16;
 -   Image height is `16*3`, as we have three different block textures/**frames** to fade. If you wanted a flipbook with 12 different textures, the height would be `16*12`.
-    **Done!** All of our blocks work perfectly.
+
+**Done!** All of our blocks work perfectly.
 
 <video width="320" height="240" controls>
   <source src="/assets/images/guide/custom_blocks_done.mp4" type="video/mp4">
@@ -224,7 +228,7 @@ tile.wiki:compass_block.name=A compass in block-form
 tile.wiki:flashing.name=Block of Flashing Matter
 ```
 
-You can learn more about .lang [here](/concepts/text-and-translations)
+You can learn more about translation keys [here](/concepts/text-and-translations).
 
 ---
 

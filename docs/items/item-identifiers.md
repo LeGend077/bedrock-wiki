@@ -1,7 +1,13 @@
 ---
 title: Vanilla Item Identifiers
 category: Documentation
+tags:
+    - deprecated
 ---
+
+:::danger
+This method no longer works after 1.18.30.
+:::
 
 An `identifier` is a required parameter that sits inside the description of the item's behaviour file.
 It accepts Vanilla Minecraft names, like so, `<namespace>:<vanilla item>`, which will apply certain hardcoded item behaviours, depending on the identifier used.
@@ -27,7 +33,7 @@ The namespace is allowed to be changed, learn more about namespaces [here](/conc
 
 ### namespace:banner
 
--   The item icon and model will be changed to that of the Vanilla Banner. 
+-   The item icon and model will be changed to that of the Vanilla Banner.
 
 ---
 
@@ -76,7 +82,7 @@ The namespace is allowed to be changed, learn more about namespaces [here](/conc
 
 ### namespace:lapis_lazuli
 
--   Makes the Item usable with Enchantment Tables, to enchant you items in place of Lapis Lazuli.
+-   Makes the Item usable with Enchantment Tables, to enchant your items in place of Lapis Lazuli.
 
 ---
 

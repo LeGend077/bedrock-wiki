@@ -2,6 +2,8 @@
 title: Custom Death Animations
 tags:
     - intermediate
+category:
+	- General
 ---
 
 Death animation refers to the rotation of the entity as it dies. This is accompanied by a red coloring and followed shortly after by the disappearance of the entity geometry and the appearance of the death particles.
@@ -106,7 +108,7 @@ This part will explain how to customize death animation.
 
 You can remove/customize entity damage color overlay.
 
-Before starting, you must have the basics of render controller so check out the [tutorial](/visuals/entity-visuals-intro) of render controllers.
+Before starting, you must have the basics of render controller so check out the [tutorial](/entities/render-controllers) of render controllers.
 
 To remove the damage overlay color of any entity you want when it gets damaged, we will use `is_hurt_color` and remove the damage overlay color when an entity receives damage from lava or fire use `on_fire_color`.
 First, you need to make the rgba values to 0
@@ -192,9 +194,7 @@ Here an example file in the BP
                     "spawn_item":"egg",
                     "single_use":true
                 },
-                "minecraft:is_sheared":{
-                    
-                },
+                "minecraft:is_sheared":{},
                 "minecraft:timer":{
                     "looping":true,
                     "time":[
@@ -207,9 +207,7 @@ Here an example file in the BP
                 }
             },
             "wiki:despawn":{
-                "minecraft:instant_despawn":{
-                    
-                }
+                "minecraft:instant_despawn":{}
             }
         },
         "components":{
@@ -227,9 +225,7 @@ Here an example file in the BP
                 "value":8,
                 "max":8
             },
-            "minecraft:physics":{
-                
-            },
+            "minecraft:physics":{},
             "minecraft:pushable":{
                 "is_pushable":true,
                 "is_pushable_by_piston":true
@@ -378,19 +374,7 @@ And then despawn it through adding component group with instant_despawn through 
 
 ### Detecting Death with Commands
 
-Death detection with commands might be useful because it don't use `player.json`
-
-<CodeHeader>BP/functions/detecting_death.mcfunction</CodeHeader>
-
-```
-tag @a add dead
-tag @e[type=player] remove dead
-execute @a[tag=dead, tag=!last_dead] ~ ~ ~ summon hatchibombotar:grave
-tag @a[tag=dead, tag=!last_dead] add last_dead
-tag @a[tag=!dead, tag=last_dead] remove last_dead
-```
-This works because @a targets all players whereas @e[type=player] only targets alive players.
-
-You can do whatever you want with that summoned entity
-
-Don't forget to add this function into [tick.json](/commands/mcfunction.html#running-functions-through-tick-json).
+<BButton
+	link="/commands/tick_json-creations#death-detection"
+	color=blue
+>View</BButton>

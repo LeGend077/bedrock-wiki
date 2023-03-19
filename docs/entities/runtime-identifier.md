@@ -41,6 +41,7 @@ Not every runtime id/effect is mentioned here. Try experimenting yourself to fin
 -   Disables entity shadows.
 -   Punching the entity will cause it to instantly despawn.
 -   Equipment placeable on/removable from entity.
+-   Makes the entity drop an armor stand item on death.
 
 ---
 
@@ -115,7 +116,7 @@ Color Variant: Leucistic, Wild, Yellow, Cyan, Blue.
 -   Breaks the entity.
 -   Punching entity will make it despawn.
 -   Spawns strangely.
--   Drops minecart.  
+-   Drops minecart.
 
 ---
 
@@ -188,11 +189,6 @@ Color Variant: Leucistic, Wild, Yellow, Cyan, Blue.
 ### minecraft:ender_pearl
 
 -   Breaks the behavior of entity.
-
----
-
-### minecraft:ender_pearl
-
 -   Summons particles when entity receives damage.
 
 ---
@@ -202,6 +198,13 @@ Color Variant: Leucistic, Wild, Yellow, Cyan, Blue.
 -   Summons particles when entity receives damage.
 -   Causes rotation glitch.
 -   Breaks some of the animations.
+
+---
+
+### minecraft:evocation_fang
+
+-   Damages entities on contact.
+-   Disables collision at all.
 
 ---
 
@@ -223,6 +226,12 @@ Color Variant: Leucistic, Wild, Yellow, Cyan, Blue.
 -   Allows launching attack (attacks deal increased knockback with a vertical amplification).
 -   Speeds up arm and leg animation (can be fixed manually, ~1/4 speed).
 -   May interact poorly with village/villager logic.
+
+---
+
+### minecraft:llama_spit
+
+- Adds llama spit's particles
 
 ---
 
@@ -296,13 +305,25 @@ Perfect for imitating a block, as long as the player is in Adventure Mode.
 
 ### minecraft:shulker_bullet
 
--   The entity will leave a trail of `minecraft:shulker_bullet` particles
+-   The entity will leave a trail of `minecraft:shulker_bullet` particles.
 
 ---
 
 ### minecraft:slime
 
--   The entity will create slime particles when falling
+-   The entity will create slime particles when falling.
+
+---
+
+### minecraft:snowball
+
+-   Removes hitbox.
+-   You can't interact with entity anymore.
+-   Spawns at player's head.
+-   Entity ignores gravity.
+-   Removes entity shadow.
+-   Entity only faces South.
+-   Cannot make step sounds.
 
 ---
 
@@ -316,6 +337,7 @@ Perfect for imitating a block, as long as the player is in Adventure Mode.
 
 -   Makes the entity receive damage from Healing effect, heal from Instant Damage effect and become immune to Regeneration and Poison effect.
 -   Makes the entity receive increased damage from weapons with Smite enchantment.
+-   Inflicts Wither status effect with both melee and ranged attacks if Variant is 1 or greater.
 
 ---
 
@@ -362,6 +384,11 @@ Perfect for imitating a block, as long as the player is in Adventure Mode.
 -   only works for entities with no ai goals(so it's only useful for dummy entities and projectiles).
 
 ---
+
+### minecraft:xp_orb
+
+-   Disables collision at all
+-   On contact with player increases xp
 
 ### minecraft:zombie
 

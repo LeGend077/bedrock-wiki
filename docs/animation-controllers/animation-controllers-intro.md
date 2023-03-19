@@ -67,7 +67,7 @@ Here is a sample `description`, which shows how the AC can first be defined in `
 "description": {
 	"identifier": "wiki:helicopter",
 	"animations": {
-		"blade_controller": "controller.animation.helicopter.blade",
+		"blade_controller": "controller.animation.helicopter.blade"
 	},
 	"scripts": {
 		"animate": [
@@ -277,7 +277,8 @@ And only then you can call them in ac:
 }
 ```
 
-:::warning Warning! Not every particle works there. If you have problems, consider trying another particle. For example, use one from blaze ac. :::
+:::warning Warning! Not every particle works there. If you have problems, consider trying another particle. For example, use one from blaze ac.
+:::
 
 ## BP Animation Controllers
 

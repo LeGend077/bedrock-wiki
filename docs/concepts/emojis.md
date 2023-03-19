@@ -2,6 +2,10 @@
 title: Emojis & Symbols
 ---
 
+:::warning
+Modifying texture of vanilla emojis and symbols on this page are incompatible with Nintendo Switch platform!
+:::
+
 Minecraft has a bunch of hard-coded [Private Use Unicode symbols](https://en.wikipedia.org/wiki/Private_Use_Areas) that it automatically converts to Emoji-like symbols.
 These can be used anywhere where normal letters can - signs, books, item names, chat, etc.
 
@@ -21,29 +25,47 @@ There will be instructions for creating custom emoji at the bottom.
 | Immersive Reader |                         | U+E104  | ![](/assets/images/concepts/emojis/general/immersive_reader.png) |
 | Craft Toggle On  |                         | U+E0A0  | ![](/assets/images/concepts/emojis/general/craft_toggle_on.png)  |
 | Craft Toggle Off |                         | U+E0A1  | ![](/assets/images/concepts/emojis/general/craft_toggle_off.png) |
+| CrossHair        |                         | U+E017  | ![](/assets/images/concepts/emojis/general/crosshair.png)        |
 
-### Mobile (iOS/Android/Fire TV)
+### Mobile (iOS/Android)
 
-| Name        | Letter (Copy/Paste This) | Unicode | Image                                                      |
-| ----------- | ------------------------ | ------- | ---------------------------------------------------------- |
-| Jump        |                         | U+E084  | ![](/assets/images/concepts/emojis/mobile/jump.png)        |
-| Couch       |                         | U+E085  | ![](/assets/images/concepts/emojis/mobile/crouch.png)      |
-| Fly Up      |                         | U+E086  | ![](/assets/images/concepts/emojis/mobile/fly_up.png)      |
-| Fly Down    |                         | U+E087  | ![](/assets/images/concepts/emojis/mobile/fly_down.png)    |
-| Left Arrow  |                         | U+E081  | ![](/assets/images/concepts/emojis/mobile/left_arrow.png)  |
-| Right Arrow |                         | U+E083  | ![](/assets/images/concepts/emojis/mobile/right_arrow.png) |
-| Up Arrow    |                         | U+E080  | ![](/assets/images/concepts/emojis/mobile/up_arrow.png)    |
-| Down Arrow  |                         | U+E082  | ![](/assets/images/concepts/emojis/mobile/down_arrow.png)  |
+| Name              | Letter (Copy/Paste This) | Unicode | Image                                                          |
+| ----------------- | ------------------------ | ------- | -------------------------------------------------------------- |
+| Jump              |                         | U+E084  | ![](/assets/images/concepts/emojis/mobile/jump.png)            |
+| Crouch            |                         | U+E085  | ![](/assets/images/concepts/emojis/mobile/crouch.png)          |
+| Fly Up            |                         | U+E086  | ![](/assets/images/concepts/emojis/mobile/fly_up.png)          |
+| Fly Down          |                         | U+E087  | ![](/assets/images/concepts/emojis/mobile/fly_down.png)        |
+| Left Arrow        |                         | U+E081  | ![](/assets/images/concepts/emojis/mobile/left_arrow.png)      |
+| Right Arrow       |                         | U+E083  | ![](/assets/images/concepts/emojis/mobile/right_arrow.png)     |
+| Up Arrow          |                         | U+E080  | ![](/assets/images/concepts/emojis/mobile/up_arrow.png)        |
+| Down Arrow        |                         | U+E082  | ![](/assets/images/concepts/emojis/mobile/down_arrow.png)      |
+| New Jump          |                         | U+E014  | ![](/assets/images/concepts/emojis/mobile/newjump.png)         |
+| Attack            |                         | U+E015  | ![](/assets/images/concepts/emojis/mobile/attack.png)          |
+| Joy Stick         |                         | U+E016  | ![](/assets/images/concepts/emojis/mobile/joystick.png)        |
+| Place             |                         | U+E018  | ![](/assets/images/concepts/emojis/mobile/place.png)           |
+| Small Jump        |                         | U+E059  | ![](/assets/images/concepts/emojis/mobile/smalljump.png)       |
+| Small Crouch      |                         | U+E05A  | ![](/assets/images/concepts/emojis/mobile/smallcrouch.png)     |
+| Small Fly Up      |                         | U+E05C  | ![](/assets/images/concepts/emojis/mobile/smallflyup.png)      |
+| Small Fly Down    |                         | U+E05D  | ![](/assets/images/concepts/emojis/mobile/smallflydown.png)    |
+| Small Left Arrow  |                         | U+E056  | ![](/assets/images/concepts/emojis/mobile/smallleftarrow.png)  |
+| Small Right Arrow |                         | U+E058  | ![](/assets/images/concepts/emojis/mobile/smallrightarrow.png) |
+| Small Up Arrow    |                         | U+E055  | ![](/assets/images/concepts/emojis/mobile/smalluparrow.png)    |
+| Small Up Down     |                         | U+E057  | ![](/assets/images/concepts/emojis/mobile/smalldownarrow.png)  |
+| Small Inventory   |                         | U+E05B  | ![](/assets/images/concepts/emojis/mobile/smallinventory.png)  |
 
 ### PC (Windows 10/MacOS/Chrome OS)
 
-| Name         | Letter (Copy/Paste This) | Unicode | Image                                                   |
-| ------------ | ------------------------ | ------- | ------------------------------------------------------- |
-| Left Click   |                         | U+E060  | ![](/assets/images/concepts/emojis/pc/left_click.png)   |
-| Right Click  |                         | U+E061  | ![](/assets/images/concepts/emojis/pc/right_click.png)  |
-| Middle Click |                         | U+E062  | ![](/assets/images/concepts/emojis/pc/middle_click.png) |
+| Name               | Letter (Copy/Paste This) | Unicode | Image                                                         |
+| ------------------ | ------------------------ | ------- | ------------------------------------------------------------- |
+| Left Click         |                         | U+E060  | ![](/assets/images/concepts/emojis/pc/left_click.png)         |
+| Right Click        |                         | U+E061  | ![](/assets/images/concepts/emojis/pc/right_click.png)        |
+| Middle Click       |                         | U+E062  | ![](/assets/images/concepts/emojis/pc/middle_click.png)       |
+| Small Left Click   |                         | U+E070  | ![](/assets/images/concepts/emojis/pc/small_left_click.png)   |
+| Small Right Click  |                         | U+E071  | ![](/assets/images/concepts/emojis/pc/small_right_click.png)  |
+| Small Middle Click |                         | U+E072  | ![](/assets/images/concepts/emojis/pc/small_middle_click.png) |
+| Small Mouse        |                         | U+E073  | ![](/assets/images/concepts/emojis/pc/small_mouse.png)        |
 
-### Xbox (One/Series X/Series S)
+### Xbox
 
 | Name               | Letter (Copy/Paste This) | Unicode | Image                                                      |
 | ------------------ | ------------------------ | ------- | ---------------------------------------------------------- |
@@ -85,7 +107,7 @@ There will be instructions for creating custom emoji at the bottom.
 | D-pad Down         |                         | U+E04E  | ![](/assets/images/concepts/emojis/switch/dpad_down.png)     |
 | D-pad Left         |                         | U+E04D  | ![](/assets/images/concepts/emojis/switch/dpad_left.png)     |
 
-### Playstation (4/5)
+### PlayStation (4/5)
 
 | Name               | Letter (Copy/Paste This) | Unicode | Image                                                             |
 | ------------------ | ------------------------ | ------- | ----------------------------------------------------------------- |
@@ -169,12 +191,10 @@ Your filepath should look like this:
 
 <FolderView
 	:paths="[
-
     'RP',
     'RP/font',
     'RP/font/glyph_E0.png',
     'RP/font/glyph_E1.png'
-
 ]"
 ></FolderView>
 
@@ -190,7 +210,7 @@ The next two characters are the position inside the image like `<row><column>`, 
 
 So after you are done, it might look like `0xE102` (`0x` + `E1` + `02`).
 
-Copy this code into the following field, and press convert. The symbol on the right-hand side can be copy/pasted into MC.
+Copy this code into the following field, and press <kbd>Convert</kbd>. The symbol on the right-hand side can be copy/pasted into MC.
 
 <div markdown="0">
 <form>
@@ -199,3 +219,7 @@ Copy this code into the following field, and press convert. The symbol on the ri
 <a onclick="document.getElementById('result').value = String.fromCodePoint(parseInt(document.getElementById('hexValue').value, 16))" style="text-decoration: none; color: white; background: rgb(91, 33, 182); padding: 0.5em; border-radius: 0.4em; cursor: pointer;">Convert</a>
 </form>
 </div>
+
+### Glyph Separation Space
+
+Sometimes, it appears that if you put 2 glyphs near to each other, there will be a couple of empty pixels between them. The only fix for it is to scale the glyph itself.

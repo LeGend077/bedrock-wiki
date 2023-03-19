@@ -1,6 +1,14 @@
 ---
 title: Wiki Developer's Test Page
 hidden: true
+tags:
+    - Dev page
+mentioned:
+    - TheItsNameless
+    - MedicalJewel105
+    - SirLich
+    - SmokeyStack
+description: A page with a description just for being a page with a description.
 ---
 
 ## What?
@@ -28,7 +36,7 @@ Danger zone, do not proceed
 
 <Checklist>
 
--   [x] My first task Lorem *ipsum* dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+-   [x] My first task Lorem *ipsum* dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
 -   [x] More tasks ...
 -   [ ] and more
 
@@ -49,6 +57,7 @@ Danger zone, do not proceed
 comment
 4. d
 
+## Spoiler Test
 
 <Spoiler title="Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong Hs">
 
@@ -62,19 +71,13 @@ comment
 
 </Spoiler>
 
-<Checklist>
-
--   [x] loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong
--   [ ] loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong
--   [ ] and more
-
-</Checklist>
-
-<CodeHeader>kjeshvtkheskthlkrzieuoirjues;oirjt;iejtoiewtpiapojlkjgklgagafglwalgöafglöahfadklgwjhglsaglfglwaösfgäaüöäüöäüößagfagajxhlkhretjekvhtiewjtlkgjxekttwelt.json</CodeHeader>
+<CodeHeader>kjeshvtkheskthlkrzieuoirjuesoirjtejtoiewtpiapojlkjgklgagafglwalgöafglöahfadklgwjhglsaglfglwaösfgäaüöäüöäüößagfagajxhlkhretjekvhtiewjtlkgjxekttwelt.json</CodeHeader>
 
 ```json
 {"var": "value"}
 ```
+
+## MD Tricks
 
 You can make a space using `>`:
 
@@ -88,4 +91,57 @@ Not actually moved
 
     трсуыешцугщшксодлпыоудловралоурлоаоцдлаодлыоадлцодлцодлкодлодлуокд
 
-Tab works like \`\`
+Tab works like `code`
+
+Actually there is a text:
+
+<!-- Comment! 👀 -->
+
+## Downloadable Images
+
+<a href="/assets/images/discord/oss.png" download>
+  <img src="/assets/images/misc/dead_bush.png" alt="OSS Image">
+</a>
+
+<BButton
+    link="/favicon.ico" download
+    color=red
+>Download Wiki Logo</BButton>
+
+<a href="/assets/images/misc/dead_bush.png" download>Download</a>
+
+## Code panel edit
+
+a`koooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooood`a
+
+<CodeHeader>silver_dagger.json</CodeHeader>
+
+```json
+{
+    "repair_amount": "context.other->query.remaining_durability + 0.05 * context.other->query.max_durability",
+    "value": 123456,
+    "valid": true //comment
+}
+hello
+```
+
+<BButton
+    link="https://www.google.com/"
+    color=default
+>Download Wiki Logo</BButton>
+
+## MD Snippets
+
+`Ctrl + Space`
+
+![](/assets/images/contribute/snippets/snippets.png)
+
+## After h4 space
+
+#### h4
+
+normal usage
+
+#### h4-2
+---
+edited

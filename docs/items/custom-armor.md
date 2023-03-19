@@ -308,23 +308,27 @@ As you can see not much has changed, we just update the categories/slots to the 
 	"minecraft:attachable": {
 		"description": {
 			"identifier": "wiki:my_helm",
+			// These 2 are default and are required
 			"materials": {
 				"default": "armor",
 				"enchanted": "armor_enchanted"
 			},
 			"textures": {
-				"enchanted": "textures/misc/enchanted_item_glint",
-				// Notice how we just use the main texture
-				"default": "textures/models/armor/custom_main"
+				// This is our CUSTOM armor texture we need to make next
+				"default": "textures/models/armor/custom_main",
+				// This texture doesn't actually exist in our RP
+				// but it will blow up without it so leave it in
+				"enchanted": "textures/misc/enchanted_item_glint"
 			},
-			// Set it to helmet
+			// We tell it what geometry to use for the helmet
 			"geometry": {
-				"default": "geometry.humanoid.armor.helmet"
+				"default": "geometry.player.armor.helmet"
 			},
-			// Hide helm layer
+			// We tell it to hide the helmet layer as we will be showing our armor on top
 			"scripts": {
-				"parent_setup": "variable.helmet_layer_visible = 0.0;"
+				"parent_setup": "variable.chest_layer_visible = 0.0;"
 			},
+			// We tell it what controller to use (default armor one)
 			"render_controllers": ["controller.render.armor"]
 		}
 	}
@@ -402,23 +406,27 @@ The custom boots texture if you need it.
 	"minecraft:attachable": {
 		"description": {
 			"identifier": "wiki:my_boots",
+			// These 2 are default and are required
 			"materials": {
 				"default": "armor",
 				"enchanted": "armor_enchanted"
 			},
 			"textures": {
-				"enchanted": "textures/misc/enchanted_item_glint",
-				// Again main texture, only leggings are different
-				"default": "textures/models/armor/custom_main"
+				// This is our CUSTOM armor texture we need to make next
+				"default": "textures/models/armor/custom_main",
+				// This texture doesn't actually exist in our RP
+				// but it will blow up without it so leave it in
+				"enchanted": "textures/misc/enchanted_item_glint"
 			},
-			// Boots geom
+			// We tell it what geometry to use for the boots
 			"geometry": {
-				"default": "geometry.humanoid.armor.boots"
+				"default": "geometry.player.armor.boots"
 			},
-			// Hide boots layer
+			// We tell it to hide the boots layer as we will be showing our armor on top
 			"scripts": {
-				"parent_setup": "variable.boot_layer_visible = 0.0;"
+				"parent_setup": "variable.chest_layer_visible = 0.0;"
 			},
+			// We tell it what controller to use (default armor one)
 			"render_controllers": ["controller.render.armor"]
 		}
 	}
@@ -436,14 +444,15 @@ Thats it, you now have a whole suit of custom armor you can swagger around in, a
 
 This is a bit more advanced but lets say you want your custom armor to act like it's a set from an RPG game. We can add some code to check if we have the set equipped and do some great stuff with it.
 
+Note that for effects you can use tick.json and functions with hasitem selector argument to avoid using player.json.
+
 In this example we will just add a chance to teleport the attacker somewhere nearby and put a blurb on the console for flavour.
 
 As we want this to trigger when the player is hit we need to add some logic to the `player.json` file. This is a huge file and we unfortunately need to make sure it has all the default content in there as well due to the way it will overwrite the default player components etc.
 
-So rather than include the whole `player.json` I will just include the parts you will need to add to your `components` and `events` sections.
+So rather than include the whole `player.json` I will just include the parts you will need to add to your `components` and `events` sections. If you have no idea what the `player.json` is then look in the vanilla behavior pack and look for it and just copy it over into your project.
 
-> If you have no idea what the `player.json` is then look in the vanilla behavior pack and look for it and just copy it over into your project.
-> So first of all lets put in the damage sensor component (which goes in your component section) which listens for when you take damage and lets you raise an event from it.
+So first of all lets put in the damage sensor component (which goes in your component section) which listens for when you take damage and lets you raise an event from it.
 
 <CodeHeader>BP/entities/player.json#components</CodeHeader>
 
@@ -538,4 +547,4 @@ As you can see from the comments, there is a lot there but really all we are doi
 
 Thats it, you can rejig the bits how you see fit but ultimately you have all the pieces to apply effects to armor and check for if you have the whole set applied or check for other equipment.
 
-> You can also change the equipment checks from self to other and check if whoever is attacking you has something equipped or even check if you are attacking a sort of block/entity and do different effects based on that. We haven't touched on that directly here but there is a good enough starting point to get you on your way and let you be creative with things.
+You can also change the equipment checks from self to other and check if whoever is attacking you has something equipped or even check if you are attacking a sort of block/entity and do different effects based on that. We haven't touched on that directly here but there is a good enough starting point to get you on your way and let you be creative with things.

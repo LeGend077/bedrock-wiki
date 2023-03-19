@@ -6,19 +6,19 @@
 		:href="link"
 	>
 		<component
+			:is="icon"
 			v-if="icon"
 			class="btn-icon"
 			:class="[iconColor]"
-			:is="icon"
 		/>
 		<div>
 			<slot />
 		</div>
 		<component
+			:is="iconRight"
 			v-if="iconRight"
 			class="btn-icon"
 			:class="[iconColor]"
-			:is="iconRight"
 		/>
 	</component>
 </template>
@@ -74,8 +74,15 @@ button.btn {
 .blue {
 	@apply text-blue-500 hover:text-blue-600 focus:text-blue-600 active:text-blue-800;
 }
+.red {
+	@apply text-red-500 hover:text-red-600 focus:text-red-600 active:text-red-800;
+}
 
-.white {
+.default {
+	@apply text-dark-500 hover:text-dark-600 focus:text-dark-600 active:text-dark-800;
+}
+
+.dark .default {
 	@apply text-light-500 hover:text-light-600 focus:text-light-600 active:text-light-800;
 }
 

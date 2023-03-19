@@ -1,9 +1,11 @@
 <template>
 	<div class="notfound max-w-screen-md mx-auto">
 		<div class="flex flex-col mx-auto items-center">
-			<h1 class="!block">404 - Page not found!</h1>
+			<h1 class="!block">
+				404 - Page not found!
+			</h1>
 			<p>Don't type <code>/spawnpoint</code> here.</p>
-			<img src="/assets/images/misc/dead_bush.png" />
+			<img src="/assets/images/misc/dead_bush.png">
 		</div>
 	</div>
 </template>
@@ -23,7 +25,7 @@ const URL_MAP: Record<string, string> = {
 		'animation-controllers/animation-controllers-intro',
 	'concepts/biomes': 'world-generation/biomes',
 	'concepts/blocks': 'blocks/blocks-intro',
-	'concepts/components-events-groups': 'entities/entities-intro',
+	'concepts/components-events-groups': 'entities/entity-intro-bp',
 	'concepts/entity-properties': 'entities/entity-properties',
 	'concepts/items': 'items/items-16',
 	'concepts/json-ui': 'json-ui/json-ui-intro',
@@ -52,6 +54,8 @@ const URL_MAP: Record<string, string> = {
 	'knowledge/using-schemas': 'meta/using-schemas',
 	'knowledge/version-control': 'meta/version-control',
 
+	'items/3d-items': 'items/attachables',
+
 	'scripting/saving_loading': 'scripting/saving-loading',
 
 	'troubleshooting/entities': 'entities/troubleshooting-entities',
@@ -65,7 +69,7 @@ const URL_MAP: Record<string, string> = {
 	'tutorials/controlling-flying-entities': 'entities/flying-entities',
 	'tutorials/craftable-spawneggs': 'loot/craftable-spawneggs',
 	'tutorials/custom-armor': 'entities/custom-armor',
-	'tutorials/item-models': 'items/3d-items',
+	'tutorials/item-models': 'items/attachables',
 	'tutorials/disabling-particles': 'visuals/disabling-particles',
 	'tutorials/disabling-team-damage': 'entities/disabling-team-damage',
 	'tutorials/egg-drops': 'loot/egg-drops',
@@ -91,8 +95,11 @@ const URL_MAP: Record<string, string> = {
 
 	'world-generation/randomized-structure-loot':
 		'loot/randomized-structure-loot',
-	'visuals/render-controllers': 'visuals/entity-visuals-intro',
+	'visuals/render-controllers': 'entities/render-controllers',
 	'items/item-categories': 'items/creative-categories',
+
+	'visuals/entity-visuals-intro': 'entities/render-controllers',
+	'entities/entities-intro': 'entities/entity-intro-bp'
 }
 onMounted(() => {
 	let path = document.location.pathname

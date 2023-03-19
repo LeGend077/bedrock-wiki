@@ -2,20 +2,27 @@
 title: Subpacks
 ---
 
-## What are subpacks?
+## What are Subpacks?
 
-Subpacks are what cause the gear icon to appear on packs. They are intended for texture resolutions to load on different memory capacities, but can also be used to create file variations in behavior and resource packs which can then be chosen by clicking the gear icon and adjusting the slider.
+Subpacks allow you to select between different addon 'configurations'.
 
-## Creating subpacks
+They are intended for texture resolutions to load on different memory capacities, but can also be used to create file variations in behavior and resource packs. These variations can be selected by clicking the gear icon and adjusting the slider.
 
--   To start adding a subpack you need to create a `subpacks` folder inside the root of your BP or RP.
+## How do Subpacks work?
+
+Files placed in you subpack folder will override files placed in your main addon folder, if the subpack is selected. For example, if your addon contains both `RP/textures/entities/ghost.png` and `RP/subpacks/pack_1/textures/ghost.png`, the second image file will replace the first, if subpack `pack_1` is selected.
+
+For more information about how files override each other, please see our page on [overriding vanilla assets](/concepts/overwriting-assets).
+
+## Creating Subpacks
+
+-   To start adding a subpack you need to create a `subpacks` folder inside the root of your `BP`/`RP`.
 -   Then inside the `subpacks` folder add a folder for each subpack you want to have
     e.g.
 
 <FolderView :paths="[
-
-'RP/subpacks/subpack_1',
-'RP/subpacks/subpack_2'
+	'RP/subpacks/subpack_1',
+	'RP/subpacks/subpack_2'
 ]"></FolderView>
 
 -   Inside each of these folders you can add the content of each subpack.
@@ -23,14 +30,13 @@ Subpacks are what cause the gear icon to appear on packs. They are intended for 
     e.g.
 
 <FolderView :paths="[
-
-'RP/subpacks/subpack_1/textures/blocks/dirt.png',
-'RP/subpacks/subpack_1/textures/items/example_item.png',
-'RP/subpacks/subpack_2/textures/blocks/dirt.png',
-'RP/subpacks/subpack_2/textures/items/example_item.png'
+	'RP/subpacks/subpack_1/textures/blocks/dirt.png',
+	'RP/subpacks/subpack_1/textures/items/example_item.png',
+	'RP/subpacks/subpack_2/textures/blocks/dirt.png',
+	'RP/subpacks/subpack_2/textures/items/example_item.png'
 ]"></FolderView>
 
-## Adding subpacks to manifests
+## Manifest Part
 
 To register the subpacks in the manifest you need to add `subpacks` and this contains an array of subpacks.
 
@@ -70,15 +76,12 @@ Example:
 }
 ```
 
--   `name`
+-   `name` - name that will show when selecting subpacks.
 
-Defines the name that will show when selecting the subpacks.
+-   `memory_tier`- amount of RAM that device must have to enable this subpack. 1 memory tier = 0.25 GB.
 
--   `memory_tier`
+-   `folder_name` - name of the folder to be used for this subpack, for example in the examples above this would be `subpack_1` or `subpack_2`.
 
-Defines what amount GB of RAM device needs to have to enable this subpack.
-1 memory tier = 0.25 GB.
+## Known Things
 
--   `folder_name`
-
-This corresponds to the name of the folder to be used in this subpack, for example in the examples above this would be `subpack_1` or `subpack_2`. These names can be anything you want, they don't need to follow the `subpack_n` format.
+If you add only one subpack, there will be 2 options at the subpacks selection section, however second resolution (no subpack actually) does **not** make content in the root folder override subpacks.

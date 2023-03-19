@@ -99,11 +99,15 @@ Looks simple, doesn't it?
 }
 ```
 
+Formula explanation:
+
 `"context.other->query.remaining_durability + 0.05 * context.other->query.max_durability"`
-The final durability will be durability of the first axe + durability of the second axe + 5% of 2nd axe MAX durability.
+
+The _final_ durability will be durability of the first axe + durability of the second axe + 5% of 2nd axe MAX durability.
 
 ## on_tool_used
 
+(This might not work now)
 `on_tool_used` is special event that can be called using tags.
 Tags work kinda like runtime identifiers for entities.
 Known tags:

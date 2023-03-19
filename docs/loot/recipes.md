@@ -108,7 +108,7 @@ Crafting:
 - `stonecutter`
 - `smithing_table`
 
-Note that if you want to make a smithing recipe, you will need to use `<namespace>:netherite_ingot` for the second slot, though using a different identifier will not work.
+Note that if you want to make a smithing recipe, you will need to use `<namespace>:netherite_ingot` for the second slot, though using a different identifier will not work. **This no longer works after 1.18.30**.
 
 Cooking and Smelting:
 - `furnace`
@@ -206,6 +206,7 @@ These identifiers are not usable in the object notation, only the string notatio
 - `leaping`
 - `slow_falling`
 - `turtle_master`
+- `wither`
 
 Where supported, `long_` and `strong_` prefixes may be used to designate modified potions, such as `minecraft:potion_type:strong_poison`.
 
@@ -514,17 +515,17 @@ Furnace recipes are used to transform an item using a heat source over a period 
 ```json
 {
 	"format_version": "1.17.41",
-	
+
 	"minecraft:recipe_furnace": {
 		"description": {
 			"identifier": "wiki:magic_ash"
 		},
 		"tags": ["soul_campfire"],
-		
-		"input": "wiki:bone_fragments"
+
+		"input": "wiki:bone_fragments",
 		"output": {
 			"item": "wiki:magic_ash",
-			
+
 			"count": 4
 		}
 	}

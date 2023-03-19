@@ -1,30 +1,27 @@
 ---
-title: MoLang
+title: Molang
 tags:
     - intermediate
 ---
 
-### | Introduction
-Pretty much everything evaluates to a number; if something doesn't evaluate to a number, you can use an `operator` to make it into one. You can basically just think of MoLang as one big math equation.
+## Introduction
+Pretty much everything evaluates to a number; if something doesn't evaluate to a number, you can use an `operator` to make it into one. You can basically just think of Molang as one big math equation.
 
 An equation evaluates to `true` when any number except `0` is returned. When I reference `returning`, I'm talking about the output of an equation. There is also a `return` statement, but I don't usually use it, and will therefore not be talking about it.
 
-
-
-### | Accessing Values
-There are three main ways to access and use values in MoLang (queries, variables and temp variables)
+## Accessing Values
+There are three main ways to access and use values in Molang (queries, variables and temp variables)
 
 - **Queries** are read only values returned by the game. You cannot set these values, only read them. (`query.example_query` | `q.example_query`)
 
-- **Variables** are read and write values that you can manipulate, these can be set and read through MoLang. (`variable.example_variable` | `v.example_variable`)
+- **Variables** are read and write values that you can manipulate, these can be set and read through Molang. (`variable.example_variable` | `v.example_variable`)
   - There are also hard-coded variables which act practically the same way as queries, but can only be used in certain situations.
 
 - **Temp. Variables** are practically the same as variables, except they only exist in the current scope. (`temp.example_temp` | `t.example_temp`)
   - A "scope" can refer to the current `for_each` or `loop` *or* just the current expression, if it's not used within either
 
+## Handling values
 
-
-### | Handling values
 - **Logical Operators** can be used to convert non-numbers into 1s or 0s. These include: `==`, `!=`, `<`, `>`, `<=`, `>=`.
   - Example.) "`query.get_equipped_item_name == 'stick'`" Will evaluate to `1`/`true` when holding a stick
 
@@ -33,7 +30,7 @@ There are three main ways to access and use values in MoLang (queries, variables
     - Example.) "`query.is_sneaking || query.is_jumping`" // Evaluates to `1`/`true` when either jumping *or* sneaking
 
 - **Parentheses**, `( )`, are also a major help when grouping values or performing math operations.
-  - Example.) "`query.is_sneaking && (query.get_equipped_item_name == `stick` || query.get_equipped_item_name == `diamond`)`" Will evaluate to `1`/`true` when sneaking *and* holding either a stick *or* a diamond
+  - Example.) "`query.is_sneaking && (query.get_equipped_item_name == "stick" || query.get_equipped_item_name == "diamond")`" Will evaluate to `1`/`true` when sneaking *and* holding either a stick *or* a diamond
 
 - **Conditional Operators** can be used as `if/else` statements. 
   - A *binary* conditional operator refers to just using `?`. When this is used, it'll output your value or `0` depending on whether the given input value is `true`. 

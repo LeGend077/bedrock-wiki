@@ -45,19 +45,17 @@ Item categories applied with the item component `creative_category` direct it ex
 
 ## For Blocks
 
-Block Categories are defined via the `minecraft:creative_category` component, your custom block will not show up in the Creative Inventory if you don't have this component, here's an example:
+Block Categories are defined via `menu_category`, your custom block will not show up in the Creative Inventory if you don't have this, here's an example:
 
 <CodeHeader></CodeHeader>
 
 ```json
 {
-	"format_version": "1.17.20",
+	"format_version": "1.19.50",
 	"minecraft:block": {
 		"description": {
-			"identifier": "wiki:balsa"
-		},
-		"components": {
-			"minecraft:creative_category": {
+			"identifier": "wiki:balsa",
+			"menu_category": {
 				"category": "nature",
 				"group": "itemGroup.name.wood"
 			}
@@ -66,96 +64,104 @@ Block Categories are defined via the `minecraft:creative_category` component, yo
 }
 ```
 
-As you can see, the `minecraft:creative_category` component accepts 2 optional children, the `category` child & the `group` child. A list of groups & categories can be found below.
+As you can see, `menu_category` accepts 2 optional children, the `category` child & the `group` child. A list of groups & categories can be found below. You can also use `is_hidden_in_commands` to make the block not show in commands.
 
 ## List of Creative Tabs
 
 > _For use with `description` parameter, `category`_
 
-| Category  
-| --------------------------------
-| commands |  
-| construction |  
-| equipment |  
-| items |  
-| nature |  
-| none |
+|   Category   |
+| ------------ |
+| commands     |
+| construction |
+| equipment    |
+| items        |
+| nature       |
+| none         |
 
 ## List of Creative Categories
 
-> _For use with the `creative_category` component_
+> _For use with the `group` parameter_
 
-| Category |
-| --------------------------------
-| itemGroup.name.anvil |  
-| itemGroup.name.arrow |  
-| itemGroup.name.axe |  
-| itemGroup.name.banner |  
-| itemGroup.name.banner_pattern |  
-| itemGroup.name.bed |  
-| itemGroup.name.boat |  
-| itemGroup.name.boots |  
-| itemGroup.name.buttons |  
-| itemGroup.name.chalkboard |  
-| itemGroup.name.chest |  
-| itemGroup.name.chestplate |  
-| itemGroup.name.concrete |  
-| itemGroup.name.concretePowder |  
-| itemGroup.name.cookedFood |  
-| itemGroup.name.copper |  
-| itemGroup.name.coral |  
-| itemGroup.name.coral_decorations |  
-| itemGroup.name.crop |  
-| itemGroup.name.door |  
-| itemGroup.name.dye |  
-| itemGroup.name.enchantedBook |  
-| itemGroup.name.fence |  
-| itemGroup.name.fenceGate |  
-| itemGroup.name.firework |  
-| itemGroup.name.fireworkStars |  
-| itemGroup.name.flower |  
-| itemGroup.name.glass |  
-| itemGroup.name.glassPane |  
-| itemGroup.name.glazedTerracotta |  
-| itemGroup.name.grass |  
-| itemGroup.name.helmet |  
-| itemGroup.name.hoe |  
-| itemGroup.name.horseArmor |  
-| itemGroup.name.leaves |  
-| itemGroup.name.leggings |  
-| itemGroup.name.lingeringPotion |  
-| itemGroup.name.log |  
-| itemGroup.name.minecart |  
-| itemGroup.name.miscFood |  
-| itemGroup.name.mobEgg |  
-| itemGroup.name.monsterStoneEgg |  
-| itemGroup.name.mushroom |  
-| itemGroup.name.netherWartBlock |  
-| itemGroup.name.ore |  
-| itemGroup.name.permission |  
-| itemGroup.name.pickaxe |  
-| itemGroup.name.planks |  
-| itemGroup.name.potion |  
-| itemGroup.name.pressurePlate |  
-| itemGroup.name.rail |  
-| itemGroup.name.rawFood |  
-| itemGroup.name.record |  
-| itemGroup.name.sandstone |  
-| itemGroup.name.sapling |  
-| itemGroup.name.seed |  
-| itemGroup.name.shovel |  
-| itemGroup.name.shulkerBox |  
-| itemGroup.name.sign |  
-| itemGroup.name.skull |  
-| itemGroup.name.slab |  
-| itemGroup.name.splashPotion |  
-| itemGroup.name.stainedClay |  
-| itemGroup.name.stairs |  
-| itemGroup.name.stone |  
-| itemGroup.name.stoneBrick |  
-| itemGroup.name.sword |  
-| itemGroup.name.trapdoor |  
-| itemGroup.name.walls |  
-| itemGroup.name.wood |  
-| itemGroup.name.wool |  
-| itemGroup.name.woolCarpet |
+<!-- page_dumper_start -->
+| Creative Categories:             |
+| -------------------------------- |
+| itemGroup.name.anvil             |
+| itemGroup.name.arrow             |
+| itemGroup.name.axe               |
+| itemGroup.name.banner            |
+| itemGroup.name.banner_pattern    |
+| itemGroup.name.bed               |
+| itemGroup.name.boat              |
+| itemGroup.name.boots             |
+| itemGroup.name.buttons           |
+| itemGroup.name.candles           |
+| itemGroup.name.chalkboard        |
+| itemGroup.name.chest             |
+| itemGroup.name.chestboat         |
+| itemGroup.name.chestplate        |
+| itemGroup.name.concrete          |
+| itemGroup.name.concretePowder    |
+| itemGroup.name.cookedFood        |
+| itemGroup.name.copper            |
+| itemGroup.name.coral             |
+| itemGroup.name.coral_decorations |
+| itemGroup.name.crop              |
+| itemGroup.name.door              |
+| itemGroup.name.dye               |
+| itemGroup.name.enchantedBook     |
+| itemGroup.name.fence             |
+| itemGroup.name.fenceGate         |
+| itemGroup.name.firework          |
+| itemGroup.name.fireworkStars     |
+| itemGroup.name.flower            |
+| itemGroup.name.glass             |
+| itemGroup.name.glassPane         |
+| itemGroup.name.glazedTerracotta  |
+| itemGroup.name.goatHorn          |
+| itemGroup.name.grass             |
+| itemGroup.name.helmet            |
+| itemGroup.name.hoe               |
+| itemGroup.name.horseArmor        |
+| itemGroup.name.leaves            |
+| itemGroup.name.leggings          |
+| itemGroup.name.lingeringPotion   |
+| itemGroup.name.log               |
+| itemGroup.name.minecart          |
+| itemGroup.name.miscFood          |
+| itemGroup.name.mobEgg            |
+| itemGroup.name.monsterStoneEgg   |
+| itemGroup.name.mushroom          |
+| itemGroup.name.netherWartBlock   |
+| itemGroup.name.ore               |
+| itemGroup.name.permission        |
+| itemGroup.name.pickaxe           |
+| itemGroup.name.planks            |
+| itemGroup.name.potion            |
+| itemGroup.name.pressurePlate     |
+| itemGroup.name.rail              |
+| itemGroup.name.rawFood           |
+| itemGroup.name.record            |
+| itemGroup.name.sandstone         |
+| itemGroup.name.sapling           |
+| itemGroup.name.sculk             |
+| itemGroup.name.seed              |
+| itemGroup.name.shovel            |
+| itemGroup.name.shulkerBox        |
+| itemGroup.name.sign              |
+| itemGroup.name.skull             |
+| itemGroup.name.slab              |
+| itemGroup.name.splashPotion      |
+| itemGroup.name.stainedClay       |
+| itemGroup.name.stairs            |
+| itemGroup.name.stone             |
+| itemGroup.name.stoneBrick        |
+| itemGroup.name.sword             |
+| itemGroup.name.trapdoor          |
+| itemGroup.name.walls             |
+| itemGroup.name.wood              |
+| itemGroup.name.wool              |
+| itemGroup.name.woolCarpet        |
+
+*Last updated for 1.19.60*
+<!-- page_dumper_end -->

@@ -1,109 +1,80 @@
 ---
-title: Game Tests
-category: Game Tests
+title: GameTests
+category: Tutorials
 tags:
     - experimental
+mentions:
+	- cda94581
 ---
 
-::: tip
-The GameTest framework requires you to activate **"Enable GameTest Framework"** in your world settings, and you must be using **Minecraft 1.16.210.60 beta or above**.
+::: warning
+The Script API is currently in active development, and breaking changes are frequent. This page assumes the format of Minecraft beta 1.19.70
 :::
 
-GameTests are a new feature that allows developers to create unit tests to make it easier to test if game mechanics work. They are built with javascript files in the behavior pack folder, and each file can register multiple GameTests. Each registered GameTest must also have a .mcstructure file in the `BP/structures` folder.
-The API can also be used for creations outside of creating unit tests by just using the `"mojang-minecraft"` module, though this is currently limited.
+The GameTest Framework allows us to create unit tests ("GameTests") which make it easier to test if game mechanics work.
 
-## Using GameTests
+GameTests can be used with the `/gametest` command.
 
-In the behavior pack manifest, you need to add a `javascript` module to set an `entry` point for your GameTests.
+-   `/gametest runthis` - Runs the nearest GameTest in range.
+-   `/gametest runthese` - Runs all GameTests in range.
+-   `/gametest pos` - It tells you the relative coordinates of the nearest GameTest.
+-   `/gametest clearall [radius: int]` - Removes all GameTests in the specified radius.
+-   `/gametest run <testName: GameTestName> [rotationSteps: int]` - Creates and runs the specified GameTest.
+-   `/gametest runset [tagTag: GameTestTag] [rotationSteps: int]` - Creates and runs all GameTests with the specified tag.
+-   `/gametest create <testName: string> [width: int] [height: int] [depth: int]` - Creates a blank GameTest area with the specified dimensions.
+-   `/reload` - Reloads all function and script files from all behavior packs. (1.19+)
 
-<CodeHeader>BP/manifest.json</CodeHeader>
+(1.19.40+) Vanilla GameTests are removed from the Minecraft game files, so you cannot run any gametests without adding your own custom behavior pack. You can find them in the [**official repo**](https://github.com/microsoft/minecraft-gametests/tree/main/behavior_packs/vanilla_gametest).
+
+# Get started with GameTest
+
+To get started, you'll want to begin with your own behavior pack and decent knowledge of scripting and API. If you're getting started check out [this article](/scripting/starting-scripts).
+
+To use the GameTest Framework, the `@minecraft/server-gametest` module is required. The GameTest API module also requires the `@minecraft/server` module, so in your dependency in your manifest.json requires the following:
+
+<CodeHeader>BP/manifest.json/</CodeHeader>
 
 ```json
-{
-	"format_version": 2,
-	"header": {
-		"name": "Pack Name",
-		"description": "Pack descripton",
-		"min_engine_version": [1, 16, 210],
-		"uuid": "604420b9-f4c3-4df2-9f09-4364486f1195",
-		"version": [1, 0, 0]
-	},
-	"modules": [
-		{
-			"description": "",
-			"type": "data",
-			"uuid": "42651ba5-6619-4547-9d48-84a5a37cf2a3",
-			"version": [1, 0, 0]
-		},
-		{
-			"description": "",
-			"uuid": "239c134f-67bf-4738-9bcc-8c69d31b1f72",
-			"version": [1, 0, 0],
-			"type": "javascript",
-			"entry": "scripts/gametests/Main.js"
-		}
-	],
-	"dependencies": [
-		{
-			// Minecraft native module - needed to use the "mojang-minecraft" module
-			"uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
-			"version": [0, 1, 0]
-		},
-		{
-			// GameTest native module - needed to use the "mojang-gametest" module
-			"uuid": "6f4b6893-1bb6-42fd-b458-7fa3d0c89616",
-			"version": [0, 1, 0]
-		}
-	]
-}
+"dependencies": [
+    {
+        "module_name": "@minecraft/server",
+        "version": "1.1.0-beta"
+    },
+    {
+        "module_name": "@minecraft/server-gametest",
+        "version": "1.0.0-beta"
+    }
+]
 ```
 
-The entry point should link to a file containing imports to your GameTest files.
+To run a GameTest, a structure file is required on your behavior pack and the command needs to be registered via `register` function.
 
-<CodeHeader>BP/scripts/gametests/Main.js</CodeHeader>
+<CodeHeader>BP/scripts/Main.js</CodeHeader>
 
 ```js
-import 'scripts/gametests/MyGameTest.js'
-import 'scripts/gametests/OtherGameTest.js'
+import * as GameTest from "@minecraft/server-gametest";
+
+// Registration Code for our test
+GameTest.register(
+    "wiki",         // Name of the class of tests.
+    "simpleTest",   // Name of this test.
+    (test) => {     // Implementation of the test
+        /**
+         * @type {import("@minecraft/server").Vector3}
+         * location from the test of where the cow should spawn in
+         */
+        const location = { x: 0, y: 0, z: 0 };
+        const cow = test.spawn("minecraft:cow", location); // returns Entity instance
+
+        test.succeedWhen(() => {
+          test.assertEntityPresentInArea("minecraft:cow", true);
+        });
+    }
+)
+    .maxTicks(410)
+    .structureName("mystructure:wiki"); /* use the wiki.mcstructure file */
 ```
 
-GameTests can be used with the /gametest command.
+The test function is locked when the command is registered, meaning the test function can not access to variables outside the test function after the command is registered.
 
--   `/gametest runthis`
-
-Runs the nearest GameTest in range.
-
--   `/gametest runthese`
-
-Runs all GameTests in range.
-
--   `/gametest pos`
-
-It tells you the relative coordinates of the nearest GameTest.
-
--   `/gametest clearall [radius: int]`
-
-Removes all GameTests in the specified radius.
-
--   `/gametest run <testName: GameTestName> [rotationSteps: int]`
-
-Creates and runs the specified GameTest.
-
--   `/gametest runset [tagTag: GameTestTag] [rotationSteps: int]`
-
-Creates and runs all GameTests with the specified tag.
-
--   `/gametest create <testName: string> [width: int] [height: int] [depth: int]`
-
-Creates a blank GameTest area with the specified dimensions.
-
-## Reference Documentation
-
-Official documentation on the `"mojang-gametest"` module can be found [here](https://docs.microsoft.com/minecraft/creator/scriptapi/mojang-gametest/mojang-gametest) and found [here](https://docs.microsoft.com/minecraft/creator/scriptapi/mojang-minecraft/mojang-minecraft) for the `'mojang-minecraft'` module.
-
-Official typescript declarations can be found here:
-
--   [mojang-minecraft](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/mojang-minecraft)
--   [mojang-gametest](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/mojang-gametest)
-
-These allow for enhanced auto-completions and validation when used inside of your editor. bridge. v2 ships with GameTest support built-in.
+If you're having issues with the Script API, consider checking out an article of [**Building your first GameTest**](https://learn.microsoft.com/en-us/minecraft/creator/documents/gametestbuildyourfirstgametest) in Microsoft learn, or joining **Bedrock Add-Ons** for support, which you can find alongside a vast array of other resources on the [Useful Links](/meta/useful-links#discord-links) page!
