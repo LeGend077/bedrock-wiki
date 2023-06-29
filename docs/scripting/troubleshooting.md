@@ -1,6 +1,11 @@
 ---
 title: Troubleshooting JavaScript
 category: Documentation
+mentions:
+    - Herobrine643928
+    - JaylyDev
+    - SmokeyStack
+    - ThomasOrs
 ---
 
 This article teaches you the basic workflow for debugging any JavaScript issue.
@@ -12,24 +17,24 @@ These errors can be a helpful debugging your code, but the reported problem isn'
 You can learn more about each Error class in `MDN` by clicking the link below each error names.
 
 - [`EvalError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError)
-  - Creates an instance representing an error that occurs regarding the global function `eval()`.
+    - Creates an instance representing an error that occurs regarding the global function `eval()`.
 - [`RangeError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError)
-  - Creates an instance representing an error that occurs when a numeric variable or parameter is outside its valid range.
+    - Creates an instance representing an error that occurs when a numeric variable or parameter is outside its valid range.
 - [`ReferenceError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError)
-  - Creates an instance representing an error that occurs when de-referencing an invalid reference. In Minecraft Script Engine, there is a reference error with no clear reason of why this error triggers:
+    - Creates an instance representing an error that occurs when de-referencing an invalid reference. In Minecraft Script Engine, there is a reference error with no clear reason of why this error triggers:
     - Native object bound to prototype does not exist.
 - [`SyntaxError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError)
-  - Creates an instance representing a syntax error.
+    - Creates an instance representing a syntax error.
 - [`TypeError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError)
-  - Creates an instance representing an error that occurs when a variable or parameter is not of a valid type.
+    - Creates an instance representing an error that occurs when a variable or parameter is not of a valid type.
 - [`URIError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError)
-  - Creates an instance representing an error that occurs when `encodeURI", "encodeURI()` or `decodeURI", "decodeURI()` are passed invalid parameters.
+    - Creates an instance representing an error that occurs when `encodeURI", "encodeURI()` or `decodeURI", "decodeURI()` are passed invalid parameters.
 - [`AggregateError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AggregateError)
-  - Creates an instance representing several errors wrapped in a single error when multiple errors need to be reported by an operation, for example by `Promise.any()`.
+    - Creates an instance representing several errors wrapped in a single error when multiple errors need to be reported by an operation, for example by `Promise.any()`.
 - [`InternalError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError)
-  - Creates an instance representing an error that occurs when an internal error in the JavaScript engine is thrown. In Minecraft JS, the errors are the following:
-    - stack overflow
-    - out of memory
+    - Creates an instance representing an error that occurs when an internal error in the JavaScript engine is thrown. In Minecraft JS, the errors are the following:
+        - stack overflow
+        - out of memory
 
 ## Minecraft JS Errors
 
@@ -41,7 +46,7 @@ This error occurs when the combined memory usage exceeds 250 megabytes.
 
 This saves and shuts down the world by Watchdog termination and cannot be canceled using `BeforeWatchdogTerminateEvent`.
 
-The memory limit can be adjusted in `server.properities` by modifying `script-watchdog-memory-limit`. (Setting this value to 0 disables the limit.)
+The memory limit can be adjusted in `server.properties` by modifying `script-watchdog-memory-limit`. (Setting this value to 0 disables the limit.)
 
 ### InternalError: stack overflow
 
@@ -72,13 +77,13 @@ This is common when attempting to set property on native objects from native mod
 
 This occurs when an iteration happens over a value that is not an iterable object.
 
-Click [**here**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/is_not_iterable) for more infomation.
+Click [**here**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/is_not_iterable) for more information.
 
 ### TypeError: not a function
 
 This occurs when there was an attempt to call a value from a function, but the value is not actually a function. This is very common as script API constantly remove or rename methods without mentioning them in Minecraft changelog.
 
-Click [**here**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_a_function) for more infomation.
+Click [**here**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_a_function) for more information.
 
 ### TypeError: Native Type Conversion Failed
 
@@ -91,7 +96,7 @@ This error occurs when you input the wrong type of value into an optional parame
 ### TypeError: Object did not have a native handle
 
 ::: warning
-This error is not documented publicly, so the explaination is an estimate.
+This error is not documented publicly, so the explanation is an estimate.
 :::
 
 The error throws when the script tries to fetch a native handle from a JavaScript object, but the handle instance was cleared.
@@ -99,7 +104,7 @@ The error throws when the script tries to fetch a native handle from a JavaScrip
 ### ReferenceError: Native object bound to prototype does not exist.
 
 ::: warning
-This error is not documented publicly, so the explaination is an estimate.
+This error is not documented publicly, so the explanation is an estimate.
 :::
 
 This error throws when a method is not supported by native codebase due to unexpected reasons. In some circumstances restarting the game should fix the issue.
@@ -112,7 +117,7 @@ Debugging allows you to find the exact point where you made a mistake on your Ja
 
 - **[Scripting][Inform]**
 
-  you can use `console.log()` or `console.info()` to display JavaScript values, however they are only displayed in [Content Log file](https://wiki.bedrock.dev/guide/troubleshooting.html#content-log-file), which you can see them [here](https://wiki.bedrock.dev/guide/troubleshooting.html#content-log-file).
+  you can use `console.log()` or `console.info()` to display JavaScript values, however they are only displayed in [Content Log file](/guide/troubleshooting#content-log-file), which you can see them [here](/guide/troubleshooting#content-log-file).
 
   `00:00:00-[Scripting][Inform]-`: This text is triggered when `console.log()` or `console.info()` is used.
 

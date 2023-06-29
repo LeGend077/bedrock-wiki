@@ -1,9 +1,10 @@
 ---
 title: On First Join
 category: On Event Systems
-mention:
+mentions:
     - BedrockCommands
-    - EziGotFliped
+    - zheaEvyline
+    - SmokeyStack
 nav_order: 1
 tags:
     - system
@@ -23,6 +24,7 @@ This system will run your desired commands on the event that a player joins the 
 #Your Commands Here (examples)
 /give @a [tag=!joined] stone_pickaxe
 /give @a [tag=!joined] bread 16 1
+
 
 /tag @a [tag=!joined] add joined
 ```

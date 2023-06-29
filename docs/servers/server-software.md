@@ -1,25 +1,42 @@
 ---
 title: Bedrock Server Software
+mentions:
+    - SirLich
+    - DevGod6969
+    - NhanAZ
+    - SmokeyStack
+    - Joemanasdawd
+    - mdisprgrm
+    - Superice666
+    - andriycraft
+    - KanadeDev
+    - HUYDGD
+    - TheItsNameless
+    - hvlhx
+    - SmokeyStack
+    - ProtectorYT364
+    - ThomasOrs
+    - lapismyt
 ---
 
 Minecraft servers allow players to play online or via a local area network with other people. This is very common within Java Edition Minecraft, but is also possible on Bedrock. [You can download the official Mojang BDS software here.](https://www.minecraft.net/en-us/download/server/bedrock).
 
-Alongside the Vanilla BDS offering, many community projects exist, in a variaty of languages.
+Alongside the Vanilla BDS offering, many community projects exist, in a variety of languages.
 
 ## Software by Language
 
 | Language   | Status                                                               |
 | ---------- | -------------------------------------------------------------------- |
-| PHP        | [Still Active](#php)        : 5 < [Discontinued](#php-1)        : 35 |
+| PHP        | [Still Active](#php)        : 5 < [Discontinued](#php-1)        : 36 |
 | Java       | [Still Active](#java)       : 5 < [Discontinued](#java-1)       : 13 |
-| JavaScript | [Still Active](#javascript) : 3 < [Discontinued](#javascript-1) : 5  |
+| JavaScript | [Still Active](#javascript) : 2 < [Discontinued](#javascript-1) : 5  |
 | Go         | [Still Active](#go)         : 2 < [Discontinued](#go-1)         : 4  |
 | C++        | [Still Active](#c)          : 2 < [Discontinued](#c-3)          : 3  |
-| TypeScript | [Still Active](#typescript) : 2 < Discontinued                  : 0  |
+| TypeScript | [Still Active](#typescript) : 2 < [Discontinued](#typescript-1) : 1  |
 | Rust       | [Still Active](#rust)       : 1 < [Discontinued](#rust-1)       : 2  |
 | C#         | [Still Active](#c-1)        : 1 < [Discontinued](#c-4)          : 1  |
 | C          | [Still Active](#c-2)        : 1 < Discontinued                  : 0  |
-| Python     | Still Active                : 0 < [Discontinued](#python)       : 2  |
+| Python     | [Still Active](#python)     : 1 < [Discontinued](#python-1)     : 2  |
 | D          | Still Active                : 0 < [Discontinued](#d)            : 1  |
 | Kotlin     | Still Active                : 0 < [Discontinued](#kotlin)       : 1  |
 
@@ -59,7 +76,6 @@ Alongside the Vanilla BDS offering, many community projects exist, in a variaty 
 
 -   [BlueBird](https://github.com/BlueBirdMC/Server)
 -   [GreenFrogMCBE](https://github.com/andriycraft/GreenFrogMCBE)
--   [LeafMCBE](https://github.com/LeafMCBE/Server)
 
 ### Rust
 
@@ -70,8 +86,12 @@ Alongside the Vanilla BDS offering, many community projects exist, in a variaty 
 -   [BetterAltay](https://github.com/Benedikt05/BetterAltay)
 -   [EskoBE](https://github.com/MCPE357/EskoBE)
 -   [PocketMine-MP](https://github.com/pmmp/PocketMine-MP)
--   [SteadFast2](https://github.com/Hydreon/Steadfast2)
 -   [LiteCore](https://github.com/LiteCoreTeam/LiteCore-public)
+-   [NetherGamesMC/PocketMine-MP](https://github.com/NetherGamesMC/PocketMine-MP)
+
+### Python
+
+- [PieMC-Bedrock](https://github.com/LapisMYT/PieMC_Bedrock)
 
 ## Discontinued Software
 
@@ -120,6 +140,10 @@ Alongside the Vanilla BDS offering, many community projects exist, in a variaty 
 -   [Numerous-alpaca](https://github.com/numerous-alpaca/numerous-alpaca)
 -   [PocketNode](https://github.com/PocketNode/PocketNode)
 
+### TypeScript
+
+-   [LeafMCBE](https://github.com/LeafMCBE/LeafMCBE)
+
 ### Kotlin
 
 -   [Kookie](https://github.com/organization/Kookie)
@@ -130,7 +154,7 @@ Alongside the Vanilla BDS offering, many community projects exist, in a variaty 
 -   [AtmosPE](https://github.com/AtmosPE/AtmosPE)
 -   [BlueLight](https://github.com/BlueLightJapan/BlueLight)
 -   [ClearSky](https://github.com/ClearSkyTeam/ClearSky)
--   [ClearSkyTeam-PocketMine-MP](https://github.com/ClearSkyTeam/PocketMine-MP)
+-   [ClearSkyTeam/PocketMine-MP](https://github.com/ClearSkyTeam/PocketMine-MP)
 -   [CoreminePE](https://github.com/starfury1927/CoreminePE)
 -   [DevMine](https://github.com/MineCode-Devs/DevMine)
 -   [DragMine](https://github.com/DragMineTeam/DragMine)
@@ -161,6 +185,7 @@ Alongside the Vanilla BDS offering, many community projects exist, in a variaty 
 -   [Elco-MP](https://github.com/elco-mp/Elco-MP)
 -   [OpenTouch](https://github.com/pooooooon/OpenTouch)
 -   [Altay](https://github.com/TuranicTeam/Altay)
+-   [SteadFast2](https://github.com/Hydreon/Steadfast2)
 
 ### Python
 

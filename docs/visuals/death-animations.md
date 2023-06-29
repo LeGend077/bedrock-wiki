@@ -3,7 +3,17 @@ title: Custom Death Animations
 tags:
     - intermediate
 category:
-	- General
+    - General
+mentions:
+    - SirLich
+    - Joelant05
+    - Dreamedc2015
+    - MedicalJewel105
+    - aexer0e
+    - Xterionix
+    - ChibiMango
+    - SmokeyStack
+    - ThomasOrs
 ---
 
 Death animation refers to the rotation of the entity as it dies. This is accompanied by a red coloring and followed shortly after by the disappearance of the entity geometry and the appearance of the death particles.
@@ -21,7 +31,7 @@ Please note that this will remove all death effects, including sound, particles,
 
 ### minecraft:instant_despawn
 
-If you want to make entity just dissapear, you can add component group with `"minecraft:instant_despawn":{}` and run an event which will add this component group.
+If you want to make entity just disappear, you can add component group with `"minecraft:instant_despawn":{}` and run an event which will add this component group.
 
 Please note that this will remove all death effects, including sound, particles, loot, and the visual death of the entity.
 

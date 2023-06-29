@@ -1,8 +1,9 @@
 ---
 title: Block Sounds
 category: Documentation
-mention:
+mentions:
     - MedicalJewel105
+    - TheItsNameless
 ---
 
 Block sounds refers to the sound property in your block entry inside `blocks.json`.
@@ -108,5 +109,5 @@ The following are valid values for the sound property:
     "wood"
 ]
 ```
-*Last updated for 1.19.60*
+*Last updated for 1.19.80*
 <!-- page_dumper_end -->

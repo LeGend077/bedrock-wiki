@@ -1,11 +1,14 @@
 ---
-title: Making Custom Glass Blocks
-category: Tutorials
+title: Custom Glass
+category: Vanilla Recreations
 tags:
     - experimental
     - expert
-mention:
+mentions:
     - Eko-byte
+    - SirLich
+    - ThomasOrs
+    - QuazChick
 ---
 
 Making glass blocks may seem like a simple task, however it comes with many drawbacks as you will find, this tutorial aims to help you achieve a vanilla like glass block.
@@ -14,8 +17,8 @@ Making glass blocks may seem like a simple task, however it comes with many draw
     -   Make a Glass Block
     -   Make Vertical Connecting Glass
 -   Issues
-    -   When breaking there is invisible textures for a second (Minecraft Bug)
-    -   When placing there is window textures visible for a second (Minecraft Bug)
+    -   When breaking there is invisible textures for a second
+    -   When placing there is window textures visible for a second
 
 :::warning
 **Requires** Molang for connected textures and Holiday Toggles for BOTH ENABLED
@@ -82,7 +85,7 @@ By The End You Should Be Able To Create Something Like This!
 		"description": {
 			"identifier": "wiki:custom_vertical_connecting_glass",
 			"properties": {
-				//properties needed for connected textures, also contols up and down culling
+				//properties needed for connected textures, also controls up and down culling
 				"wiki:connected_state": [0, 1, 2, 3],
 				//properties to remove culling, depending on the direction in which a block is placed
 				"wiki:north": [0, 1],

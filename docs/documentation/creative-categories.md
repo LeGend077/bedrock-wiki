@@ -2,9 +2,16 @@
 title: Creative Categories
 tags:
     - experimental
-mention:
+mentions:
     - Warhead51707
     - yanasakana
+    - SirLich
+    - SmokeyStack
+    - MedicalJewel105
+    - Chikorita-Lover
+    - MiemieMethod
+    - retr0cube
+    - TheItsNameless
 ---
 
 Creative categories are the categories that determine where an item or block will appear inside of the creative inventory.
@@ -163,5 +170,5 @@ As you can see, `menu_category` accepts 2 optional children, the `category` chil
 | itemGroup.name.wool              |
 | itemGroup.name.woolCarpet        |
 
-*Last updated for 1.19.60*
+*Last updated for 1.19.80*
 <!-- page_dumper_end -->

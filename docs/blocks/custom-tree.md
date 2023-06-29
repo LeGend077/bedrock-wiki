@@ -1,10 +1,18 @@
 ---
 title: Custom Tree
-category: Tutorials
+category: Vanilla Recreations
 tags:
     - experimental
-mention:
+mentions:
     - MedicalJewel105
+    - SmokeyStack
+    - stirante
+    - aexer0e
+    - SirLich
+    - SuperFluffyGame
+    - XxPoggyisLitxX
+    - ThomasOrs
+    - QuazChick
 ---
 
 Creating your own tree with decaying leaves are possible. Follow this tutorial and you'll have your own in no time!
@@ -14,11 +22,11 @@ Creating your own tree with decaying leaves are possible. Follow this tutorial a
 -   Features:
 
     -   Decaying leaves
-    -                       Tree Feature compatable
+    -   Tree Feature compatible
     -   If leaves were broken using shears, they will drop the block
     -   Leaves doesn't decay if placed by player
     -   Logs are strippable and rotatable
-    -   Stripping logs is compatible with tools from other Add-Ons (if they have the `"tag:minecraft:is_axe":{}` component)
+    -   Stripping logs is compatible with tools from other Add-Ons (if they have the `minecraft:is_axe` tag)
     -   Saplings can be bonemealed and grow the tree (with structures)
 
 -   Issues:
@@ -481,7 +489,7 @@ Here all components are the same
 
 ## Making Custom Sapling
 
-For the sapling we will need structures of out tree to make the sapling semi-realistick. `/place feature` would be great.
+For the sapling we will need structures of out tree to make the sapling semi-realistic. `/place feature` would be great.
 
 <Spoiler title="Code">
 
@@ -726,7 +734,7 @@ For the sapling we will need structures of out tree to make the sapling semi-rea
 
 <CodeHeader>BP/loot_tables/blocks/custom_leaves_block.json</CodeHeader>
 
-This loot will spawn leaves block (when you breaak it using shears)
+This loot will spawn leaves block (when you break it using shears)
 
 ```json
 {
@@ -1211,7 +1219,7 @@ What you have created:
 
 -   [x] Custom Trees with Decaying Leaves
 -   [x] Working Sapling
--   [x] Rotatable and Stripable Logs
+-   [x] Rotatable and strippable Logs
 
 </Checklist>
 

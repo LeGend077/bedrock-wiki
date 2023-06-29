@@ -2,11 +2,15 @@
 title: Sound Definitions
 mentions:
     - MedicalJewel105
+    - SirLich
+    - TheDoctor15
+    - TheItsNameless
+    - ThomasOrs
 ---
 
 Sounds from `sound_definitions.json` sorted by categories and subcategories based on their names.
 This page was created with [Wiki Content Generator](https://github.com/Bedrock-OSS/bedrock-wiki-content-generator). If there are issues, contact us on [Bedrock OSS](https://discord.gg/XjV87YN) Discord server.
-*Last updated for 1.19.60*
+*Last updated for 1.19.80*
 
 ## ambient
 
@@ -744,11 +748,17 @@ This page was created with [Wiki Content Generator](https://github.com/Bedrock-O
 
 `random.glass`
 
+`random.lever_click`
+
 `random.potion.brewed`
 
 `random.shulkerboxclosed`
 
 `random.shulkerboxopen`
+
+`random.stone_click`
+
+`random.wood_click`
 
 #### respawn_anchor
 ---
@@ -2441,8 +2451,6 @@ This page was created with [Wiki Content Generator](https://github.com/Bedrock-O
 `random.screenshot`
 
 `random.toast`
-
-`random.wood_click`
 
 ## weather
 

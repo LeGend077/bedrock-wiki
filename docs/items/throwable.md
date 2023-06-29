@@ -2,7 +2,16 @@
 title: Throwable Items
 category: Tutorials
 tags:
-- intermediate
+    - intermediate
+mentions:
+    - Fabrimat
+    - MedicalJewel105
+    - Luthorius
+    - IlkinQafarov
+    - seeit360
+    - TheItsNameless
+    - SmokeyStack
+    - ThomasOrs
 ---
 
 ::: tip
@@ -299,7 +308,7 @@ This method requires the `Holiday Creator Features` experimental toggle to be en
 We can notice several things here:
 
 - `format_version` must be `1.16.100`
-- `minecraft:on_use` will call an event everytime the item is used (right-clicked)
+- `minecraft:on_use` will call an event every time the item is used (right-clicked)
 
 In the event:
 
@@ -370,4 +379,4 @@ The entity file is the same as the Stable version.
 
 ## Conclusion
 
-Once you have your throwable item you can start trying several things, like playing with its power, effects, animations or combining it with an [AOE Cloud](/entities/introduction-to-aec.html). The only limit is your imagination.
+Once you have your throwable item you can start trying several things, like playing with its power, effects, animations or combining it with an [AOE Cloud](/entities/introduction-to-aec). The only limit is your imagination.

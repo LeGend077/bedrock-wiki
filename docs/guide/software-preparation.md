@@ -3,6 +3,21 @@ title: Software and preparation
 category: Guide
 nav_order: 3
 prefix: '3. '
+mentions:
+    - SirLich
+    - Dreamedc2015
+    - sermah
+    - cda94581
+    - Joelant05
+    - MedicalJewel105
+    - TheItsNameless
+    - TheDoctor15
+    - ChibiMango
+    - profeplaysminecraft
+    - solvedDev
+    - retr0cube
+    - SmokeyStack
+    - ThomasOrs
 ---
 
 Before you can start creating addons, you first have to install the required tools and applications. While development will be easiest on Windows 10, we have provided mobile alternatives for both Android and iOS, where applicable.
@@ -30,14 +45,13 @@ VSCode is a general purpose text-editor and IDE. With VSCode, you will be able t
 
 Many packages exist for VSCode that make editing addons easier:
 
--   [Blockceptions Minecraft Bedrock Development](https://marketplace.visualstudio.com/items?itemName=BlockceptionLtd.blockceptionvscodeminecraftbedrockdevelopmentextension)
+-   [Blockception's Minecraft Bedrock Development](https://marketplace.visualstudio.com/items?itemName=BlockceptionLtd.blockceptionvscodeminecraftbedrockdevelopmentextension)
 -   [.mcfunction support](https://marketplace.visualstudio.com/items?itemName=arcensoth.language-mcfunction)
 -   [.lang support](https://marketplace.visualstudio.com/items?itemName=zz5840.minecraft-lang-colorizer)
 -   [Bedrock Definitions](https://marketplace.visualstudio.com/items?itemName=destruc7i0n.vscode-bedrock-definitions)
 -   [Prettify-json](https://marketplace.visualstudio.com/items?itemName=mohsen1.prettify-json)
 -   [Spell Checker (for writing wiki)](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 -   [Snowstorm Particle Editor](https://marketplace.visualstudio.com/items?itemName=JannisX11.snowstorm)
--   [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2)
 -   [UUID Generator](https://marketplace.visualstudio.com/items?itemName=netcorext.uuid-generator)
 
 </Spoiler>
@@ -48,8 +62,8 @@ Many packages exist for VSCode that make editing addons easier:
 bridge. includes a regular text editor for experienced addon creators and a tree editor to make it easy for beginners to get started with editing JSON files.
 
 #### Next Steps
-- [Read more on why you should use bridge.](https://bridge-core.app/guide/why-bridge.html)
-- [Read our guide on getting started with bridge.](https://bridge-core.app/guide/index.html)
+- [Read more on why you should use bridge.](https://bridge-core.app/guide/why-bridge)
+- [Read our guide on getting started with bridge.](https://bridge-core.app/guide/index)
 - [Try out bridge. online](https://editor.bridge-core.app/)
 
 ### Mobile Editors
@@ -104,7 +118,7 @@ Pixilart is a web-based pixel art software. It is extremely simple to use since 
 [Use Pixilart](https://www.pixilart.com/)
 
 ### Piskel
-Piskel is a web-based pixel art software with a focus of making pixelated sprites (or video game charater animations). This tool, similar to Pixilart, is simple to use. This is also a great tool for making flipbooks (Minecraft block or skin animations).
+Piskel is a web-based pixel art software with a focus of making pixelated sprites (or video game character animations). This tool, similar to Pixilart, is simple to use. This is also a great tool for making flipbooks (Minecraft block or skin animations).
 
 **+ Pros:** Easy to use and learn. Perfect for flipbook animations
 **- Cons:** Must have internet connection. Only offers the most basic tools.

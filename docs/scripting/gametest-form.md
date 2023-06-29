@@ -2,13 +2,22 @@
 title: Script Forms
 category: Tutorials
 tags:
-	- experimental
+    - experimental
 mentions:
-	- cda94581
+    - cda94581
+    - FrankyRay
+    - MedicalJewel105
+    - Worldwidebrine
+    - Fabrimat
+    - Axisander
+    - JaylyDev
+    - Herobrine643928
+    - SmokeyStack
+    - ThomasOrs
 ---
 
 ::: warning
-The Script API is currently in active development, and breaking changes are frequent. This page assumes the format of Minecraft beta 1.19.70
+The Script API is currently in active development, and breaking changes are frequent. This page assumes the format of Minecraft 1.19.80
 :::
 
 In version 1.18.30, Minecraft released a wonderful new script module, `@minecraft/server-ui` (formerly named `mojang-minecraft-ui`). With this module, we can create form UIs without the need for JSON UI-wrangling.
@@ -25,7 +34,7 @@ Like other modules, you will need to add the dependency into your `manifest.json
 		},
 		{
 			"module_name": "@minecraft/server",
-			"version": "1.1.0-beta"
+			"version": "1.3.0-beta"
 		}
 	]
 }
@@ -155,7 +164,7 @@ form.button2("No, leave it as default!");
 
 
 ### ModalFormData
-Modal Form has the most types of input avaiable in the form. It has text fields, sliders, dropdowns, and toggles. Modal forms are useful for complicated forms, such as an effect giver. Modal forms don't have a body property.
+Modal Form has the most types of input available in the form. It has text fields, sliders, dropdowns, and toggles. Modal forms are useful for complicated forms, such as an effect giver. Modal forms don't have a body property.
 
 ```js
 let form = new ModalFormData();

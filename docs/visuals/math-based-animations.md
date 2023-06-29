@@ -3,7 +3,17 @@ title: Math-based Animations
 tags:
     - intermediate
 category:
-	- General
+    - General
+mentions:
+    - SirLich
+    - solvedDev
+    - Joelant05
+    - MedicalJewel105
+    - yanasakana
+    - Luthorius
+    - TheItsNameless
+    - SmokeyStack
+    - ThomasOrs
 ---
 
 Math animations are a powerful alternative to keyframe animations. Generally speaking, `math-based animations` is the concept of using Molang expressions to animate entity geometry. All vanilla animations are math-based, here is an example:
@@ -50,7 +60,7 @@ Common Queries include:
 -   `query.anim_time`
 -   `query.life_time`
 
-These are utilised in animations to draw things such as the attack-time or distance-moved from the game-world to provide a more dyanamic and synced flow.
+These are utilised in animations to draw things such as the attack-time or distance-moved from the game-world to provide a more dynamic and synced flow.
 
 ### Avoiding Animation Controllers
 

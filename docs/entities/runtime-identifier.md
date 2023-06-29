@@ -1,6 +1,20 @@
 ---
 title: Runtime Identifiers
 category: Documentation
+mentions:
+    - MedicalJewel105
+    - aexer0e
+    - Luthorius
+    - SirLich
+    - TheDoctor15
+    - ChibiMango
+    - stirante
+    - epxzzy
+    - IlkinQafarov
+    - TheItsNameless
+    - SmokeyStack
+    - ThomasOrs
+    - Goatfu
 ---
 
 `runtime_identifier` is an optional parameter that sits inside the description of the entity's behavior file, and is used to imitate a vanilla entity's hard-coded elements.
@@ -179,7 +193,7 @@ Color Variant: Leucistic, Wild, Yellow, Cyan, Blue.
 
 -   Adds the Ender Dragon death effect to the entity.
 -   Inherits Ender Dragon hitbox.
--   Destroys blocks within hitbox, including blocks below the entity. To prevent it from falling to bedrock either, add a indutructible block below it, remove gravity from the entity or disable the `mobGriefing` gamerule.
+-   Destroys blocks within hitbox, including blocks below the entity. To prevent it from falling to bedrock either, add a indestructible block below it, remove gravity from the entity or disable the `mobGriefing` gamerule.
 -   Damages players within 2 blocks of hitbox.
 -   Increases distance it is rendered.
 -   Only able to be killed using /kill.
@@ -312,6 +326,8 @@ Perfect for imitating a block, as long as the player is in Adventure Mode.
 ### minecraft:slime
 
 -   The entity will create slime particles when falling.
+-   The entity will spawn slimes of lower tier upon death depending on variant (variants 1 to 5 act as the default slime tiers, values above 5 will act as a default medium slime)
+-   Allows entity to attack and have the slime jumping mechanism active at the same time (without this identifier, the slime can't rotate while attacking, the entity would instead jump in a straight path till it loses the target)
 
 ---
 
