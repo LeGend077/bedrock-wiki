@@ -151,7 +151,7 @@ Data Binding allows to bind hardcoded values/variables to an element property.
 
 | Property Name             |          Type          | Default Value | Description                                                                                                                         |
 | ------------------------- | :--------------------: | ------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| grid_dimensions           | Vector [rows, columns] |               | Number of columns and rows the grid has                                                                                             |
+| grid_dimensions           | Vector [columns, rows] |               | Number of columns and rows the grid has                                                                                             |
 | maximum_grid_items        |          int           |               | Maximum number of items the grid will generate                                                                                      |
 | grid_dimension_binding    |         string         |               | Binding name for grid dimensions                                                                                                    |
 | grid_rescaling_type       |          enum          |               | Grid rescaling orientation. <br> Possible values: <br> `vertical` <br> `horizontal` <br> `none`                                     |
