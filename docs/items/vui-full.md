@@ -3,11 +3,12 @@ title: Vanilla Usage Components - Full
 category: Documentation
 mentions:
     - MedicalJewel105
+description: Automatically generated list of item components used in vanilla.
 hidden: true
 ---
 
 This page was created with [Wiki Content Generator](https://github.com/Bedrock-OSS/bedrock-wiki-content-generator). If there are issues, contact us on [Bedrock OSS](https://discord.gg/XjV87YN) Discord server.
-Includes all examples. Namespace `minecraft` and some formatting have been removed to make the page load quickly. *Last updated for 1.19.80*
+Includes all examples. Namespace `minecraft` and some formatting have been removed to make the page load quickly. *Last updated for 1.21.50*
 
 ## block
 
@@ -15,6 +16,144 @@ camera
 
 ```json
 "minecraft:block": "minecraft:camera"
+```
+
+## bundle_interaction
+
+black_bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+blue_bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+brown_bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+cyan_bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+gray_bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+green_bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+light_blue_bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+light_gray_bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+lime_bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+magenta_bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+orange_bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+pink_bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+purple_bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+red_bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+white_bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+yellow_bundle
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
 ```
 
 ## camera
@@ -28,6 +167,59 @@ camera
     "shutter_duration": 0.2,
     "picture_duration": 1.0,
     "slide_away_duration": 0.2
+}
+```
+
+## cooldown
+
+wind_charge
+
+```json
+"minecraft:cooldown": {
+    "category": "wind_charge",
+    "duration": 0.5
+}
+```
+
+## display_name
+
+apple
+
+```json
+"minecraft:display_name": {
+    "value": "item.apple.name"
+}
+```
+
+breeze_rod
+
+```json
+"minecraft:display_name": {
+    "value": "item.breeze_rod.name"
+}
+```
+
+ominous_trial_key
+
+```json
+"minecraft:display_name": {
+    "value": "item.ominous_trial_key.name"
+}
+```
+
+trial_key
+
+```json
+"minecraft:display_name": {
+    "value": "item.trial_key.name"
+}
+```
+
+wind_charge
+
+```json
+"minecraft:display_name": {
+    "value": "item.wind_charge.name"
 }
 ```
 
@@ -52,7 +244,7 @@ apple
 ```json
 "minecraft:food": {
     "nutrition": 4,
-    "saturation_modifier": "low"
+    "saturation_modifier": 0.3
 }
 ```
 
@@ -68,7 +260,7 @@ appleEnchanted
             "name": "regeneration",
             "chance": 1.0,
             "duration": 30,
-            "amplifier": 4
+            "amplifier": 1
         },
         {
             "name": "absorption",
@@ -416,7 +608,7 @@ pufferfish
         {
             "name": "nausea",
             "duration": 15,
-            "amplifier": 1
+            "amplifier": 0
         },
         {
             "name": "hunger",
@@ -505,7 +697,8 @@ suspicious_stew
     "nutrition": 6,
     "saturation_modifier": "normal",
     "using_converts_to": "bowl",
-    "on_use_action": "suspicious_stew_effect"
+    "on_use_action": "suspicious_stew_effect",
+    "can_always_eat": true
 }
 ```
 
@@ -525,6 +718,224 @@ appleEnchanted
 
 ```json
 "minecraft:hand_equipped": false
+```
+
+breeze_rod
+
+```json
+"minecraft:hand_equipped": true
+```
+
+## icon
+
+apple
+
+```json
+"minecraft:icon": {
+    "texture": "apple"
+}
+```
+
+black_bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_black"
+    }
+}
+```
+
+blue_bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_blue"
+    }
+}
+```
+
+breeze_rod
+
+```json
+"minecraft:icon": {
+    "texture": "breeze_rod"
+}
+```
+
+brown_bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_brown"
+    }
+}
+```
+
+bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle"
+    }
+}
+```
+
+cyan_bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_cyan"
+    }
+}
+```
+
+gray_bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_gray"
+    }
+}
+```
+
+green_bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_green"
+    }
+}
+```
+
+light_blue_bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_light_blue"
+    }
+}
+```
+
+light_gray_bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_light_gray"
+    }
+}
+```
+
+lime_bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_lime"
+    }
+}
+```
+
+magenta_bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_magenta"
+    }
+}
+```
+
+ominous_trial_key
+
+```json
+"minecraft:icon": {
+    "texture": "ominous_trial_key"
+}
+```
+
+orange_bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_orange"
+    }
+}
+```
+
+pink_bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_pink"
+    }
+}
+```
+
+purple_bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_purple"
+    }
+}
+```
+
+red_bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_red"
+    }
+}
+```
+
+trial_key
+
+```json
+"minecraft:icon": {
+    "texture": "trial_key"
+}
+```
+
+white_bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_white"
+    }
+}
+```
+
+wind_charge
+
+```json
+"minecraft:icon": {
+    "texture": "wind_charge"
+}
+```
+
+yellow_bundle
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_yellow"
+    }
+}
 ```
 
 ## max_damage
@@ -573,13 +984,97 @@ beetroot_soup
 "minecraft:max_stack_size": 1
 ```
 
+black_bundle
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+blue_bundle
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+brown_bundle
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+bundle
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+cyan_bundle
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+gray_bundle
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+green_bundle
+
+```json
+"minecraft:max_stack_size": 1
+```
+
 honey_bottle
 
 ```json
 "minecraft:max_stack_size": 16
 ```
 
+light_blue_bundle
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+light_gray_bundle
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+lime_bundle
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+magenta_bundle
+
+```json
+"minecraft:max_stack_size": 1
+```
+
 mushroom_stew
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+orange_bundle
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+pink_bundle
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+purple_bundle
 
 ```json
 "minecraft:max_stack_size": 1
@@ -591,10 +1086,38 @@ rabbit_stew
 "minecraft:max_stack_size": 1
 ```
 
+red_bundle
+
+```json
+"minecraft:max_stack_size": 1
+```
+
 suspicious_stew
 
 ```json
 "minecraft:max_stack_size": 1
+```
+
+white_bundle
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+yellow_bundle
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+## projectile
+
+wind_charge
+
+```json
+"minecraft:projectile": {
+    "projectile_entity": "wind_charge_projectile"
+}
 ```
 
 ## seed
@@ -646,6 +1169,14 @@ nether_wart
 }
 ```
 
+pitcher_pod
+
+```json
+"minecraft:seed": {
+    "crop_result": "pitcher_crop"
+}
+```
+
 potato
 
 ```json
@@ -671,6 +1202,7 @@ sweet_berries
         "farmland",
         "grass",
         "dirt",
+        "coarse_dirt",
         "podzol",
         "moss_block",
         "mycelium",
@@ -678,6 +1210,14 @@ sweet_berries
         "muddy_mangrove_roots",
         "dirt_with_roots"
     ]
+}
+```
+
+torchflower_seeds
+
+```json
+"minecraft:seed": {
+    "crop_result": "torchflower_crop"
 }
 ```
 
@@ -739,13 +1279,296 @@ salmon
 "minecraft:stacked_by_data": true
 ```
 
-## use_duration
+## storage_item
+
+black_bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+blue_bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+brown_bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+cyan_bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+gray_bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+green_bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+light_blue_bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+light_gray_bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+lime_bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+magenta_bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+orange_bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+pink_bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+purple_bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+red_bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+white_bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+yellow_bundle
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+## tags
 
 apple
 
 ```json
-"minecraft:use_duration": 32
+"minecraft:tags": {
+    "tags": [
+        "minecraft:is_food"
+    ]
+}
 ```
+
+## throwable
+
+wind_charge
+
+```json
+"minecraft:throwable": {
+    "do_swing_animation": true,
+    "launch_power_scale": 1.5,
+    "max_launch_power": 1.5
+}
+```
+
+## use_animation
+
+apple
+
+```json
+"minecraft:use_animation": "eat"
+```
+
+## use_duration
 
 appleEnchanted
 
@@ -985,5 +1808,16 @@ sweet_berries
 
 ```json
 "minecraft:use_duration": 32
+```
+
+## use_modifiers
+
+apple
+
+```json
+"minecraft:use_modifiers": {
+    "use_duration": 1.6,
+    "movement_modifier": 0.35
+}
 ```
 

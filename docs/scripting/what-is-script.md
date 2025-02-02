@@ -1,8 +1,7 @@
 ---
 title: What is Script API?
 category: General
-tags:
-    - experimental
+nav_order: 2
 mentions:
     - ConsoleTerm
     - Herobrine643928
@@ -10,13 +9,15 @@ mentions:
     - SmokeyStack
     - ThomasOrs
     - gdm3
+description: What the heck are scripts!?
 ---
 
 ::: warning
-The Script API is currently in active development, and breaking changes are frequent. This page assumes the format of Minecraft 1.19.80
+The Script API is currently in active development, and breaking changes are frequent. This page assumes the format of Minecraft 1.21.20
 :::
 
 ## API
+
 API stands for (Application Programming Interface), and it is a way of establishing contacts between two applications. The term application contains a lot more than you might imagine. An application can be a simple script, a game, or an entire operating system.
 
 An example of an API that you encounter all the time is right in front of you, and that API is between the application and your operating system. It is the cursor on the screen. Why is that related to an API? Because applications can find out through an API that your operating system provides where the cursor is on the screen without having to implement their own cursors. This allows a program such as Minecraft to use the API system so that we can see the application.

@@ -1,96 +1,107 @@
 ---
-hidden: true
-show_toc: false
-show_contributors: false
 title: Hacktoberfest
+description: Participate in Hacktoberfest and contribute to the Wiki!
+show_contributors: false
+show_outline: false
+hidden: true
 ---
-### Hacktoberfest
 
-Each year there is a hacktoberfest event where you can get a free t-shirt by contributing to open source projects. This year the event is from October 1st to October 31st. You can find more information about the event [here](https://hacktoberfest.com/).
+<WikiImage
+  :src="{
+    dark: '/assets/images/hacktoberfest/hf10_horz_fcl_rgb.png',
+    light: '/assets/images/hacktoberfest/hf10_horz_fcd_rgb.png'
+  }"
+  alt="Hacktoberfest Logo"
+  width="600"
+/>
 
-We as a bedrock OSS want to help as well and are looking for contributors for the open source projects, see project you can help on in the [Organizations section](#organizations). If you don't know how to help, we suggest reading [How to get started](#how-to-get-started)
+Hacktoberfest is a month-long celebration of open source celebration dedicated to the improvement and growth of the open source technology. Throughout the month of October, everyone is invited to join open-source software enthusiasts, beginners, and the developer community by contributing to open-source projects.
+This annual event plays a huge role in encouraging meaningful contributions to the open-source ecosystem, promoting open-source projects, and supporting a healthy community that welcomes all.
 
-### How to get started
+We as a bedrock OSS want to help as well and are looking for contributors for the open source projects, see project you can help on in the [Where to contribute section](#where-to-contribute). If you don't know how to help, we suggest reading [How to get started](#how-to-get-started).
 
-Read the official [Hacktoberfest guide](https://hacktoberfest.com/participation/#beginner-resources) to get started. After that, check out the organizations/projects bellow. You can [join the discord]( https://discord.gg/XjV87YN) to get in touch.
-
-:::tip
-Issues that are a particularly good fit for Hacktoberfest will be tagged as so.
+:::warning Attention!
+After ten years the Hacktoberfest is moving from the historical t-shirt reward to a digital reward kit, you can learn more [here](https://hacktoberfest.com/about/#digital-rewards).
 :::
 
-# Organizations
+## How to Get Started
+
+Read the official [Hacktoberfest guide](https://hacktoberfest.com/participation/#beginner-resources) to get started. After that, check out the organizations/projects bellow. If you have any doubts you can [join the discord](https://discord.gg/XjV87YN) to get in touch, we are friendly people!
+
+## Where to Contribute
 
 Below is a list of organizations and their projects that are participating in Hacktoberfest.
 
-## Bedrock-OSS
+<CardGrid>
+<Card title="Bedrock OSS" link="https://github.com/Bedrock-OSS" image="/assets/images/hacktoberfest/bedrockoss.png">
 
-See all participating Bedrock-OSS projects [here](https://github.com/orgs/Bedrock-OSS/repositories?q=topic%3Ahacktoberfest).
+[Bedrock Loot Gen](https://github.com/Bedrock-OSS/bedrock-loot-gen) —
+A website for creating Bedrock Edition loot tables.
 
-### [Bedrock Wiki](https://github.com/Bedrock-OSS/bedrock-wiki)
+[Bedrock Wiki](https://github.com/Bedrock-OSS/bedrock-wiki) —
+A knowledge-sharing website for technical features of Minecraft Bedrock.
 
-The Bedrock Wiki is a knowledge-sharing website for Technical Bedrock, containing documentation, tutorials, and general how-to information.
+[Regolith](https://github.com/Bedrock-OSS/regolith) —
+An add-on compiler for the Bedrock Edition of Minecraft.
 
-### [Regolith](https://github.com/Bedrock-OSS/regolith)
+_See all participating Bedrock OSS projects [here](https://github.com/orgs/Bedrock-OSS/repositories?q=topic%3Ahacktoberfest)._
 
-Regolith is an Add-on Compiler for the Bedrock Edition of Minecraft.
+</Card>
+<Card title="Blockception" link="https://github.com/Blockception" image="/assets/images/hacktoberfest/blockception.png">
+  
+[Minecraft Error Codes](https://github.com/Blockception/Minecraft-Error-Codes) —
+Every error code the plugin can throw, with explanations of the error
 
+[Minecraft JSON Schemas](https://github.com/Blockception/Minecraft-bedrock-json-schemas) —
+The JSON validation schema files for Minecraft Bedrock.
 
-### [Bedrock Loot Gen](https://github.com/Bedrock-OSS/bedrock-loot-gen)
-Website for creating Bedrock Edition loot tables.
+[VSCode Development Extension](https://github.com/Blockception/VSCode-Bedrock-Development-Extension) —
+An extension that is used for Minecraft Bedrock Development.
 
+_See all participating Bedrock OSS projects [here](https://github.com/orgs/Blockception/repositories?q=topic%3Ahacktoberfest)._
 
-## Blockception
+</Card>
+<Card title="SirLich" link="https://github.com/SirLich" image="/assets/images/hacktoberfest/sirlich.png">
+  
+[Bedrock Schema Docs](https://github.com/SirLich/bedrock-schema-docs) —
+Auto-generated documentation from the schemas by Blockception.
 
-See all participating Blockception projects [here](https://github.com/orgs/Blockception/repositories?q=topic%3Ahacktoberfest)
-
-### [Blockception's Minecraft Bedrock Development](https://github.com/Blockception/VSCode-Bedrock-Development-Extension)
-
-The repository that hosts the code for the VSCode extension that is used for Blockception's Minecraft Bedrock Development.
-
-### [Minecraft Json Schemas](https://github.com/Blockception/Minecraft-bedrock-json-schemas)
-
-The JSON validation schema files for Minecraft bedrock
-
-## SirLich
-
-See all participating projects by SirLich [here](https://github.com/orgs/SirLich/repositories?q=topic%3Ahacktoberfest)
-
-### [Reticulator](https://github.com/SirLich/reticulator)
-
+[Reticulator](https://github.com/SirLich/reticulator) —
 Minecraft Bedrock pack-access library.
 
-### [Bedrock Schema Docs](https://github.com/SirLich/bedrock-schema-docs)
+_See all participating projects by SirLich [here](https://github.com/SirLich/repositories?q=topic%3Ahacktoberfest)._
 
-Auto generated documentation from the Schemas by Blockception.
+</Card>
+<Card title="MCDevKit" link="https://github.com/MCDevKit" image="/assets/images/hacktoberfest/mcdevkit.png">
+  
+[jsonte](https://github.com/MCDevKit/jsonte) —
+JSON Templating Engine for generating JSON files easily for Minecraft Bedrock Add-On development.
 
-## MCDevKit
+_See all participating MCDevKit projects [here](https://github.com/orgs/MCDevKit/repositories?q=topic%3Ahacktoberfest)._
 
-See all participating MCDevKit projects [here](https://github.com/orgs/MCDevKit/repositories?q=topic%3Ahacktoberfest)
+</Card>
+<Card title="bridge." link="https://github.com/bridge-core" image="/assets/images/hacktoberfest/bridge.png">
+  
+[bridge. Documentation](https://github.com/bridge-core/docs) —
+Documentation aiming to introduce users to bridge. and its features.
 
-### [jsonte](https://github.com/MCDevKit/jsonte)
-
-JSON Templating Engine for generating JSON files easily for Minecraft Bedrock Addon development.
-
-## bridge.
-
-See all participating bridge. projects [here](https://github.com/orgs/bridge-core/repositories?q=topic%3Ahacktoberfest)
-
-### [bridge. v2 editor](https://github.com/bridge-core/editor)
-
+[bridge. Editor](https://github.com/bridge-core/editor) —
 bridge. is an IDE designed for creating Minecraft Bedrock Add-Ons.
 
-### [Dash Compiler](https://github.com/bridge-core/dash-compiler)
-
+[Dash Compiler](https://github.com/bridge-core/dash-compiler) —
 The Dash compiler is a fast, reliable and platform agnostic compiler for Minecraft Bedrock Edition.
 
-### [Deno Dash Compiler](https://github.com/bridge-core/deno-dash-compiler)
-
+[Deno Dash Compiler](https://github.com/bridge-core/deno-dash-compiler) —
 A standalone implementation of the Dash compiler inside of [Deno](https://deno.land/).
 
-### [Molang Parser](https://github.com/bridge-core/molang)
-
+[Molang Parser](https://github.com/bridge-core/molang) —
 A fast Molang parser for JavaScript and TypeScript applications.
 
-### [bridge. Documentation](https://github.com/bridge-core/docs)
+_See all participating bridge. projects [here](https://github.com/orgs/bridge-core/repositories?q=topic%3Ahacktoberfest)._
 
-A collection of docs aiming to introduce users to bridge. and its features, and get started with creating extensions for bridge.
+</Card>
+</CardGrid>
+
+## Thank you
+
+If you are reading this, that means that you're interested in contributing to open source projects, and that's awesome! We hope you have a great time contributing to the projects listed above, and we hope to see you become a part of our community!

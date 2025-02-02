@@ -13,6 +13,8 @@ mentions:
     - Dreamedc2015
     - sermah
     - 7dev7urandom
+    - legopitstop
+description: In this tutorial, you will learn to have an entity spawn with an item in its hand.
 ---
 
 ::: tip
@@ -74,3 +76,13 @@ To have the entity always spawn with the same item, add the following loot table
 If everything went well, you'd have something looking like this:
 
 ![](/assets/images/tutorials/entity-holds-item/finished_result.png)
+
+
+## Common Problems
+
+- Held item not displaying
+
+Your entity contains multiple geometry variants.
+
+
+

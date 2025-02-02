@@ -15,6 +15,8 @@ mentions:
     - SmokeyStack
     - ThomasOrs
     - Goatfu
+    - MRBBATES1
+description: runtime_identifier is an optional parameter that sits inside the description of the entity's behavior file, and is used to imitate a vanilla entity's hard-coded elements.
 ---
 
 `runtime_identifier` is an optional parameter that sits inside the description of the entity's behavior file, and is used to imitate a vanilla entity's hard-coded elements.
@@ -257,9 +259,17 @@ Color Variant: Leucistic, Wild, Yellow, Cyan, Blue.
 
 ---
 
+### minecraft:npc
+
+-   When in creative mode; punching entity will make it instantly despawn.
+-   When in survival or adventure mode; punching entity causes no damage and no Knockback is applied.
+-   Ignores the `minecraft:health` component in all modes.
+
+---
+
 ### minecraft:panda
 
--   Allows `query.is_grazing` and `query.sit_mount` to function with the `minecraft:behavior.random_sitting` component.
+-   Allows `q.is_grazing` and `q.sit_mount` to function with the `minecraft:behavior.random_sitting` component.
 
 ---
 
@@ -273,13 +283,13 @@ Color Variant: Leucistic, Wild, Yellow, Cyan, Blue.
 
 ### minecraft:piglin
 
--   Allows `minecraft:celebrate_hunt` to function (which activates query.is_celebrating).
+-   Allows `minecraft:celebrate_hunt` to function (which activates q.is_celebrating).
 
 ---
 
 ### minecraft:player
 
--   Activates `query.movement_direction`.
+-   Activates `q.movement_direction`.
 
 ---
 
@@ -301,7 +311,7 @@ Color Variant: Leucistic, Wild, Yellow, Cyan, Blue.
 
 ### minecraft:sheep
 
--   Allows `query.is_grazing` to function with the `behavior.eat_block` component.
+-   Allows `q.is_grazing` to function with the `behavior.eat_block` component.
 
 ---
 

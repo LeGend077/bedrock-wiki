@@ -3,11 +3,12 @@ title: Vanilla Usage Components - Full
 category: Documentation
 mentions:
     - MedicalJewel105
+description: Automatically generated list of entity components used in vanilla.
 hidden: true
 ---
 
 This page was created with [Wiki Content Generator](https://github.com/Bedrock-OSS/bedrock-wiki-content-generator). If there are issues, contact us on [Bedrock OSS](https://discord.gg/XjV87YN) Discord server.
-Includes all examples. Namespace `minecraft` and some formatting have been removed to make the page load quickly. *Last updated for 1.19.80*
+Includes all examples. Namespace `minecraft` and some formatting have been removed to make the page load quickly. *Last updated for 1.21.50*
 
 ## addrider
 
@@ -122,6 +123,24 @@ piglin
 
 ## ageable
 
+armadillo
+
+```json
+"minecraft:ageable": {
+    "duration": 1200,
+    "interact_filters": {
+        "test": "enum_property",
+        "domain": "minecraft:armadillo_state",
+        "value": "unrolled"
+    },
+    "feed_items": "spider_eye",
+    "grow_up": {
+        "event": "minecraft:ageable_grow_up",
+        "target": "self"
+    }
+}
+```
+
 axolotl
 
 ```json
@@ -142,17 +161,44 @@ bee
 "minecraft:ageable": {
     "duration": 1200,
     "feed_items": [
-        "minecraft:red_flower",
-        "minecraft:yellow_flower",
+        "minecraft:poppy",
+        "minecraft:blue_orchid",
+        "minecraft:allium",
+        "minecraft:azure_bluet",
+        "minecraft:red_tulip",
+        "minecraft:orange_tulip",
+        "minecraft:white_tulip",
+        "minecraft:pink_tulip",
+        "minecraft:oxeye_daisy",
+        "minecraft:cornflower",
+        "minecraft:lily_of_the_valley",
+        "minecraft:dandelion",
         "minecraft:wither_rose",
-        "minecraft:double_plant:0",
-        "minecraft:double_plant:1",
-        "minecraft:double_plant:4",
-        "minecraft:double_plant:5",
+        "minecraft:sunflower",
+        "minecraft:lilac",
+        "minecraft:rose_bush",
+        "minecraft:peony",
         "minecraft:flowering_azalea",
         "minecraft:azalea_leaves_flowered",
-        "minecraft:mangrove_propagule"
+        "minecraft:mangrove_propagule",
+        "minecraft:pitcher_plant",
+        "minecraft:torchflower",
+        "minecraft:cherry_leaves",
+        "minecraft:pink_petals"
     ],
+    "grow_up": {
+        "event": "minecraft:ageable_grow_up",
+        "target": "self"
+    }
+}
+```
+
+camel
+
+```json
+"minecraft:ageable": {
+    "duration": 1200,
+    "feed_items": "cactus",
     "grow_up": {
         "event": "minecraft:ageable_grow_up",
         "target": "self"
@@ -185,7 +231,9 @@ chicken
         "wheat_seeds",
         "beetroot_seeds",
         "melon_seeds",
-        "pumpkin_seeds"
+        "pumpkin_seeds",
+        "pitcher_pod",
+        "torchflower_seeds"
     ],
     "grow_up": {
         "event": "minecraft:ageable_grow_up",
@@ -494,7 +542,7 @@ rabbit
     "feed_items": [
         "golden_carrot",
         "carrot",
-        "yellow_flower"
+        "dandelion"
     ],
     "grow_up": {
         "event": "grow_up",
@@ -521,6 +569,21 @@ skeleton_horse
 ```json
 "minecraft:ageable": {
     "duration": 1200,
+    "grow_up": {
+        "event": "minecraft:ageable_grow_up",
+        "target": "self"
+    }
+}
+```
+
+sniffer
+
+```json
+"minecraft:ageable": {
+    "duration": 2400,
+    "feed_items": [
+        "torchflower_seeds"
+    ],
     "grow_up": {
         "event": "minecraft:ageable_grow_up",
         "target": "self"
@@ -681,6 +744,12 @@ allay
 }
 ```
 
+armadillo
+
+```json
+"minecraft:ambient_sound_interval": {}
+```
+
 bee
 
 ```json
@@ -697,6 +766,12 @@ bee
     "range": 0.0,
     "value": 0.0
 }
+```
+
+creaking
+
+```json
+"minecraft:ambient_sound_interval": {}
 ```
 
 evocation_illager
@@ -842,6 +917,7 @@ bee
     "duration": 25,
     "broadcastAnger": true,
     "broadcastRange": 20,
+    "broadcast_anger_when_dying": false,
     "broadcast_filters": {
         "test": "is_family",
         "operator": "!=",
@@ -1079,6 +1155,7 @@ silverfish
     "duration": -1,
     "broadcast_anger": true,
     "broadcast_range": 20,
+    "broadcast_anger_when_dying": false,
     "calm_event": {
         "event": "minecraft:on_calm",
         "target": "self"
@@ -1176,9 +1253,27 @@ wolf
     "duration": 25,
     "broadcast_anger": true,
     "broadcast_range": 20,
+    "broadcast_anger_when_dying": false,
     "calm_event": {
         "event": "minecraft:on_calm",
         "target": "self"
+    }
+}
+```
+
+zoglin
+
+```json
+"minecraft:angry": {
+    "duration": 10,
+    "calm_event": {
+        "event": "become_calm_event",
+        "target": "self"
+    },
+    "angry_sound": "angry",
+    "sound_interval": {
+        "range_min": 2.0,
+        "range_max": 5.0
     }
 }
 ```
@@ -1190,6 +1285,7 @@ zombie_pigman
     "duration": 25,
     "broadcast_anger": true,
     "broadcast_range": 20,
+    "broadcast_anger_when_dying": false,
     "calm_event": {
         "event": "minecraft:on_calm",
         "target": "self"
@@ -1462,6 +1558,14 @@ blaze
 }
 ```
 
+bogged
+
+```json
+"minecraft:attack": {
+    "damage": 3
+}
+```
+
 cave_spider
 
 ```json
@@ -1485,6 +1589,14 @@ cave_spider
     "damage": 2,
     "effect_name": "poison",
     "effect_duration": 15
+}
+```
+
+creaking
+
+```json
+"minecraft:attack": {
+    "damage": 3
 }
 ```
 
@@ -1948,6 +2060,12 @@ allay
 }
 ```
 
+armadillo
+
+```json
+"minecraft:balloonable": {}
+```
+
 bee
 
 ```json
@@ -1957,6 +2075,12 @@ bee
 ```
 
 boat
+
+```json
+"minecraft:balloonable": {}
+```
+
+camel
 
 ```json
 "minecraft:balloonable": {}
@@ -1993,7 +2117,9 @@ cow
 dolphin
 
 ```json
-"minecraft:balloonable": {}
+"minecraft:balloonable": {
+    "mass": 0.4
+}
 ```
 
 donkey
@@ -2113,6 +2239,12 @@ sheep
 ```
 
 skeleton_horse
+
+```json
+"minecraft:balloonable": {}
+```
+
+sniffer
 
 ```json
 "minecraft:balloonable": {}
@@ -2256,6 +2388,26 @@ piglin
 
 ## behavior.avoid_mob_type
 
+bogged
+
+```json
+"minecraft:behavior.avoid_mob_type": {
+    "priority": 4,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "wolf"
+            },
+            "max_dist": 6,
+            "walk_speed_multiplier": 1.2,
+            "sprint_speed_multiplier": 1.2
+        }
+    ]
+}
+```
+
 cat
 
 ```json
@@ -2271,6 +2423,35 @@ cat
             "max_dist": 10,
             "walk_speed_multiplier": 0.8,
             "sprint_speed_multiplier": 1.33
+        }
+    ]
+}
+```
+
+cave_spider
+
+```json
+"minecraft:behavior.avoid_mob_type": {
+    "priority": 2,
+    "entity_types": [
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "armadillo"
+                    },
+                    {
+                        "test": "enum_property",
+                        "subject": "other",
+                        "domain": "minecraft:armadillo_state",
+                        "value": "unrolled"
+                    }
+                ]
+            },
+            "max_dist": 6,
+            "sprint_speed_multiplier": 1.2
         }
     ]
 }
@@ -2349,6 +2530,15 @@ evocation_illager
             "max_dist": 8,
             "walk_speed_multiplier": 0.6,
             "sprint_speed_multiplier": 1.0
+        },
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "creaking"
+            },
+            "max_dist": 8,
+            "sprint_speed_multiplier": 1.2
         }
     ]
 }
@@ -2621,6 +2811,25 @@ piglin
 }
 ```
 
+pillager
+
+```json
+"minecraft:behavior.avoid_mob_type": {
+    "priority": 1,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "creaking"
+            },
+            "max_dist": 8,
+            "sprint_speed_multiplier": 1.2
+        }
+    ]
+}
+```
+
 pufferfish
 
 ```json
@@ -2734,6 +2943,35 @@ skeleton
             },
             "max_dist": 6,
             "walk_speed_multiplier": 1.2,
+            "sprint_speed_multiplier": 1.2
+        }
+    ]
+}
+```
+
+spider
+
+```json
+"minecraft:behavior.avoid_mob_type": {
+    "priority": 2,
+    "entity_types": [
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "armadillo"
+                    },
+                    {
+                        "test": "enum_property",
+                        "subject": "other",
+                        "domain": "minecraft:armadillo_state",
+                        "value": "unrolled"
+                    }
+                ]
+            },
+            "max_dist": 6,
             "sprint_speed_multiplier": 1.2
         }
     ]
@@ -2872,6 +3110,25 @@ villager_v2
 }
 ```
 
+vindicator
+
+```json
+"minecraft:behavior.avoid_mob_type": {
+    "priority": 2,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "creaking"
+            },
+            "max_dist": 8,
+            "sprint_speed_multiplier": 1.2
+        }
+    ]
+}
+```
+
 wandering_trader
 
 ```json
@@ -2983,6 +3240,15 @@ wolf
 
 ## behavior.breed
 
+armadillo
+
+```json
+"minecraft:behavior.breed": {
+    "priority": 2,
+    "speed_multiplier": 1.0
+}
+```
+
 axolotl
 
 ```json
@@ -2997,6 +3263,15 @@ bee
 ```json
 "minecraft:behavior.breed": {
     "priority": 4,
+    "speed_multiplier": 1.0
+}
+```
+
+camel
+
+```json
+"minecraft:behavior.breed": {
+    "priority": 2,
     "speed_multiplier": 1.0
 }
 ```
@@ -3164,6 +3439,15 @@ rabbit
 ```
 
 sheep
+
+```json
+"minecraft:behavior.breed": {
+    "priority": 3,
+    "speed_multiplier": 1.0
+}
+```
+
+sniffer
 
 ```json
 "minecraft:behavior.breed": {
@@ -4004,7 +4288,23 @@ enderman
 
 ## behavior.equip_item
 
+bogged
+
+```json
+"minecraft:behavior.equip_item": {
+    "priority": 3
+}
+```
+
 drowned
+
+```json
+"minecraft:behavior.equip_item": {
+    "priority": 3
+}
+```
+
+evocation_illager
 
 ```json
 "minecraft:behavior.equip_item": {
@@ -4053,6 +4353,14 @@ skeleton
 ```
 
 stray
+
+```json
+"minecraft:behavior.equip_item": {
+    "priority": 3
+}
+```
+
+vindicator
 
 ```json
 "minecraft:behavior.equip_item": {
@@ -4174,7 +4482,7 @@ parrot
 
 ```json
 "minecraft:behavior.find_mount": {
-    "priority": 3,
+    "priority": 4,
     "within_radius": 16,
     "avoid_water": true,
     "start_delay": 100,
@@ -4236,7 +4544,55 @@ dolphin
 }
 ```
 
+## behavior.fire_at_target
+
+breeze
+
+```json
+"minecraft:behavior.fire_at_target": {
+    "projectile_def": "minecraft:breeze_wind_charge_projectile",
+    "priority": 2,
+    "filters": {
+        "all_of": [
+            {
+                "test": "is_navigating",
+                "value": false
+            }
+        ]
+    },
+    "attack_range": [
+        0,
+        16
+    ],
+    "attack_cooldown": 0.5,
+    "pre_shoot_delay": 0.75,
+    "post_shoot_delay": 0.2,
+    "ranged_fov": 90.0,
+    "owner_anchor": 2,
+    "owner_offset": [
+        0.0,
+        0.3,
+        0.0
+    ],
+    "target_anchor": 0,
+    "target_offset": [
+        0.0,
+        0.5,
+        0.0
+    ]
+}
+```
+
 ## behavior.flee_sun
+
+bogged
+
+```json
+"minecraft:behavior.flee_sun": {
+    "priority": 2,
+    "speed_multiplier": 1
+}
+```
 
 drowned
 
@@ -4293,6 +4649,14 @@ allay
 }
 ```
 
+armadillo
+
+```json
+"minecraft:behavior.float": {
+    "priority": 0
+}
+```
+
 bat
 
 ```json
@@ -4314,6 +4678,23 @@ blaze
 ```json
 "minecraft:behavior.float": {
     "priority": 0
+}
+```
+
+breeze
+
+```json
+"minecraft:behavior.float": {
+    "priority": 0
+}
+```
+
+camel
+
+```json
+"minecraft:behavior.float": {
+    "priority": 0,
+    "sink_with_passengers": true
 }
 ```
 
@@ -4342,6 +4723,14 @@ chicken
 ```
 
 cow
+
+```json
+"minecraft:behavior.float": {
+    "priority": 0
+}
+```
+
+creaking
 
 ```json
 "minecraft:behavior.float": {
@@ -4465,7 +4854,7 @@ parrot
 
 ```json
 "minecraft:behavior.float": {
-    "priority": 0
+    "priority": 1
 }
 ```
 
@@ -4522,6 +4911,14 @@ silverfish
 ```json
 "minecraft:behavior.float": {
     "priority": 1
+}
+```
+
+sniffer
+
+```json
+"minecraft:behavior.float": {
+    "priority": 0
 }
 ```
 
@@ -4681,7 +5078,7 @@ parrot
 
 ```json
 "minecraft:behavior.follow_mob": {
-    "priority": 3,
+    "priority": 4,
     "speed_multiplier": 1.0,
     "stop_distance": 3,
     "search_range": 20
@@ -4729,7 +5126,7 @@ parrot
 
 ```json
 "minecraft:behavior.follow_owner": {
-    "priority": 2,
+    "priority": 3,
     "speed_multiplier": 1.0,
     "start_distance": 5,
     "stop_distance": 1
@@ -4749,6 +5146,15 @@ wolf
 
 ## behavior.follow_parent
 
+armadillo
+
+```json
+"minecraft:behavior.follow_parent": {
+    "priority": 5,
+    "speed_multiplier": 1.25
+}
+```
+
 axolotl
 
 ```json
@@ -4764,6 +5170,15 @@ bee
 "minecraft:behavior.follow_parent": {
     "priority": 11,
     "speed_multiplier": 1.1
+}
+```
+
+camel
+
+```json
+"minecraft:behavior.follow_parent": {
+    "priority": 5,
+    "speed_multiplier": 2.5
 }
 ```
 
@@ -5229,11 +5644,97 @@ blaze
 }
 ```
 
+bogged
+
+```json
+"minecraft:behavior.hurt_by_target": {
+    "priority": 1,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "breeze"
+            }
+        }
+    ]
+}
+```
+
+breeze
+
+```json
+"minecraft:behavior.hurt_by_target": {
+    "priority": 4,
+    "entity_types": [
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "skeleton"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "stray"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "zombie"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "husk"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "spider"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "cavespider"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "slime"
+                    }
+                ]
+            }
+        }
+    ]
+}
+```
+
 cave_spider
 
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 1,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "breeze"
+            }
+        }
+    ]
 }
 ```
 
@@ -5273,7 +5774,16 @@ evocation_illager
 
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 1,
+    "entity_types": {
+        "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "illager"
+        },
+        "max_dist": 64
+    }
 }
 ```
 
@@ -5297,7 +5807,17 @@ husk
 
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 1,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "breeze"
+            }
+        }
+    ]
 }
 ```
 
@@ -5395,7 +5915,7 @@ polar_bear
 
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 2
 }
 ```
 
@@ -5445,7 +5965,17 @@ skeleton
 
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 1,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "breeze"
+            }
+        }
+    ]
 }
 ```
 
@@ -5453,7 +5983,17 @@ spider
 
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 1,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "breeze"
+            }
+        }
+    ]
 }
 ```
 
@@ -5461,7 +6001,17 @@ stray
 
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 1,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "breeze"
+            }
+        }
+    ]
 }
 ```
 
@@ -5502,7 +6052,16 @@ vindicator
 
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 1,
+    "entity_types": {
+        "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "illager"
+        },
+        "max_dist": 64
+    }
 }
 ```
 
@@ -5550,7 +6109,17 @@ zombie
 
 ```json
 "minecraft:behavior.hurt_by_target": {
-    "priority": 1
+    "priority": 1,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "breeze"
+            }
+        }
+    ]
 }
 ```
 
@@ -5605,6 +6174,66 @@ warden
 "minecraft:behavior.investigate_suspicious_location": {
     "priority": 5,
     "speed_multiplier": 0.7
+}
+```
+
+## behavior.jump_around_target
+
+breeze
+
+```json
+"minecraft:behavior.jump_around_target": {
+    "priority": 5,
+    "filters": {
+        "all_of": [
+            {
+                "any_of": [
+                    {
+                        "test": "in_water",
+                        "value": true
+                    },
+                    {
+                        "test": "on_ground",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "test": "is_riding",
+                "value": false
+            },
+            {
+                "test": "in_lava",
+                "value": false
+            }
+        ]
+    },
+    "jump_cooldown_duration": 0.5,
+    "jump_cooldown_when_hurt_duration": 0.1,
+    "last_hurt_duration": 2.0,
+    "prepare_jump_duration": 0.5,
+    "max_jump_velocity": 1.4,
+    "check_collision": false,
+    "entity_bounding_box_scale": 0.7,
+    "line_of_sight_obstruction_height_ignore": 4,
+    "valid_distance_to_target": [
+        4.0,
+        20.0
+    ],
+    "landing_position_spread_degrees": 90,
+    "landing_distance_from_target": [
+        4.0,
+        8.0
+    ],
+    "required_vertical_space": 4,
+    "snap_to_surface_block_range": 10,
+    "jump_angles": [
+        40.0,
+        55.0,
+        60.0,
+        75.0,
+        80.0
+    ]
 }
 ```
 
@@ -5795,7 +6424,7 @@ wolf
 ```json
 "minecraft:behavior.leap_at_target": {
     "priority": 4,
-    "target_dist": 0.4
+    "yd": 0.4
 }
 ```
 
@@ -5857,11 +6486,51 @@ allay
 }
 ```
 
+armadillo
+
+```json
+"minecraft:behavior.look_at_player": {
+    "priority": 7,
+    "target_distance": 6.0,
+    "probability": 0.02,
+    "min_look_time": 40,
+    "max_look_time": 80
+}
+```
+
 axolotl
 
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 10,
+    "target_distance": 6.0,
+    "probability": 0.02
+}
+```
+
+bogged
+
+```json
+"minecraft:behavior.look_at_player": {
+    "priority": 7,
+    "look_distance": 8
+}
+```
+
+breeze
+
+```json
+"minecraft:behavior.look_at_player": {
+    "priority": 7,
+    "look_distance": 16
+}
+```
+
+camel
+
+```json
+"minecraft:behavior.look_at_player": {
+    "priority": 7,
     "target_distance": 6.0,
     "probability": 0.02
 }
@@ -6115,7 +6784,7 @@ parrot
 
 ```json
 "minecraft:behavior.look_at_player": {
-    "priority": 1,
+    "priority": 2,
     "look_distance": 8.0
 }
 ```
@@ -6221,6 +6890,16 @@ skeleton_horse
 "minecraft:behavior.look_at_player": {
     "priority": 7,
     "look_distance": 6.0,
+    "probability": 0.02
+}
+```
+
+sniffer
+
+```json
+"minecraft:behavior.look_at_player": {
+    "priority": 8,
+    "target_distance": 6.0,
     "probability": 0.02
 }
 ```
@@ -6348,7 +7027,7 @@ witch
 ```json
 "minecraft:behavior.look_at_player": {
     "priority": 5,
-    "look_distance": 8.0
+    "look_distance": 16.0
 }
 ```
 
@@ -6496,10 +7175,23 @@ villager_v2
 
 ## behavior.melee_attack
 
-axolotl
+creeper
 
 ```json
 "minecraft:behavior.melee_attack": {
+    "priority": 4,
+    "speed_multiplier": 1.25,
+    "track_target": false,
+    "reach_multiplier": 0.0
+}
+```
+
+## behavior.melee_box_attack
+
+axolotl
+
+```json
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "on_kill": {
         "event": "killed_enemy_event",
@@ -6511,7 +7203,7 @@ axolotl
 bee
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 2,
     "attack_once": true,
     "speed_multiplier": 1.4,
@@ -6525,45 +7217,51 @@ bee
 blaze
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 3
+}
+```
+
+bogged
+
+```json
+"minecraft:behavior.melee_box_attack": {
+    "priority": 4,
+    "track_target": true,
+    "speed_multiplier": 1.25
 }
 ```
 
 cave_spider
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 3,
     "track_target": true,
-    "random_stop_interval": 100,
-    "reach_multiplier": 0.8
+    "random_stop_interval": 100
 }
 ```
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 3,
-    "track_target": true,
-    "reach_multiplier": 1.4
+    "track_target": true
 }
 ```
 
-creeper
+creaking
 
 ```json
-"minecraft:behavior.melee_attack": {
-    "priority": 4,
-    "speed_multiplier": 1.25,
-    "track_target": false,
-    "reach_multiplier": 0.0
+"minecraft:behavior.melee_box_attack": {
+    "priority": 2,
+    "cooldown_time": 2.0
 }
 ```
 
 dolphin
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 2,
     "track_target": true
 }
@@ -6572,7 +7270,8 @@ dolphin
 drowned
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
+    "can_spread_on_fire": true,
     "priority": 3,
     "speed_multiplier": 1,
     "track_target": false,
@@ -6583,7 +7282,7 @@ drowned
 enderman
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 2
 }
 ```
@@ -6591,7 +7290,7 @@ enderman
 endermite
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 3,
     "track_target": true
 }
@@ -6600,41 +7299,37 @@ endermite
 fox
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 10,
     "track_target": true,
-    "require_complete_path": true,
-    "reach_multiplier": 1.5
+    "require_complete_path": true
 }
 ```
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 1,
     "track_target": true,
-    "require_complete_path": true,
-    "reach_multiplier": 1.5
+    "require_complete_path": true
 }
 ```
 
 hoglin
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "speed_multiplier": 1,
     "track_target": true,
-    "reach_multiplier": 1.0,
     "cooldown_time": 0.75
 }
 ```
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "speed_multiplier": 1,
     "track_target": true,
-    "reach_multiplier": 2.15,
     "cooldown_time": 2
 }
 ```
@@ -6642,7 +7337,8 @@ hoglin
 husk
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
+    "can_spread_on_fire": true,
     "priority": 3
 }
 ```
@@ -6650,7 +7346,7 @@ husk
 iron_golem
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 1,
     "track_target": true
 }
@@ -6659,26 +7355,24 @@ iron_golem
 panda
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 2,
     "attack_once": true,
-    "track_target": true,
-    "reach_multiplier": 1.0
+    "track_target": true
 }
 ```
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 2,
-    "track_target": true,
-    "reach_multiplier": 1.0
+    "track_target": true
 }
 ```
 
 piglin
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 8,
     "speed_multiplier": 1.0,
     "track_target": true
@@ -6688,7 +7382,7 @@ piglin
 piglin_brute
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "speed_multiplier": 1,
     "track_target": true
@@ -6698,7 +7392,7 @@ piglin_brute
 pillager
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "track_target": true
 }
@@ -6707,7 +7401,7 @@ pillager
 silverfish
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "track_target": true
 }
@@ -6716,7 +7410,7 @@ silverfish
 skeleton
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "track_target": true,
     "speed_multiplier": 1.25
@@ -6726,17 +7420,16 @@ skeleton
 spider
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 3,
-    "track_target": true,
-    "reach_multiplier": 0.8
+    "track_target": true
 }
 ```
 
 stray
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "track_target": true,
     "speed_multiplier": 1.25
@@ -6746,7 +7439,7 @@ stray
 vindicator
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 3
 }
 ```
@@ -6754,7 +7447,7 @@ vindicator
 warden
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "speed_multiplier": 1.2,
     "melee_fov": 360
@@ -6764,7 +7457,7 @@ warden
 wither_skeleton
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "track_target": true,
     "speed_multiplier": 1.25
@@ -6774,7 +7467,7 @@ wither_skeleton
 wolf
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 5
 }
 ```
@@ -6782,9 +7475,8 @@ wolf
 zoglin
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
-    "reach_multiplier": 2.15,
     "speed_multiplier": 1.4,
     "track_target": true
 }
@@ -6793,7 +7485,8 @@ zoglin
 zombie
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
+    "can_spread_on_fire": true,
     "priority": 3
 }
 ```
@@ -6801,7 +7494,7 @@ zombie
 zombie_pigman
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
     "priority": 4,
     "speed_multiplier": 1.5
 }
@@ -6810,7 +7503,8 @@ zombie_pigman
 zombie_villager
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
+    "can_spread_on_fire": true,
     "priority": 6
 }
 ```
@@ -6818,7 +7512,8 @@ zombie_villager
 zombie_villager_v2
 
 ```json
-"minecraft:behavior.melee_attack": {
+"minecraft:behavior.melee_box_attack": {
+    "can_spread_on_fire": true,
     "priority": 6
 }
 ```
@@ -7108,6 +7803,36 @@ zombie_villager_v2
 }
 ```
 
+## behavior.move_around_target
+
+breeze
+
+```json
+"minecraft:behavior.move_around_target": {
+    "priority": 3,
+    "destination_position_range": [
+        4.0,
+        8.0
+    ],
+    "movement_speed": 1.2,
+    "destination_pos_spread_degrees": 360,
+    "filters": {
+        "all_of": [
+            {
+                "test": "on_ground",
+                "value": true
+            },
+            {
+                "test": "target_distance",
+                "subject": "self",
+                "value": 24.0,
+                "operator": "<="
+            }
+        ]
+    }
+}
+```
+
 ## behavior.move_indoors
 
 villager
@@ -7189,16 +7914,31 @@ bee
         "value": false
     },
     "target_blocks": [
-        "minecraft:red_flower",
-        "minecraft:yellow_flower",
+        "minecraft:poppy",
+        "minecraft:blue_orchid",
+        "minecraft:allium",
+        "minecraft:azure_bluet",
+        "minecraft:red_tulip",
+        "minecraft:orange_tulip",
+        "minecraft:white_tulip",
+        "minecraft:pink_tulip",
+        "minecraft:oxeye_daisy",
+        "minecraft:cornflower",
+        "minecraft:lily_of_the_valley",
+        "minecraft:dandelion",
         "minecraft:wither_rose",
-        "minecraft:double_plant:8",
-        "minecraft:double_plant:9",
-        "minecraft:double_plant:12",
-        "minecraft:double_plant:13",
+        "minecraft:sunflower",
+        "minecraft:lilac",
+        "minecraft:rose_bush",
+        "minecraft:peony",
         "minecraft:flowering_azalea",
         "minecraft:azalea_leaves_flowered",
-        "minecraft:mangrove_propagule"
+        "minecraft:mangrove_propagule",
+        "minecraft:pitcher_plant",
+        "minecraft:torchflower",
+        "minecraft:cherry_leaves",
+        "minecraft:pink_petals",
+        "minecraft:open_eyeblossom"
     ],
     "on_stay_completed": [
         {
@@ -7658,6 +8398,81 @@ blaze
             "max_dist": 48.0
         }
     ]
+}
+```
+
+bogged
+
+```json
+"minecraft:behavior.nearest_attackable_target": {
+    "priority": 2,
+    "must_see": true,
+    "reselect_targets": true,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+            },
+            "max_dist": 16
+        },
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "irongolem"
+            },
+            "max_dist": 16
+        },
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "baby_turtle"
+                    },
+                    {
+                        "test": "in_water",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": true
+                    }
+                ]
+            },
+            "max_dist": 16
+        }
+    ]
+}
+```
+
+breeze
+
+```json
+"minecraft:behavior.nearest_attackable_target": {
+    "priority": 1,
+    "within_radius": 24,
+    "scan_interval": 10,
+    "entity_types": [
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+            },
+            "max_dist": 24
+        },
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "irongolem"
+            },
+            "max_dist": 24
+        }
+    ],
+    "must_see": true
 }
 ```
 
@@ -9086,14 +9901,10 @@ vindicator
     "entity_types": [
         {
             "filters": {
-                "all_of": [
-                    {
-                        "test": "is_family",
-                        "subject": "other",
-                        "operator": "!=",
-                        "value": "illager"
-                    }
-                ]
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "illager"
             },
             "max_dist": 12
         }
@@ -9154,39 +9965,6 @@ vindicator
             "max_dist": 12
         }
     ]
-}
-```
-
-witch
-
-```json
-"minecraft:behavior.nearest_attackable_target": {
-    "priority": 2,
-    "entity_types": [
-        {
-            "filters": {
-                "any_of": [
-                    {
-                        "test": "is_family",
-                        "subject": "other",
-                        "value": "player"
-                    },
-                    {
-                        "test": "is_family",
-                        "subject": "other",
-                        "value": "snowgolem"
-                    },
-                    {
-                        "test": "is_family",
-                        "subject": "other",
-                        "value": "irongolem"
-                    }
-                ]
-            },
-            "max_dist": 10
-        }
-    ],
-    "must_reach": true
 }
 ```
 
@@ -9803,6 +10581,68 @@ piglin_brute
 }
 ```
 
+witch
+
+```json
+"minecraft:behavior.nearest_prioritized_attackable_target": {
+    "priority": 2,
+    "entity_types": [
+        {
+            "filters": {
+                "any_of": [
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "player"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "snowgolem"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "irongolem"
+                    }
+                ]
+            },
+            "priority": 1,
+            "max_dist": 10
+        },
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "is_raider",
+                        "subject": "other",
+                        "value": true
+                    },
+                    {
+                        "test": "is_raider",
+                        "subject": "self",
+                        "value": true
+                    },
+                    {
+                        "none_of": [
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "witch"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "priority": 2,
+            "cooldown": 10,
+            "max_dist": 10
+        }
+    ],
+    "must_reach": true
+}
+```
+
 ## behavior.ocelot_sit_on_block
 
 cat
@@ -9921,6 +10761,16 @@ allay
 }
 ```
 
+armadillo
+
+```json
+"minecraft:behavior.panic": {
+    "priority": 1,
+    "ignore_mob_damage": true,
+    "speed_multiplier": 2.0
+}
+```
+
 bee
 
 ```json
@@ -9936,6 +10786,15 @@ bee
     "priority": 1,
     "speed_multiplier": 1.25,
     "force": true
+}
+```
+
+camel
+
+```json
+"minecraft:behavior.panic": {
+    "priority": 1,
+    "speed_multiplier": 4
 }
 ```
 
@@ -10092,6 +10951,17 @@ panda
 "minecraft:behavior.panic": {
     "priority": 1,
     "speed_multiplier": 1.25,
+    "damage_sources": [
+        "campfire",
+        "fire",
+        "fire_tick",
+        "freezing",
+        "lightning",
+        "lava",
+        "magma",
+        "temperature",
+        "soul_campfire"
+    ],
     "ignore_mob_damage": true
 }
 ```
@@ -10100,7 +10970,7 @@ parrot
 
 ```json
 "minecraft:behavior.panic": {
-    "priority": 0,
+    "priority": 1,
     "speed_multiplier": 1.25
 }
 ```
@@ -10120,6 +10990,27 @@ piglin
 "minecraft:behavior.panic": {
     "priority": 1,
     "speed_multiplier": 1.1
+}
+```
+
+polar_bear
+
+```json
+"minecraft:behavior.panic": {
+    "priority": 1,
+    "speed_multiplier": 1.25,
+    "damage_sources": [
+        "campfire",
+        "fire",
+        "fire_tick",
+        "freezing",
+        "lightning",
+        "lava",
+        "magma",
+        "temperature",
+        "soul_campfire"
+    ],
+    "ignore_mob_damage": true
 }
 ```
 
@@ -10147,6 +11038,15 @@ skeleton_horse
 "minecraft:behavior.panic": {
     "priority": 1,
     "speed_multiplier": 1.2
+}
+```
+
+sniffer
+
+```json
+"minecraft:behavior.panic": {
+    "priority": 1,
+    "speed_multiplier": 2
 }
 ```
 
@@ -10219,6 +11119,34 @@ wandering_trader
 }
 ```
 
+wolf
+
+```json
+"minecraft:behavior.panic": {
+    "priority": 2,
+    "speed_multiplier": 1.25,
+    "damage_sources": [
+        "campfire",
+        "fire",
+        "fire_tick",
+        "freezing",
+        "lightning",
+        "lava",
+        "magma",
+        "temperature",
+        "soul_campfire"
+    ],
+    "ignore_mob_damage": true
+}
+```
+
+```json
+"minecraft:behavior.panic": {
+    "priority": 1,
+    "speed_multiplier": 1.25
+}
+```
+
 zombie_horse
 
 ```json
@@ -10260,6 +11188,19 @@ allay
 }
 ```
 
+bogged
+
+```json
+"minecraft:behavior.pickup_items": {
+    "priority": 5,
+    "max_dist": 3,
+    "goal_radius": 2,
+    "speed_multiplier": 1.0,
+    "pickup_based_on_chance": true,
+    "can_pickup_any_item": true
+}
+```
+
 drowned
 
 ```json
@@ -10273,6 +11214,17 @@ drowned
     "excluded_items": [
         "minecraft:glow_ink_sac"
     ]
+}
+```
+
+evocation_illager
+
+```json
+"minecraft:behavior.pickup_items": {
+    "priority": 7,
+    "max_dist": 3,
+    "goal_radius": 2,
+    "speed_multiplier": 1.0
 }
 ```
 
@@ -10378,6 +11330,17 @@ villager_v2
 }
 ```
 
+vindicator
+
+```json
+"minecraft:behavior.pickup_items": {
+    "priority": 7,
+    "max_dist": 3,
+    "goal_radius": 2,
+    "speed_multiplier": 1.0
+}
+```
+
 wither_skeleton
 
 ```json
@@ -10427,7 +11390,7 @@ zombie_villager
     "max_dist": 3,
     "goal_radius": 2,
     "speed_multiplier": 1.0,
-    "pickup_based_on_chance": true,
+    "pickup_based_on_chance": false,
     "can_pickup_any_item": true,
     "excluded_items": [
         "minecraft:glow_ink_sac"
@@ -10524,6 +11487,12 @@ axolotl
 
 ## behavior.player_ride_tamed
 
+camel
+
+```json
+"minecraft:behavior.player_ride_tamed": {}
+```
+
 donkey
 
 ```json
@@ -10584,7 +11553,8 @@ rabbit
         "minecraft:carrots"
     ],
     "search_range": 16,
-    "goal_radius": 0.8
+    "goal_radius": 1.0,
+    "speed_multiplier": 0.6
 }
 ```
 
@@ -10659,7 +11629,7 @@ parrot
 
 ```json
 "minecraft:behavior.random_fly": {
-    "priority": 2,
+    "priority": 3,
     "xz_dist": 15,
     "y_dist": 1,
     "y_offset": 0,
@@ -10713,11 +11683,43 @@ allay
 }
 ```
 
+armadillo
+
+```json
+"minecraft:behavior.random_look_around": {
+    "priority": 8
+}
+```
+
 blaze
 
 ```json
 "minecraft:behavior.random_look_around": {
     "priority": 5
+}
+```
+
+bogged
+
+```json
+"minecraft:behavior.random_look_around": {
+    "priority": 8
+}
+```
+
+breeze
+
+```json
+"minecraft:behavior.random_look_around": {
+    "priority": 8
+}
+```
+
+camel
+
+```json
+"minecraft:behavior.random_look_around": {
+    "priority": 8
 }
 ```
 
@@ -10953,6 +11955,14 @@ skeleton_horse
 }
 ```
 
+sniffer
+
+```json
+"minecraft:behavior.random_look_around": {
+    "priority": 9
+}
+```
+
 snow_golem
 
 ```json
@@ -11084,6 +12094,24 @@ zombie_villager_v2
 
 ## behavior.random_look_around_and_sit
 
+camel
+
+```json
+"minecraft:behavior.random_look_around_and_sit": {
+    "priority": 4,
+    "continue_if_leashed": true,
+    "continue_sitting_on_reload": true,
+    "min_look_count": 2,
+    "max_look_count": 5,
+    "min_look_time": 80,
+    "max_look_time": 100,
+    "min_angle_of_view_horizontal": -30,
+    "max_angle_of_view_horizontal": 30,
+    "random_look_around_cooldown": 5,
+    "probability": 0.001
+}
+```
+
 fox
 
 ```json
@@ -11094,6 +12122,64 @@ fox
     "min_look_time": 80,
     "max_look_time": 100,
     "probability": 0.001
+}
+```
+
+## behavior.random_search_and_dig
+
+sniffer
+
+```json
+"minecraft:behavior.random_search_and_dig": {
+    "priority": 5,
+    "speed_multiplier": 1.25,
+    "find_valid_position_retries": 5,
+    "target_blocks": [
+        "minecraft:dirt",
+        "minecraft:coarse_dirt",
+        "minecraft:grass",
+        "minecraft:podzol",
+        "minecraft:dirt_with_roots",
+        "minecraft:moss_block",
+        "minecraft:pale_moss_block",
+        "minecraft:mud",
+        "minecraft:muddy_mangrove_roots"
+    ],
+    "goal_radius": 2.0,
+    "search_range_xz": 20.0,
+    "search_range_y": 3,
+    "cooldown_range": 0.0,
+    "digging_duration_range": [
+        8.0,
+        10.0
+    ],
+    "item_table": "loot_tables/gameplay/entities/sniffer_seeds.json",
+    "spawn_item_after_seconds": 6.0,
+    "spawn_item_pos_offset": 2.25,
+    "on_searching_start": {
+        "event": "on_searching_start",
+        "target": "self"
+    },
+    "on_fail_during_searching": {
+        "event": "on_fail_during_searching",
+        "target": "self"
+    },
+    "on_digging_start": {
+        "event": "on_digging_start",
+        "target": "self"
+    },
+    "on_item_found": {
+        "event": "on_item_found",
+        "target": "self"
+    },
+    "on_fail_during_digging": {
+        "event": "on_fail_during_digging",
+        "target": "self"
+    },
+    "on_success": {
+        "event": "on_search_and_digging_success",
+        "target": "self"
+    }
 }
 ```
 
@@ -11123,6 +12209,15 @@ panda
 
 ## behavior.random_stroll
 
+armadillo
+
+```json
+"minecraft:behavior.random_stroll": {
+    "priority": 6,
+    "speed_multiplier": 1.0
+}
+```
+
 axolotl
 
 ```json
@@ -11138,6 +12233,33 @@ blaze
 "minecraft:behavior.random_stroll": {
     "priority": 4,
     "speed_multiplier": 1.0
+}
+```
+
+bogged
+
+```json
+"minecraft:behavior.random_stroll": {
+    "priority": 6,
+    "speed_multiplier": 1
+}
+```
+
+breeze
+
+```json
+"minecraft:behavior.random_stroll": {
+    "priority": 6,
+    "speed_multiplier": 1.0
+}
+```
+
+camel
+
+```json
+"minecraft:behavior.random_stroll": {
+    "priority": 6,
+    "speed_multiplier": 2
 }
 ```
 
@@ -11174,6 +12296,15 @@ cow
 "minecraft:behavior.random_stroll": {
     "priority": 6,
     "speed_multiplier": 0.8
+}
+```
+
+creaking
+
+```json
+"minecraft:behavior.random_stroll": {
+    "priority": 7,
+    "speed_multiplier": 0.3
 }
 ```
 
@@ -11434,6 +12565,15 @@ skeleton_horse
 "minecraft:behavior.random_stroll": {
     "priority": 6,
     "speed_multiplier": 0.7
+}
+```
+
+sniffer
+
+```json
+"minecraft:behavior.random_stroll": {
+    "priority": 7,
+    "speed_multiplier": 1
 }
 ```
 
@@ -11752,6 +12892,16 @@ blaze
     "attack_interval_min": 3.0,
     "attack_interval_max": 5.0,
     "attack_radius": 16.0
+}
+```
+
+bogged
+
+```json
+"minecraft:behavior.ranged_attack": {
+    "priority": 0,
+    "attack_interval": 3.5,
+    "attack_radius": 15.0
 }
 ```
 
@@ -12586,7 +13736,7 @@ parrot
 
 ```json
 "minecraft:behavior.stay_while_sitting": {
-    "priority": 1
+    "priority": 2
 }
 ```
 
@@ -12782,7 +13932,8 @@ evocation_illager
                     "summon_cap": 8,
                     "summon_cap_radius": 16.0,
                     "size": 1.0,
-                    "sound_event": "prepare.summon"
+                    "sound_event": "prepare.summon",
+                    "summon_event": "minecraft:add_damage_timer"
                 }
             ]
         }
@@ -12841,6 +13992,16 @@ tropicalfish
     "priority": 5,
     "idle_time": 5.0,
     "success_rate": 0.1
+}
+```
+
+## behavior.swim_up_for_breath
+
+dolphin
+
+```json
+"minecraft:behavior.swim_up_for_breath": {
+    "priority": 1
 }
 ```
 
@@ -13002,7 +14163,118 @@ iron_golem
 }
 ```
 
+## behavior.teleport_to_owner
+
+cat
+
+```json
+"minecraft:behavior.teleport_to_owner": {
+    "priority": 0,
+    "filters": {
+        "all_of": [
+            {
+                "test": "owner_distance",
+                "operator": ">",
+                "value": 12
+            },
+            {
+                "test": "is_panicking"
+            }
+        ]
+    }
+}
+```
+
+ocelot
+
+```json
+"minecraft:behavior.teleport_to_owner": {
+    "priority": 0,
+    "filters": {
+        "all_of": [
+            {
+                "test": "owner_distance",
+                "operator": ">",
+                "value": 12
+            },
+            {
+                "test": "is_panicking"
+            }
+        ]
+    }
+}
+```
+
+parrot
+
+```json
+"minecraft:behavior.teleport_to_owner": {
+    "priority": 0,
+    "filters": {
+        "all_of": [
+            {
+                "test": "owner_distance",
+                "operator": ">",
+                "value": 12
+            },
+            {
+                "test": "is_panicking"
+            }
+        ]
+    }
+}
+```
+
+wolf
+
+```json
+"minecraft:behavior.teleport_to_owner": {
+    "priority": 1,
+    "filters": {
+        "any_of": [
+            {
+                "all_of": [
+                    {
+                        "test": "owner_distance",
+                        "operator": ">",
+                        "value": 12
+                    },
+                    {
+                        "test": "is_panicking"
+                    }
+                ]
+            },
+            {
+                "all_of": [
+                    {
+                        "test": "owner_distance",
+                        "operator": ">",
+                        "value": 24
+                    },
+                    {
+                        "test": "has_target"
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+
 ## behavior.tempt
+
+armadillo
+
+```json
+"minecraft:behavior.tempt": {
+    "priority": 3,
+    "speed_multiplier": 1.25,
+    "can_tempt_vertically": true,
+    "items": [
+        "spider_eye"
+    ]
+}
+```
 
 axolotl
 
@@ -13026,16 +14298,44 @@ bee
     "within_radius": 8,
     "can_tempt_vertically": true,
     "items": [
-        "minecraft:red_flower",
-        "minecraft:yellow_flower",
+        "minecraft:poppy",
+        "minecraft:blue_orchid",
+        "minecraft:allium",
+        "minecraft:azure_bluet",
+        "minecraft:red_tulip",
+        "minecraft:orange_tulip",
+        "minecraft:white_tulip",
+        "minecraft:pink_tulip",
+        "minecraft:oxeye_daisy",
+        "minecraft:cornflower",
+        "minecraft:lily_of_the_valley",
+        "minecraft:dandelion",
         "minecraft:wither_rose",
-        "minecraft:double_plant:0",
-        "minecraft:double_plant:1",
-        "minecraft:double_plant:4",
-        "minecraft:double_plant:5",
+        "minecraft:sunflower",
+        "minecraft:lilac",
+        "minecraft:rose_bush",
+        "minecraft:peony",
         "minecraft:flowering_azalea",
         "minecraft:azalea_leaves_flowered",
-        "minecraft:mangrove_propagule"
+        "minecraft:mangrove_propagule",
+        "minecraft:pitcher_plant",
+        "minecraft:torchflower",
+        "minecraft:cherry_leaves",
+        "minecraft:pink_petals",
+        "minecraft:open_eyeblossom"
+    ]
+}
+```
+
+camel
+
+```json
+"minecraft:behavior.tempt": {
+    "priority": 3,
+    "speed_multiplier": 2.5,
+    "can_tempt_vertically": true,
+    "items": [
+        "cactus"
     ]
 }
 ```
@@ -13048,6 +14348,11 @@ cat
     "speed_multiplier": 0.5,
     "within_radius": 16,
     "can_get_scared": true,
+    "tempt_sound": "tempt",
+    "sound_interval": [
+        0,
+        100
+    ],
     "items": [
         "fish",
         "salmon"
@@ -13077,7 +14382,9 @@ chicken
         "wheat_seeds",
         "beetroot_seeds",
         "melon_seeds",
-        "pumpkin_seeds"
+        "pumpkin_seeds",
+        "pitcher_pod",
+        "torchflower_seeds"
     ]
 }
 ```
@@ -13101,16 +14408,9 @@ donkey
     "priority": 5,
     "speed_multiplier": 1.2,
     "items": [
-        "apple",
-        "carrot",
         "golden_apple",
         "appleEnchanted",
-        "golden_carrot",
-        "carrotOnAStick",
-        "hay_block",
-        "sugar",
-        "bread",
-        "wheat"
+        "golden_carrot"
     ]
 }
 ```
@@ -13169,6 +14469,18 @@ horse
 }
 ```
 
+llama
+
+```json
+"minecraft:behavior.tempt": {
+    "priority": 5,
+    "speed_multiplier": 1.2,
+    "items": [
+        "hay_block"
+    ]
+}
+```
+
 mooshroom
 
 ```json
@@ -13188,16 +14500,9 @@ mule
     "priority": 5,
     "speed_multiplier": 1.2,
     "items": [
-        "apple",
-        "carrot",
         "golden_apple",
         "appleEnchanted",
-        "golden_carrot",
-        "carrotOnAStick",
-        "hay_block",
-        "sugar",
-        "bread",
-        "wheat"
+        "golden_carrot"
     ]
 }
 ```
@@ -13265,7 +14570,7 @@ rabbit
     "items": [
         "golden_carrot",
         "carrot",
-        "yellow_flower"
+        "dandelion"
     ]
 }
 ```
@@ -13278,6 +14583,18 @@ sheep
     "speed_multiplier": 1.25,
     "items": [
         "wheat"
+    ]
+}
+```
+
+sniffer
+
+```json
+"minecraft:behavior.tempt": {
+    "priority": 4,
+    "speed_multiplier": 1.25,
+    "items": [
+        "torchflower_seeds"
     ]
 }
 ```
@@ -13314,6 +14631,18 @@ tadpole
 }
 ```
 
+trader_llama
+
+```json
+"minecraft:behavior.tempt": {
+    "priority": 5,
+    "speed_multiplier": 1.2,
+    "items": [
+        "hay_block"
+    ]
+}
+```
+
 turtle
 
 ```json
@@ -13324,6 +14653,149 @@ turtle
     "items": [
         "seagrass"
     ]
+}
+```
+
+## behavior.timer_flag_1
+
+armadillo
+
+```json
+"minecraft:behavior.timer_flag_1": {
+    "priority": 0,
+    "cooldown_range": 2.5,
+    "duration_range": [
+        5.0,
+        20.0
+    ],
+    "on_start": {
+        "event": "minecraft:stop_peeking"
+    },
+    "on_end": {
+        "event": "minecraft:start_peeking"
+    }
+}
+```
+
+```json
+"minecraft:behavior.timer_flag_1": {
+    "priority": 0,
+    "cooldown_range": 2.5,
+    "duration_range": 1.5,
+    "on_start": {
+        "event": "minecraft:start_unrolling"
+    }
+}
+```
+
+bee
+
+```json
+"minecraft:behavior.timer_flag_1": {
+    "priority": 0,
+    "cooldown_range": 0.0,
+    "duration_range": [
+        0.05,
+        0.05
+    ],
+    "on_end": {
+        "event": "minecraft:on_poison_effect_added",
+        "target": "self"
+    }
+}
+```
+
+```json
+"minecraft:behavior.timer_flag_1": {
+    "priority": 0,
+    "cooldown_range": 0.0,
+    "duration_range": [
+        0.05,
+        0.05
+    ],
+    "on_end": {
+        "event": "minecraft:on_wither_effect_added",
+        "target": "self"
+    }
+}
+```
+
+creaking
+
+```json
+"minecraft:behavior.timer_flag_1": {
+    "priority": 0,
+    "cooldown_range": 0.0,
+    "duration_range": [
+        2.25,
+        2.25
+    ],
+    "on_end": {
+        "event": "minecraft:crumble",
+        "target": "self"
+    }
+}
+```
+
+sniffer
+
+```json
+"minecraft:behavior.timer_flag_1": {
+    "priority": 6,
+    "control_flags": [
+        "move",
+        "look"
+    ],
+    "cooldown_range": [
+        400.0,
+        500.0
+    ],
+    "duration_range": 2.0,
+    "on_end": {
+        "event": "on_scenting_success",
+        "target": "self"
+    }
+}
+```
+
+## behavior.timer_flag_2
+
+sniffer
+
+```json
+"minecraft:behavior.timer_flag_2": {
+    "priority": 2,
+    "control_flags": [
+        "move"
+    ],
+    "cooldown_range": 0.0,
+    "duration_range": [
+        2.0,
+        5.0
+    ],
+    "on_end": {
+        "event": "on_rising_end",
+        "target": "self"
+    }
+}
+```
+
+## behavior.timer_flag_3
+
+sniffer
+
+```json
+"minecraft:behavior.timer_flag_3": {
+    "priority": 5,
+    "cooldown_range": 0.0,
+    "duration_range": [
+        2.0,
+        5.0
+    ],
+    "on_end": {
+        "event": "on_feeling_happy_end",
+        "target": "self"
+    }
 }
 ```
 
@@ -13767,7 +15239,22 @@ piglin
                 "minecraft:trapped_chest",
                 "minecraft:ender_chest",
                 "minecraft:barrel",
-                "minecraft:shulker_box",
+                "minecraft:white_shulker_box",
+                "minecraft:orange_shulker_box",
+                "minecraft:magenta_shulker_box",
+                "minecraft:light_blue_shulker_box",
+                "minecraft:yellow_shulker_box",
+                "minecraft:lime_shulker_box",
+                "minecraft:pink_shulker_box",
+                "minecraft:gray_shulker_box",
+                "minecraft:light_gray_shulker_box",
+                "minecraft:cyan_shulker_box",
+                "minecraft:purple_shulker_box",
+                "minecraft:blue_shulker_box",
+                "minecraft:brown_shulker_box",
+                "minecraft:green_shulker_box",
+                "minecraft:red_shulker_box",
+                "minecraft:black_shulker_box",
                 "minecraft:undyed_shulker_box"
             ],
             "on_block_broken": "important_block_destroyed_event"
@@ -13776,13 +15263,27 @@ piglin
 }
 ```
 
+## body_rotation_blocked
+
+armadillo
+
+```json
+"minecraft:body_rotation_blocked": {}
+```
+
+creaking
+
+```json
+"minecraft:body_rotation_blocked": {}
+```
+
 ## boostable
 
 pig
 
 ```json
 "minecraft:boostable": {
-    "speed_multiplier": 2.0,
+    "speed_multiplier": 1.35,
     "duration": 3.0,
     "boost_items": [
         {
@@ -13798,7 +15299,7 @@ strider
 
 ```json
 "minecraft:boostable": {
-    "speed_multiplier": 2.0,
+    "speed_multiplier": 1.35,
     "duration": 16.0,
     "boost_items": [
         {
@@ -13868,7 +15369,7 @@ ravager
         "vine",
         "waterlily",
         "wheat",
-        "yellow_flower",
+        "dandelion",
         "azalea",
         "flowering_azalea",
         "azalea_leaves",
@@ -13880,7 +15381,10 @@ ravager
         "big_dripleaf",
         "spore_blossom",
         "hanging_roots",
-        "mangrove_leaves"
+        "mangrove_leaves",
+        "pale_hanging_moss",
+        "cherry_leaves",
+        "pale_oak_leaves"
     ]
 }
 ```
@@ -13893,6 +15397,15 @@ allay
 "minecraft:breathable": {
     "totalSupply": 15,
     "suffocateTime": 0
+}
+```
+
+armadillo
+
+```json
+"minecraft:breathable": {
+    "total_supply": 15,
+    "suffocate_time": 0
 }
 ```
 
@@ -13921,8 +15434,36 @@ bee
 
 ```json
 "minecraft:breathable": {
-    "totalSupply": 15,
-    "suffocateTime": 0
+    "totalSupply": 0,
+    "suffocateTime": -1
+}
+```
+
+bogged
+
+```json
+"minecraft:breathable": {
+    "total_supply": 15,
+    "suffocate_time": 0,
+    "breathes_water": true
+}
+```
+
+breeze
+
+```json
+"minecraft:breathable": {
+    "total_supply": 15,
+    "suffocate_time": 0
+}
+```
+
+camel
+
+```json
+"minecraft:breathable": {
+    "total_supply": 15,
+    "suffocate_time": 0
 }
 ```
 
@@ -14364,6 +15905,15 @@ slime
 }
 ```
 
+sniffer
+
+```json
+"minecraft:breathable": {
+    "total_supply": 15,
+    "suffocate_time": 0
+}
+```
+
 snow_golem
 
 ```json
@@ -14592,6 +16142,32 @@ zombie_villager_v2
 
 ## breedable
 
+armadillo
+
+```json
+"minecraft:breedable": {
+    "love_filters": {
+        "test": "enum_property",
+        "domain": "minecraft:armadillo_state",
+        "value": "unrolled"
+    },
+    "require_tame": false,
+    "breeds_with": [
+        {
+            "mate_type": "minecraft:armadillo",
+            "baby_type": "minecraft:armadillo",
+            "breed_event": {
+                "event": "minecraft:entity_born",
+                "target": "baby"
+            }
+        }
+    ],
+    "breed_items": [
+        "spider_eye"
+    ]
+}
+```
+
 axolotl
 
 ```json
@@ -14627,16 +16203,51 @@ bee
         }
     },
     "breed_items": [
-        "minecraft:red_flower",
-        "minecraft:yellow_flower",
+        "minecraft:poppy",
+        "minecraft:blue_orchid",
+        "minecraft:allium",
+        "minecraft:azure_bluet",
+        "minecraft:red_tulip",
+        "minecraft:orange_tulip",
+        "minecraft:white_tulip",
+        "minecraft:pink_tulip",
+        "minecraft:oxeye_daisy",
+        "minecraft:cornflower",
+        "minecraft:lily_of_the_valley",
+        "minecraft:dandelion",
         "minecraft:wither_rose",
-        "minecraft:double_plant:0",
-        "minecraft:double_plant:1",
-        "minecraft:double_plant:4",
-        "minecraft:double_plant:5",
+        "minecraft:sunflower",
+        "minecraft:lilac",
+        "minecraft:rose_bush",
+        "minecraft:peony",
         "minecraft:flowering_azalea",
         "minecraft:azalea_leaves_flowered",
-        "minecraft:mangrove_propagule"
+        "minecraft:mangrove_propagule",
+        "minecraft:pitcher_plant",
+        "minecraft:torchflower",
+        "minecraft:cherry_leaves",
+        "minecraft:pink_petals"
+    ]
+}
+```
+
+camel
+
+```json
+"minecraft:breedable": {
+    "require_tame": false,
+    "breeds_with": [
+        {
+            "mate_type": "minecraft:camel",
+            "baby_type": "minecraft:camel",
+            "breed_event": {
+                "event": "minecraft:entity_born",
+                "target": "baby"
+            }
+        }
+    ],
+    "breed_items": [
+        "cactus"
     ]
 }
 ```
@@ -14680,7 +16291,9 @@ chicken
         "wheat_seeds",
         "beetroot_seeds",
         "melon_seeds",
-        "pumpkin_seeds"
+        "pumpkin_seeds",
+        "pitcher_pod",
+        "torchflower_seeds"
     ]
 }
 ```
@@ -14990,7 +16603,7 @@ rabbit
     "breed_items": [
         "golden_carrot",
         "carrot",
-        "yellow_flower"
+        "dandelion"
     ],
     "breeds_with": {
         "mate_type": "minecraft:rabbit",
@@ -15013,6 +16626,27 @@ sheep
         "baby_type": "minecraft:sheep"
     },
     "breed_items": "wheat"
+}
+```
+
+sniffer
+
+```json
+"minecraft:breedable": {
+    "require_tame": false,
+    "causes_pregnancy": true,
+    "breeds_with": [
+        {
+            "mate_type": "minecraft:sniffer",
+            "breed_event": {
+                "event": "on_pregnant",
+                "target": "self"
+            }
+        }
+    ],
+    "breed_items": [
+        "torchflower_seeds"
+    ]
 }
 ```
 
@@ -15256,6 +16890,12 @@ xp_orb
 
 ## burns_in_daylight
 
+bogged
+
+```json
+"minecraft:burns_in_daylight": {}
+```
+
 drowned
 
 ```json
@@ -15306,7 +16946,31 @@ zombie_villager_v2
 
 ## can_climb
 
+armadillo
+
+```json
+"minecraft:can_climb": {}
+```
+
 blaze
+
+```json
+"minecraft:can_climb": {}
+```
+
+bogged
+
+```json
+"minecraft:can_climb": {}
+```
+
+breeze
+
+```json
+"minecraft:can_climb": {}
+```
+
+camel
 
 ```json
 "minecraft:can_climb": {}
@@ -15331,6 +16995,12 @@ chicken
 ```
 
 cow
+
+```json
+"minecraft:can_climb": {}
+```
+
+creaking
 
 ```json
 "minecraft:can_climb": {}
@@ -15475,6 +17145,12 @@ skeleton
 ```
 
 slime
+
+```json
+"minecraft:can_climb": {}
+```
+
+sniffer
 
 ```json
 "minecraft:can_climb": {}
@@ -15626,6 +17302,38 @@ wither
 "minecraft:can_fly": {}
 ```
 
+## can_join_raid
+
+evocation_illager
+
+```json
+"minecraft:can_join_raid": {}
+```
+
+pillager
+
+```json
+"minecraft:can_join_raid": {}
+```
+
+ravager
+
+```json
+"minecraft:can_join_raid": {}
+```
+
+vindicator
+
+```json
+"minecraft:can_join_raid": {}
+```
+
+witch
+
+```json
+"minecraft:can_join_raid": {}
+```
+
 ## can_power_jump
 
 donkey
@@ -15650,6 +17358,14 @@ skeleton_horse
 
 ```json
 "minecraft:can_power_jump": {}
+```
+
+## cannot_be_attacked
+
+ghast
+
+```json
+"minecraft:cannot_be_attacked": {}
 ```
 
 ## celebrate_hunt
@@ -15685,6 +17401,15 @@ allay
 "minecraft:collision_box": {
     "width": 0.35,
     "height": 0.6
+}
+```
+
+armadillo
+
+```json
+"minecraft:collision_box": {
+    "width": 0.7,
+    "height": 0.65
 }
 ```
 
@@ -15751,6 +17476,49 @@ boat
 }
 ```
 
+bogged
+
+```json
+"minecraft:collision_box": {
+    "width": 0.6,
+    "height": 1.9
+}
+```
+
+breeze
+
+```json
+"minecraft:collision_box": {
+    "width": 0.6,
+    "height": 1.77
+}
+```
+
+breeze_wind_charge_projectile
+
+```json
+"minecraft:collision_box": {
+    "width": 0.3125,
+    "height": 0.3125
+}
+```
+
+camel
+
+```json
+"minecraft:collision_box": {
+    "width": 1.7,
+    "height": 2.375
+}
+```
+
+```json
+"minecraft:collision_box": {
+    "width": 1.7,
+    "height": 0.945
+}
+```
+
 cat
 
 ```json
@@ -15811,6 +17579,15 @@ cow
 "minecraft:collision_box": {
     "width": 0.9,
     "height": 1.3
+}
+```
+
+creaking
+
+```json
+"minecraft:collision_box": {
+    "width": 0.9,
+    "height": 2.7
 }
 ```
 
@@ -16385,6 +18162,15 @@ small_fireball
 }
 ```
 
+sniffer
+
+```json
+"minecraft:collision_box": {
+    "width": 1.9,
+    "height": 1.75
+}
+```
+
 snowball
 
 ```json
@@ -16578,6 +18364,15 @@ warden
 "minecraft:collision_box": {
     "width": 0.9,
     "height": 2.9
+}
+```
+
+wind_charge_projectile
+
+```json
+"minecraft:collision_box": {
+    "width": 0.3125,
+    "height": 0.3125
 }
 ```
 
@@ -17248,6 +19043,12 @@ area_effect_cloud
 "minecraft:conditional_bandwidth_optimization": {}
 ```
 
+armadillo
+
+```json
+"minecraft:conditional_bandwidth_optimization": {}
+```
+
 armor_stand
 
 ```json
@@ -17309,6 +19110,36 @@ boat
         }
     ]
 }
+```
+
+bogged
+
+```json
+"minecraft:conditional_bandwidth_optimization": {}
+```
+
+breeze
+
+```json
+"minecraft:conditional_bandwidth_optimization": {}
+```
+
+breeze_wind_charge_projectile
+
+```json
+"minecraft:conditional_bandwidth_optimization": {
+    "default_values": {
+        "max_optimized_distance": 80.0,
+        "max_dropped_ticks": 7,
+        "use_motion_prediction_hints": true
+    }
+}
+```
+
+camel
+
+```json
+"minecraft:conditional_bandwidth_optimization": {}
 ```
 
 cat
@@ -17430,6 +19261,18 @@ donkey
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
+```
+
+dragon_fireball
+
+```json
+"minecraft:conditional_bandwidth_optimization": {
+    "default_values": {
+        "max_optimized_distance": 80.0,
+        "max_dropped_ticks": 7,
+        "use_motion_prediction_hints": true
+    }
+}
 ```
 
 drowned
@@ -17856,6 +19699,12 @@ small_fireball
 }
 ```
 
+sniffer
+
+```json
+"minecraft:conditional_bandwidth_optimization": {}
+```
+
 snowball
 
 ```json
@@ -18012,6 +19861,18 @@ wandering_trader
 
 ```json
 "minecraft:conditional_bandwidth_optimization": {}
+```
+
+wind_charge_projectile
+
+```json
+"minecraft:conditional_bandwidth_optimization": {
+    "default_values": {
+        "max_optimized_distance": 80.0,
+        "max_dropped_ticks": 7,
+        "use_motion_prediction_hints": true
+    }
+}
 ```
 
 witch
@@ -18212,6 +20073,15 @@ dolphin
 }
 ```
 
+vex
+
+```json
+"minecraft:damage_over_time": {
+    "damage_per_hurt": 1,
+    "time_between_hurt": 1.0
+}
+```
+
 ## damage_sensor
 
 allay
@@ -18237,6 +20107,64 @@ allay
                 }
             },
             "deals_damage": false
+        }
+    ]
+}
+```
+
+armadillo
+
+```json
+"minecraft:damage_sensor": {
+    "triggers": {
+        "on_damage": {
+            "filters": {
+                "any_of": [
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "mob"
+                    },
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "player"
+                    }
+                ]
+            },
+            "event": "minecraft:threat_detected"
+        }
+    }
+}
+```
+
+```json
+"minecraft:damage_sensor": {
+    "triggers": [
+        {
+            "on_damage": {
+                "filters": {
+                    "any_of": [
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "mob"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        }
+                    ]
+                },
+                "event": "minecraft:threat_detected"
+            },
+            "damage_multiplier": 0.5,
+            "damage_modifier": -1.0
+        },
+        {
+            "damage_multiplier": 0.5,
+            "damage_modifier": -1.0
         }
     ]
 }
@@ -18269,10 +20197,22 @@ bee
 
 ```json
 "minecraft:damage_sensor": {
-    "triggers": {
-        "cause": "fall",
-        "deals_damage": false
-    }
+    "triggers": [
+        {
+            "cause": "fall",
+            "deals_damage": "no"
+        },
+        {
+            "on_damage": {
+                "filters": {
+                    "test": "is_block",
+                    "subject": "block",
+                    "value": "minecraft:sweet_berry_bush"
+                }
+            },
+            "deals_damage": "no"
+        }
+    ]
 }
 ```
 
@@ -18287,13 +20227,38 @@ blaze
 }
 ```
 
+breeze
+
+```json
+"minecraft:damage_sensor": {
+    "triggers": [
+        {
+            "cause": "fall",
+            "deals_damage": false
+        },
+        {
+            "on_damage": {
+                "filters": {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "operator": "!=",
+                    "value": "wind_charge"
+                }
+            },
+            "cause": "projectile",
+            "deals_damage": false
+        }
+    ]
+}
+```
+
 cat
 
 ```json
 "minecraft:damage_sensor": {
     "triggers": {
         "cause": "fall",
-        "deals_damage": false
+        "deals_damage": "no"
     }
 }
 ```
@@ -18306,6 +20271,54 @@ chicken
         "cause": "fall",
         "deals_damage": false
     }
+}
+```
+
+creaking
+
+```json
+"minecraft:damage_sensor": {
+    "triggers": [
+        {
+            "cause": "void",
+            "deals_damage": "yes"
+        },
+        {
+            "on_damage": {
+                "filters": {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                },
+                "event": "minecraft:damaged_by_player"
+            },
+            "cause": "all",
+            "deals_damage": "no_but_side_effects_apply"
+        },
+        {
+            "on_damage": {
+                "filters": {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "mob"
+                },
+                "event": "minecraft:damaged_by_entity"
+            },
+            "cause": "all",
+            "deals_damage": "no_but_side_effects_apply"
+        },
+        {
+            "on_damage": {
+                "event": "minecraft:damaged_by_entity"
+            },
+            "cause": "projectile",
+            "deals_damage": "no_but_side_effects_apply"
+        },
+        {
+            "cause": "all",
+            "deals_damage": "no_but_side_effects_apply"
+        }
+    ]
 }
 ```
 
@@ -18333,7 +20346,7 @@ ender_dragon
 "minecraft:damage_sensor": {
     "triggers": {
         "cause": "fall",
-        "deals_damage": false
+        "deals_damage": "no"
     }
 }
 ```
@@ -18351,7 +20364,7 @@ fox
                     "value": "minecraft:sweet_berry_bush"
                 }
             },
-            "deals_damage": false
+            "deals_damage": "no"
         }
     ]
 }
@@ -18465,7 +20478,7 @@ mooshroom
                 },
                 "event": "minecraft:become_brown"
             },
-            "deals_damage": false,
+            "deals_damage": "no",
             "on_damage_sound_event": "convert_mooshroom"
         },
         {
@@ -18487,7 +20500,7 @@ mooshroom
                 },
                 "event": "minecraft:become_red"
             },
-            "deals_damage": false,
+            "deals_damage": "no",
             "on_damage_sound_event": "convert_mooshroom"
         }
     ]
@@ -18511,7 +20524,7 @@ ocelot
 "minecraft:damage_sensor": {
     "triggers": {
         "cause": "fall",
-        "deals_damage": false
+        "deals_damage": "no"
     }
 }
 ```
@@ -18522,7 +20535,7 @@ parrot
 "minecraft:damage_sensor": {
     "triggers": {
         "cause": "fall",
-        "deals_damage": false
+        "deals_damage": "no"
     }
 }
 ```
@@ -18548,56 +20561,6 @@ pig
             "event": "become_zombie"
         },
         "deals_damage": false
-    }
-}
-```
-
-pillager
-
-```json
-"minecraft:damage_sensor": {
-    "triggers": {
-        "on_damage": {
-            "filters": {
-                "all_of": [
-                    {
-                        "test": "has_damage",
-                        "value": "fatal"
-                    },
-                    {
-                        "test": "is_family",
-                        "subject": "other",
-                        "value": "player"
-                    }
-                ]
-            },
-            "event": "minecraft:gain_bad_omen",
-            "target": "other"
-        }
-    }
-}
-```
-
-```json
-"minecraft:damage_sensor": {
-    "triggers": {
-        "on_damage": {
-            "filters": {
-                "all_of": [
-                    {
-                        "test": "has_damage",
-                        "value": "fatal"
-                    },
-                    {
-                        "test": "is_family",
-                        "subject": "other",
-                        "value": "player"
-                    }
-                ]
-            },
-            "event": "minecraft:gain_bad_omen",
-            "target": "other"
-        }
     }
 }
 ```
@@ -18791,56 +20754,6 @@ villager_v2
 }
 ```
 
-vindicator
-
-```json
-"minecraft:damage_sensor": {
-    "triggers": {
-        "on_damage": {
-            "filters": {
-                "all_of": [
-                    {
-                        "test": "has_damage",
-                        "value": "fatal"
-                    },
-                    {
-                        "test": "is_family",
-                        "subject": "other",
-                        "value": "player"
-                    }
-                ]
-            },
-            "event": "minecraft:gain_bad_omen",
-            "target": "other"
-        }
-    }
-}
-```
-
-```json
-"minecraft:damage_sensor": {
-    "triggers": {
-        "on_damage": {
-            "filters": {
-                "all_of": [
-                    {
-                        "test": "has_damage",
-                        "value": "fatal"
-                    },
-                    {
-                        "test": "is_family",
-                        "subject": "other",
-                        "value": "player"
-                    }
-                ]
-            },
-            "event": "minecraft:gain_bad_omen",
-            "target": "other"
-        }
-    }
-}
-```
-
 wandering_trader
 
 ```json
@@ -18894,7 +20807,27 @@ wither
 }
 ```
 
+## dash
+
+camel
+
+```json
+"minecraft:dash": {
+    "cooldown_time": 2.75,
+    "horizontal_momentum": 20.0,
+    "vertical_momentum": 0.6
+}
+```
+
 ## despawn
+
+armadillo
+
+```json
+"minecraft:despawn": {
+    "despawn_from_distance": {}
+}
+```
 
 axolotl
 
@@ -18913,6 +20846,22 @@ bat
 ```
 
 blaze
+
+```json
+"minecraft:despawn": {
+    "despawn_from_distance": {}
+}
+```
+
+bogged
+
+```json
+"minecraft:despawn": {
+    "despawn_from_distance": {}
+}
+```
+
+camel
 
 ```json
 "minecraft:despawn": {
@@ -19535,6 +21484,68 @@ zombie_villager_v2
 }
 ```
 
+## dimension_bound
+
+arrow
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+creaking
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+dragon_fireball
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+ender_dragon
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+fireball
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+fishing_hook
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+small_fireball
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+thrown_trident
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+wither_skull
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+wither_skull_dangerous
+
+```json
+"minecraft:dimension_bound": {}
+```
+
 ## drying_out_timer
 
 axolotl
@@ -19871,12 +21882,12 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
@@ -19888,12 +21899,12 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
@@ -19905,12 +21916,12 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
@@ -19922,12 +21933,12 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
@@ -19939,12 +21950,12 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
@@ -19956,12 +21967,12 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
@@ -19973,12 +21984,12 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
@@ -19990,12 +22001,12 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
@@ -20007,12 +22018,12 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
@@ -20024,12 +22035,12 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
@@ -20041,12 +22052,12 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
@@ -20058,12 +22069,12 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
@@ -20075,12 +22086,12 @@ villager_v2
     "new_screen": true,
     "persist_trades": true,
     "cured_discount": [
-        -100,
-        -100
+        -25,
+        -20
     ],
     "max_cured_discount": [
-        -500,
-        -500
+        -25,
+        -20
     ]
 }
 ```
@@ -20097,53 +22108,163 @@ wandering_trader
 
 ## entity_sensor
 
+armadillo
+
+```json
+"minecraft:entity_sensor": {
+    "subsensors": [
+        {
+            "event": "minecraft:no_threat_detected",
+            "cooldown": 0.2,
+            "range": [
+                7.0,
+                2.0
+            ],
+            "minimum_count": 0,
+            "maximum_count": 0,
+            "event_filters": {
+                "any_of": [
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "undead"
+                    },
+                    {
+                        "all_of": [
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            },
+                            {
+                                "any_of": [
+                                    {
+                                        "test": "was_last_hurt_by",
+                                        "subject": "other"
+                                    },
+                                    {
+                                        "test": "is_sprinting",
+                                        "subject": "other"
+                                    },
+                                    {
+                                        "test": "is_riding",
+                                        "subject": "other"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "event": "minecraft:threat_detected",
+            "cooldown": 0.2,
+            "range": [
+                7.0,
+                2.0
+            ],
+            "minimum_count": 1,
+            "event_filters": {
+                "any_of": [
+                    {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "undead"
+                    },
+                    {
+                        "all_of": [
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            },
+                            {
+                                "any_of": [
+                                    {
+                                        "test": "was_last_hurt_by",
+                                        "subject": "other"
+                                    },
+                                    {
+                                        "test": "is_sprinting",
+                                        "subject": "other"
+                                    },
+                                    {
+                                        "test": "is_riding",
+                                        "subject": "other"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
+```
+
 parrot
 
 ```json
 "minecraft:entity_sensor": {
-    "sensor_range": 2.0,
     "relative_range": false,
-    "event_filters": {
-        "all_of": [
-            {
-                "test": "is_riding",
-                "subject": "self",
-                "operator": "equals",
-                "value": true
+    "subsensors": [
+        {
+            "range": [
+                2.0,
+                2.0
+            ],
+            "event_filters": {
+                "all_of": [
+                    {
+                        "test": "is_riding",
+                        "subject": "self",
+                        "operator": "equals",
+                        "value": true
+                    },
+                    {
+                        "test": "has_component",
+                        "subject": "self",
+                        "operator": "equals",
+                        "value": "minecraft:behavior.look_at_player"
+                    }
+                ]
             },
-            {
-                "test": "has_component",
-                "subject": "self",
-                "operator": "equals",
-                "value": "minecraft:behavior.look_at_player"
-            }
-        ]
-    },
-    "event": "minecraft:on_riding_player"
+            "event": "minecraft:on_riding_player"
+        }
+    ]
 }
 ```
 
 ```json
 "minecraft:entity_sensor": {
-    "sensor_range": 2.0,
     "relative_range": false,
-    "event_filters": {
-        "all_of": [
-            {
-                "test": "is_riding",
-                "subject": "self",
-                "operator": "equals",
-                "value": false
+    "subsensors": [
+        {
+            "range": [
+                2.0,
+                2.0
+            ],
+            "event_filters": {
+                "all_of": [
+                    {
+                        "test": "is_riding",
+                        "subject": "self",
+                        "operator": "equals",
+                        "value": false
+                    },
+                    {
+                        "test": "has_component",
+                        "subject": "self",
+                        "operator": "not",
+                        "value": "minecraft:behavior.look_at_player"
+                    }
+                ]
             },
-            {
-                "test": "has_component",
-                "subject": "self",
-                "operator": "not",
-                "value": "minecraft:behavior.look_at_player"
-            }
-        ]
-    },
-    "event": "minecraft:on_not_riding_player"
+            "event": "minecraft:on_not_riding_player"
+        }
+    ]
 }
 ```
 
@@ -20151,110 +22272,148 @@ pufferfish
 
 ```json
 "minecraft:entity_sensor": {
-    "sensor_range": 2.5,
     "relative_range": false,
-    "minimum_count": 1,
-    "event_filters": {
-        "any_of": [
-            {
-                "test": "is_family",
-                "subject": "other",
-                "value": "mob"
-            },
-            {
-                "all_of": [
+    "subsensors": [
+        {
+            "range": 2.5,
+            "minimum_count": 1,
+            "event_filters": {
+                "any_of": [
                     {
                         "test": "is_family",
                         "subject": "other",
-                        "value": "player"
+                        "value": "mob"
                     },
                     {
-                        "none_of": {
-                            "test": "has_ability",
-                            "subject": "other",
-                            "value": "instabuild"
-                        }
+                        "all_of": [
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            },
+                            {
+                                "test": "has_ability",
+                                "subject": "other",
+                                "operator": "not",
+                                "value": "instabuild"
+                            }
+                        ]
                     }
                 ]
-            }
-        ]
-    },
-    "event": "minecraft:start_half_puff"
+            },
+            "event": "minecraft:start_half_puff"
+        }
+    ]
 }
 ```
 
 ```json
 "minecraft:entity_sensor": {
-    "sensor_range": 2.5,
     "relative_range": false,
-    "minimum_count": 1,
-    "event_filters": {
-        "any_of": [
-            {
-                "test": "is_family",
-                "subject": "other",
-                "value": "mob"
-            },
-            {
-                "all_of": [
+    "subsensors": [
+        {
+            "range": 2.5,
+            "minimum_count": 1,
+            "event_filters": {
+                "any_of": [
                     {
                         "test": "is_family",
                         "subject": "other",
-                        "value": "player"
+                        "value": "mob"
                     },
                     {
-                        "none_of": {
-                            "test": "has_ability",
-                            "subject": "other",
-                            "value": "instabuild"
-                        }
+                        "all_of": [
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            },
+                            {
+                                "test": "has_ability",
+                                "subject": "other",
+                                "operator": "not",
+                                "value": "instabuild"
+                            }
+                        ]
                     }
                 ]
-            }
-        ]
-    },
-    "event": "minecraft:start_full_puff"
+            },
+            "event": "minecraft:start_full_puff"
+        }
+    ]
 }
 ```
 
 ```json
 "minecraft:entity_sensor": {
-    "sensor_range": 2.9,
     "relative_range": false,
-    "require_all": true,
-    "event_filters": {
-        "none_of": [
-            {
-                "test": "is_family",
-                "subject": "other",
-                "value": "mob"
-            },
-            {
-                "all_of": [
+    "subsensors": [
+        {
+            "range": 2.9,
+            "minimum_count": 0,
+            "maximum_count": 0,
+            "event_filters": {
+                "any_of": [
                     {
                         "test": "is_family",
                         "subject": "other",
-                        "value": "player"
+                        "value": "mob"
                     },
                     {
-                        "none_of": {
-                            "test": "has_ability",
-                            "subject": "other",
-                            "value": "instabuild"
-                        }
+                        "all_of": [
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            },
+                            {
+                                "test": "has_ability",
+                                "subject": "other",
+                                "operator": "not",
+                                "value": "instabuild"
+                            }
+                        ]
                     }
                 ]
-            }
-        ],
-        "test": "distance_to_nearest_player",
-        "operator": ">",
-        "value": 2.9
-    },
-    "event": "minecraft:from_full_puff"
+            },
+            "event": "minecraft:from_full_puff"
+        }
+    ]
 }
 ```
 
 ## environment_sensor
+
+armadillo
+
+```json
+"minecraft:environment_sensor": {
+    "triggers": [
+        {
+            "filters": {
+                "any_of": [
+                    {
+                        "test": "on_fire"
+                    },
+                    {
+                        "test": "in_water"
+                    },
+                    {
+                        "test": "is_panicking"
+                    },
+                    {
+                        "test": "is_leashed"
+                    },
+                    {
+                        "test": "is_riding"
+                    }
+                ]
+            },
+            "event": "minecraft:unroll"
+        }
+    ]
+}
+```
 
 axolotl
 
@@ -20357,6 +22516,141 @@ bee
 }
 ```
 
+bogged
+
+```json
+"minecraft:environment_sensor": {
+    "triggers": [
+        {
+            "filters": {
+                "test": "is_underwater",
+                "subject": "self",
+                "operator": "==",
+                "value": true
+            },
+            "event": "minecraft:melee_mode"
+        },
+        {
+            "filters": {
+                "test": "has_ranged_weapon",
+                "subject": "self",
+                "operator": "==",
+                "value": false
+            },
+            "event": "minecraft:melee_mode"
+        }
+    ]
+}
+```
+
+```json
+"minecraft:environment_sensor": {
+    "triggers": [
+        {
+            "filters": {
+                "test": "is_underwater",
+                "subject": "self",
+                "operator": "==",
+                "value": true
+            },
+            "event": "minecraft:melee_mode"
+        },
+        {
+            "filters": {
+                "test": "has_ranged_weapon",
+                "subject": "self",
+                "operator": "==",
+                "value": false
+            },
+            "event": "minecraft:melee_mode"
+        }
+    ]
+}
+```
+
+```json
+"minecraft:environment_sensor": {
+    "triggers": [
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "in_water",
+                        "subject": "self",
+                        "operator": "==",
+                        "value": false
+                    },
+                    {
+                        "test": "has_ranged_weapon",
+                        "subject": "self",
+                        "operator": "==",
+                        "value": true
+                    }
+                ]
+            },
+            "event": "minecraft:ranged_mode"
+        }
+    ]
+}
+```
+
+breeze
+
+```json
+"minecraft:environment_sensor": {
+    "triggers": [
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "on_ground",
+                        "subject": "self",
+                        "value": true
+                    },
+                    {
+                        "test": "has_target",
+                        "subject": "self",
+                        "value": true
+                    },
+                    {
+                        "test": "bool_property",
+                        "operator": "==",
+                        "domain": "minecraft:is_playing_idle_ground_sound"
+                    }
+                ]
+            },
+            "event": "minecraft:stop_playing_idle_ground_sound"
+        },
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "bool_property",
+                        "operator": "!=",
+                        "domain": "minecraft:is_playing_idle_ground_sound"
+                    },
+                    {
+                        "any_of": [
+                            {
+                                "test": "on_ground",
+                                "subject": "self",
+                                "value": false
+                            },
+                            {
+                                "test": "has_target",
+                                "subject": "self",
+                                "value": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            "event": "minecraft:start_playing_idle_ground_sound"
+        }
+    ]
+}
+```
+
 cave_spider
 
 ```json
@@ -20382,6 +22676,82 @@ cave_spider
         },
         "event": "minecraft:become_neutral"
     }
+}
+```
+
+creaking
+
+```json
+"minecraft:environment_sensor": {
+    "triggers": [
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "any_of": [
+                            {
+                                "test": "enum_property",
+                                "domain": "minecraft:creaking_state",
+                                "value": "hostile_observed"
+                            },
+                            {
+                                "test": "enum_property",
+                                "domain": "minecraft:creaking_state",
+                                "value": "hostile_unobserved"
+                            }
+                        ]
+                    },
+                    {
+                        "any_of": [
+                            {
+                                "test": "has_target",
+                                "value": false
+                            },
+                            {
+                                "test": "actor_health",
+                                "subject": "target",
+                                "value": 0
+                            },
+                            {
+                                "test": "target_distance",
+                                "operator": ">",
+                                "value": 24
+                            }
+                        ]
+                    }
+                ]
+            },
+            "event": "minecraft:become_neutral"
+        },
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "int_property",
+                        "domain": "minecraft:creaking_swaying_ticks",
+                        "operator": ">",
+                        "value": 0
+                    },
+                    {
+                        "test": "int_property",
+                        "domain": "minecraft:creaking_swaying_ticks",
+                        "operator": "<=",
+                        "value": 5
+                    }
+                ]
+            },
+            "event": "minecraft:increment_swaying_ticks"
+        },
+        {
+            "filters": {
+                "test": "int_property",
+                "domain": "minecraft:creaking_swaying_ticks",
+                "operator": ">",
+                "value": 5
+            },
+            "event": "minecraft:reset_swaying_ticks"
+        }
+    ]
 }
 ```
 
@@ -20762,7 +23132,7 @@ player
                 }
             ]
         },
-        "event": "minecraft:trigger_raid"
+        "event": "minecraft:gain_raid_omen"
     }
 }
 ```
@@ -21185,6 +23555,52 @@ trader_llama
 }
 ```
 
+wolf
+
+```json
+"minecraft:environment_sensor": {
+    "triggers": [
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "bool_property",
+                        "operator": "!=",
+                        "domain": "minecraft:has_increased_max_health"
+                    },
+                    {
+                        "test": "has_component",
+                        "value": "minecraft:is_tamed"
+                    }
+                ]
+            },
+            "event": "minecraft:increase_max_health"
+        },
+        {
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "bool_property",
+                        "operator": "!=",
+                        "domain": "minecraft:is_armorable"
+                    },
+                    {
+                        "test": "has_component",
+                        "operator": "!=",
+                        "value": "minecraft:is_baby"
+                    },
+                    {
+                        "test": "has_component",
+                        "value": "minecraft:is_tamed"
+                    }
+                ]
+            },
+            "event": "minecraft:become_armorable"
+        }
+    ]
+}
+```
+
 zombie
 
 ```json
@@ -21230,7 +23646,31 @@ zombie
 
 ## equip_item
 
+bogged
+
+```json
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
+```
+
 drowned
+
+```json
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
+```
+
+evocation_illager
 
 ```json
 "minecraft:equip_item": {}
@@ -21245,13 +23685,25 @@ fox
 husk
 
 ```json
-"minecraft:equip_item": {}
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
 ```
 
 piglin
 
 ```json
-"minecraft:equip_item": {}
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
 ```
 
 pillager
@@ -21263,10 +23715,28 @@ pillager
 skeleton
 
 ```json
-"minecraft:equip_item": {}
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
 ```
 
 stray
+
+```json
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
+```
+
+vindicator
 
 ```json
 "minecraft:equip_item": {}
@@ -21275,13 +23745,25 @@ stray
 wither_skeleton
 
 ```json
-"minecraft:equip_item": {}
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
 ```
 
 zombie
 
 ```json
-"minecraft:equip_item": {}
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
 ```
 
 zombie_pigman
@@ -21293,16 +23775,36 @@ zombie_pigman
 zombie_villager
 
 ```json
-"minecraft:equip_item": {}
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
 ```
 
 zombie_villager_v2
 
 ```json
-"minecraft:equip_item": {}
+"minecraft:equip_item": {
+    "excluded_items": [
+        {
+            "item": "minecraft:banner:15"
+        }
+    ]
+}
 ```
 
 ## equipment
+
+bogged
+
+```json
+"minecraft:equipment": {
+    "table": "loot_tables/entities/skeleton_gear.json"
+}
+```
 
 drowned
 
@@ -21430,6 +23932,19 @@ vex
 }
 ```
 
+villager_v2
+
+```json
+"minecraft:equipment": {
+    "slot_drop_chance": [
+        {
+            "slot": "slot.weapon.mainhand",
+            "drop_chance": 0.0
+        }
+    ]
+}
+```
+
 vindicator
 
 ```json
@@ -21493,6 +24008,28 @@ zombie_pigman
 ```
 
 ## equippable
+
+camel
+
+```json
+"minecraft:equippable": {
+    "slots": [
+        {
+            "slot": 0,
+            "item": "saddle",
+            "accepted_items": [
+                "saddle"
+            ],
+            "on_equip": {
+                "event": "minecraft:camel_saddled"
+            },
+            "on_unequip": {
+                "event": "minecraft:camel_unsaddled"
+            }
+        }
+    ]
+}
+```
 
 donkey
 
@@ -21622,6 +24159,15 @@ player
 
 ## experience_reward
 
+armadillo
+
+```json
+"minecraft:experience_reward": {
+    "on_bred": "Math.Random(1,7)",
+    "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+}
+```
+
 axolotl
 
 ```json
@@ -21645,6 +24191,32 @@ blaze
 ```json
 "minecraft:experience_reward": {
     "on_death": "query.last_hit_by_player ? 10 : 0"
+}
+```
+
+bogged
+
+```json
+"minecraft:experience_reward": {
+    "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
+}
+```
+
+breeze
+
+```json
+"minecraft:experience_reward": {
+    "on_bred": "Math.Random(1,7)",
+    "on_death": "query.last_hit_by_player ? 10 : 0"
+}
+```
+
+camel
+
+```json
+"minecraft:experience_reward": {
+    "on_bred": "Math.Random(1,7)",
+    "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
 }
 ```
 
@@ -22050,6 +24622,15 @@ slime
 }
 ```
 
+sniffer
+
+```json
+"minecraft:experience_reward": {
+    "on_bred": "Math.Random(1,7)",
+    "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+}
+```
+
 spider
 
 ```json
@@ -22171,7 +24752,6 @@ zoglin
 
 ```json
 "minecraft:experience_reward": {
-    "on_bred": "Math.Random(1,7)",
     "on_death": "query.last_hit_by_player ? 5 : 0"
 }
 ```
@@ -22241,6 +24821,24 @@ zombie_villager_v2
 ```
 
 ## explode
+
+breeze_wind_charge_projectile
+
+```json
+"minecraft:explode": {
+    "power": 3.0,
+    "particle_effect": "breeze_wind_burst",
+    "sound_effect": "breeze_wind_charge.burst",
+    "knockback_scaling": 0.6,
+    "negates_fall_damage": false,
+    "causes_fire": false,
+    "breaks_blocks": false,
+    "allow_underwater": true,
+    "toggles_blocks": true,
+    "damage_scaling": 0,
+    "max_resistance": 0
+}
+```
 
 creeper
 
@@ -22352,6 +24950,24 @@ tnt_minecart
 }
 ```
 
+wind_charge_projectile
+
+```json
+"minecraft:explode": {
+    "power": 1.2,
+    "particle_effect": "wind_burst",
+    "sound_effect": "wind_charge.burst",
+    "knockback_scaling": 1.22,
+    "negates_fall_damage": true,
+    "causes_fire": false,
+    "breaks_blocks": false,
+    "allow_underwater": true,
+    "toggles_blocks": true,
+    "damage_scaling": 0,
+    "max_resistance": 0
+}
+```
+
 wither_skull
 
 ```json
@@ -22380,6 +24996,12 @@ wither_skull_dangerous
 ## fire_immune
 
 blaze
+
+```json
+"minecraft:fire_immune": {}
+```
+
+creaking
 
 ```json
 "minecraft:fire_immune": {}
@@ -22643,6 +25265,23 @@ blaze
 }
 ```
 
+breeze
+
+```json
+"minecraft:follow_range": {
+    "value": 32.0
+}
+```
+
+creaking
+
+```json
+"minecraft:follow_range": {
+    "value": 32,
+    "max": 32
+}
+```
+
 dolphin
 
 ```json
@@ -22759,6 +25398,14 @@ ravager
 ```json
 "minecraft:follow_range": {
     "value": 64
+}
+```
+
+sniffer
+
+```json
+"minecraft:follow_range": {
+    "value": 64.0
 }
 ```
 
@@ -23062,6 +25709,19 @@ bee
 
 ## healable
 
+camel
+
+```json
+"minecraft:healable": {
+    "items": [
+        {
+            "item": "cactus",
+            "heal_amount": 2
+        }
+    ]
+}
+```
+
 cat
 
 ```json
@@ -23234,6 +25894,19 @@ parrot
 }
 ```
 
+sniffer
+
+```json
+"minecraft:healable": {
+    "items": [
+        {
+            "item": "torchflower_seeds",
+            "heal_amount": 2
+        }
+    ]
+}
+```
+
 trader_llama
 
 ```json
@@ -23258,75 +25931,75 @@ wolf
     "items": [
         {
             "item": "porkchop",
-            "heal_amount": 3
+            "heal_amount": 6
         },
         {
             "item": "cooked_porkchop",
-            "heal_amount": 8
+            "heal_amount": 16
         },
         {
             "item": "fish",
-            "heal_amount": 2
-        },
-        {
-            "item": "salmon",
-            "heal_amount": 2
-        },
-        {
-            "item": "clownfish",
-            "heal_amount": 1
-        },
-        {
-            "item": "pufferfish",
-            "heal_amount": 1
-        },
-        {
-            "item": "cooked_fish",
-            "heal_amount": 5
-        },
-        {
-            "item": "cooked_salmon",
-            "heal_amount": 6
-        },
-        {
-            "item": "beef",
-            "heal_amount": 3
-        },
-        {
-            "item": "cooked_beef",
-            "heal_amount": 8
-        },
-        {
-            "item": "chicken",
-            "heal_amount": 2
-        },
-        {
-            "item": "cooked_chicken",
-            "heal_amount": 6
-        },
-        {
-            "item": "muttonRaw",
-            "heal_amount": 2
-        },
-        {
-            "item": "muttonCooked",
-            "heal_amount": 6
-        },
-        {
-            "item": "rotten_flesh",
             "heal_amount": 4
         },
         {
+            "item": "salmon",
+            "heal_amount": 4
+        },
+        {
+            "item": "clownfish",
+            "heal_amount": 2
+        },
+        {
+            "item": "pufferfish",
+            "heal_amount": 2
+        },
+        {
+            "item": "cooked_fish",
+            "heal_amount": 10
+        },
+        {
+            "item": "cooked_salmon",
+            "heal_amount": 12
+        },
+        {
+            "item": "beef",
+            "heal_amount": 6
+        },
+        {
+            "item": "cooked_beef",
+            "heal_amount": 16
+        },
+        {
+            "item": "chicken",
+            "heal_amount": 4
+        },
+        {
+            "item": "cooked_chicken",
+            "heal_amount": 12
+        },
+        {
+            "item": "muttonRaw",
+            "heal_amount": 4
+        },
+        {
+            "item": "muttonCooked",
+            "heal_amount": 12
+        },
+        {
+            "item": "rotten_flesh",
+            "heal_amount": 8
+        },
+        {
             "item": "rabbit",
-            "heal_amount": 3
+            "heal_amount": 6
         },
         {
             "item": "cooked_rabbit",
-            "heal_amount": 5
+            "heal_amount": 10
         },
         {
             "item": "rabbit_stew",
-            "heal_amount": 10
+            "heal_amount": 20
         }
     ]
 }
@@ -23339,6 +26012,14 @@ allay
 ```json
 "minecraft:health": {
     "value": 20
+}
+```
+
+armadillo
+
+```json
+"minecraft:health": {
+    "value": 12
 }
 ```
 
@@ -23386,6 +26067,32 @@ blaze
 }
 ```
 
+bogged
+
+```json
+"minecraft:health": {
+    "value": 16,
+    "max": 16
+}
+```
+
+breeze
+
+```json
+"minecraft:health": {
+    "value": 30,
+    "max": 30
+}
+```
+
+camel
+
+```json
+"minecraft:health": {
+    "value": 32
+}
+```
+
 cat
 
 ```json
@@ -23426,6 +26133,15 @@ cow
 "minecraft:health": {
     "value": 10,
     "max": 10
+}
+```
+
+creaking
+
+```json
+"minecraft:health": {
+    "value": 1,
+    "max": 1
 }
 ```
 
@@ -23534,8 +26250,8 @@ fox
 
 ```json
 "minecraft:health": {
-    "value": 20,
-    "max": 20
+    "value": 10,
+    "max": 10
 }
 ```
 
@@ -23873,6 +26589,14 @@ slime
 }
 ```
 
+sniffer
+
+```json
+"minecraft:health": {
+    "value": 14
+}
+```
+
 snow_golem
 
 ```json
@@ -24055,8 +26779,8 @@ wolf
 
 ```json
 "minecraft:health": {
-    "value": 20,
-    "max": 20
+    "value": 40,
+    "max": 40
 }
 ```
 
@@ -24147,11 +26871,21 @@ bee
 
 ```json
 "minecraft:home": {
+    "restriction_type": "random_movement",
     "restriction_radius": 22,
     "home_block_list": [
         "minecraft:bee_nest",
         "minecraft:beehive"
     ]
+}
+```
+
+creaking
+
+```json
+"minecraft:home": {
+    "restriction_type": "all_movement",
+    "restriction_radius": 32
 }
 ```
 
@@ -24263,6 +26997,23 @@ allay
 }
 ```
 
+armadillo
+
+```json
+"minecraft:hurt_on_condition": {
+    "damage_conditions": [
+        {
+            "filters": {
+                "test": "in_lava",
+                "subject": "self"
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+        }
+    ]
+}
+```
+
 armor_stand
 
 ```json
@@ -24347,9 +27098,7 @@ bee
         {
             "filters": {
                 "test": "in_lava",
-                "subject": "self",
-                "operator": "==",
-                "value": true
+                "subject": "self"
             },
             "cause": "lava",
             "damage_per_tick": 4
@@ -24388,6 +27137,63 @@ blaze
 ```
 
 boat
+
+```json
+"minecraft:hurt_on_condition": {
+    "damage_conditions": [
+        {
+            "filters": {
+                "test": "in_lava",
+                "subject": "self",
+                "operator": "==",
+                "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+        }
+    ]
+}
+```
+
+bogged
+
+```json
+"minecraft:hurt_on_condition": {
+    "damage_conditions": [
+        {
+            "filters": {
+                "test": "in_lava",
+                "subject": "self",
+                "operator": "==",
+                "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+        }
+    ]
+}
+```
+
+breeze
+
+```json
+"minecraft:hurt_on_condition": {
+    "damage_conditions": [
+        {
+            "filters": {
+                "test": "in_lava",
+                "subject": "self",
+                "operator": "==",
+                "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+        }
+    ]
+}
+```
+
+camel
 
 ```json
 "minecraft:hurt_on_condition": {
@@ -24501,6 +27307,22 @@ cow
 }
 ```
 
+creaking
+
+```json
+"minecraft:hurt_on_condition": {
+    "damage_conditions": [
+        {
+            "filters": {
+                "test": "in_lava"
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+        }
+    ]
+}
+```
+
 creeper
 
 ```json
@@ -24604,18 +27426,14 @@ enderman
         {
             "filters": {
                 "test": "in_lava",
-                "subject": "self",
-                "operator": "==",
-                "value": true
+                "subject": "self"
             },
             "cause": "lava",
             "damage_per_tick": 4
         },
         {
             "filters": {
-                "test": "in_contact_with_water",
-                "operator": "==",
-                "value": true
+                "test": "in_contact_with_water"
             },
             "cause": "drowning",
             "damage_per_tick": 1
@@ -24841,9 +27659,7 @@ llama
         {
             "filters": {
                 "test": "in_lava",
-                "subject": "self",
-                "operator": "==",
-                "value": true
+                "subject": "self"
             },
             "cause": "lava",
             "damage_per_tick": 4
@@ -25126,9 +27942,7 @@ ravager
         {
             "filters": {
                 "test": "in_lava",
-                "subject": "self",
-                "operator": "==",
-                "value": true
+                "subject": "self"
             },
             "cause": "lava",
             "damage_per_tick": 4
@@ -25251,6 +28065,23 @@ slime
 }
 ```
 
+sniffer
+
+```json
+"minecraft:hurt_on_condition": {
+    "damage_conditions": [
+        {
+            "filters": {
+                "test": "in_lava",
+                "subject": "self"
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+        }
+    ]
+}
+```
+
 snow_golem
 
 ```json
@@ -25268,9 +28099,19 @@ snow_golem
         },
         {
             "filters": {
-                "test": "is_temperature_value",
-                "operator": ">",
-                "value": 1.0
+                "all_of": [
+                    {
+                        "test": "is_temperature_value",
+                        "operator": ">",
+                        "value": 1.0
+                    },
+                    {
+                        "test": "has_component",
+                        "subject": "self",
+                        "operator": "!=",
+                        "value": "minecraft:effect.fire_resistance"
+                    }
+                ]
             },
             "cause": "temperature",
             "damage_per_tick": 1
@@ -25650,6 +28491,12 @@ zombie_villager_v2
 
 ## input_ground_controlled
 
+camel
+
+```json
+"minecraft:input_ground_controlled": {}
+```
+
 donkey
 
 ```json
@@ -25768,6 +28615,14 @@ player
 }
 ```
 
+## instant_despawn
+
+creaking
+
+```json
+"minecraft:instant_despawn": {}
+```
+
 ## interact
 
 allay
@@ -25785,7 +28640,7 @@ allay
                             "value": "player"
                         },
                         {
-                            "test": "is_sneaking",
+                            "test": "is_sneak_held",
                             "subject": "other",
                             "value": false
                         }
@@ -25795,6 +28650,181 @@ allay
             "give_item": true,
             "take_item": true,
             "interact_text": "action.interact.allay"
+        }
+    ]
+}
+```
+
+armadillo
+
+```json
+"minecraft:interact": {
+    "interactions": [
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "brush"
+                        }
+                    ]
+                }
+            },
+            "play_sounds": "mob.armadillo.brush",
+            "interact_text": "action.interact.brush",
+            "hurt_item": 16,
+            "swing": true,
+            "spawn_items": {
+                "table": "loot_tables/entities/armadillo_brush.json"
+            }
+        }
+    ]
+}
+```
+
+bee
+
+```json
+"minecraft:interact": {
+    "interactions": [
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "domain": "hand",
+                            "subject": "other",
+                            "value": "minecraft:open_eyeblossom"
+                        }
+                    ]
+                },
+                "event": "fed_open_eyeblossom"
+            },
+            "use_item": true,
+            "particle_on_start": {
+                "particle_type": "food"
+            },
+            "interact_text": "action.interact.feed"
+        },
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "domain": "hand",
+                            "subject": "other",
+                            "value": "minecraft:wither_rose"
+                        }
+                    ]
+                },
+                "event": "fed_wither_rose"
+            },
+            "use_item": true,
+            "particle_on_start": {
+                "particle_type": "food"
+            },
+            "interact_text": "action.interact.feed"
+        }
+    ]
+}
+```
+
+bogged
+
+```json
+"minecraft:interact": {
+    "interactions": [
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "shears"
+                        },
+                        {
+                            "test": "has_component",
+                            "operator": "!=",
+                            "value": "minecraft:is_sheared"
+                        }
+                    ]
+                },
+                "event": "be_sheared",
+                "target": "self"
+            },
+            "use_item": false,
+            "hurt_item": 1,
+            "play_sounds": "shear",
+            "spawn_items": {
+                "table": "loot_tables/entities/bogged_shear.json"
+            },
+            "interact_text": "action.interact.shear"
+        }
+    ]
+}
+```
+
+camel
+
+```json
+"minecraft:interact": {
+    "interactions": [
+        {
+            "play_sounds": "saddle",
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "self",
+                            "domain": "inventory",
+                            "operator": "not",
+                            "value": "saddle"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "saddle"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_sneak_held",
+                            "subject": "other",
+                            "value": false
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "equip_item_slot": "0",
+            "interact_text": "action.interact.saddle"
         }
     ]
 }
@@ -25898,7 +28928,7 @@ donkey
                             "value": "player"
                         },
                         {
-                            "test": "is_sneaking",
+                            "test": "is_sneak_held",
                             "subject": "other",
                             "value": false
                         }
@@ -25906,7 +28936,7 @@ donkey
                 },
                 "target": "self"
             },
-            "equip_item_slot": 0,
+            "equip_item_slot": "0",
             "interact_text": "action.interact.equip"
         }
     ]
@@ -25940,7 +28970,7 @@ donkey
                             "value": "player"
                         },
                         {
-                            "test": "is_sneaking",
+                            "test": "is_sneak_held",
                             "subject": "other",
                             "value": false
                         }
@@ -25948,7 +28978,7 @@ donkey
                 },
                 "target": "self"
             },
-            "equip_item_slot": 0,
+            "equip_item_slot": "0",
             "interact_text": "action.interact.saddle"
         },
         {
@@ -26019,7 +29049,7 @@ donkey
                 },
                 "target": "self"
             },
-            "equip_item_slot": 0,
+            "equip_item_slot": "0",
             "interact_text": "action.interact.saddle"
         }
     ]
@@ -26172,7 +29202,7 @@ horse
                             "value": "player"
                         },
                         {
-                            "test": "is_sneaking",
+                            "test": "is_sneak_held",
                             "subject": "other",
                             "value": false
                         }
@@ -26180,7 +29210,7 @@ horse
                 },
                 "target": "self"
             },
-            "equip_item_slot": 1,
+            "equip_item_slot": "1",
             "interact_text": "action.interact.equiphorsearmor"
         },
         {
@@ -26207,7 +29237,7 @@ horse
                             "value": "player"
                         },
                         {
-                            "test": "is_sneaking",
+                            "test": "is_sneak_held",
                             "subject": "other",
                             "value": false
                         }
@@ -26215,7 +29245,7 @@ horse
                 },
                 "target": "self"
             },
-            "equip_item_slot": 0,
+            "equip_item_slot": "0",
             "interact_text": "action.interact.saddle"
         }
     ]
@@ -26324,7 +29354,7 @@ llama
                 },
                 "target": "self"
             },
-            "equip_item_slot": 0,
+            "equip_item_slot": "0",
             "interact_text": "action.interact.equipcarpet"
         }
     ]
@@ -26366,7 +29396,7 @@ llama
                 },
                 "target": "self"
             },
-            "equip_item_slot": 0,
+            "equip_item_slot": "0",
             "interact_text": "action.interact.equipcarpet"
         }
     ]
@@ -26418,7 +29448,7 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:2"
+                            "value": "allium"
                         },
                         {
                             "test": "is_family",
@@ -26459,7 +29489,7 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:3"
+                            "value": "azure_bluet"
                         },
                         {
                             "test": "is_family",
@@ -26500,7 +29530,7 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:1"
+                            "value": "blue_orchid"
                         },
                         {
                             "test": "is_family",
@@ -26541,7 +29571,7 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:9"
+                            "value": "cornflower"
                         },
                         {
                             "test": "is_family",
@@ -26582,7 +29612,7 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "yellow_flower"
+                            "value": "dandelion"
                         },
                         {
                             "test": "is_family",
@@ -26623,7 +29653,7 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:10"
+                            "value": "lily_of_the_valley"
                         },
                         {
                             "test": "is_family",
@@ -26664,7 +29694,7 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:8"
+                            "value": "oxeye_daisy"
                         },
                         {
                             "test": "is_family",
@@ -26705,7 +29735,7 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:0"
+                            "value": "poppy"
                         },
                         {
                             "test": "is_family",
@@ -26746,25 +29776,25 @@ mooshroom
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:4"
+                            "value": "red_tulip"
                         },
                         {
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:5"
+                            "value": "orange_tulip"
                         },
                         {
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:6"
+                            "value": "white_tulip"
                         },
                         {
                             "test": "has_equipment",
                             "subject": "other",
                             "domain": "hand",
-                            "value": "red_flower:7"
+                            "value": "pink_tulip"
                         }
                     ],
                     "all_of": [
@@ -26829,6 +29859,129 @@ mooshroom
                     ]
                 },
                 "event": "minecraft:ate_rose",
+                "target": "self"
+            },
+            "use_item": true,
+            "play_sounds": "eat",
+            "particle_on_start": {
+                "particle_type": "smoke",
+                "particle_y_offset": 0.25,
+                "particle_offset_towards_interactor": true
+            },
+            "interact_text": "action.interact.feed"
+        },
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "torchflower"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_variant",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": 1
+                        },
+                        {
+                            "test": "is_mark_variant",
+                            "subject": "self",
+                            "operator": "!=",
+                            "value": 10
+                        }
+                    ]
+                },
+                "event": "minecraft:ate_torchflower",
+                "target": "self"
+            },
+            "use_item": true,
+            "play_sounds": "eat",
+            "particle_on_start": {
+                "particle_type": "smoke",
+                "particle_y_offset": 0.25,
+                "particle_offset_towards_interactor": true
+            },
+            "interact_text": "action.interact.feed"
+        },
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "open_eyeblossom"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_variant",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": 1
+                        },
+                        {
+                            "test": "is_mark_variant",
+                            "subject": "self",
+                            "operator": "!=",
+                            "value": 11
+                        }
+                    ]
+                },
+                "event": "minecraft:ate_open_eyeblossom",
+                "target": "self"
+            },
+            "use_item": true,
+            "play_sounds": "eat",
+            "particle_on_start": {
+                "particle_type": "smoke",
+                "particle_y_offset": 0.25,
+                "particle_offset_towards_interactor": true
+            },
+            "interact_text": "action.interact.feed"
+        },
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "closed_eyeblossom"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_variant",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": 1
+                        },
+                        {
+                            "test": "is_mark_variant",
+                            "subject": "self",
+                            "operator": "!=",
+                            "value": 12
+                        }
+                    ]
+                },
+                "event": "minecraft:ate_closed_eyeblossom",
                 "target": "self"
             },
             "use_item": true,
@@ -26969,7 +30122,7 @@ mule
                             "value": "player"
                         },
                         {
-                            "test": "is_sneaking",
+                            "test": "is_sneak_held",
                             "subject": "other",
                             "value": false
                         }
@@ -27005,7 +30158,7 @@ mule
                             "value": "player"
                         },
                         {
-                            "test": "is_sneaking",
+                            "test": "is_sneak_held",
                             "subject": "other",
                             "value": false
                         }
@@ -27013,7 +30166,7 @@ mule
                 },
                 "target": "self"
             },
-            "equip_item_slot": 0,
+            "equip_item_slot": "0",
             "interact_text": "action.interact.saddle"
         }
     ]
@@ -27047,7 +30200,7 @@ mule
                             "value": "player"
                         },
                         {
-                            "test": "is_sneaking",
+                            "test": "is_sneak_held",
                             "subject": "other",
                             "value": false
                         }
@@ -27055,7 +30208,7 @@ mule
                 },
                 "target": "self"
             },
-            "equip_item_slot": 0,
+            "equip_item_slot": "0",
             "interact_text": "action.interact.saddle"
         }
     ]
@@ -27809,6 +30962,143 @@ trader_llama
 }
 ```
 
+wolf
+
+```json
+"minecraft:interact": {
+    "interactions": [
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "self",
+                            "domain": "armor",
+                            "operator": "not",
+                            "value": "wolf_armor"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "wolf_armor"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_owner",
+                            "subject": "other",
+                            "value": true
+                        },
+                        {
+                            "test": "is_sneak_held",
+                            "subject": "other",
+                            "value": false
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "equip_item_slot": "slot.armor.body",
+            "play_sounds": "armor.equip_wolf",
+            "interact_text": "action.interact.equipwolfarmor"
+        },
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "has_equipment",
+                            "subject": "self",
+                            "domain": "armor",
+                            "value": "wolf_armor"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "shears"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_owner",
+                            "subject": "other",
+                            "value": true
+                        },
+                        {
+                            "test": "is_sneak_held",
+                            "subject": "other",
+                            "value": false
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "hurt_item": 1,
+            "drop_item_slot": "slot.armor.body",
+            "play_sounds": "armor.unequip_wolf",
+            "interact_text": "action.interact.removewolfarmor",
+            "vibration": "shear"
+        },
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "is_sitting",
+                            "subject": "self"
+                        },
+                        {
+                            "test": "has_damaged_equipment",
+                            "subject": "self",
+                            "domain": "armor",
+                            "value": "wolf_armor"
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "is_owner",
+                            "subject": "other",
+                            "value": true
+                        },
+                        {
+                            "test": "is_sneak_held",
+                            "subject": "other",
+                            "value": false
+                        },
+                        {
+                            "test": "has_equipment",
+                            "domain": "hand",
+                            "subject": "other",
+                            "value": "armadillo_scute"
+                        }
+                    ]
+                },
+                "target": "self"
+            },
+            "repair_entity_item": {
+                "slot": "slot.armor.body",
+                "amount": 8
+            },
+            "use_item": true,
+            "play_sounds": "armor.repair_wolf",
+            "interact_text": "action.interact.repairwolfarmor"
+        }
+    ]
+}
+```
+
 zombie_villager
 
 ```json
@@ -27876,6 +31166,14 @@ allay
 ```json
 "minecraft:inventory": {
     "inventory_size": 1
+}
+```
+
+camel
+
+```json
+"minecraft:inventory": {
+    "container_type": "horse"
 }
 ```
 
@@ -27999,6 +31297,12 @@ villager_v2
 
 ## is_baby
 
+armadillo
+
+```json
+"minecraft:is_baby": {}
+```
+
 axolotl
 
 ```json
@@ -28006,6 +31310,12 @@ axolotl
 ```
 
 bee
+
+```json
+"minecraft:is_baby": {}
+```
+
+camel
 
 ```json
 "minecraft:is_baby": {}
@@ -28144,6 +31454,12 @@ sheep
 ```
 
 skeleton_horse
+
+```json
+"minecraft:is_baby": {}
+```
+
+sniffer
 
 ```json
 "minecraft:is_baby": {}
@@ -28301,6 +31617,12 @@ allay
 "minecraft:is_hidden_when_invisible": {}
 ```
 
+armadillo
+
+```json
+"minecraft:is_hidden_when_invisible": {}
+```
+
 axolotl
 
 ```json
@@ -28325,6 +31647,24 @@ blaze
 "minecraft:is_hidden_when_invisible": {}
 ```
 
+bogged
+
+```json
+"minecraft:is_hidden_when_invisible": {}
+```
+
+breeze
+
+```json
+"minecraft:is_hidden_when_invisible": {}
+```
+
+camel
+
+```json
+"minecraft:is_hidden_when_invisible": {}
+```
+
 cat
 
 ```json
@@ -28344,6 +31684,12 @@ chicken
 ```
 
 cow
+
+```json
+"minecraft:is_hidden_when_invisible": {}
+```
+
+creaking
 
 ```json
 "minecraft:is_hidden_when_invisible": {}
@@ -28607,6 +31953,12 @@ slime
 "minecraft:is_hidden_when_invisible": {}
 ```
 
+sniffer
+
+```json
+"minecraft:is_hidden_when_invisible": {}
+```
+
 snow_golem
 
 ```json
@@ -28791,7 +32143,21 @@ vindicator
 "minecraft:is_illager_captain": {}
 ```
 
+## is_pregnant
+
+sniffer
+
+```json
+"minecraft:is_pregnant": {}
+```
+
 ## is_saddled
+
+camel
+
+```json
+"minecraft:is_saddled": {}
+```
 
 donkey
 
@@ -28889,6 +32255,12 @@ zombie_villager_v2
 
 ## is_sheared
 
+bogged
+
+```json
+"minecraft:is_sheared": {}
+```
+
 sheep
 
 ```json
@@ -28950,6 +32322,12 @@ ravager
 ```
 
 ## is_tamed
+
+camel
+
+```json
+"minecraft:is_tamed": {}
+```
 
 cat
 
@@ -29059,6 +32437,12 @@ allay
 "minecraft:jump.static": {}
 ```
 
+armadillo
+
+```json
+"minecraft:jump.static": {}
+```
+
 axolotl
 
 ```json
@@ -29083,6 +32467,24 @@ blaze
 "minecraft:jump.static": {}
 ```
 
+bogged
+
+```json
+"minecraft:jump.static": {}
+```
+
+breeze
+
+```json
+"minecraft:jump.static": {}
+```
+
+camel
+
+```json
+"minecraft:jump.static": {}
+```
+
 cat
 
 ```json
@@ -29102,6 +32504,12 @@ chicken
 ```
 
 cow
+
+```json
+"minecraft:jump.static": {}
+```
+
+creaking
 
 ```json
 "minecraft:jump.static": {}
@@ -29325,6 +32733,12 @@ slime
 "minecraft:jump.static": {}
 ```
 
+sniffer
+
+```json
+"minecraft:jump.static": {}
+```
+
 snow_golem
 
 ```json
@@ -29473,6 +32887,28 @@ armor_stand
 }
 ```
 
+breeze
+
+```json
+"minecraft:knockback_resistance": {
+    "value": 0.0
+}
+```
+
+creaking
+
+```json
+"minecraft:knockback_resistance": {
+    "value": 0.0
+}
+```
+
+```json
+"minecraft:knockback_resistance": {
+    "value": 1.0
+}
+```
+
 ender_dragon
 
 ```json
@@ -29544,6 +32980,16 @@ allay
 }
 ```
 
+armadillo
+
+```json
+"minecraft:leashable": {
+    "soft_distance": 4.0,
+    "hard_distance": 6.0,
+    "max_distance": 10.0
+}
+```
+
 axolotl
 
 ```json
@@ -29565,6 +33011,16 @@ bee
 ```
 
 boat
+
+```json
+"minecraft:leashable": {
+    "soft_distance": 4.0,
+    "hard_distance": 6.0,
+    "max_distance": 10.0
+}
+```
+
+camel
 
 ```json
 "minecraft:leashable": {
@@ -29809,6 +33265,16 @@ skeleton_horse
 }
 ```
 
+sniffer
+
+```json
+"minecraft:leashable": {
+    "soft_distance": 4.0,
+    "hard_distance": 6.0,
+    "max_distance": 10.0
+}
+```
+
 snow_golem
 
 ```json
@@ -29888,30 +33354,105 @@ zombie_horse
 }
 ```
 
-## lookat
+## looked_at
+
+creaking
+
+```json
+"minecraft:looked_at": {
+    "search_radius": 12.0,
+    "look_at_locations": [
+        {
+            "location": "head"
+        },
+        {
+            "location": "body"
+        },
+        {
+            "location": "feet",
+            "vertical_offset": 0.5
+        }
+    ],
+    "set_target": "once_and_keep_scanning",
+    "find_players_only": true,
+    "looked_at_cooldown": 0.1,
+    "field_of_view": 120,
+    "scale_fov_by_distance": false,
+    "line_of_sight_obstruction_type": "collision_for_camera",
+    "looked_at_event": {
+        "event": "minecraft:become_hostile",
+        "filter": "self"
+    },
+    "filters": {
+        "test": "actor_health",
+        "subject": "other",
+        "operator": ">",
+        "value": 0
+    }
+}
+```
+
+```json
+"minecraft:looked_at": {
+    "search_radius": 24.0,
+    "look_at_locations": [
+        {
+            "location": "head"
+        },
+        {
+            "location": "body"
+        },
+        {
+            "location": "feet",
+            "vertical_offset": 0.5
+        }
+    ],
+    "set_target": "never",
+    "find_players_only": true,
+    "looked_at_cooldown": 0.1,
+    "field_of_view": 120,
+    "scale_fov_by_distance": false,
+    "line_of_sight_obstruction_type": "collision_for_camera",
+    "looked_at_event": {
+        "event": "minecraft:on_target_start_looking",
+        "filter": "self"
+    },
+    "not_looked_at_event": {
+        "event": "minecraft:on_target_stop_looking",
+        "filter": "self"
+    },
+    "filters": {
+        "none_of": [
+            {
+                "test": "actor_health",
+                "subject": "target",
+                "value": 0
+            },
+            {
+                "test": "has_equipment",
+                "subject": "other",
+                "domain": "head",
+                "value": "carved_pumpkin"
+            }
+        ]
+    }
+}
+```
 
 enderman
 
 ```json
-"minecraft:lookat": {
+"minecraft:looked_at": {
     "search_radius": 64.0,
-    "set_target": true,
-    "look_cooldown": 5.0,
+    "set_target": "once_and_stop_scanning",
+    "find_players_only": true,
+    "looked_at_cooldown": 5.0,
     "filters": {
-        "all_of": [
-            {
-                "subject": "other",
-                "test": "is_family",
-                "value": "player"
-            },
-            {
-                "test": "has_equipment",
-                "domain": "head",
-                "subject": "other",
-                "operator": "not",
-                "value": "carved_pumpkin"
-            }
-        ]
+        "test": "has_equipment",
+        "domain": "head",
+        "subject": "other",
+        "operator": "not",
+        "value": "carved_pumpkin"
     }
 }
 ```
@@ -29939,6 +33480,22 @@ boat
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/boat.json"
+}
+```
+
+bogged
+
+```json
+"minecraft:loot": {
+    "table": "loot_tables/entities/bogged.json"
+}
+```
+
+breeze
+
+```json
+"minecraft:loot": {
+    "table": "loot_tables/entities/breeze.json"
 }
 ```
 
@@ -30246,6 +33803,18 @@ pillager
 }
 ```
 
+```json
+"minecraft:loot": {
+    "table": "loot_tables/entities/pillager_captain.json"
+}
+```
+
+```json
+"minecraft:loot": {
+    "table": "loot_tables/entities/pillager_captain.json"
+}
+```
+
 player
 
 ```json
@@ -30449,6 +34018,18 @@ vindicator
 ```json
 "minecraft:loot": {
     "table": "loot_tables/entities/vindicator_raid.json"
+}
+```
+
+```json
+"minecraft:loot": {
+    "table": "loot_tables/entities/pillager_captain.json"
+}
+```
+
+```json
+"minecraft:loot": {
+    "table": "loot_tables/entities/pillager_captain.json"
 }
 ```
 
@@ -30669,6 +34250,24 @@ mooshroom
 ```json
 "minecraft:mark_variant": {
     "value": 9
+}
+```
+
+```json
+"minecraft:mark_variant": {
+    "value": 10
+}
+```
+
+```json
+"minecraft:mark_variant": {
+    "value": 11
+}
+```
+
+```json
+"minecraft:mark_variant": {
+    "value": 12
 }
 ```
 
@@ -30984,6 +34583,28 @@ warden
 }
 ```
 
+## mob_effect_immunity
+
+silverfish
+
+```json
+"minecraft:mob_effect_immunity": {
+    "mob_effects": [
+        "infested"
+    ]
+}
+```
+
+slime
+
+```json
+"minecraft:mob_effect_immunity": {
+    "mob_effects": [
+        "oozing"
+    ]
+}
+```
+
 ## movement
 
 allay
@@ -30991,6 +34612,20 @@ allay
 ```json
 "minecraft:movement": {
     "value": 0.1
+}
+```
+
+armadillo
+
+```json
+"minecraft:movement": {
+    "value": 0.14
+}
+```
+
+```json
+"minecraft:movement": {
+    "value": 0.0
 }
 ```
 
@@ -31026,6 +34661,30 @@ blaze
 }
 ```
 
+bogged
+
+```json
+"minecraft:movement": {
+    "value": 0.25
+}
+```
+
+breeze
+
+```json
+"minecraft:movement": {
+    "value": 0.4
+}
+```
+
+camel
+
+```json
+"minecraft:movement": {
+    "value": 0.09
+}
+```
+
 cat
 
 ```json
@@ -31055,6 +34714,20 @@ cow
 ```json
 "minecraft:movement": {
     "value": 0.25
+}
+```
+
+creaking
+
+```json
+"minecraft:movement": {
+    "value": 0.4
+}
+```
+
+```json
+"minecraft:movement": {
+    "value": 0.0
 }
 ```
 
@@ -31488,6 +35161,14 @@ slime
 }
 ```
 
+sniffer
+
+```json
+"minecraft:movement": {
+    "value": 0.09
+}
+```
+
 snow_golem
 
 ```json
@@ -31732,6 +35413,12 @@ turtle
 
 ## movement.basic
 
+armadillo
+
+```json
+"minecraft:movement.basic": {}
+```
+
 bat
 
 ```json
@@ -31739,6 +35426,24 @@ bat
 ```
 
 blaze
+
+```json
+"minecraft:movement.basic": {}
+```
+
+bogged
+
+```json
+"minecraft:movement.basic": {}
+```
+
+breeze
+
+```json
+"minecraft:movement.basic": {}
+```
+
+camel
 
 ```json
 "minecraft:movement.basic": {}
@@ -31763,6 +35468,12 @@ chicken
 ```
 
 cow
+
+```json
+"minecraft:movement.basic": {}
+```
+
+creaking
 
 ```json
 "minecraft:movement.basic": {}
@@ -31931,6 +35642,12 @@ skeleton
 ```
 
 skeleton_horse
+
+```json
+"minecraft:movement.basic": {}
+```
+
+sniffer
 
 ```json
 "minecraft:movement.basic": {}
@@ -32251,6 +35968,12 @@ allay
 "minecraft:nameable": {}
 ```
 
+armadillo
+
+```json
+"minecraft:nameable": {}
+```
+
 armor_stand
 
 ```json
@@ -32281,6 +36004,24 @@ blaze
 "minecraft:nameable": {}
 ```
 
+bogged
+
+```json
+"minecraft:nameable": {}
+```
+
+breeze
+
+```json
+"minecraft:nameable": {}
+```
+
+camel
+
+```json
+"minecraft:nameable": {}
+```
+
 cat
 
 ```json
@@ -32300,6 +36041,12 @@ chicken
 ```
 
 cow
+
+```json
+"minecraft:nameable": {}
+```
+
+creaking
 
 ```json
 "minecraft:nameable": {}
@@ -32570,6 +36317,12 @@ skeleton_horse
 ```
 
 slime
+
+```json
+"minecraft:nameable": {}
+```
+
+sniffer
 
 ```json
 "minecraft:nameable": {}
@@ -33028,12 +36781,53 @@ bee
 
 ## navigation.walk
 
+armadillo
+
+```json
+"minecraft:navigation.walk": {
+    "can_path_over_water": true,
+    "avoid_damage_blocks": true,
+    "avoid_water": true
+}
+```
+
 blaze
 
 ```json
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
     "avoid_water": true,
+    "avoid_damage_blocks": true
+}
+```
+
+bogged
+
+```json
+"minecraft:navigation.walk": {
+    "is_amphibious": true,
+    "avoid_sun": true,
+    "avoid_water": true
+}
+```
+
+breeze
+
+```json
+"minecraft:navigation.walk": {
+    "blocks_to_avoid": [
+        {
+            "tags": "query.any_tag('trapdoors')"
+        }
+    ]
+}
+```
+
+camel
+
+```json
+"minecraft:navigation.walk": {
+    "can_path_over_water": true,
     "avoid_damage_blocks": true
 }
 ```
@@ -33064,6 +36858,24 @@ cow
     "can_path_over_water": true,
     "avoid_water": true,
     "avoid_damage_blocks": true
+}
+```
+
+creaking
+
+```json
+"minecraft:navigation.walk": {
+    "can_path_over_water": true,
+    "can_path_over_lava": false,
+    "avoid_damage_blocks": true
+}
+```
+
+```json
+"minecraft:navigation.walk": {
+    "can_path_over_water": true,
+    "can_path_over_lava": true,
+    "avoid_damage_blocks": false
 }
 ```
 
@@ -33358,6 +37170,16 @@ slime
 "minecraft:navigation.walk": {
     "can_path_over_water": true,
     "avoid_water": true
+}
+```
+
+sniffer
+
+```json
+"minecraft:navigation.walk": {
+    "can_path_over_water": true,
+    "avoid_water": true,
+    "avoid_damage_blocks": true
 }
 ```
 
@@ -34179,6 +38001,15 @@ wolf
 }
 ```
 
+zoglin
+
+```json
+"minecraft:on_target_acquired": {
+    "event": "become_angry_event",
+    "target": "self"
+}
+```
+
 zombie_pigman
 
 ```json
@@ -34383,6 +38214,12 @@ armor_stand
 "minecraft:persistent": {}
 ```
 
+breeze
+
+```json
+"minecraft:persistent": {}
+```
+
 ender_dragon
 
 ```json
@@ -34418,6 +38255,12 @@ pillager
 ```
 
 ravager
+
+```json
+"minecraft:persistent": {}
+```
+
+sniffer
 
 ```json
 "minecraft:persistent": {}
@@ -34483,6 +38326,12 @@ area_effect_cloud
 }
 ```
 
+armadillo
+
+```json
+"minecraft:physics": {}
+```
+
 armor_stand
 
 ```json
@@ -34520,6 +38369,30 @@ blaze
 ```
 
 boat
+
+```json
+"minecraft:physics": {}
+```
+
+bogged
+
+```json
+"minecraft:physics": {}
+```
+
+breeze
+
+```json
+"minecraft:physics": {}
+```
+
+breeze_wind_charge_projectile
+
+```json
+"minecraft:physics": {}
+```
+
+camel
 
 ```json
 "minecraft:physics": {}
@@ -34567,6 +38440,12 @@ cow
 "minecraft:physics": {}
 ```
 
+creaking
+
+```json
+"minecraft:physics": {}
+```
+
 creeper
 
 ```json
@@ -34580,6 +38459,12 @@ dolphin
 ```
 
 donkey
+
+```json
+"minecraft:physics": {}
+```
+
+dragon_fireball
 
 ```json
 "minecraft:physics": {}
@@ -34930,6 +38815,12 @@ small_fireball
 "minecraft:physics": {}
 ```
 
+sniffer
+
+```json
+"minecraft:physics": {}
+```
+
 snowball
 
 ```json
@@ -35056,6 +38947,12 @@ wandering_trader
 ```
 
 warden
+
+```json
+"minecraft:physics": {}
+```
+
+wind_charge_projectile
 
 ```json
 "minecraft:physics": {}
@@ -35210,26 +39107,119 @@ iron_golem
             "blocks": [
                 "cobblestone",
                 "stone",
-                "stonebrick",
+                "granite",
+                "polished_granite",
+                "diorite",
+                "polished_diorite",
+                "andesite",
+                "polished_andesite",
+                "stone_bricks",
+                "mossy_stone_bricks",
+                "cracked_stone_bricks",
+                "chiseled_stone_bricks",
                 "sandstone",
+                "cut_sandstone",
+                "chiseled_sandstone",
+                "smooth_sandstone",
                 "mossy_cobblestone",
-                "stone_slab",
-                "stone_slab2",
-                "stone_slab3",
-                "stone_slab4",
-                "double_stone_slab",
-                "double_stone_slab2",
-                "double_stone_slab3",
-                "double_stone_slab4",
-                "wooden_slab",
-                "double_wooden_slab",
-                "planks",
+                "smooth_stone_slab",
+                "sandstone_slab",
+                "cobblestone_slab",
+                "brick_slab",
+                "stone_brick_slab",
+                "quartz_slab",
+                "nether_brick_slab",
+                "red_sandstone_slab",
+                "purpur_slab",
+                "prismarine_slab",
+                "dark_prismarine_slab",
+                "prismarine_brick_slab",
+                "mossy_cobblestone_slab",
+                "smooth_sandstone_slab",
+                "red_nether_brick_slab",
+                "end_stone_brick_slab",
+                "smooth_red_sandstone_slab",
+                "polished_andesite_slab",
+                "andesite_slab",
+                "diorite_slab",
+                "polished_diorite_slab",
+                "granite_slab",
+                "polished_granite_slab",
+                "mossy_stone_brick_slab",
+                "smooth_quartz_slab",
+                "normal_stone_slab",
+                "cut_sandstone_slab",
+                "cut_red_sandstone_slab",
+                "smooth_stone_double_slab",
+                "sandstone_double_slab",
+                "cobblestone_double_slab",
+                "brick_double_slab",
+                "stone_brick_double_slab",
+                "quartz_double_slab",
+                "nether_brick_double_slab",
+                "red_sandstone_double_slab",
+                "purpur_double_slab",
+                "prismarine_double_slab",
+                "dark_prismarine_double_slab",
+                "prismarine_brick_double_slab",
+                "mossy_cobblestone_double_slab",
+                "smooth_sandstone_double_slab",
+                "red_nether_brick_double_slab",
+                "end_stone_brick_double_slab",
+                "smooth_red_sandstone_double_slab",
+                "polished_andesite_double_slab",
+                "andesite_double_slab",
+                "diorite_double_slab",
+                "polished_diorite_double_slab",
+                "granite_double_slab",
+                "polished_granite_double_slab",
+                "mossy_stone_brick_double_slab",
+                "smooth_quartz_double_slab",
+                "normal_stone_double_slab",
+                "cut_sandstone_double_slab",
+                "cut_red_sandstone_double_slab",
+                "oak_slab",
+                "spruce_slab",
+                "birch_slab",
+                "jungle_slab",
+                "acacia_slab",
+                "dark_oak_slab",
+                "oak_double_slab",
+                "spruce_double_slab",
+                "birch_double_slab",
+                "jungle_double_slab",
+                "acacia_double_slab",
+                "dark_oak_double_slab",
+                "oak_planks",
+                "spruce_planks",
+                "birch_planks",
+                "jungle_planks",
+                "acacia_planks",
+                "dark_oak_planks",
                 "brick_block",
                 "nether_brick",
                 "red_nether_brick",
                 "end_bricks",
                 "red_sandstone",
-                "stained_glass",
+                "cut_red_sandstone",
+                "chiseled_red_sandstone",
+                "smooth_red_sandstone",
+                "white_stained_glass",
+                "orange_stained_glass",
+                "magenta_stained_glass",
+                "light_blue_stained_glass",
+                "yellow_stained_glass",
+                "lime_stained_glass",
+                "pink_stained_glass",
+                "gray_stained_glass",
+                "light_gray_stained_glass",
+                "cyan_stained_glass",
+                "purple_stained_glass",
+                "blue_stained_glass",
+                "brown_stained_glass",
+                "green_stained_glass",
+                "red_stained_glass",
+                "black_stained_glass",
                 "glass",
                 "glowstone",
                 "prismarine",
@@ -35298,26 +39288,119 @@ villager_v2
             "blocks": [
                 "cobblestone",
                 "stone",
-                "stonebrick",
+                "granite",
+                "polished_granite",
+                "diorite",
+                "polished_diorite",
+                "andesite",
+                "polished_andesite",
+                "stone_bricks",
+                "mossy_stone_bricks",
+                "cracked_stone_bricks",
+                "chiseled_stone_bricks",
                 "sandstone",
+                "cut_sandstone",
+                "chiseled_sandstone",
+                "smooth_sandstone",
                 "mossy_cobblestone",
-                "stone_slab",
-                "stone_slab2",
-                "stone_slab3",
-                "stone_slab4",
-                "double_stone_slab",
-                "double_stone_slab2",
-                "double_stone_slab3",
-                "double_stone_slab4",
-                "wooden_slab",
-                "double_wooden_slab",
-                "planks",
+                "smooth_stone_slab",
+                "sandstone_slab",
+                "cobblestone_slab",
+                "brick_slab",
+                "stone_brick_slab",
+                "quartz_slab",
+                "nether_brick_slab",
+                "red_sandstone_slab",
+                "purpur_slab",
+                "prismarine_slab",
+                "dark_prismarine_slab",
+                "prismarine_brick_slab",
+                "mossy_cobblestone",
+                "smooth_sandstone_slab",
+                "red_nether_brick_slab",
+                "end_stone_brick_slab",
+                "smooth_red_sandstone_slab",
+                "polished_andesite_slab",
+                "andesite_slab",
+                "diorite_slab",
+                "polished_diorite_slab",
+                "granite_slab",
+                "polished_granite_slab",
+                "mossy_stone_brick_slab",
+                "smooth_quartz_slab",
+                "normal_stone_slab",
+                "cut_sandstone_slab",
+                "cut_red_sandstone_slab",
+                "smooth_stone_double_slab",
+                "sandstone_double_slab",
+                "cobblestone_double_slab",
+                "brick_double_slab",
+                "stone_brick_double_slab",
+                "quartz_double_slab",
+                "nether_brick_double_slab",
+                "red_sandstone_double_slab",
+                "purpur_double_slab",
+                "prismarine_double_slab",
+                "dark_prismarine_double_slab",
+                "prismarine_brick_double_slab",
+                "mossy_cobblestone_double_slab",
+                "smooth_sandstone_double_slab",
+                "red_nether_brick_double_slab",
+                "end_stone_brick_double_slab",
+                "smooth_red_sandstone_double_slab",
+                "polished_andesite_double_slab",
+                "andesite_double_slab",
+                "diorite_double_slab",
+                "polished_diorite_double_slab",
+                "granite_double_slab",
+                "polished_granite_double_slab",
+                "mossy_stone_brick_double_slab",
+                "smooth_quartz_double_slab",
+                "normal_stone_double_slab",
+                "cut_sandstone_double_slab",
+                "cut_red_sandstone_double_slab",
+                "oak_slab",
+                "spruce_slab",
+                "birch_slab",
+                "jungle_slab",
+                "acacia_slab",
+                "dark_oak_slab",
+                "oak_double_slab",
+                "spruce_double_slab",
+                "birch_double_slab",
+                "jungle_double_slab",
+                "acacia_double_slab",
+                "dark_oak_double_slab",
+                "oak_planks",
+                "spruce_planks",
+                "birch_planks",
+                "jungle_planks",
+                "acacia_planks",
+                "dark_oak_planks",
                 "brick_block",
                 "nether_brick",
                 "red_nether_brick",
                 "end_bricks",
                 "red_sandstone",
-                "stained_glass",
+                "cut_red_sandstone",
+                "chiseled_red_sandstone",
+                "smooth_red_sandstone",
+                "white_stained_glass",
+                "orange_stained_glass",
+                "magenta_stained_glass",
+                "light_blue_stained_glass",
+                "yellow_stained_glass",
+                "lime_stained_glass",
+                "pink_stained_glass",
+                "gray_stained_glass",
+                "light_gray_stained_glass",
+                "cyan_stained_glass",
+                "purple_stained_glass",
+                "blue_stained_glass",
+                "brown_stained_glass",
+                "green_stained_glass",
+                "red_stained_glass",
+                "black_stained_glass",
                 "glass",
                 "glowstone",
                 "prismarine",
@@ -35384,26 +39467,119 @@ villager_v2
             "blocks": [
                 "cobblestone",
                 "stone",
-                "stonebrick",
+                "granite",
+                "polished_granite",
+                "diorite",
+                "polished_diorite",
+                "andesite",
+                "polished_andesite",
+                "stone_bricks",
+                "mossy_stone_bricks",
+                "cracked_stone_bricks",
+                "chiseled_stone_bricks",
                 "sandstone",
+                "cut_sandstone",
+                "chiseled_sandstone",
+                "smooth_sandstone",
                 "mossy_cobblestone",
-                "stone_slab",
-                "stone_slab2",
-                "stone_slab3",
-                "stone_slab4",
-                "double_stone_slab",
-                "double_stone_slab2",
-                "double_stone_slab3",
-                "double_stone_slab4",
-                "wooden_slab",
-                "double_wooden_slab",
-                "planks",
+                "smooth_stone_slab",
+                "sandstone_slab",
+                "cobblestone_slab",
+                "brick_slab",
+                "stone_brick_slab",
+                "quartz_slab",
+                "nether_brick_slab",
+                "red_sandstone_slab",
+                "purpur_slab",
+                "prismarine_slab",
+                "dark_prismarine_slab",
+                "prismarine_brick_slab",
+                "mossy_cobblestone_slab",
+                "smooth_sandstone_slab",
+                "red_nether_brick_slab",
+                "end_stone_brick_slab",
+                "smooth_red_sandstone_slab",
+                "polished_andesite_slab",
+                "andesite_slab",
+                "diorite_slab",
+                "polished_diorite_slab",
+                "granite_slab",
+                "polished_granite_slab",
+                "mossy_stone_brick_slab",
+                "smooth_quartz_slab",
+                "normal_stone_slab",
+                "cut_sandstone_slab",
+                "cut_red_sandstone_slab",
+                "smooth_stone_double_slab",
+                "sandstone_double_slab",
+                "cobblestone_double_slab",
+                "brick_double_slab",
+                "stone_brick_double_slab",
+                "quartz_double_slab",
+                "nether_brick_double_slab",
+                "red_sandstone_double_slab",
+                "purpur_double_slab",
+                "prismarine_double_slab",
+                "dark_prismarine_double_slab",
+                "prismarine_brick_double_slab",
+                "mossy_cobblestone_double_slab",
+                "smooth_sandstone_double_slab",
+                "red_nether_brick_double_slab",
+                "end_stone_brick_double_slab",
+                "smooth_red_sandstone_double_slab",
+                "polished_andesite_double_slab",
+                "andesite_double_slab",
+                "diorite_double_slab",
+                "polished_diorite_double_slab",
+                "granite_double_slab",
+                "polished_granite_double_slab",
+                "mossy_stone_brick_double_slab",
+                "smooth_quartz_double_slab",
+                "normal_stone_double_slab",
+                "cut_sandstone_double_slab",
+                "cut_red_sandstone_double_slab",
+                "oak_slab",
+                "spruce_slab",
+                "birch_slab",
+                "jungle_slab",
+                "acacia_slab",
+                "dark_oak_slab",
+                "oak_double_slab",
+                "spruce_double_slab",
+                "birch_double_slab",
+                "jungle_double_slab",
+                "acacia_double_slab",
+                "dark_oak_double_slab",
+                "oak_planks",
+                "spruce_planks",
+                "birch_planks",
+                "jungle_planks",
+                "acacia_planks",
+                "dark_oak_planks",
                 "brick_block",
                 "nether_brick",
                 "red_nether_brick",
                 "end_bricks",
                 "red_sandstone",
-                "stained_glass",
+                "cut_red_sandstone",
+                "chiseled_red_sandstone",
+                "smooth_red_sandstone",
+                "white_stained_glass",
+                "orange_stained_glass",
+                "magenta_stained_glass",
+                "light_blue_stained_glass",
+                "yellow_stained_glass",
+                "lime_stained_glass",
+                "pink_stained_glass",
+                "gray_stained_glass",
+                "light_gray_stained_glass",
+                "cyan_stained_glass",
+                "purple_stained_glass",
+                "blue_stained_glass",
+                "brown_stained_glass",
+                "green_stained_glass",
+                "red_stained_glass",
+                "black_stained_glass",
                 "glass",
                 "glowstone",
                 "prismarine",
@@ -35480,7 +39656,9 @@ arrow
         "stick_in_ground": {
             "shake_time": 0.35
         },
-        "arrow_effect": {}
+        "arrow_effect": {
+            "apply_effect_to_blocking_targets": false
+        }
     },
     "hit_sound": "bow.hit",
     "power": 1.6,
@@ -35512,7 +39690,9 @@ arrow
         "stick_in_ground": {
             "shake_time": 0.35
         },
-        "arrow_effect": {}
+        "arrow_effect": {
+            "apply_effect_to_blocking_targets": false
+        }
     },
     "hit_sound": "bow.hit",
     "power": 1.6,
@@ -35544,7 +39724,9 @@ arrow
         "stick_in_ground": {
             "shake_time": 0.35
         },
-        "arrow_effect": {}
+        "arrow_effect": {
+            "apply_effect_to_blocking_targets": false
+        }
     },
     "hit_sound": "bow.hit",
     "power": 5.0,
@@ -35576,7 +39758,9 @@ arrow
         "stick_in_ground": {
             "shake_time": 0.35
         },
-        "arrow_effect": {}
+        "arrow_effect": {
+            "apply_effect_to_blocking_targets": false
+        }
     },
     "hit_sound": "bow.hit",
     "power": 1.6,
@@ -35589,6 +39773,32 @@ arrow
         0,
         -0.1,
         0
+    ]
+}
+```
+
+breeze_wind_charge_projectile
+
+```json
+"minecraft:projectile": {
+    "on_hit": {
+        "impact_damage": {
+            "damage": 1,
+            "knockback": true
+        },
+        "wind_burst_on_hit": {}
+    },
+    "power": 0.7,
+    "gravity": 0.0,
+    "inertia": 1.0,
+    "liquid_inertia": 1.0,
+    "uncertainty_base": 5.0,
+    "uncertainty_multiplier": 4.0,
+    "reflect_on_hurt": true,
+    "ignored_entities": [
+        "ender_crystal",
+        "wind_charge_projectile",
+        "breeze_wind_charge_projectile"
     ]
 }
 ```
@@ -35721,10 +39931,10 @@ fireball
     "liquid_inertia": 1,
     "uncertainty_base": 0,
     "uncertainty_multiplier": 0,
-    "anchor": 1,
+    "anchor": 2,
     "offset": [
         0,
-        -0.1,
+        -1.5,
         0
     ],
     "reflect_on_hurt": true,
@@ -35941,6 +40151,35 @@ thrown_trident
 }
 ```
 
+wind_charge_projectile
+
+```json
+"minecraft:projectile": {
+    "on_hit": {
+        "impact_damage": {
+            "damage": 1,
+            "max_critical_damage": 1.0,
+            "knockback": true
+        },
+        "wind_burst_on_hit": {}
+    },
+    "power": 1.5,
+    "gravity": 0.0,
+    "inertia": 1.0,
+    "liquid_inertia": 1.0,
+    "uncertainty_base": 1.0,
+    "uncertainty_multiplier": 0.0,
+    "reflect_on_hurt": true,
+    "multiple_targets": false,
+    "reflect_immunity": 0.5,
+    "ignored_entities": [
+        "ender_crystal",
+        "wind_charge_projectile",
+        "breeze_wind_charge_projectile"
+    ]
+}
+```
+
 wither_skull
 
 ```json
@@ -36048,6 +40287,15 @@ allay
 }
 ```
 
+armadillo
+
+```json
+"minecraft:pushable": {
+    "is_pushable": true,
+    "is_pushable_by_piston": true
+}
+```
+
 armor_stand
 
 ```json
@@ -36098,6 +40346,49 @@ boat
 ```json
 "minecraft:pushable": {
     "is_pushable": true,
+    "is_pushable_by_piston": true
+}
+```
+
+bogged
+
+```json
+"minecraft:pushable": {
+    "is_pushable": true,
+    "is_pushable_by_piston": true
+}
+```
+
+breeze
+
+```json
+"minecraft:pushable": {
+    "is_pushable": true,
+    "is_pushable_by_piston": true
+}
+```
+
+breeze_wind_charge_projectile
+
+```json
+"minecraft:pushable": {
+    "is_pushable": false,
+    "is_pushable_by_piston": true
+}
+```
+
+camel
+
+```json
+"minecraft:pushable": {
+    "is_pushable": true,
+    "is_pushable_by_piston": true
+}
+```
+
+```json
+"minecraft:pushable": {
+    "is_pushable": false,
     "is_pushable_by_piston": true
 }
 ```
@@ -36165,6 +40456,22 @@ cow
 }
 ```
 
+creaking
+
+```json
+"minecraft:pushable": {
+    "is_pushable": true,
+    "is_pushable_by_piston": true
+}
+```
+
+```json
+"minecraft:pushable": {
+    "is_pushable": false,
+    "is_pushable_by_piston": false
+}
+```
+
 creeper
 
 ```json
@@ -36184,6 +40491,15 @@ dolphin
 ```
 
 donkey
+
+```json
+"minecraft:pushable": {
+    "is_pushable": true,
+    "is_pushable_by_piston": true
+}
+```
+
+dragon_fireball
 
 ```json
 "minecraft:pushable": {
@@ -36648,6 +40964,15 @@ small_fireball
 }
 ```
 
+sniffer
+
+```json
+"minecraft:pushable": {
+    "is_pushable": true,
+    "is_pushable_by_piston": true
+}
+```
+
 snowball
 
 ```json
@@ -36816,6 +41141,15 @@ warden
 }
 ```
 
+wind_charge_projectile
+
+```json
+"minecraft:pushable": {
+    "is_pushable": false,
+    "is_pushable_by_piston": true
+}
+```
+
 witch
 
 ```json
@@ -36883,7 +41217,7 @@ xp_orb
 
 ```json
 "minecraft:pushable": {
-    "is_pushable": true,
+    "is_pushable": false,
     "is_pushable_by_piston": true
 }
 ```
@@ -37093,6 +41427,36 @@ ravager
 }
 ```
 
+## reflect_projectiles
+
+breeze
+
+```json
+"minecraft:reflect_projectiles": {
+    "reflected_projectiles": [
+        "xp_bottle",
+        "thrown_trident",
+        "shulker_bullet",
+        "dragon_fireball",
+        "arrow",
+        "snowball",
+        "egg",
+        "fireball",
+        "splash_potion",
+        "ender_pearl",
+        "wither_skull",
+        "wither_skull_dangerous",
+        "small_fireball",
+        "lingering_potion",
+        "llama_spit",
+        "fireworks_rocket",
+        "fishing_hook"
+    ],
+    "azimuth_angle": "180.0 + Math.random(-20.0, 20.0)",
+    "reflection_scale": "0.5"
+}
+```
+
 ## rideable
 
 boat
@@ -37180,6 +41544,84 @@ boat
             "max_rider_count": 2,
             "rotate_rider_by": "query.has_any_family('blaze', 'creeper', 'enderman', 'illager', 'magmacube', 'piglin', 'player', 'skeleton', 'slime', 'villager', 'wandering_trader', 'witch', 'zombie', 'zombie_pigman') ? -90 : 0",
             "lock_rider_rotation": 90
+        }
+    ]
+}
+```
+
+```json
+"minecraft:rideable": {
+    "seat_count": 2,
+    "passenger_max_width": 1.375,
+    "interact_text": "action.interact.ride.boat",
+    "pull_in_entities": true,
+    "seats": [
+        {
+            "position": [
+                0.0,
+                0.1,
+                0.0
+            ],
+            "min_rider_count": 0,
+            "max_rider_count": 1,
+            "rotate_rider_by": -90,
+            "lock_rider_rotation": 90
+        },
+        {
+            "position": [
+                0.2,
+                0.1,
+                0.0
+            ],
+            "min_rider_count": 2,
+            "max_rider_count": 2,
+            "rotate_rider_by": "query.has_any_family('blaze', 'creeper', 'enderman', 'illager', 'magmacube', 'piglin', 'player', 'skeleton', 'slime', 'villager', 'wandering_trader', 'witch', 'zombie', 'zombie_pigman') ? -90 : 0",
+            "lock_rider_rotation": 90
+        },
+        {
+            "position": [
+                -0.6,
+                0.1,
+                0.0
+            ],
+            "min_rider_count": 2,
+            "max_rider_count": 2,
+            "rotate_rider_by": "query.has_any_family('blaze', 'creeper', 'enderman', 'illager', 'magmacube', 'piglin', 'player', 'skeleton', 'slime', 'villager', 'wandering_trader', 'witch', 'zombie', 'zombie_pigman') ? -90 : 0",
+            "lock_rider_rotation": 90
+        }
+    ]
+}
+```
+
+camel
+
+```json
+"minecraft:rideable": {
+    "seat_count": 2,
+    "crouching_skip_interact": true,
+    "pull_in_entities": true,
+    "family_types": [
+        "player"
+    ],
+    "interact_text": "action.interact.ride.horse",
+    "seats": [
+        {
+            "min_rider_count": 0,
+            "max_rider_count": 2,
+            "position": [
+                0.0,
+                1.905,
+                0.5
+            ]
+        },
+        {
+            "min_rider_count": 1,
+            "max_rider_count": 2,
+            "position": [
+                0.0,
+                1.905,
+                -0.5
+            ]
         }
     ]
 }
@@ -37304,6 +41746,28 @@ chest_boat
             "position": [
                 0.2,
                 -0.2,
+                0.0
+            ],
+            "min_rider_count": 0,
+            "max_rider_count": 1,
+            "rotate_rider_by": "query.has_any_family('blaze', 'creeper', 'enderman', 'illager', 'magmacube', 'piglin', 'player', 'skeleton', 'slime', 'villager', 'wandering_trader', 'witch', 'zombie', 'zombie_pigman') ? -90 : 0",
+            "lock_rider_rotation": 90
+        }
+    ]
+}
+```
+
+```json
+"minecraft:rideable": {
+    "seat_count": 1,
+    "passenger_max_width": 1.375,
+    "interact_text": "action.interact.ride.boat",
+    "pull_in_entities": true,
+    "seats": [
+        {
+            "position": [
+                0.2,
+                0.1,
                 0.0
             ],
             "min_rider_count": 0,
@@ -38083,6 +42547,14 @@ zombie_villager_v2
 
 ## scale
 
+armadillo
+
+```json
+"minecraft:scale": {
+    "value": 0.6
+}
+```
+
 axolotl
 
 ```json
@@ -38096,6 +42568,14 @@ bee
 ```json
 "minecraft:scale": {
     "value": 0.5
+}
+```
+
+camel
+
+```json
+"minecraft:scale": {
+    "value": 0.45
 }
 ```
 
@@ -38314,6 +42794,14 @@ sheep
 ```json
 "minecraft:scale": {
     "value": 0.5
+}
+```
+
+sniffer
+
+```json
+"minecraft:scale": {
+    "value": 0.45
 }
 ```
 
@@ -39149,10 +43637,231 @@ villager_v2
 
 ## shareables
 
+bogged
+
+```json
+"minecraft:shareables": {
+    "singular_pickup": true,
+    "items": [
+        {
+            "item": "minecraft:netherite_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+        },
+        {
+            "item": "minecraft:diamond_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+        },
+        {
+            "item": "minecraft:iron_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+        },
+        {
+            "item": "minecraft:stone_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+        },
+        {
+            "item": "minecraft:golden_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+        },
+        {
+            "item": "minecraft:wooden_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+        },
+        {
+            "item": "minecraft:bow",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 6
+        },
+        {
+            "item": "minecraft:netherite_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+        },
+        {
+            "item": "minecraft:diamond_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+        },
+        {
+            "item": "minecraft:iron_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+        },
+        {
+            "item": "minecraft:chainmail_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+        },
+        {
+            "item": "minecraft:golden_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+        },
+        {
+            "item": "minecraft:leather_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+        },
+        {
+            "item": "minecraft:turtle_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 6
+        },
+        {
+            "item": "minecraft:skull:0",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+        },
+        {
+            "item": "minecraft:skull:1",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+        },
+        {
+            "item": "minecraft:carved_pumpkin",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+        },
+        {
+            "item": "minecraft:netherite_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+        },
+        {
+            "item": "minecraft:diamond_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+        },
+        {
+            "item": "minecraft:iron_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+        },
+        {
+            "item": "minecraft:chainmail_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+        },
+        {
+            "item": "minecraft:golden_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+        },
+        {
+            "item": "minecraft:leather_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+        },
+        {
+            "item": "minecraft:netherite_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+        },
+        {
+            "item": "minecraft:diamond_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+        },
+        {
+            "item": "minecraft:iron_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+        },
+        {
+            "item": "minecraft:chainmail_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+        },
+        {
+            "item": "minecraft:golden_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+        },
+        {
+            "item": "minecraft:leather_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+        },
+        {
+            "item": "minecraft:netherite_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+        },
+        {
+            "item": "minecraft:diamond_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+        },
+        {
+            "item": "minecraft:iron_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+        },
+        {
+            "item": "minecraft:chainmail_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+        },
+        {
+            "item": "minecraft:golden_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+        },
+        {
+            "item": "minecraft:leather_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+        }
+    ]
+}
+```
+
 drowned
 
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:nautilus_shell",
@@ -39374,10 +44083,26 @@ drowned
 }
 ```
 
+evocation_illager
+
+```json
+"minecraft:shareables": {
+    "items": [
+        {
+            "item": "minecraft:banner:15",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+        }
+    ]
+}
+```
+
 fox
 
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "all_items": true,
     "all_items_max_amount": 1,
     "items": [
@@ -39414,6 +44139,11 @@ fox
         {
             "item": "minecraft:bread",
             "priority": 0,
+            "max_amount": 1
+        },
+        {
+            "item": "minecraft:bundle",
+            "priority": 1,
             "max_amount": 1
         },
         {
@@ -39584,6 +44314,7 @@ husk
 
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:netherite_sword",
@@ -39797,6 +44528,7 @@ piglin
 
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:golden_sword",
@@ -39828,13 +44560,6 @@ piglin
         },
         {
             "item": "minecraft:golden_shovel",
-            "priority": 2,
-            "admire": true,
-            "pickup_limit": 1,
-            "stored_in_inventory": true
-        },
-        {
-            "item": "minecraft:golden_rail",
             "priority": 2,
             "admire": true,
             "pickup_limit": 1,
@@ -40180,6 +44905,7 @@ skeleton
 
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:netherite_sword",
@@ -40399,6 +45125,7 @@ stray
 
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:netherite_sword",
@@ -40743,6 +45470,20 @@ villager_v2
             "pickup_only": true
         },
         {
+            "item": "minecraft:torchflower_seeds",
+            "want_amount": 64,
+            "surplus_amount": 64,
+            "stored_in_inventory": true,
+            "pickup_only": true
+        },
+        {
+            "item": "minecraft:pitcher_pod",
+            "want_amount": 64,
+            "surplus_amount": 64,
+            "stored_in_inventory": true,
+            "pickup_only": true
+        },
+        {
             "item": "minecraft:bone_meal",
             "want_amount": 64,
             "surplus_amount": 64,
@@ -40842,10 +45583,26 @@ villager_v2
 }
 ```
 
+vindicator
+
+```json
+"minecraft:shareables": {
+    "items": [
+        {
+            "item": "minecraft:banner:15",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+        }
+    ]
+}
+```
+
 wither_skeleton
 
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:netherite_sword",
@@ -41203,6 +45960,7 @@ zombie
 
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:netherite_sword",
@@ -41629,6 +46387,7 @@ zombie_villager
 
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:netherite_sword",
@@ -41842,6 +46601,7 @@ zombie_villager_v2
 
 ```json
 "minecraft:shareables": {
+    "singular_pickup": true,
     "items": [
         {
             "item": "minecraft:netherite_sword",
@@ -42061,11 +46821,22 @@ blaze
 }
 ```
 
+bogged
+
+```json
+"minecraft:shooter": {
+    "def": "minecraft:arrow",
+    "sound": "bow",
+    "aux_val": 26
+}
+```
+
 drowned
 
 ```json
 "minecraft:shooter": {
-    "def": "minecraft:thrown_trident"
+    "def": "minecraft:thrown_trident",
+    "sound": "item.trident.throw"
 }
 ```
 
@@ -42073,7 +46844,6 @@ ender_dragon
 
 ```json
 "minecraft:shooter": {
-    "type": "dragonfireball",
     "def": "minecraft:dragon_fireball"
 }
 ```
@@ -42128,7 +46898,8 @@ skeleton
 
 ```json
 "minecraft:shooter": {
-    "def": "minecraft:arrow"
+    "def": "minecraft:arrow",
+    "sound": "bow"
 }
 ```
 
@@ -42152,6 +46923,7 @@ stray
 ```json
 "minecraft:shooter": {
     "def": "minecraft:arrow",
+    "sound": "bow",
     "aux_val": 19
 }
 ```
@@ -42173,6 +46945,40 @@ witch
     "aux_val": 23,
     "sound": "throw",
     "projectiles": [
+        {
+            "def": "minecraft:splash_potion",
+            "aux_val": 21,
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "is_raider",
+                        "subject": "other",
+                        "value": true
+                    },
+                    {
+                        "test": "actor_health",
+                        "subject": "other",
+                        "value": 4,
+                        "operator": "<="
+                    }
+                ]
+            },
+            "lose_target": true
+        },
+        {
+            "def": "minecraft:splash_potion",
+            "aux_val": 28,
+            "filters": {
+                "all_of": [
+                    {
+                        "test": "is_raider",
+                        "subject": "other",
+                        "value": true
+                    }
+                ]
+            },
+            "lose_target": true
+        },
         {
             "def": "minecraft:splash_potion",
             "aux_val": 17,
@@ -42354,6 +47160,19 @@ zombie_villager_v2
 
 ## spawn_entity
 
+armadillo
+
+```json
+"minecraft:spawn_entity": {
+    "entities": {
+        "min_wait_time": 300,
+        "max_wait_time": 600,
+        "spawn_sound": "mob.armadillo.scute_drop",
+        "spawn_item": "armadillo_scute"
+    }
+}
+```
+
 chicken
 
 ```json
@@ -42396,6 +47215,24 @@ ocelot
 }
 ```
 
+sniffer
+
+```json
+"minecraft:spawn_entity": {
+    "entities": {
+        "min_wait_time": 0,
+        "max_wait_time": 0,
+        "spawn_sound": "plop",
+        "spawn_item": "sniffer_egg",
+        "spawn_item_event": {
+            "event": "on_egg_spawned",
+            "target": "self"
+        },
+        "single_use": true
+    }
+}
+```
+
 wandering_trader
 
 ```json
@@ -42416,29 +47253,51 @@ wandering_trader
 
 ## spell_effects
 
+bee
+
+```json
+"minecraft:spell_effects": {
+    "add_effects": [
+        {
+            "effect": "poison",
+            "duration": 25,
+            "display_on_screen_animation": true
+        }
+    ],
+    "remove_effects": "poison"
+}
+```
+
+```json
+"minecraft:spell_effects": {
+    "add_effects": [
+        {
+            "effect": "wither",
+            "duration": 40,
+            "display_on_screen_animation": true
+        }
+    ],
+    "remove_effects": "wither"
+}
+```
+
 player
 
 ```json
 "minecraft:spell_effects": {
     "add_effects": [
         {
-            "effect": "bad_omen",
-            "duration": 6000,
-            "visible": false,
+            "effect": "raid_omen",
+            "duration": 30,
             "display_on_screen_animation": true
         }
-    ]
+    ],
+    "remove_effects": "bad_omen"
 }
 ```
 
 ```json
 "minecraft:spell_effects": {}
-```
-
-```json
-"minecraft:spell_effects": {
-    "remove_effects": "bad_omen"
-}
 ```
 
 zombie_villager
@@ -42466,11 +47325,11 @@ zombie_villager_v2
     "add_effects": [
         {
             "effect": "strength",
-            "duration": 100
+            "duration": 300
         },
         {
             "effect": "heal",
-            "duration": 100
+            "duration": 300
         }
     ],
     "remove_effects": "weakness"
@@ -42588,7 +47447,9 @@ parrot
         "wheat_seeds",
         "pumpkin_seeds",
         "melon_seeds",
-        "beetroot_seeds"
+        "beetroot_seeds",
+        "pitcher_pod",
+        "torchflower_seeds"
     ],
     "tame_event": {
         "event": "minecraft:on_tame",
@@ -42977,6 +47838,19 @@ allay
 }
 ```
 
+armadillo
+
+```json
+"minecraft:timer": {
+    "looping": true,
+    "time": 4,
+    "randomInterval": false,
+    "time_down_event": {
+        "event": "minecraft:unroll"
+    }
+}
+```
+
 bee
 
 ```json
@@ -43156,7 +48030,7 @@ player
     ],
     "looping": false,
     "time_down_event": {
-        "event": "minecraft:clear_add_bad_omen",
+        "event": "minecraft:clear_add_raid_omen",
         "target": "self"
     }
 }
@@ -43228,6 +48102,22 @@ skeleton
     "time": 20,
     "time_down_event": {
         "event": "become_stray_event"
+    }
+}
+```
+
+vex
+
+```json
+"minecraft:timer": {
+    "looping": false,
+    "randomInterval": true,
+    "time": [
+        30,
+        119
+    ],
+    "time_down_event": {
+        "event": "minecraft:add_periodic_damage"
     }
 }
 ```
@@ -43396,7 +48286,7 @@ hoglin
 ```json
 "minecraft:transformation": {
     "into": "minecraft:zoglin",
-    "transformation_sound": "converted_to_zombified",
+    "transformation_sound": "mob.hoglin.converted_to_zombified",
     "keep_level": true
 }
 ```
@@ -43406,7 +48296,7 @@ husk
 ```json
 "minecraft:transformation": {
     "into": "minecraft:zombie<minecraft:as_adult>",
-    "transformation_sound": "convert_to_drowned",
+    "transformation_sound": "mob.husk.convert_to_zombie",
     "drop_equipment": true,
     "delay": {
         "value": 15
@@ -43417,7 +48307,7 @@ husk
 ```json
 "minecraft:transformation": {
     "into": "minecraft:zombie<minecraft:as_baby>",
-    "transformation_sound": "convert_to_drowned",
+    "transformation_sound": "mob.husk.convert_to_zombie",
     "drop_equipment": true,
     "delay": {
         "value": 15
@@ -43438,6 +48328,7 @@ pig
 ```json
 "minecraft:transformation": {
     "into": "minecraft:pig_zombie",
+    "transformation_sound": "mob.pig.death",
     "delay": 0.5
 }
 ```
@@ -43591,9 +48482,12 @@ zombie_villager_v2
     "into": "minecraft:villager_v2",
     "begin_transform_sound": "remedy",
     "transformation_sound": "unfect",
+    "drop_equipment": true,
     "keep_level": true,
     "delay": {
         "value": 100,
+        "range_min": 80,
+        "range_max": 200,
         "block_assist_chance": 0.01,
         "block_radius": 4,
         "block_chance": 0.3,
@@ -43603,6 +48497,20 @@ zombie_villager_v2
         ]
     }
 }
+```
+
+## transient
+
+creaking
+
+```json
+"minecraft:transient": {}
+```
+
+fishing_hook
+
+```json
+"minecraft:transient": {}
 ```
 
 ## trust
@@ -43639,6 +48547,17 @@ allay
 "minecraft:type_family": {
     "family": [
         "allay",
+        "mob"
+    ]
+}
+```
+
+armadillo
+
+```json
+"minecraft:type_family": {
+    "family": [
+        "armadillo",
         "mob"
     ]
 }
@@ -43724,6 +48643,54 @@ boat
 }
 ```
 
+bogged
+
+```json
+"minecraft:type_family": {
+    "family": [
+        "bogged",
+        "skeleton",
+        "monster",
+        "mob",
+        "undead"
+    ]
+}
+```
+
+breeze
+
+```json
+"minecraft:type_family": {
+    "family": [
+        "breeze",
+        "monster",
+        "mob"
+    ]
+}
+```
+
+breeze_wind_charge_projectile
+
+```json
+"minecraft:type_family": {
+    "family": [
+        "wind_charge",
+        "wind_charge_projectile"
+    ]
+}
+```
+
+camel
+
+```json
+"minecraft:type_family": {
+    "family": [
+        "camel",
+        "mob"
+    ]
+}
+```
+
 cat
 
 ```json
@@ -43798,6 +48765,18 @@ cow
 "minecraft:type_family": {
     "family": [
         "cow",
+        "mob"
+    ]
+}
+```
+
+creaking
+
+```json
+"minecraft:type_family": {
+    "family": [
+        "creaking",
+        "monster",
         "mob"
     ]
 }
@@ -44413,6 +49392,17 @@ slime
 }
 ```
 
+sniffer
+
+```json
+"minecraft:type_family": {
+    "family": [
+        "sniffer",
+        "mob"
+    ]
+}
+```
+
 snow_golem
 
 ```json
@@ -44955,6 +49945,17 @@ warden
 }
 ```
 
+wind_charge_projectile
+
+```json
+"minecraft:type_family": {
+    "family": [
+        "wind_charge",
+        "wind_charge_projectile"
+    ]
+}
+```
+
 witch
 
 ```json
@@ -45024,6 +50025,7 @@ zoglin
         "zoglin",
         "zoglin_baby",
         "undead",
+        "monster",
         "mob"
     ]
 }
@@ -45035,6 +50037,7 @@ zoglin
         "zoglin",
         "zoglin_adult",
         "undead",
+        "monster",
         "mob"
     ]
 }
@@ -45254,19 +50257,6 @@ zombie_villager_v2
 ```json
 "minecraft:type_family": {
     "family": [
-        "nitwit",
-        "zombie",
-        "zombie_villager",
-        "undead",
-        "monster",
-        "mob"
-    ]
-}
-```
-
-```json
-"minecraft:type_family": {
-    "family": [
         "farmer",
         "zombie",
         "zombie_villager",
@@ -45433,6 +50423,19 @@ zombie_villager_v2
 }
 ```
 
+```json
+"minecraft:type_family": {
+    "family": [
+        "nitwit",
+        "zombie",
+        "zombie_villager",
+        "undead",
+        "monster",
+        "mob"
+    ]
+}
+```
+
 ## underwater_movement
 
 axolotl
@@ -45552,6 +50555,25 @@ turtle
 ```
 
 ## variable_max_auto_step
+
+camel
+
+```json
+"minecraft:variable_max_auto_step": {
+    "base_value": 1.5625,
+    "controlled_value": 1.5625,
+    "jump_prevented_value": 0.5625
+}
+```
+
+creaking
+
+```json
+"minecraft:variable_max_auto_step": {
+    "base_value": 1.0625,
+    "jump_prevented_value": 0.5625
+}
+```
 
 enderman
 
@@ -46488,6 +51510,62 @@ vindicator
 }
 ```
 
+wolf
+
+```json
+"minecraft:variant": {
+    "value": 0
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 1
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 2
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 3
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 4
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 5
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 6
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 7
+}
+```
+
+```json
+"minecraft:variant": {
+    "value": 8
+}
+```
+
 zombie_villager
 
 ```json
@@ -46572,85 +51650,85 @@ zombie_villager_v2
 
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 1
 }
 ```
 
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 2
 }
 ```
 
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 3
 }
 ```
 
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 4
 }
 ```
 
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 5
 }
 ```
 
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 6
 }
 ```
 
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 7
 }
 ```
 
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 8
 }
 ```
 
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 9
 }
 ```
 
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 10
 }
 ```
 
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 11
 }
 ```
 
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 12
 }
 ```
 
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 13
 }
 ```
 
 ```json
 "minecraft:variant": {
-    "value": 0
+    "value": 14
 }
 ```
 

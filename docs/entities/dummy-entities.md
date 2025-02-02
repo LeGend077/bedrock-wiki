@@ -8,6 +8,7 @@ mentions:
     - Joelant05
     - MedicalJewel105
     - aexer0e
+description: Dummy entities are invisible entities which are used behind the scenes for game-play purposes.
 ---
 
 Dummy entities are invisible entities which are used behind the scenes for game-play purposes. Dummy entities are a very useful tool, and this document will cover some of the ways they are utilized, as well as showing how to set up the resource side of things.
@@ -40,6 +41,13 @@ You can use whatever behaviors you like, but here is a good template. The import
 			"is_experimental": false
 		},
 		"components": {
+			"minecraft:breathable": { //Optional, allows the entity to breath underwater
+				"breathes_water": true
+			},
+			"minecraft:physics": { 
+				"has_gravity": false, //Optional, allows the entity to not be affected by gravity or water
+				"has_collision": false
+			},
 			"minecraft:custom_hit_test": {
 				"hitboxes": [
 					{

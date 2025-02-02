@@ -1,12 +1,12 @@
 ---
 title: Bedrock Modeling
 nav_order: 2
-category:
-    - General
+category: General
 mentions:
     - SirLich
     - solvedDev
     - MedicalJewel105
+description: Tips, tricks, and things you should know when modeling for Minecraft Bedrock Edition.
 ---
 
 This will guide tips, tricks, and things you should know when modeling for Minecraft Bedrock Edition.
@@ -21,6 +21,7 @@ Another trick to solve this if you _must_ have smaller textures is by **increasi
 Vertex snap is a handy tool in blockbench any modeler should use. It's beneficial when doing rounded things like wheels.
 You can find this tool right top next to the movement & scale tools. It has 2 modes, Move & Scale. How this tool works can be seen in the following gif.
 ![](/assets/images/visuals/bedrock-modeling/vertex_snap.gif)
+
 ## Transparency
 
 If you use semi-transparent textures (like colored glass), you need to move elements with that texture to the bottom of the element list. Otherwise, elements behind these semi-transparent ones won't render in-game.
@@ -36,7 +37,7 @@ and in general, any on pixel art.
 Whether or no the transparency or emissive textures in your models work in-game, it's decided by the materials applied to them.
 
 | Material              | Description                                                                                              |
-| --------------------- | -------------------------------------------------------------------------------------------------------- |
+|-----------------------|----------------------------------------------------------------------------------------------------------|
 | entity                | basic opaque material                                                                                    |
 | entity_alphatest      | supports transparent pixels                                                                              |
 | entity_alphablend     | supports translucent pixels                                                                              |
@@ -59,11 +60,11 @@ Let's start with this picture.
 
 the name or `animation.cuack` is essential. You can't have symbols or caps there, and it must start with `animation.` for the animations to work without problems. Now the function we will be using is
 
-`Base + Math.sin((query.life_time + Offset) * Speed) \_ pitch`
+`Base + Math.sin((q.life_time + Offset) * Speed) \_ pitch`
 
 -   Base is the starting rotation/position the bone has
 -   Sin is the math function we all know
--   `query.life_time` is a variable. Is a number that will be increasing as the animation continues
+-   `q.life_time` is a variable. Is a number that will be increasing as the animation continues
 -   Offset is a number we use to have the animation start earlier or later than its "original" position
 -   Speed is the time it will take from going from top to down
 -   Pitch is how far it goes from the origin
@@ -72,17 +73,17 @@ the name or `animation.cuack` is essential. You can't have symbols or caps there
 
 Function used:
 
-`Math.sin((query.life_time+0.5)*150)*15`
+`Math.sin((q.life_time+0.5)*150)*15`
 
 one on position & the other on rotation.
 
-<MolangGraph code="Math.sin((query.life_time+0.5)*150)*15" :toY="2" :stepSize="0.001"/>
+<MolangGraph code="Math.sin((q.life_time+0.5)*150)*15" :toY="2" :stepSize="0.001"/>
 
 Don't forget that for the animation to be a perfect loop. It would help if you correlated the sin equation `speed` & the animation `time`.
 Here's a table with values to get a perfect loop, though there are more you can discover.
 
 | Speed | Time | Group |
-| ----- | ---- | ----- |
+|-------|------|-------|
 | 150   | 2.4  | 1     |
 | 100   | 3.6  | 2     |
 
@@ -90,7 +91,7 @@ These numbers can be multiplied but not divided, so these will also work
 But only multiples of the same option
 
 | Speed | Time | Group |
-| ----- | ---- | ----- |
+|-------|------|-------|
 | 150   | 4.8  | 1     |
 | 200   | 3.6  | 2     |
 | 300   | 2.4  | 1     |
@@ -108,13 +109,13 @@ You can learn more about queries & functions [here](https://bedrock.dev/docs/sta
 
 ## Animation Speed
 
-To easily change the speed of an animation you can simply multiply the default value of `anim_time_update` (defaults to `query.delta_time + query.anim_time`) inside our animation:
+To easily change the speed of an animation you can simply multiply the default value of `anim_time_update` (defaults to `q.delta_time + q.anim_time`) inside our animation:
 
 <CodeHeader>RP/animations/myentity.animation.json#animations</CodeHeader>
 
 ```json
 "animation.myentity.myanimation": {
-    "anim_time_update":"2 * query.delta_time + query.anim_time"
+    "anim_time_update":"2 * q.delta_time + q.anim_time"
     //Your animation goes here!
 }
 ```

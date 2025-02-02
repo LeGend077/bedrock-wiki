@@ -1,6 +1,7 @@
 ---
 title: Understanding JSON
 category: Extra
+description: A first peek into JSON
 nav_order: 1
 prefix: 'a. '
 mentions:
@@ -29,7 +30,7 @@ We can use an online tool called [json lint](https://jsonlint.com/) to tell us w
 In JSON, data can be written in a number of formats. Each format is specialized for the kind of data it wants to represent. Here are the structures we have available:
 
 | Name   | Example  | Explanation                            |
-| ------ | -------- | -------------------------------------- |
+|--------|----------|----------------------------------------|
 | String | "hello!" | Words, or characters. Requires quotes. |
 | Int    | 15       | A number. No quotes.                   |
 | Float  | 1.2      | A fractional number. No quotes.        |
@@ -55,7 +56,7 @@ Arrays are written as two square brackets `[]`. They represent a _list_. We can 
 Some examples:
 
 | Structure       | Comment                               |
-| --------------- | ------------------------------------- |
+|-----------------|---------------------------------------|
 | [1, 2, 3]       | A list of integers.                   |
 | ["Red", "blue"] | A list of strings. Notice the quotes! |
 
@@ -93,7 +94,7 @@ We call the key-value pairs of an object as its _child_ or as being _inside_ the
 
 In Minecraft, JSON files always begin with an _object_, which you can remember is two curly brackets:`{}`. We call this the _top level object_. We write our code _inside_ of this object, in the form of key-value pairs.
 
-Here is an example of a simple json file, used for Minecraft addons:
+Here is an example of a simple json file, used for Minecraft add-ons:
 
 <CodeHeader></CodeHeader>
 
@@ -106,10 +107,10 @@ Here is an example of a simple json file, used for Minecraft addons:
 			"animation_length": 1.0,
 			"bones": {
 				"front_wheels": {
-					"rotation": ["query.modified_distance_moved * -30", 0, 0]
+					"rotation": ["q.modified_distance_moved * -30", 0, 0]
 				},
 				"back_wheels": {
-					"rotation": ["query.modified_distance_moved * -30", 0, 0]
+					"rotation": ["q.modified_distance_moved * -30", 0, 0]
 				}
 			}
 		}
@@ -125,7 +126,7 @@ Take a careful look at the format. You will see that the entire structure is bui
 
 ## Troubleshooting Examples
 
-Here are a few examples, to help you understand feedback you might recieve on the discord or online. We tend to use technical jargon when talking about errors in JSON, so hopefully this section helps familizrize you with the terms: 
+Here are a few examples, to help you understand feedback you might recieve on the discord or online. We tend to use technical jargon when talking about errors in JSON, so hopefully this section helps familiarize you with the terms: 
 
 ---
 

@@ -2,11 +2,11 @@
 title: Player Geometry
 tags:
     - beginner
-category:
-    - Tutorials
+category: Tutorials
 mentions:
     - SirLich
     - MedicalJewel105
+description: Player's client entity files.
 ---
 
 This tutorial will show you how to create player NPCs and add them into your world. These player NPCs will take vanilla player skins, and come included with walk-animations, attack animations, etc.
@@ -494,7 +494,7 @@ If you need a more complete set of animations, consider copying the default play
 			"scripts": {
 				"scale": "0.9375",
 				"pre_animation": [
-					"variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+					"v.tcos0 = (math.cos(q.modified_distance_moved * 38.17) * q.modified_move_speed / v.gliding_speed_value) * 57.3;"
 				],
 				"animate": [
 					"move.arms",

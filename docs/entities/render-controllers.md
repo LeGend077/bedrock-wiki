@@ -8,6 +8,7 @@ mentions:
     - MedicalJewel105
     - Overload252
     - ChibiMango
+description: Learn about render controllers.
 ---
 
 Render controllers are an often-misunderstood part of the resource pack. But you don't need to be afraid! It would help if you considered render controllers as logic packs that take short-name definitions from the RP Entity File and determine how they will be combined/layered/rendered in-game.
@@ -199,14 +200,14 @@ Set multiple top textures, which we will index later.
 			],
 			"textures": [
 				"Texture.bottom", //static bottom texture
-				"Array.top[query.variant]" //pick top texture based on entity variant.
+				"Array.top[q.variant]" //pick top texture based on entity variant.
 			]
 		}
 	}
 }
 ```
 
-Using arrays and then `query.variant`, we can select the top texture based on the `variant` of the entity.
+Using arrays and then `q.variant`, we can select the top texture based on the `variant` of the entity.
 
 #### Setting variant
 
@@ -257,7 +258,7 @@ This still requires the use of `villager_v2_masked` material.
 			],
 			"textures": [
 				"Texture.bottom",
-				"Array.top[query.variant]"
+				"Array.top[q.variant]"
 			],
 			"arrays": {
 				"geometries": {
@@ -275,7 +276,7 @@ This still requires the use of `villager_v2_masked` material.
 					]
 				}
 			},
-			"geometry": "Array.geo[query.variant]"
+			"geometry": "Array.geo[q.variant]"
 		}
 	}
 }
@@ -316,8 +317,8 @@ Followed by:
 
 ```json
 "textures": [
-    "array.skin[query.variant]",
-    "array.dress[query.skin_id]"
+    "array.skin[q.variant]",
+    "array.dress[q.skin_id]"
 ],
-"geometry": "array.geo[query.mark_variant]"
+"geometry": "array.geo[q.mark_variant]"
 ```

@@ -1,37 +1,34 @@
 ---
 title: Format Versions
+description: Learn what format versions are and how to choose the right one for each of your files.
 category: Extra
-prefix: 'e. '
+prefix: "e. "
 nav_order: 5
 mentions:
     - SirLich
     - SmokeyStack
     - ThomasOrs
+    - Xterionix
+    - QuazChick
 ---
 
-Format versions are an important part of Minecraft: Bedrock Edition's Addon System. They appear at the top of most files, formatted like this: `"format_version": "1.16.100"`. You can think of this as the "version number" of the file, and the number you select here is really important! The format version you select will define which syntax and features are available to you, in that particular file.
+Format versions are an important part of Minecraft: Bedrock Edition's add-on system. They appear at the top of most files, formatted like this: `"format_version": "1.21.0"`. You can think of this as the "version number" of the file, and the number you select here is really important! The format version you select will define which syntax and features are available to you, in that particular file.
 
 :::tip
 Selecting the wrong format version is a common source of errors. When troubleshooting, people may ask you questions like 'what format version is your item'. Ensure that you know how to answer that question.
 :::
 
-## Why do format versions exist?
+## Why Do Format Versions Exist?
 
-Format versions exist to *version* the Addon system, and allow Minecraft to introduce new features into the addon system, without breaking old Addons. For example, a `1.8.0` format version RP Entity file has very different syntax than a `1.10.0` format version RP Entity file. By using the 'format_version' key in the json *you* can decide which version you want to use.
+Format versions exist to _version_ the Add-on system, and allow Minecraft to introduce new features into the add-on system, without breaking old Add-ons. For example, a `1.8.0` format version RP Entity file has very different syntax than a `1.10.0` format version RP Entity file. By using the 'format*version' key in the json \_you* can decide which version you want to use.
 
-By using format versions *per file*, Minecraft gives you a lot of control over how your addon will be interpreted by the game. It is completely possible and expected to mix different format versions in your addon.
+By using format versions _per file_, Minecraft gives you a lot of control over how your add-on will be interpreted by the game. It is completely possible and expected to mix different format versions in your add-on.
 
-## Experimental Format Versions
+## Format Version Is Not Game Version
 
-Format versions are also used for the purpose of versioning experimental features. Since Minecraft releases bedrock experiments directly into stable, some format versions will be 'locked' under experimental, unless you toggle the correct experiment.
+It is really important to understand that format version is _per subsystem_, and is generally not equal to the base game version. This simply means that every type of file (item, rp entity, bp entity, recipe) will use a different versioning system.
 
-A well known example is the item/blocks system, where `1.16.100` denotes experimental, and `1.10.0` denotes stable. If you want to make an item, it's important to select a format version early, as it will effect everything else you add to the files.
-
-## Format Version is not Game Version
-
-It is really important to understand that format version is *per subsystem*, and is generally not equal to the base game version. This simply means that every type of file (item, rp entity, bp entity, recipe) will use a different versioning system.
-
-For example: `"format_version": "1.8.0"` in an RP entity file means "use version `1.8.0` of the *item system*". It does *not* mean "use version `1.8.0` of the *addon system*".
+For example: `"format_version": "1.8.0"` in an RP entity file means "use version `1.8.0` of the _item system_". It does _not_ mean "use version `1.8.0` of the _add-on system_".
 
 For this reason, some file types will have very "old" format versions. Do not be tempted to replace this version with the latest game version, such as `1.17.0`.
 
@@ -47,9 +44,9 @@ Generally speaking, there is a cool tricky to pick the correct format version, f
 
 For example, imagine you are creating a Recipe file:
 
- 1) Install the [Vanilla Packs](/guide/download-packs).
- 2) Look at some recipe files, to judge which format version is most used, or the most recent
- 3) Use this format version in your file
+1.  Install the [Vanilla Packs](/guide/download-packs).
+2.  Look at some recipe files, to judge which format version is most used, or the most recent
+3.  Use this format version in your file
 
 This simple trick will help you select a valid format version for your file.
 
@@ -57,66 +54,73 @@ This simple trick will help you select a valid format version for your file.
 
 This section will list the format versions used in the vanilla game, alongside how many times it appears.
 
-    - The '⭐' is the recommended *stable* version.
-    - The '🚀' is the recommended *experimental* version, where applicable.
+-   The '⭐' is the recommended _stable_ version.
+-   The '🚀' is the recommended _experimental_ version, where applicable.
+
+_Last Updated for 1.21.50_
 
 ### Resource Pack
 
-**Entity**:
-    - `1.10.0` : 82 ⭐
-    - `1.8.0` : 74
-
-**Animation Controller**:
-    - `1.10.0` : 56 ⭐
-
-**Animation**:
-    - `1.8.0` : 120
-    - `1.10.0` : 6 ⭐
-
-**Attachables**:
-    - `1.10.0` : 29 ⭐
-    - `1.8.0` : 25
-    - `1.10` : 1
-
-**Models**:
-    - `1.8.0` : 92
-    - `1.12.0` : 19
-    - `1.10.0` : 4
-    - `1.16.0` : 7
-
-**Particles**:
-    - `1.10.0` : 131 ⭐
-
-**Render Controllers**:
-    - `1.10.0`: 83 ⭐
+| Format                | Version     | Count |
+| --------------------- | ----------- | ----: |
+| Animation Controllers | 1.10.0 ⭐   |    65 |
+| Animations            | 1.10.0 ⭐   |     6 |
+| Animations            | 1.8.0       |   130 |
+| Attachable            | 1.10.0 ⭐   |    30 |
+| Attachable            | 1.10        |     1 |
+| Attachable            | 1.8.0       |    25 |
+| Blocks Catalog        | 1.20.40 ⭐  |     1 |
+| Client Entity         | 1.10.0 ⭐   |    88 |
+| Client Entity         | 1.8.0       |    84 |
+| Fog Settings          | 1.16.100 ⭐ |    73 |
+| Geometry              | 1.16.0      |     6 |
+| Geometry              | 1.12.0      |    30 |
+| Geometry              | 1.10.0      |     5 |
+| Geometry              | 1.8.0       |    91 |
+| Particle Effect       | 1.10.0 ⭐   |   176 |
+| Render Controllers    | 1.10.0 ⭐   |    24 |
+| Render Controllers    | 1.8.0       |    98 |
+| Sound Definitions     | 1.20.20 ⭐  |     1 |
 
 ### Behavior Pack
 
-**Entities**:
-    - `1.8.0` : 2
-    - `1.16.210` : 1
-    - `1.13.0` : 7
-    - `1.16.0` : 58 ⭐
-    - `1.16.100` : 3
-    - `1.12.0` : 21
-    - `1.17.20` : 7
-    - `1.17.10` : 4
-    - `1.10.0` : 1
-    - `1.14.0` : 1
-
-**Items**:
-    - `1.10` : 44 ⭐
-    - `1.16.0` : 1
-    - `1.16` : 1
-    - `1.14` : 1
-    - `1.16.100`: 0 🚀
-
-**Recipes**:
-    - `1.12` : 991
-    - `1.16` : 194 ⭐
-    - `1.14` : 2
-
-**Spawn Rules**:
-    - `1.8.0` : 48 ⭐
-    - `1.17.0` : 1
-    - `1.11.0` : 1
+| Format      | Version    | Count |
+| ----------- | ---------- | ----: |
+| Entity      | 1.21.50 ⭐ |     9 |
+| Entity      | 1.21.40    |    17 |
+| Entity      | 1.21.30    |     1 |
+| Entity      | 1.21.20    |     2 |
+| Entity      | 1.21.10    |     9 |
+| Entity      | 1.21.0     |    28 |
+| Entity      | 1.19.80    |     1 |
+| Entity      | 1.19.60    |     1 |
+| Entity      | 1.19.50    |     1 |
+| Entity      | 1.19.30    |     1 |
+| Entity      | 1.18.20    |     1 |
+| Entity      | 1.18.10    |     3 |
+| Entity      | 1.17.10    |     1 |
+| Entity      | 1.16.210   |     1 |
+| Entity      | 1.16.0     |    19 |
+| Entity      | 1.14.0     |     6 |
+| Entity      | 1.13.0     |     2 |
+| Entity      | 1.12.0     |    14 |
+| Entity      | 1.10.0     |     1 |
+| Entity      | 1.8.0      |     2 |
+| Item        | 1.21.30 ⭐ |    17 |
+| Item        | 1.20.50    |     5 |
+| Item        | 1.16.0     |     1 |
+| Item        | 1.16       |     1 |
+| Item        | 1.14       |     1 |
+| Item        | 1.10       |    45 |
+| Recipe      | 1.21.50 ⭐ |    13 |
+| Recipe      | 1.21.40    |     4 |
+| Recipe      | 1.21.30    |     2 |
+| Recipe      | 1.20.60    |     3 |
+| Recipe      | 1.20.30    |    19 |
+| Recipe      | 1.20.10    |  1315 |
+| Recipe      | 1.16       |   139 |
+| Recipe      | 1.12       |    67 |
+| Spawn Rules | 1.17.0 ⭐  |     1 |
+| Spawn Rules | 1.11.0     |     1 |
+| Spawn Rules | 1.8.0      |    51 |
+| Trade Table | 1.18.10    |     1 |

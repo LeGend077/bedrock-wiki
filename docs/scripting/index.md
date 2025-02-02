@@ -7,6 +7,4 @@ categories:
       color: green
     - title: Documentation
       color: red
-    - title: Legacy Scripting
-      color: orange
 ---

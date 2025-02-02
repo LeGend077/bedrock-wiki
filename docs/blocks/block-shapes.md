@@ -9,12 +9,12 @@ mentions:
     - Luthorius
     - Fabrimat
     - TheItsNameless
+    - QuazChick
+description: Blockshapes are essentially block geometries or models that are hard-coded into vanilla, meaning that they exist without having accessible files.
 ---
 
-:::warning Deprecated
-
-Block Shapes are no longer officially supported and cannot be used with custom blocks, however they can still be used with vanilla ones.
-
+:::warning DEPRECATED
+Block shapes are no longer officially supported and cannot be used with custom blocks, however they can still be used with vanilla ones.
 :::
 
 Blockshapes are essentially block geometries or models that are hard-coded into vanilla, meaning that they exist without having accessible files.
@@ -23,18 +23,15 @@ Blockshapes are essentially block geometries or models that are hard-coded into 
 
 They are added in the resource pack's file, `blocks.json`, using child `"blockshape"` in a block's object. This would look something like this:
 
-<CodeHeader></CodeHeader>
+<CodeHeader>RP/blocks.json</CodeHeader>
 
 ```json
-
-    "wiki:invisible_aluminium_ore": {
-        "blockshape": "invisible",
-        "sound": "stone",
-        "textures": "invisible_aluminium_ore"
-    }
-
+"wiki:invisible_aluminium_ore": {
+  "blockshape": "invisible",
+  "sound": "stone",
+  "textures": "invisible_aluminium_ore"
+}
 ```
-
 
 ## List of known Blockshapes
 
@@ -127,5 +124,6 @@ They are added in the resource pack's file, `blocks.json`, using child `"blocksh
 | 133 | flowering_azalea          |
 | 134 | glow_frame                |
 | 135 | glow_lichen               |
+| 136 | redstone_wire"            |
 
 [ Original Credit ](https://gist.github.com/toka7290/3bef704d2f57c775bb9ac84443a6df1c)

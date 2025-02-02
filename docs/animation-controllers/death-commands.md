@@ -1,7 +1,5 @@
 ---
 title: Death Commands
-tags:
-    - recipe
 mentions:
     - SirLich
     - BlueFrog130
@@ -10,16 +8,18 @@ mentions:
     - MedicalJewel105
     - Kaioga5
     - TheItsNameless
+    - QuazChick
+description: Run command when entity dies.
 ---
 
-<BButton color="blue" link="animation-controllers-intro">Learn more about Animation Controllers</BButton>
+<Button link="animation-controllers-intro">Learn more about Animation Controllers</Button>
 
 I define `Death Effects` as "Doing something when an Entity dies". There are a few wrong ways to achieve this that should be avoided, including:
 
 -   Detecting death in the entity file, adding a component, and _then_ trying to detect that component in the animation controller. This is wrong because the entity will be removed from the world before the animation controller has a chance to run.
 -   Detecting the entity death from an outside source, such as a ticking command block. This method isn't _strictly_ wrong, and in some circumstances, it may even be preferred. However it is costly and easy to break.
 
-## Using query.is_alive
+## Using q.is_alive
 
 The best way to create death effects is by using the `is_alive` query.
 
@@ -31,24 +31,24 @@ Here is a sample animation controller:
 
 ```json
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.death": {
-		"initial_state":"default",
-			"states": {
-				"default": {
-					"transitions": [
-						{
-							"dead": "!query.is_alive"
-						}
-					]
-				},
-				"dead": {
-					"on_entry": ["/say I am dead!"]
-				}
-			}
-		}
-	}
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.death": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "dead": "!q.is_alive"
+                        }
+                    ]
+                },
+                "dead": {
+                    "on_entry": ["/say I am dead!"]
+                }
+            }
+        }
+    }
 }
 ```
 
@@ -60,61 +60,57 @@ In the case of player entities, an additional transition must be added to the se
 
 ```json
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.death": {
-		"initial_state":"default",
-			"states": {
-				"default": {
-					"transitions": [
-						{
-							"dead": "!query.is_alive"
-						}
-					]
-				},
-				"dead": {
-					"on_entry": ["/say I am dead!"],
-					"transitions": [
-						{
-							"default": "query.is_alive"
-						}
-					]
-				}
-			}
-		}
-	}
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.death": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "dead": "!q.is_alive"
+                        }
+                    ]
+                },
+                "dead": {
+                    "on_entry": ["/say I am dead!"],
+                    "transitions": [
+                        {
+                            "default": "q.is_alive"
+                        }
+                    ]
+                }
+            }
+        }
+    }
 }
 ```
-
-:::warning
-Requires Experimental
-:::
 
 ## Using minecraft:on_death
 
 You can also use the `minecraft:on_death` component in your `entity.json` file in the Behavior Pack, which is a fairly easy way to accomplish a command on death.
 
 You first add it to your components and make it run an event on self;
-```
+
+```json
 "minecraft:on_death" : {
-          "event" : "wiki:on_death",
-          "target" : "self"
-           }
+    "event": "wiki:on_death",
+    "target": "self"
+}
 ```
 
 And then, in your events section you add the event;
 
-```
+```json
 "wiki:on_death": {
-            "run_command": {
-                "command": [
-                    "say I have died!"
-                ]
-            }
-        }
+    "queue_command": {
+        "command": [
+            "say I have died!"
+        ]
+    }
+}
 ```
 
 :::tip
 You can add scores and tags to the entity even when it is dead using this method.
-
 :::

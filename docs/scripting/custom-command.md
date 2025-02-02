@@ -1,5 +1,6 @@
 ---
 title: Simple Chat Commands
+description: Custom commands using scripts.
 category: Tutorials
 tags:
     - experimental
@@ -15,10 +16,14 @@ mentions:
     - JaylyDev
     - Herobrine643928
     - ConsoleTerm
+    - kumja1
+    - modmaker101
+    - AmethystDevbyFK
+    - QuazChick
 ---
 
 ::: warning
-The Script API is currently in active development, and breaking changes are frequent. This page assumes the format of Minecraft 1.19.80
+The Script API is currently in active development, and breaking changes are frequent. This page assumes the format of Minecraft 1.21.30
 :::
 
 Who doesn't want cool custom commands? With the Script API, you can create your own. In this article, we will be creating them using the Script API.
@@ -26,87 +31,85 @@ Who doesn't want cool custom commands? With the Script API, you can create your 
 ## Setup Pack
 
 :::tip
-Before creating a script, it is recommended to learn the basics of JavaScript, Addons, and the Script API. To see what the Script API can do, see the [Microsoft Docs](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/)
+Before creating a script, it is recommended to learn the basics of JavaScript, Add-Ons, and the Script API. To see what the Script API can do, see the [Microsoft Docs](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/)
 :::
 
 Assuming you have understood the basics of scripting, let's start creating the pack.
 
-<CodeHeader>manifest.json</CodeHeader>
+<CodeHeader>BP/manifest.json</CodeHeader>
 
 ```json
 {
-	"format_version": 2,
-	"header": {
-		"name": "Custom Commands",
-		"description": "Custom Commands using the Script API",
-		"uuid": "c8c3239f-027f-4e80-890f-880eba65027d",
-		"min_engine_version": [1, 19, 40],
-		"version": [1, 0, 0]
-	},
-	"modules": [
-		{
-			"description": "Behavior Pack Module",
-			"type": "data",
-			"uuid": "cd2cd41a-1849-410e-8f0a-5d30fde4bd9a",
-			"version": [1, 0, 0]
-		},
-		{
-			"description": "Gametest Module",
-			"type": "script",
-			"language": "javascript",
-			"entry": "scripts/index.js",
-			"uuid": "f626740d-50a6-49f1-a24a-834983b72134",
-			"version": [1, 0, 0]
-		}
-	],
-	"dependencies": [
-		{
-			// Minecraft native module - needed to use the "@minecraft/server" module
-			"module_name": "@minecraft/server",
-			"version": "1.3.0-beta"
-		}
-  ]
+    "format_version": 2,
+    "header": {
+        "name": "Custom Commands",
+        "description": "Custom Commands using the Script API",
+        "uuid": "c8c3239f-027f-4e80-890f-880eba65027d",
+        "min_engine_version": [1, 19, 40],
+        "version": [1, 0, 0]
+    },
+    "modules": [
+        {
+            "description": "Behavior Pack Module",
+            "type": "data",
+            "uuid": "cd2cd41a-1849-410e-8f0a-5d30fde4bd9a",
+            "version": [1, 0, 0]
+        },
+        {
+            "description": "Gametest Module",
+            "type": "script",
+            "language": "javascript",
+            "entry": "scripts/main.js",
+            "uuid": "f626740d-50a6-49f1-a24a-834983b72134",
+            "version": [1, 0, 0]
+        }
+    ],
+    "dependencies": [
+        {
+            "module_name": "@minecraft/server",
+            "version": "1.15.0-beta" // needs to be the latest or it will break ( latest as of 1.21.30 )
+        }
+    ]
 }
 ```
 
 In our manifest, we have added script module. The `entry` is where our script file is stored. This is typically within the `scripts` folder of the behavior pack. The dependency allows us to use that script module in our script.
 
-<FolderView
-	:paths="[
-		'BP/manifest.json',
-		'BP/pack_icon.png',
-        'BP/scripts/index.js'
-	]"
-/>
+<FolderView :paths="[
+    'BP/manifest.json',
+    'BP/pack_icon.png',
+    'BP/scripts/main.js'
+]" />
 
 ## Creating Custom Commands
 
 Now comes the fun part - creating our custom commands. First, we will add the module.
 
-<CodeHeader>BP/scripts/index.js</CodeHeader>
+<CodeHeader>BP/scripts/main.js</CodeHeader>
 
 ```js
-import { world } from '@minecraft/server';
+import { world } from "@minecraft/server";
 ```
 
 Next, we will add simple commands, such as `!gmc` to change our gamemode to creative and `!gms` to change into survival.
 
-<CodeHeader>BP/scripts/index.js</CodeHeader>
+<CodeHeader>BP/scripts/main.js</CodeHeader>
 
 ```js
 world.beforeEvents.chatSend.subscribe((eventData) => {
-	const player = eventData.sender;
-	switch (eventData.message) {
-		case '!gmc':
-			eventData.cancel = true;
-			player.runCommandAsync('gamemode c');
-			break;
-		case '!gms':
-			eventData.cancel = true;
-			player.runCommandAsync('gamemode s');
-			break;
-		default: break;
-	}
+    const player = eventData.sender;
+    switch (eventData.message) {
+        case "!gmc":
+            eventData.cancel = true;
+            player.runCommandAsync("gamemode c");
+            break;
+        case "!gms":
+            eventData.cancel = true;
+            player.runCommandAsync("gamemode s");
+            break;
+        default:
+            break;
+    }
 });
 ```
 
@@ -123,28 +126,29 @@ This function will always be checking if the player types the special message to
 
 For example, let's make our commands usable only to players that have the `Admin` tag.
 
-<CodeHeader>BP/scripts/index.js</CodeHeader>
+<CodeHeader>BP/scripts/main.js</CodeHeader>
 
 ```js
 import { world } from "@minecraft/server";
 
 world.beforeEvents.chatSend.subscribe((eventData) => {
-	const player = eventData.sender;
-	if (!player.hasTag('Admin')) return;
-	switch (eventData.message) {
-		case '!gmc':
-			eventData.cancel = true;
-			player.runCommandAsync('gamemode c');
-			break;
-		case '!gms':
-			eventData.cancel = true;
-			player.runCommandAsync('gamemode s');
-			break;
-		default: break;
-	}
+    const player = eventData.sender;
+    if (!player.hasTag("Admin")) return;
+    switch (eventData.message) {
+        case "!gmc":
+            eventData.cancel = true;
+            player.runCommandAsync("gamemode c");
+            break;
+        case "!gms":
+            eventData.cancel = true;
+            player.runCommandAsync("gamemode s");
+            break;
+        default:
+            break;
+    }
 });
 ```
 
 In plain text, `if (!eventData.sender.hasTag('Admin')) return;` means: "If the player does NOT (`!`) have the 'Admin' tag, stop the script from running past here (`return`)"
 
-For more information about the Script API, you can reference the [wiki](/scripting/starting-scripts) or the [Microsoft Docs](https://docs.microsoft.com/en-us/minecraft/creator/documents/gametestgettingstarted)
+For more information about the Script API, you can reference the [wiki](/scripting/scripting-intro) or the [Microsoft Docs](https://docs.microsoft.com/en-us/minecraft/creator/documents/gametestgettingstarted)

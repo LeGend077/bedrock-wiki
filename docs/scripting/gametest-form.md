@@ -4,6 +4,7 @@ category: Tutorials
 tags:
     - experimental
 mentions:
+    - DrakPlay
     - cda94581
     - FrankyRay
     - MedicalJewel105
@@ -14,10 +15,12 @@ mentions:
     - Herobrine643928
     - SmokeyStack
     - ThomasOrs
+    - kumja1
+description: Create form UIs without the need for JSON UI-wrangling.
 ---
 
 ::: warning
-The Script API is currently in active development, and breaking changes are frequent. This page assumes the format of Minecraft 1.19.80
+The Script API is currently in active development, and breaking changes are frequent. This page assumes the format of Minecraft 1.20.60
 :::
 
 In version 1.18.30, Minecraft released a wonderful new script module, `@minecraft/server-ui` (formerly named `mojang-minecraft-ui`). With this module, we can create form UIs without the need for JSON UI-wrangling.
@@ -30,11 +33,11 @@ Like other modules, you will need to add the dependency into your `manifest.json
 	"dependencies": [
 		{
 			"module_name": "@minecraft/server-ui",
-			"version": "1.0.0-beta"
+			"version": "1.2.0-beta"
 		},
 		{
 			"module_name": "@minecraft/server",
-			"version": "1.3.0-beta"
+			"version": "1.9.0-beta"
 		}
 	]
 }
@@ -141,12 +144,12 @@ Message Form only contains 2 buttons, unlike Action Forms, which can have more t
 Just like the buttons on an Action Form, button1 and button2 have 2 arguments, text and icon.
 
 ```js
-form.button1("Button 1: Yes");
-form.button2("Button 2: No");
+form.button1("Button 1: No");
+form.button2("Button 2: Yes");
 ```
 
 :::tip
-Because the Message Form only has 2 buttons, it's recommended to have "Yes/OK" option on "button1" and "No/Cancel" option on "button2". You can see the problem in the "Show and Respond" section
+Because the Message Form only has 2 buttons, it's recommended to have "Yes/OK" option on "button2" and "No/Cancel" option on "button1". You can see the problem in the "Show and Respond" section
 :::
 
 #### Example
@@ -156,8 +159,8 @@ This is an example of a Message Form
 let form = new MessageFormData();
 form.title("Higher Random Tick Warning");
 form.body("Are you sure you want to run this command:\n/gamerule randomtickspeed 1000\nThis can cause lag to the world");
-form.button1("Yes, do it!");
-form.button2("No, leave it as default!");
+form.button1("No, leave it as default!");
+form.button2("Yes, do it!");
 ```
 
 ![image](/assets/images/gametest/gametest-form/message-form.png)
@@ -243,7 +246,7 @@ form.toggle("Toggle", true);
 This is an example of a Modal Form with all of the components
 
 ```js
-let form = new MessageFormData()
+let form = new ModalFormData()
 let effectList = [ "Regeneration", "Protection", "Poison", "Wither" ]
 form.title("Effect Generator");
 form.textField("Target", "Target of Effect")
@@ -260,8 +263,8 @@ After we create the form, we will need to show the form to the player and save t
 Let's say our form must be opened with a stick that is named "Form Opener". You can use any event with any configurations in order to open your own form.
 
 ```js
-world.events.beforeItemUse.subscribe(event => {
-	if (event.item.typeId === "minecraft:stick" && event.item.nameTag === "Form Opener") {
+world.beforeEvents.itemUse.subscribe(event => {
+	if (event.itemStack.typeId === "minecraft:stick" && event.itemStack.nameTag === "Form Opener") {
 		// Form
 	};
 });
@@ -326,18 +329,18 @@ form.show(event.source).then(r => {
 });
 ```
 
-### ModalFormData
-Same as an action form, Message form will save the input inside `.selection`. However, something is odd about this form. `.button1` returns 1, but `.button2` returns 0. Using `.canceled` will not work, but closing the form will return 0. This is why button2 must be used for the "No/Cancel" option.
+### MessageFormData
+Similar to the action form, the message form will save the input inside `.selection`. Clicking `.button1` will return 0, and clicking `.button2` will return 1. Although there is no close button, pressing 'Escape' will close the form. We can use `.canceled` to handle this event.
 
 ```js
 form.show(event.source).then(r => {
-	// ".canceled" does not work, but returns 0 to ".selection"
-	if (r.selection === 0) {
-		// Do something when the player closes the form or presses "button2"
-		return;
-	};
+	if(r.canceled || r.selection == 0){
+		// Do something when the player closes the form or presses "button1"
+		return
+	}
+	//we don't need to test for "r.selection == 1" since that the only case we didn't handle yet.
+	// Do something when player presses "button2"
 
-	// Do something when player presses "button1"
 }).catch(e => {
 	console.error(e, e.stack);
 });

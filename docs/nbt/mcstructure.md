@@ -6,6 +6,7 @@ mentions:
     - MedicalJewel105
     - Misledwater79
     - SmokeyStack
+description: About .mcstructure format.
 ---
 
 [int]: /assets/images/nbt/int.png
@@ -37,10 +38,13 @@ In this case, the file in the `mystructure` folder is the one that "wins," resul
 `mcstructure` files are uncompressed [NBT files](https://wiki.vg/NBT#Specification). Like all Bedrock Edition NBT files, they are stored in little-endian format. The tag structure is as follows:
 
 > ![Integer][int] `format_version`: Currently always set to `1`.
+>
 > ![List][list] `size`: List of three integers describing the size of the structure's bounds.
 >
 > > ![Integer][int] Size of the structure in the X direction.
+> >
 > > ![Integer][int] Size of the structure in the Y direction.
+> >
 > > ![Integer][int] Size of the structure in the Z direction.
 >
 > ![Compound][compound] `structure`: Actual data compound.
@@ -48,6 +52,7 @@ In this case, the file in the `mystructure` folder is the one that "wins," resul
 > > ![List][list] `block_indices`: List containing two sublists, one for each layer. These contain the blocks in the structure. Each block is stored as an integer index into the palette (see below). Proceeds in ZYX order from the lowest corner to the highest one. For example, if the structure size is `[2,3,4]`, then the 24 (product of the dimensions) values in each layer list represent the blocks located at `[(0,0,0), (0,0,1), (0,0,2), (0,0,3), (0,1,0), (0,1,1), (0,1,2), (0,1,3), (0,2,0), (0,2,1), (0,2,2), (0,2,3), (1,0,0), (1,0,1), (1,0,2), (1,0,3), (1,1,0), (1,1,1), (1,1,2), (1,1,3), (1,2,0), (1,2,1), (1,2,2), (1,2,3)]` relative to the origin. Index values equal to `-1` indicate no block, causing any existing block to remain upon loading. This occurs when structure voids are saved, and is the case for most blocks in the second layer. Both layers share the same palette.
 > >
 > > > ![List][list] of ![Integer][int] Indices for blocks in the primary layer.
+> > >
 > > > ![List][list] of ![Integer][int] Indices for blocks in the secondary layer. This layer is usually empty, except for water when the block here is waterlogged.
 > >
 > > ![List][list] of ![Compound][compound] `entities`: List of entities as NBT, stored exactly the same as entities in the world file itself. Tags like `Pos` and `UniqueID` are saved, but replaced upon loading.
@@ -62,13 +67,19 @@ In this case, the file in the `mystructure` folder is the one that "wins," resul
 > > > > >
 > > > > > > ![String][string] `name`: The block's identifier, such as `minecraft:planks`.
 > > > > > > ![Compound][compound] `states`: The block's states as keys and values. Examples: `wood_type:"acacia"`, `bite_counter:3`, `open_bit:1b`. The values are the appropriate NBT type for the state: strings for enum values, integers for scalar numbers, and bytes for boolean values.
-> > > > > > ![Integer][int] `version`: Compatibility versioning number for this block (currently `17959425` as of writing, in 1.19).
+> > > > > > ![Integer][int] `version`: Compatibility versioning number for this block (currently `17959425` as of writing, in 1.19). For example, `17879555` is hex `01 10 D2 03`, meaning 1.16.210.03.
 > > > >
 > > > > ![Compound][compound] `block_position_data`: Contains additional data for individual blocks in the structure. Each key is an integer index into the flattened list of blocks inside of `block_indices`. Layer is unspecified as it is irrelevant.
 > > > >
-> > > > > ![Compound][compound] `<index>`: A single piece of additional block data, applied to the block at its index position.
-> > > > >
-> > > > > > ![Compound][compound] `block_entity_data`: Block entity data as NBT, stored the same as block entities in the world file itself. Position tags are saved, but replaced upon loading. No other objects seem to exist adjacent to this one at this time.
+> > > > > ![Compound][compound] `<index>`: A single piece of additional block data, relevant to the block at its index position.
+> > > > > 
+> > > > > > ![Compound][compound] `block_entity_data`: Block entity data as NBT, stored exactly the same as block entities in the world file itself. Position tags are saved, but replaced upon loading. Layer is unspecified, as multiple block entities cannot coexist in a block space.
+> > > > > >
+> > > > > > ![List][list] `tick_queue_data`: Contains one more compounds of scheduled tick information. This is used for blocks like coral to make it die, water to make it flow, and other various scheduled updates.
+> > > > > > 
+> > > > > > > ![Compound][compound] A single pending tick.
+> > > > > > > 
+> > > > > > > > ![Integer][int] `tick_delay`: The amount of ticks remaining until this block should be updated. No other values seem to exist adjacent to this one at this time.
 >
 > ![List][list] `structure_world_origin`: List of three integers describing where in the world the structure was initially saved. Equal to the position of the saving structure block, plus its offset settings. This is used to determine where entities should be placed when loading. An entity's new absolute position is equal to its old position, minus these values, plus the origin of the structure's loading position.
 >

@@ -2,8 +2,8 @@
 title: Effects in Animations
 mentions:
     - MedicalJewel105
-category:
-    - General
+category: General
+description: Learn how to add particles and sounds to your animation.
 ---
 
 ## Effects in Animations
@@ -28,7 +28,7 @@ Minecraft Particles can be used in entity animations. For example, the phantom h
 
 Here we defined a shortname for particle that we are going to use.
 
-You can find a list of particles [here](https://minecraft.gamepedia.com/Particles) or [here](/particles/vanilla-particles).
+You can find a list of particles [here](https://minecraft.wiki/w/Particles) or [here](/particles/vanilla-particles).
 
 :::warning Warning!
 Not every particle works there. If you have problems, consider trying another particle. For example, use this one.
@@ -38,6 +38,7 @@ Also note that some particles emit constantly.
 ### Sounds
 
 If you want to use a sound, you need to define it too.
+You can get sounds at [ZapSplat](https://www.zapsplat.com/).
 
 <CodeHeader>RP/entity/my_entity.json</CodeHeader>
 
@@ -129,12 +130,12 @@ You can call more than one particle at the same time:
 					},
 					"rotation" : {
 						"0.2" : {
-							"post" : [ "180.0 * (0.2 + 0.07 * math.sin(query.key_frame_lerp_time * 1644.39))", 0.0, 0.0 ],
+							"post" : [ "180.0 * (0.2 + 0.07 * math.sin(q.key_frame_lerp_time * 1644.39))", 0.0, 0.0 ],
 							"pre" : [ 36.0, 0.0, 0.0 ]
 						},
 						"1.8" : {
 							"post" : [ 36.0, 0.0, 0.0 ],
-							"pre" : [ "180.0 * (0.2 + 0.07 * math.sin(query.key_frame_lerp_time * 1644.39))", 0.0, 0.0 ]
+							"pre" : [ "180.0 * (0.2 + 0.07 * math.sin(q.key_frame_lerp_time * 1644.39))", 0.0, 0.0 ]
 						}
 					}
 				}
@@ -167,6 +168,10 @@ You can attach a sound to animation the same way.
 Now save your animation and launch the game!
 
 ![](/assets/images/visuals/animation-effects/showcase.png)
+
+:::warning Warning!
+Currently (1.21.1) locators are broken for attachables.
+:::
 
 ## Offscreen Updating
 

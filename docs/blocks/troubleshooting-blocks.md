@@ -1,7 +1,6 @@
 ---
 title: Troubleshooting Blocks
 category: General
-nav_order: 4
 tags:
     - help
 mentions:
@@ -11,258 +10,165 @@ mentions:
     - MedicalJewel105
     - Sprunkles137
     - QuazChick
+description: Guide for blocks troubleshooting.
 ---
-
-## Learn about Troubleshooting
 
 :::tip
 This page contains troubleshooting information about _blocks_. You should read our [global troubleshooting](/guide/troubleshooting) document before continuing here.
 :::
 
-## Step-by-step Block Debugging
+## 0.0 - Trouble
 
-## 0.0.0 - Trouble
+> "I followed a tutorial or tried to make my own block and something's wrong!"
 
-I followed a tutorial or tried to make my own block and something's wrong! Calm down. This page will help debug common issues. <BButton color="blue" link="troubleshooting-blocks#_1-0-0-my-block-has-a-black-magenta-checkered-pattern-my-textures-are-missing">Continue</BButton>
+No need to panic! This page will help debug common issues.
 
-## 1.0.0 - My Block Has a Black-Magenta checkered pattern/My Textures Are Missing!
+## 1.0 - Texture Troubleshooting
+
+Fix issues related to block textures.
+
+## 1.1 - Texture is Black and Magenta
 
 I will be reviewing three different types of blocks that have different layouts: Dirt-like ![](/assets/images/blocks/block_tr/tr_dirt.png), Log-like ![](/assets/images/blocks/block_tr/tr_log.png), Grass-like ![](/assets/images/blocks/block_tr/tr_grass.png)
 
-1.10 Block <BButton color="blue" link="troubleshooting-blocks#_1-10-blocks">Continue</BButton>
-
-1.16.100 Block <BButton color="blue" link="troubleshooting-blocks#_1-16-100-blocks">Continue</BButton>
-
-## 1.10 Blocks
-
-Navigate to your `blocks.json`. Ensure that it is properly named.
-
-<CodeHeader>RP/blocks.json</CodeHeader>
-
-```json
-{
-	"format_version": [1, 1, 0],
-	"wiki:dirt_like": {
-		"textures": "dirt_like", //You can replace this with anything, just remember the name
-		"sound": "your_sound_name"
-	},
-	"wiki:log_like": {
-		"textures": {
-			"up": "log_like_top", //You can replace this with anything, just remember the name
-			"down": "log_like_top", //You can replace this with anything, just remember the name
-			"side": "log_like_side" //You can replace this with anything, just remember the name
-		},
-		"sound": "your_sound_name"
-	},
-	"wiki:grass_like": {
-		"textures": {
-			"up": "grass_like_top", //You can replace this with anything, just remember the name
-			"down": "grass_like_bottom", //You can replace this with anything, just remember the name
-			"side": "grass_like_side" //You can replace this with anything, just remember the name
-		},
-		"sound": "your_sound_name"
-	}
-}
-```
-
-Next, navigate to your `terrain_texture.json`. Ensure that it is properly named.
+Navigate to your `RP/textures/terrain_texture.json`. Ensure that the file is properly named.
 
 <CodeHeader>RP/textures/terrain_texture.json</CodeHeader>
 
 ```json
 {
-	"resource_pack_name": "tut",
-	"texture_name": "atlas.terrain",
-	"padding": 8,
-	"num_mip_levels": 4,
-	"texture_data": {
-		"dirt_like": {
-			"textures": "textures/blocks/dirt_like" //You can replace this with anything, just remember the name
-		},
-		"log_like_top": {
-			"textures": "textures/blocks/log_like_top" //You can replace this with anything, just remember the name
-		},
-		"log_like_side": {
-			"textures": "textures/blocks/log_like_side" //You can replace this with anything, just remember the name
-		},
-		"grass_like_top": {
-			"textures": "textures/blocks/grass_like_top" //You can replace this with anything, just remember the name
-		},
-		"grass_like_bottom": {
-			"textures": "textures/blocks/grass_like_bottom" //You can replace this with anything, just remember the name
-		},
-		"grass_like_side": {
-			"textures": "textures/blocks/grass_like_side" //You can replace this with anything, just remember the name
-		}
-	}
-}
-```
-
-If you followed this properly, your 1.10 block should now have correct texture.
-
-## 1.16.100 Blocks
-
-You can follow the exact same steps as the 1.10 blocks. But doing this method allows you to rotate your blocks.
-Navigate to your `terrain_texture.json`. Ensure that it is properly named
-
-<CodeHeader>RP/textures/terrain_texture.json</CodeHeader>
-
-```json
-{
-	"resource_pack_name": "tut",
-	"texture_name": "atlas.terrain",
-	"padding": 8,
-	"num_mip_levels": 4,
-	"texture_data": {
-		"dirt_like": {
-			"textures": "textures/blocks/dirt_like" //You can replace this with anything, just remember the name
-		},
-		"log_like_top": {
-			"textures": "textures/blocks/log_like_top" //You can replace this with anything, just remember the name
-		},
-		"log_like_side": {
-			"textures": "textures/blocks/log_like_side" //You can replace this with anything, just remember the name
-		},
-		"grass_like_top": {
-			"textures": "textures/blocks/grass_like_top" //You can replace this with anything, just remember the name
-		},
-		"grass_like_bottom": {
-			"textures": "textures/blocks/grass_like_bottom" //You can replace this with anything, just remember the name
-		},
-		"grass_like_side": {
-			"textures": "textures/blocks/grass_like_side" //You can replace this with anything, just remember the name
-		}
-	}
+    "texture_name": "atlas.terrain",
+    "resource_pack_name": "wiki",
+    "padding": 8,
+    "num_mip_levels": 4,
+    "texture_data": {
+        "dirt_like": {
+            "textures": "textures/blocks/dirt_like" // You can replace this with anything, just remember the name
+        },
+        "log_like_top": {
+            "textures": "textures/blocks/log_like_top" // You can replace this with anything, just remember the name
+        },
+        "log_like_side": {
+            "textures": "textures/blocks/log_like_side" // You can replace this with anything, just remember the name
+        },
+        "custom_grass_top": {
+            "textures": "textures/blocks/custom_grass_top" // You can replace this with anything, just remember the name
+        },
+        "custom_grass_bottom": {
+            "textures": "textures/blocks/custom_grass_bottom" // You can replace this with anything, just remember the name
+        },
+        "custom_grass_side": {
+            "textures": "textures/blocks/custom_grass_side" // You can replace this with anything, just remember the name
+        }
+    }
 }
 ```
 
 Next, navigate to your block file. In your block file, make sure you have the `material_instances` component.
 
 Dirt like block example:
+
 <CodeHeader>BP/blocks/dirt_like.json</CodeHeader>
 
 ```json
 {
-    "format_version": "1.16.100",
+    "format_version": "1.21.40",
     "minecraft:block": {
         "description": {
-            "identifier": "wiki:dirt_like",
-            "register_to_creative_menu": true
+            "identifier": "wiki:dirt_like"
         },
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "dirt_like",
+                    "texture": "dirt_like"
                 }
-            },
-            ...
-        },
-        "events": {...}
+            }
+        }
     }
 }
 ```
 
 Log like block example:
+
 <CodeHeader>BP/blocks/log_like.json</CodeHeader>
 
 ```json
 {
-    "format_version": "1.16.100",
+    "format_version": "1.21.40",
     "minecraft:block": {
         "description": {
-            "identifier": "wiki:log_like",
-            "register_to_creative_menu": true
+            "identifier": "wiki:log_like"
         },
         "components": {
             "minecraft:material_instances": {
                 "*": {
                     "texture": "log_like_side"
                 },
-                "ends": {
+                "end": {
                     "texture": "log_like_top"
                 },
-                "up": "ends",
-                "down": "ends"
-            },
-            ...
-        },
-        "events": {...}
+                "up": "end",
+                "down": "end"
+            }
+        }
     }
 }
 ```
 
-Grass like block example:
-<CodeHeader>BP/blocks/grass_like.json</CodeHeader>
+Grass-like block example:
+
+<CodeHeader>BP/blocks/custom_grass.json</CodeHeader>
 
 ```json
 {
-    "format_version": "1.16.100",
+    "format_version": "1.21.40",
     "minecraft:block": {
         "description": {
-            "identifier": "wiki:grass_like",
-            "register_to_creative_menu": true
+            "identifier": "wiki:custom_grass"
         },
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "grass_like_side"
+                    "texture": "custom_grass_side"
                 },
                 "up": {
-                    "texture": "grass_like_top"
+                    "texture": "custom_grass_top"
                 },
                 "down": {
-                    "texture": "grass_like_bottom"
+                    "texture": "custom_grass_bottom"
                 }
-            },
-            ...
-        },
-        "events": {...}
+            }
+        }
     }
 }
 ```
 
-If you followed this properly, your 1.16.100 block should now have correct texture.
+If you followed this properly, your block should now have correct texture.
 
-## 2.0.0 - My Block Looks Like Dirt!
+## 1.2 - Texture Displays "?" on Dirt
 
-Problem: My custom block has turned into a dirt block with green writing on it. ![](/assets/images/blocks/block_tr/tr_update.png) This is called `info_update` block. This happens when the block identifier changed or an invalid json was made.
+Problem: My custom block has turned into a dirt block with a question mark on it.
 
-Solution: Use a json linter and double check that your identifier didn't change.
+<WikiImage
+    src="/assets/images/blocks/block_tr/unknown.png"
+    pixelated="true"
+    width="128"
+    class="my-4"
+/>
+
+This an `unknown` block, which appears when the block identifier is changed or if your block JSON invalid.
+
+Solution: Use a JSON linter and double check that your identifier didn't change. Ensure that you block has `minecraft:geometry` and `minecraft:material_instances`, or an `RP/blocks.json` textures entry.
 
 ---
 
-<a name="3.0.0"></a>
-
-## 3.0.0 - Block Rendering
+## 2.0 - Rendering Troubleshooting
 
 This section will describe common block rendering issues and how to fix them.
 
-## 3.1.0 - Block isn't transparent!
+## 2.1 - Transparency isn't Working
 
-Problem: You have transparent pixels in your texture file. When you apply it in game, they become opaque.
-
-Solution: Navigate to your block file. Navigate to your `material_instances` component. Add the following to your component:
-
-<CodeHeader>BP/blocks/your_block.json</CodeHeader>
-
-```json
-{
-	"format_version": "1.16.100",
-	"minecraft:block": {
-		"components": {
-			"minecraft:material_instances": {
-				"*": {
-					"render_method": "alpha_test"
-				}
-			}
-		}
-	}
-}
-```
-
-## 3.2.0 - Block has shadow!
-
-Problem: You have block with custom geometry but it has shadow.
+Problem: You have transparent pixels in your texture file, but when applied in-game, they become opaque.
 
 Solution: Navigate to your block file. Navigate to your `material_instances` component. Add the following to your component:
 
@@ -270,86 +176,60 @@ Solution: Navigate to your block file. Navigate to your `material_instances` com
 
 ```json
 {
-	"format_version": "1.16.100",
-	"minecraft:block": {
-		"components": {
-			"minecraft:material_instances": {
-				"*": {
-					"face_dimming": false,
-					"ambient_occlusion": false
-				}
-			}
-		}
-	}
+  "format_version": "1.21.40",
+  "minecraft:block": {
+    ...
+    "components": {
+      "minecraft:material_instances": {
+        "*": {
+          "render_method": "alpha_test"
+        }
+      }
+    }
+  }
 }
 ```
 
-Another method:
+## 2.2 - Block Creates Shadows
 
-Add following components to your block's code:
+Problem: You have block with custom geometry but it has a shadow.
 
-<CodeHeader>BP/blocks/your_block.json</CodeHeader>
+Solution: Add following component to your block's code:
+
+<CodeHeader>minecraft:block > components</CodeHeader>
 
 ```json
-{
-	"format_version": "1.16.100",
-	"minecraft:block": {
-		"components": {
-			"minecraft:block_light_emission": 0.0,
-			"minecraft:block_light_absorption": 0
-		}
-	}
-}
+"minecraft:light_dampening": 0
 ```
 
-## 3.3.0 - Block Renders Odd in Inventory
-
-Problem: You have a block with custom geometry and it renders strange in inventory, like this:
-
-![](/assets/images/blocks/block_tr/inventory_render_cubes.png)
-
-Solution: In inventory, block's geometry is rendered by cubes, from the bottom to the top, where first ones overlap next. To render your block correctly, you'll need to change the order of the cubes in blockbench.
-
-```
-cube_middle      cube_bottom
-cube_top     ->  cube_middle
-cube_bottom      cube_top
-```
-
-## 3.4.0 - Block Looks Smaller in Inventory
-
-Problem: You have a block with `"minecraft:unit_cube": {}` component and it looks smaller than vanilla blocks in inventory.
-
-Solution: Block can get its visuals in two ways, either by applying textures in the blocks.json OR by giving the block a model and material instances.
-Using the blocks.json causes the block to appear full sized in your inventory, but forces it to use opaque as a material and doesn't allow rotations through the component/change anything about the appearance. So what you do is use the fact that, if your block has no materials and model active from components or permutations, it will take the textures from the blocks.json causing the normal full sized block model. If you wanna make use of the rotation component you can't just apply it, you need to give it material instances, unit_cube or a custom model and the rotation component. This will make it rotatable and work fine, while the default state which uses the blocks.json shows normally in the end you only can use this for full 16³ blocks which are non transparent, but it's a neat life hack to make it not seem off.
-
-## 4.0.0 - Common Content Log Errors
+## 3.0 - Common Content Log Errors
 
 This section will describe common content log errors and how to debug them.
 
-## 4.1.0 - [Blocks][error]
+## 3.1 - Collision/Selection Box Errors
 
-Problem: Your content log shows `[Blocks][error]-minecraft:entity_collision: min can't be below (-8, 0, -8) and max can't be more than (8, 16, 8)` or `[Blocks][error]-minecraft:pick_collision: min can't be below (-8, 0, -8) and max can't be more than (8, 16, 8)`
+Problem: You get a content error similar to:
 
-Solution: Check your `entity_collision` or `pick_collision` components and do the following:
+> `[Blocks][error]-minecraft:collision_box: min can't be below (-8, 0, -8) and max can't be more than (8, 16, 8)`
 
--   Make sure the x or z isn't less than -8.
--   Make sure the y isn't less than 0.
--   Make sure the size isn't bigger than 16x16x16.
+Solution: Check your `minecraft:collision_box` or `minecraft:selection_box` components and do the following:
 
-## 4.2.0 - [Blocks][error]
+-   Make sure the X and Z values are in the range `-8` - `8`.
+-   Make sure the Y value is in the range `0` - `16`.
+-   Make sure the box doesn't exit the block's 16&times;16&times;16 unit area.
 
-Problem: Your content log shows `geometry.your_block contains an X boxes outside the warning error of (*insert numbers*) to (*insert numbers*)`
+## 3.2 - Model Errors
 
-Solution: Your geometry is bigger than 16x16x16. You can either make the geometry smaller or use geo fixer.
+Problem: You get a content error similar to:
 
-<BButton
-	link="https://github.com/Bedrock-OSS/wiki-addon/tree/main/geometry_fixer"
-	color=blue
->Download</BButton>
+> `geometry.your_block contains X boxes outside...`
+
+Solution: Your geometry is bigger than Minecraft blocks allow. You can either make the geometry smaller or split it into multiple blocks.
 
 ---
 
 ## What Now?
 
-That is all the common block troubleshooting tips I have seen. If you still have any problems, feel free to join the discord server and ask your question there. If you believe any information is wrong or outdated, feel free to contribute via github.
+If you still have problems after trying these steps, feel free to join the discord server and ask your question there.
+
+If you believe any information is wrong or outdated, please contribute via github!
