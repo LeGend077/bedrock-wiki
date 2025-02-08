@@ -1,5 +1,6 @@
 ---
 title: Style Guide
+description: A guide for keeping Minecraft creations consistent.
 mentions:
     - SirLich
     - solvedDev
@@ -7,10 +8,9 @@ mentions:
     - ChibiMango
     - zheaEvyline
     - QuazChick
-description: Officially supported Bedrock Wiki style guide for add-on creation.
 ---
 
-This document will present the officially supported Bedrock Wiki style guide for add-on creation. This guide aims to promote best practices while creating add-ons and create a consistent format for everyone to follow.
+This document will present the Bedrock Wiki style guide for add-on creation. This guide aims to promote best practices while creating add-ons and create a consistent format for everyone to follow.
 
 :::tip
 The style guide is a living, breathing document, which will evolve as add-on creation evolves. Please get in touch if you think something needs to be updated or changed!
@@ -24,24 +24,28 @@ The style guide is a living, breathing document, which will evolve as add-on cre
 -   Content folders should use consistent pluralization: Stick with names that are either all plural or all singular, don't mix and match. Example:
 
 ✅️ Consistent:
+
 ```
 BP/functions/abilities/ice_blast.mcfunction
 BP/functions/events/player/on_death.mcfunction
 BP/functions/events/world/on_initialise.mcfunction
 BP/functions/quests/jungle/1.mcfunction
 ```
-- All content folders `abilities`, `events`, and `quests` are consistently pluralized.
-- The content folders in `events` are also consistent, as both `player` and `world` are singular.
+
+-   All content folders `abilities`, `events`, and `quests` are consistently pluralized.
+-   The content folders in `events` are also consistent, as both `player` and `world` are singular.
 
 ❌️ Inconsistent:
+
 ```
 BP/functions/ability/ice_blast.mcfunction
 BP/functions/event/players/on_death.mcfunction
 BP/functions/event/world/on_initialise.mcfunction
 BP/functions/quests/jungle/1.mcfunction
 ```
-- Only `quests` content folder is pluralized while `ability`, and `event` are singular.
-- Also, in the `event` folder, the `players` folder is plural while `world` is singular.
+
+-   Only `quests` content folder is pluralized while `ability`, and `event` are singular.
+-   Also, in the `event` folder, the `players` folder is plural while `world` is singular.
 
 ## Identifiers
 
@@ -49,26 +53,26 @@ Do not use identifiers that begin with a number, and especially don't use an ide
 
 ## File and Folder Names
 
-| Concept              | Example Identifier         |
-| -------------------- | -------------------------- |
-| Behavior Pack        | dragons_BP                 |
-| Resource Pack        | dragons_RP                 |
-| Geometry             | dragon.geo.json            |
-| Animation            | dragon.animation.json      |
-| Animation Controller | dragon.ac.json             |
-| RP Entity            | dragon.ce.json<br>*(ce: client entity)*|
-| BP Entity            | dragon.se.json<br>*(se: server entity)*|
-| Item 1.16.100+       | dragon_tooth.item.json     |
-| BP Item              | dragon_tooth.item.bp.json  |
-| RP Item              | dragon_tooth.item.rp.json  |
-| Render Controller    | dragon.rc.json             |
-| Loot Table           | dragon.loot.json           |
-| Recipe               | dragon_saddle.recipe.json  |
-| Spawn Rules          | dragon.spawn.json          |
-| Trade Table          | dragon.trade.json          |
-| Particles            | dragon_magic.particle.json |
-| Texture              | dragon.png                 |
-| Gametest             | dragonTest.js              |
+| Concept               | Example                                                           |
+| --------------------- | ----------------------------------------------------------------- |
+| Behavior Pack         | dragons_BP                                                        |
+| Resource Pack         | dragons_RP                                                        |
+| Geometry              | dragon.geo.json                                                   |
+| Animations            | dragon.animation.json<br>dragon.anim.json                         |
+| Animation Controllers | dragon.animation_controllers.json<br>dragon.ac.json               |
+| RP Entity             | dragon.entity.json<br>dragon.client_entity.json<br>dragon.ce.json |
+| BP Entity             | dragon.behavior.json<br>dragon.se.json<br>*(se: server entity)*   |
+| Item                  | dragon_tooth.item.json                                            |
+| Legacy Item (BP)      | dragon_tooth.item.bp.json                                         |
+| Legacy Item (RP)      | dragon_tooth.item.rp.json                                         |
+| Render Controllers    | dragon.render_controllers.json<br>dragon.rc.json                  |
+| Loot Table            | dragon.json                                                       |
+| Recipe                | dragon_saddle.recipe.json                                         |
+| Spawn Rules           | dragon.spawn.json                                                 |
+| Trade Table           | dragon.json                                                       |
+| Particles             | dragon_magic.particle.json                                        |
+| Texture               | dragon.png                                                        |
+| Script                | dragonFlight.js                                                   |
 
 ## Namespaces
 
@@ -84,12 +88,12 @@ Where to use namespaces:
 
 -   entities
 -   particles
--   component-groups
+-   component groups
 -   events
 
 When not to use namespaces:
 
--   do not include your namespace in any folder path or file-name
+-   do not include your namespace in any folder path or file name
 
 ## Sub-Indexing
 
@@ -273,8 +277,8 @@ Own-line comments can be used for organizational purposes but should not store l
 | BDS     | Bedrock Dedicated Server           |
 | FPV     | First Person View                  |
 | RD      | Render Dragon                      |
-| VSCode  | Visual Studio Code                 |
 | SP      | Skin Pack                          |
+| VSCode  | Visual Studio Code                 |
 
 ## Definition Format Orders
 
@@ -327,5 +331,3 @@ Blocks, entities and items should follow the format order below.
 
 PascalCase should be used with `BlockComponent` or `ItemComponent` as a suffix. As an example, `const MeltableBlockComponent = { ... }` rather than `const meltable = { ... }`.
 This helps to differentiate what we're using in `registerCustomComponent` and what we're using as values elsewhere.
-
-

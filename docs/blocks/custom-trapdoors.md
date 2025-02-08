@@ -60,7 +60,7 @@ This is the block JSON you'll need for basic trapdoor functionality. It includes
             "minecraft:geometry": "geometry.trapdoor",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "acacia_trapdoor",
+                    "texture": "wiki:custom_trapdoor",
                     "render_method": "alpha_test_single_sided"
                 }
             }

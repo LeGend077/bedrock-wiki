@@ -50,10 +50,10 @@ Block components are used to change how your block appears and functions in the 
             "minecraft:geometry": "geometry.lamp",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "lamp"
+                    "texture": "wiki:lamp"
                 },
                 "shade": {
-                    "texture": "lamp_shade"
+                    "texture": "wiki:lamp_shade"
                 }
             }
         }
@@ -71,10 +71,10 @@ _Released from experiment `Holiday Creator Features` for format versions 1.19.50
 
 Type: Boolean/Object
 
--   `origin`: Vector [a, b, c]
-    -   Minimal position of the bounds of the collision box. `origin` is specified as `[x, y, z]` and must be in the range `(-8, 0, -8)` to `(8, 16, 8)`, inclusive.
--   `size`: Vector [a, b, c]
-    -   Size of each side of the collision box. Size is specified as `[x, y, z]`. `origin` + `size` must be in the range `(-8, 0, -8)` to `(8, 16, 8)`, inclusive.
+- `origin`: Vector [a, b, c]
+    - Minimal position of the bounds of the collision box. `origin` is specified as `[x, y, z]` and must be in the range `(-8, 0, -8)` to `(8, 16, 8)`, inclusive.
+- `size`: Vector [a, b, c]
+    - Size of each side of the collision box. Size is specified as `[x, y, z]`. `origin` + `size` must be in the range `(-8, 0, -8)` to `(8, 16, 8)`, inclusive.
 
 #### Example using Boolean
 
@@ -103,11 +103,11 @@ _Released from experiment `Holiday Creator Features` for format versions 1.19.50
 
 Type: Object
 
--   `crafting_tags`: Array
-    -   Required Field
-    -   Defines the tags recipes should define to be crafted on this table. Limited to 64 tags. Each tag is limited to 64 characters.
--   `table_name`: String
-    -   Specifies the language file key that maps to what text will be displayed in the UI of this table. If the string given can not be resolved as a loc string, the raw string given will be displayed. If this field is omitted, the name displayed will default to the name specified in the "display_name" component. If this block has no "display_name" component, the name displayed will default to the name of the block.
+- `crafting_tags`: Array
+    - Required Field
+    - Defines the tags recipes should define to be crafted on this table. Limited to 64 tags. Each tag is limited to 64 characters.
+- `table_name`: String
+    - Specifies the language file key that maps to what text will be displayed in the UI of this table. If the string given can not be resolved as a loc string, the raw string given will be displayed. If this field is omitted, the name displayed will default to the name specified in the "display_name" component. If this block has no "display_name" component, the name displayed will default to the name of the block.
 
 <CodeHeader>minecraft:block > components</CodeHeader>
 
@@ -127,8 +127,8 @@ Describes the destructible by explosion properties for this block. If set to tru
 
 Type: Boolean/Object
 
--   `explosion_resistance`: Double
-    -   Describes how resistant the block is to explosion. Greater values mean the block is less likely to break when near an explosion (or has higher resistance to explosions). The scale will be different for different explosion power levels. A negative value or 0 means it will easily explode; larger numbers increase level of resistance.
+- `explosion_resistance`: Double
+    - Describes how resistant the block is to explosion. Greater values mean the block is less likely to break when near an explosion (or has higher resistance to explosions). The scale will be different for different explosion power levels. A negative value or 0 means it will easily explode; larger numbers increase level of resistance.
 
 #### Example using Boolean
 
@@ -154,9 +154,9 @@ Describes the destructible by mining properties for this block. If set to true, 
 
 Type: Boolean/Object
 
--   `seconds_to_destroy`: Double
-    -   Sets the number of seconds it takes to destroy the block with base equipment. Greater numbers result in greater mining times.
-    -   Note: It actually takes 2x the amount of seconds defined.
+- `seconds_to_destroy`: Double
+    - Sets the number of seconds it takes to destroy the block with base equipment. Greater numbers result in greater mining times.
+    - Note: It actually takes 2x the amount of seconds defined.
 
 #### Example using Boolean
 
@@ -212,8 +212,8 @@ Triggers an event when an entity falls onto this block.
 
 Type: Object
 
--   `min_fall_distance`: Double
-    -   The minimum distance an entity must fall to trigger the event in blocks.
+- `min_fall_distance`: Double
+    - The minimum distance an entity must fall to trigger the event in blocks.
 
 _Released from experiment `Beta APIs` for format versions 1.21.10 and higher._
 
@@ -231,8 +231,8 @@ Describes the flammable properties for this block. If set to true, default value
 
 Type: Boolean/Object
 
--   `catch_chance_modifier`: Int
-    -   A modifier affecting the chance that this block will catch flame when next to a fire. Values are greater than or equal to 0, with a higher number meaning more likely to catch on fire. For a `catch_chance_modifier` greater than 0, the fire will continue to burn until the block is destroyed (or it will burn forever if the `destroy_chance_modifier` is 0). If the `catch_chance_modifier` is 0, and the block is directly ignited, the fire will eventually burn out without destroying the block (or it will have a chance to be destroyed if `destroy_chance_modifier` is greater than 0). The default value of 5 is the same as that of Planks.
+- `catch_chance_modifier`: Int
+    - A modifier affecting the chance that this block will catch flame when next to a fire. Values are greater than or equal to 0, with a higher number meaning more likely to catch on fire. For a `catch_chance_modifier` greater than 0, the fire will continue to burn until the block is destroyed (or it will burn forever if the `destroy_chance_modifier` is 0). If the `catch_chance_modifier` is 0, and the block is directly ignited, the fire will eventually burn out without destroying the block (or it will have a chance to be destroyed if `destroy_chance_modifier` is greater than 0). The default value of 5 is the same as that of Planks.
 
 #### Example using Boolean
 
@@ -267,15 +267,15 @@ Type: Double
 
 ### Geometry
 
-The description identifier of the geometry to use to render this block. This identifier must match an existing geometry identifier in any of the loaded resource packs or be one of the currently supported Vanilla identifiers: `minecraft:geometry.full_block` or `minecraft:geometry.cross`.
+The description identifier of the geometry to use to render this block. This identifier must match an existing geometry identifier in any of the loaded resource packs or refer to one of the currently supported [vanilla models](/blocks/vanilla-block-models).
 
 **Custom block model limitations:**
 
--   Your block is limited to 30&times;30&times;30 <abbr title="16ths of a block unit">pixels</abbr> in size.
+- Your block is limited to 30&times;30&times;30 <abbr title="16ths of a block unit">pixels</abbr> in size.
 
--   At least 1 pixel of your block on each axis must be contained by the base 16&times;16&times;16 block.
+- At least 1 pixel of your block on each axis must be contained by the base 16&times;16&times;16 block.
 
--   The absolute bounds of the position of your 30&times;30&times;30 block are 30 <abbr title="16ths of a block unit">pixels</abbr> in each direction from the origin. Your block can be placed in any position within these bounds, as long as it adheres to rule #2.
+- The absolute bounds of the position of your 30&times;30&times;30 block are 30 <abbr title="16ths of a block unit">pixels</abbr> in each direction from the origin. Your block can be placed in any position within these bounds, as long as it adheres to rule #2.
 
 Note: Does not conduct redstone. Even if using the vanilla `full_block` identifier. Makes your block breathable as well. Mobs are unable to spawn as well. Interestingly, bats are able to hang upside down on them despite being a "non solid" block in terms of spawnability and conducitvity.
 
@@ -283,11 +283,11 @@ _Released from experiment `Holiday Creator Features` for format versions 1.19.40
 
 Type: String/Object
 
--   `identifier`: String
-    -   The identifier of the geometry.
--   `bone_visibility`: Object
-    -   Optional “array” of Booleans that define the visibility of individual bones in the geometry file. In order to set up bone_visibility the geometry file name must be entered as an identifier. After the identifier has been specified, bone_visibility can be defined based on the names of the bones in the specified geometry file on a true/false basis.
-    -   Note that all bones default to true, so bones should only be defined if they are being set to false. Including bones set to true will work the same as the default.
+- `identifier`: String
+    - The identifier of the geometry.
+- `bone_visibility`: Object
+    - Optional “array” of Booleans that define the visibility of individual bones in the geometry file. In order to set up bone_visibility the geometry file name must be entered as an identifier. After the identifier has been specified, bone_visibility can be defined based on the names of the bones in the specified geometry file on a true/false basis.
+    - Note that all bones default to true, so bones should only be defined if they are being set to false. Including bones set to true will work the same as the default.
 
 #### Example using String
 
@@ -394,9 +394,9 @@ Type: String/Vector [a, b, c]
 
 Configuration of your block's rendering, including textures and lighting.
 
--   All instances must have the same render method.
--   Block faces will unconditionally darken if intersecting another block.
--   The texture on the `down` face is used for destruction particles.
+- All instances must have the same render method.
+- Block faces will unconditionally darken if intersecting another block.
+- The texture on the `down` face is used for destruction particles.
 
 Material instances can be combined with `RP/blocks.json` entries to create blocks which exhibit opaque-like properties. This is primarily used to enable face culling on [custom glass blocks](/blocks/custom-glass-blocks).
 
@@ -414,13 +414,13 @@ Render methods essentially control how a block appears in the world, much like e
 | double_sided            |       ❌       |       ❌       |         ❌         |        ❌         | N/A - Use for opaque 2D plains. |
 | opaque _(default)_      |       ❌       |       ❌       |         ✔️         |        ❌         | Dirt, Stone, Concrete.          |
 
--   **_Transparency_** - fully see-through areas.
+- **_Transparency_** - fully see-through areas.
 
--   **_Translucency_** - semi-transparent areas.
+- **_Translucency_** - semi-transparent areas.
 
--   **_Backface Culling_** - faces become invisible when viewed from behind.
+- **_Backface Culling_** - faces become invisible when viewed from behind.
 
--   **_Distant Culling_** - the block becomes invisible before reaching the full render distance.
+- **_Distant Culling_** - the block becomes invisible before reaching the full render distance.
 
 <CodeHeader>minecraft:block > components</CodeHeader>
 
@@ -429,7 +429,7 @@ Render methods essentially control how a block appears in the world, much like e
   // '*' instance required - default instance for cube faces
   // Instance names 'up', 'down', 'north', 'east', 'south' and 'west' are built in
   "*": {
-    "texture": "texture_name", // Shortname defined in `RP/textures/terrain_textures.json`
+    "texture": "wiki:texture_name", // Shortname defined in `RP/textures/terrain_texture.json`
     "render_method": "blend", // One of the render methods in the above table
     "face_dimming": true, // Defaults to true; should faces with this material be dimmed by their direction?
     "ambient_occlusion": true // Defaults to true; should shadows be created based on surrounding blocks?
@@ -450,19 +450,19 @@ Custom instance names can be defined within material instances, and can be refer
 ```json
 "minecraft:material_instances": {
   "*": {
-    "texture": "texture_name",
+    "texture": "wiki:texture_name",
     "render_method": "blend" // Must match other instances
   },
   // Custom instance name
   "end": {
-    "texture": "texture_name_end",
+    "texture": "wiki:texture_name_end",
     "render_method": "blend" // Must match other instances
   },
   "up": "end",
   "down": "end",
   // Instance name defined in model:
   "flower": {
-    "texture": "texture_name_flower",
+    "texture": "wiki:texture_name_flower",
     "render_method": "blend" // Must match other instances
   }
 }
@@ -476,20 +476,20 @@ _Released from experiment `Holiday Creator Features` for format versions 1.19.60
 
 Type: Object
 
--   `conditions`: Array - List of conditions where the block can be placed/survive. Limited to 64 conditions. Each condition is a JSON Object that must contain at least one (and can contain both) of the parameters `allowed_faces` or `block_filter` as shown below.
-    -   `allowed_faces`: Array - List of any of the following strings describing which face(s) this block can be placed on: `up`, `down`, `north`, `south`, `east`, `west`, `side`, `all`. Limited to 6 faces.
-    -   `block_filter`: Array - List of blocks that this block can be placed against in the `allowed_faces` direction. Limited to 64 blocks. Each block in this list can either be specified as a String (block name) or as a BlockDescriptor.
+- `conditions`: Array - List of conditions where the block can be placed/survive. Limited to 64 conditions. Each condition is a JSON Object that must contain at least one (and can contain both) of the parameters `allowed_faces` or `block_filter` as shown below.
+    - `allowed_faces`: Array - List of any of the following strings describing which face(s) this block can be placed on: `up`, `down`, `north`, `south`, `east`, `west`, `side`, `all`. Limited to 6 faces.
+    - `block_filter`: Array - List of blocks that this block can be placed against in the `allowed_faces` direction. Limited to 64 blocks. Each block in this list can either be specified as a String (block name) or as a BlockDescriptor.
 
 #### Block Descriptor
 
 A BlockDescriptor is an object that allows you to reference a block (or multiple blocks) based on its tags, or based on its name and states. The fields of a BlockDescriptor are described below.
 
--   `name`: String
-    -   The name of a block.
--   `states`: Object
-    -   The list of Vanilla block states and their values that the block can have, expressed in key/value pairs.
--   `tags`: String
-    -   A condition using Molang queries that results to true/false that can be used to query for blocks with certain tags.
+- `name`: String
+    - The name of a block.
+- `states`: Object
+    - The list of Vanilla block states and their values that the block can have, expressed in key/value pairs.
+- `tags`: String
+    - A condition using Molang queries that results to true/false that can be used to query for blocks with certain tags.
 
 <CodeHeader>minecraft:block > components</CodeHeader>
 
@@ -527,10 +527,10 @@ _Released from experiment `Upcoming Creator Features` for format versions 1.21.4
 
 Type: Object
 
--   `redstone_conductor`: Boolean
-    -   Determines whether this block conducts direct redstone power.
--   `allows_wire_to_step_down`: Boolean
-    -   Determines whether redstone wire can travel down the side of this block.
+- `redstone_conductor`: Boolean
+    - Determines whether this block conducts direct redstone power.
+- `allows_wire_to_step_down`: Boolean
+    - Determines whether redstone wire can travel down the side of this block.
 
 <CodeHeader>minecraft:block > components</CodeHeader>
 
@@ -549,10 +549,10 @@ _Released from experiment `Holiday Creator Features` for format versions 1.19.60
 
 Type: Boolean/Object
 
--   `origin`: Vector [a, b, c]
-    -   Minimal position of the bounds of the collision box. `origin` is specified as `[x, y, z]` and must be in the range `(-8, 0, -8)` to `(8, 16, 8)`, inclusive.
--   `size`: Vector [a, b, c]
-    -   Size of each side of the collision box. Size is specified as `[x, y, z]`. `origin` + `size` must be in the range `(-8, 0, -8)` to `(8, 16, 8)`, inclusive.
+- `origin`: Vector [a, b, c]
+    - Minimal position of the bounds of the collision box. `origin` is specified as `[x, y, z]` and must be in the range `(-8, 0, -8)` to `(8, 16, 8)`, inclusive.
+- `size`: Vector [a, b, c]
+    - Size of each side of the collision box. Size is specified as `[x, y, z]`. `origin` + `size` must be in the range `(-8, 0, -8)` to `(8, 16, 8)`, inclusive.
 
 #### Example using Boolean
 
@@ -579,10 +579,10 @@ Causes the block to tick after a random delay in the range specified by `interva
 
 Type: Object
 
--   `interval_range`: Range [a, b]
-    -   Two durations (in ticks) which will be used as the minimum and maximum delays for randomness.
--   `looping`: Boolean
-    -   Whether this block should continuously tick, rather than only ticking once.
+- `interval_range`: Range [a, b]
+    - Two durations (in ticks) which will be used as the minimum and maximum delays for randomness.
+- `looping`: Boolean
+    - Whether this block should continuously tick, rather than only ticking once.
 
 _Released from experiment `Beta APIs` for format versions 1.21.10 and higher._
 
@@ -607,16 +607,16 @@ Lean about [rotatable blocks](/blocks/rotatable-blocks) to apply rotation based 
 
 Type: Object
 
--   `rotation`: Vector [a, b, c]
-    -   How many degrees to rotate the geometry. [x ,y, z]. Must be in increments of 90. Can be negative. If not in increment of 90, the game will round to the nearest 90 increment.
--   `rotation_pivot`: Vector [a, b, c]
-    -   The pivot point(in block units) to rotate the block on.
--   `scale`: Vector [a, b, c]
-    -   How many pixels to scale the geometry. [x ,y, z]
--   `scale_pivot`: Vector [a, b, c]
-    -   The pivot point(in block units) to scale the block on.
--   `translation`: Vector [a, b, c]
-    -   How many pixels to translate the geometry. [x ,y, z]
+- `rotation`: Vector [a, b, c]
+    - How many degrees to rotate the geometry. [x ,y, z]. Must be in increments of 90. Can be negative. If not in increment of 90, the game will round to the nearest 90 increment.
+- `rotation_pivot`: Vector [a, b, c]
+    - The pivot point(in block units) to rotate the block on.
+- `scale`: Vector [a, b, c]
+    - How many pixels to scale the geometry. [x ,y, z]
+- `scale_pivot`: Vector [a, b, c]
+    - The pivot point(in block units) to scale the block on.
+- `translation`: Vector [a, b, c]
+    - How many pixels to translate the geometry. [x ,y, z]
 
 <CodeHeader>minecraft:block > components</CodeHeader>
 

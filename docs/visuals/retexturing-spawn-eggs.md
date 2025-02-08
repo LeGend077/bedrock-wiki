@@ -1,14 +1,14 @@
 ---
 title: Retexturing Spawn Eggs
+description: Change the default texture of an entity's spawn egg.
+category: Tutorials
 tags:
     - beginner
-category: Tutorials
 mentions:
     - SirLich
     - Joelant05
     - MedicalJewel105
     - aexer0e
-description: Change spawn default texture of spawn egg.
 ---
 
 Custom entities will automatically be given a spawn egg. This spawn egg can be found inside of the creative menu, with a name like `item.spawn_egg.entity.wiki:my_entity.name`. If you want to rename your spawn egg as well as set a texture, you can do so in the lang files.
@@ -33,13 +33,14 @@ Now we need to give our texture a short-name. This can be done in item_texture f
 
 ```json
 {
-	"resource_pack_name": "My Map Name", //I don't actually know if this field does anything.
-	"texture_name": "atlas.items",
-	"texture_data": {
-		"my_entity": { //"my_entity" is the short-name of the texture, which we can reference later
-			"textures": "textures/items/egg/my_entity"
-		}
-        //Add more spawn egg textures here
+    "resource_pack_name": "My Map Name", //I don't actually know if this field does anything.
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "wiki:my_entity": {
+            // "my_entity" is the short-name of the texture, which we can reference later
+            "textures": "textures/items/egg/my_entity"
+        }
+        // Add more spawn egg textures here
     }
 }
 ```
@@ -52,7 +53,7 @@ Now we can use our new texture inside of the Resource Pack entity file:
 
 ```json
 "spawn_egg": {
-    "texture": "my_entity", //"my entity should match the texture short-name we created in step-1.
+    "texture": "wiki:my_entity", // "wiki:my_entity" should match the texture short-name we created in step-1.
     "texture_index": 0
 }
 ```

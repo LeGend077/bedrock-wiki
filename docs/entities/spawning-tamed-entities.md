@@ -132,7 +132,7 @@ To make the tamed wolf spawn only when the projectile hits something, we first n
             "identifier": "wiki:throwable_pretamed_wolf"
         },
         "components": {
-            "minecraft:icon": "my_icon",
+            "minecraft:icon": "wiki:my_icon",
             "minecraft:throwable": {
                 "do_swing_animation": true
             },

@@ -42,22 +42,22 @@ Navigate to your `RP/textures/terrain_texture.json`. Ensure that the file is pro
     "padding": 8,
     "num_mip_levels": 4,
     "texture_data": {
-        "dirt_like": {
+        "wiki:dirt_like": {
             "textures": "textures/blocks/dirt_like" // You can replace this with anything, just remember the name
         },
-        "log_like_top": {
-            "textures": "textures/blocks/log_like_top" // You can replace this with anything, just remember the name
+        "wiki:custom_log_top": {
+            "textures": "textures/blocks/custom_log_top" // You can replace this with anything, just remember the name
         },
-        "log_like_side": {
-            "textures": "textures/blocks/log_like_side" // You can replace this with anything, just remember the name
+        "wiki:custom_log_side": {
+            "textures": "textures/blocks/custom_log_side" // You can replace this with anything, just remember the name
         },
-        "custom_grass_top": {
+        "wiki:custom_grass_top": {
             "textures": "textures/blocks/custom_grass_top" // You can replace this with anything, just remember the name
         },
-        "custom_grass_bottom": {
+        "wiki:custom_grass_bottom": {
             "textures": "textures/blocks/custom_grass_bottom" // You can replace this with anything, just remember the name
         },
-        "custom_grass_side": {
+        "wiki:custom_grass_side": {
             "textures": "textures/blocks/custom_grass_side" // You can replace this with anything, just remember the name
         }
     }
@@ -80,7 +80,7 @@ Dirt like block example:
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "dirt_like"
+                    "texture": "wiki:dirt_like"
                 }
             }
         }
@@ -90,22 +90,22 @@ Dirt like block example:
 
 Log like block example:
 
-<CodeHeader>BP/blocks/log_like.json</CodeHeader>
+<CodeHeader>BP/blocks/custom_log.json</CodeHeader>
 
 ```json
 {
     "format_version": "1.21.40",
     "minecraft:block": {
         "description": {
-            "identifier": "wiki:log_like"
+            "identifier": "wiki:custom_log"
         },
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "log_like_side"
+                    "texture": "wiki:custom_log_side"
                 },
                 "end": {
-                    "texture": "log_like_top"
+                    "texture": "wiki:custom_log_top"
                 },
                 "up": "end",
                 "down": "end"
@@ -129,13 +129,13 @@ Grass-like block example:
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "custom_grass_side"
+                    "texture": "wiki:custom_grass_side"
                 },
                 "up": {
-                    "texture": "custom_grass_top"
+                    "texture": "wiki:custom_grass_top"
                 },
                 "down": {
-                    "texture": "custom_grass_bottom"
+                    "texture": "wiki:custom_grass_bottom"
                 }
             }
         }
@@ -214,9 +214,9 @@ Problem: You get a content error similar to:
 
 Solution: Check your `minecraft:collision_box` or `minecraft:selection_box` components and do the following:
 
--   Make sure the X and Z values are in the range `-8` - `8`.
--   Make sure the Y value is in the range `0` - `16`.
--   Make sure the box doesn't exit the block's 16&times;16&times;16 unit area.
+- Make sure the X and Z values are in the range `-8` - `8`.
+- Make sure the Y value is in the range `0` - `16`.
+- Make sure the box doesn't exit the block's 16&times;16&times;16 unit area.
 
 ## 3.2 - Model Errors
 

@@ -42,7 +42,7 @@ First, you'll want to make the actual item:
             "minecraft:projectile": {
                 "projectile_entity": "wiki:throwable_item_entity"
             },
-            "minecraft:icon": "throwable_item"
+            "minecraft:icon": "wiki:throwable_item"
         }
     }
 }

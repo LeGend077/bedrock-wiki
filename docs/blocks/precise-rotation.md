@@ -1,5 +1,6 @@
 ---
 title: Precise Rotation
+description: This tutorial guides you through making a block with sub-cardinal rotation (e.g. creeper heads and signs), providing examples of a shell block with this rotation type.
 category: Tutorials
 tags:
     - expert
@@ -7,7 +8,6 @@ tags:
 mentions:
     - QuazChick
     - SmokeyStack
-description: This tutorial guides you through making a block with sub-cardinal rotation (e.g. creeper heads and signs), providing examples of a shell block with this rotation type.
 ---
 
 ::: tip FORMAT & MIN ENGINE VERSION `1.21.40`
@@ -23,9 +23,9 @@ _Looking for regular rotation? Learn about it [here](/blocks/rotatable-blocks)!_
 
 Features:
 
--   Can be placed on the top of blocks, with 16 possible rotations
--   Can be placed on the side faces of blocks (north, east, south & west)
--   Rotation behaves the same as vanilla mob heads - without the performance hit from block entities!
+- Can be placed on the top of blocks, with 16 possible rotations
+- Can be placed on the side faces of blocks (north, east, south & west)
+- Rotation behaves the same as vanilla mob heads - without the performance hit from block entities!
 
 ## Block Model
 
@@ -33,10 +33,10 @@ To allow for more precise rotation, your block's model will need a few extra bon
 
 There are 4 bones required for precise ground rotation, each with different Y axis rotations:
 
--   `up_0` (Y rotation = 0)
--   `up_22_5` (Y rotation = 22.5)
--   `up_45` (Y rotation = 45)
--   `up_67_5` (Y rotation = 67.5)
+- `up_0` (Y rotation = 0)
+- `up_22_5` (Y rotation = 22.5)
+- `up_45` (Y rotation = 45)
+- `up_67_5` (Y rotation = 67.5)
 
 **These rotations are in a clockwise direction.**
 
@@ -206,7 +206,7 @@ Below is the base "shell" block we will be adding advanced rotation to.
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "shell" // Shortname defined in `RP/textures/terrain_texture.json`
+                    "texture": "wiki:shell" // Shortname defined in `RP/textures/terrain_texture.json`
                 }
             },
             // Prevent block from being placed on `down` face
@@ -380,10 +380,10 @@ Add the following component to your block:
 "minecraft:geometry": {
   "identifier": "geometry.shell", // Model created in first step
   "bone_visibility": {
-    "up_0": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation'), 4)",
-    "up_22_5": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation') - 1, 4)",
-    "up_45": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation') - 2, 4)",
-    "up_67_5": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation') - 3, 4)",
+    "up_0": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('wiki:rotation'), 4) == 0",
+    "up_22_5": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('wiki:rotation'), 4) == 1",
+    "up_45": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('wiki:rotation'), 4) == 2",
+    "up_67_5": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('wiki:rotation'), 4) == 3",
     "side": "q.block_state('minecraft:block_face') != 'up'"
   }
 }
@@ -452,16 +452,16 @@ Your block JSON and script files after the above steps should look similar to th
             "minecraft:geometry": {
                 "identifier": "geometry.shell",
                 "bone_visibility": {
-                    "up_0": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation'), 4)",
-                    "up_22_5": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation') - 1, 4)",
-                    "up_45": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation') - 2, 4)",
-                    "up_67_5": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation') - 3, 4)",
+                    "up_0": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('wiki:rotation'), 4) == 0",
+                    "up_22_5": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('wiki:rotation'), 4) == 1",
+                    "up_45": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('wiki:rotation'), 4) == 2",
+                    "up_67_5": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('wiki:rotation'), 4) == 3",
                     "side": "q.block_state('minecraft:block_face') != 'up'"
                 }
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "shell"
+                    "texture": "wiki:shell"
                 }
             },
             "minecraft:placement_filter": {
@@ -557,9 +557,9 @@ world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
 
 What you have created:
 
--   [x] Block model supporting precise rotation
--   [x] Block with 16 supported rotation values, allowing placement on 5 block faces (20 total orientations)
--   [x] Custom block component that can be used to set this rotation state
+- [x] Block model supporting precise rotation
+- [x] Block with 16 supported rotation values, allowing placement on 5 block faces (20 total orientations)
+- [x] Custom block component that can be used to set this rotation state
 
 ---
 

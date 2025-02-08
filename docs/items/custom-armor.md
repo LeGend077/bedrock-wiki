@@ -43,7 +43,7 @@ Create a chest piece:
         },
         "components": {
             // The icon we want to use in our INVENTORY
-            "minecraft:icon": "my_chest",
+            "minecraft:icon": "wiki:my_chest",
             // We give it a name
             "minecraft:display_name": {
                 "value": "My Custom Armor"
@@ -169,7 +169,7 @@ So while the chest piece alone is great, you probably want a whole set, so from 
         },
         "components": {
             // Give it an applicable ITEM texture
-            "minecraft:icon": "my_leggings",
+            "minecraft:icon": "wiki:my_leggings",
             "minecraft:display_name": {
                 "value": "My Custom Leggings"
             },
@@ -264,7 +264,7 @@ This is just like the chest piece, just we change some of the categories and slo
             }
         },
         "components": {
-            "minecraft:icon": "my_helm",
+            "minecraft:icon": "wiki:my_helm",
             "minecraft:display_name": {
                 "value": "My Custom Helmet"
             },
@@ -358,7 +358,7 @@ You already know the pattern so lets make the item and attachable json files.
             }
         },
         "components": {
-            "minecraft:icon": "my_boots",
+            "minecraft:icon": "wiki:my_boots",
             "minecraft:display_name": {
                 "value": "My Custom Boots"
             },

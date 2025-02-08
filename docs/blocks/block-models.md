@@ -155,16 +155,16 @@ If you have textures for your block defined in that file, make sure you migrate 
             // Apply textures and other rendering configuration
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "paper_bag",
+                    "texture": "wiki:paper_bag",
                     "render_method": "alpha_test" // Disable backface culling and allow transparency
                 },
                 "down": {
-                    "texture": "paper_bag_bottom_fold",
+                    "texture": "wiki:paper_bag_bottom_fold",
                     "render_method": "alpha_test" // Must be the same in all instances
                 },
                 // Custom instance name used in model
                 "side_gusset": {
-                    "texture": "paper_bag_side_gusset",
+                    "texture": "wiki:paper_bag_side_gusset",
                     "render_method": "alpha_test" // Must be the same in all instances
                 }
             },

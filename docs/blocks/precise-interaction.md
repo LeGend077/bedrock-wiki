@@ -112,7 +112,7 @@ export default class FaceSelectionPlains {
 
 ### Methods
 
--   #### constructor
+- #### constructor
 
     ```ts
     new FaceSelectionPlains(...plains: { origin: [number, number]; size: [number, number]; name?: string }[])
@@ -122,25 +122,25 @@ export default class FaceSelectionPlains {
 
     <Spoiler title="Parameters">
 
-    -   **plains**: `Object[]`
+    - **plains**: `Object[]`
 
         Array defining the 2D areas on a block's face which may be selected.
 
-        -   **origin**: `[number, number]`
+        - **origin**: `[number, number]`
 
             [U, V] array defining the offset of the plain from the top left of the block face.
 
-        -   **size**: `[number, number]`
+        - **size**: `[number, number]`
 
             [U, V] array defining the size of the plain, extending from the top left.
 
-        -   **name**?: `string`
+        - **name**?: `string`
 
             Custom name to easily identify this plain when it is selected.
 
     </Spoiler>
 
--   #### getSelected
+- #### getSelected
 
     ```ts
     getSelected(selection: { face: Direction; faceLocation: Vector3 }, options?: { invertU?: boolean; invertV?: boolean }): number | string | undefined
@@ -150,27 +150,27 @@ export default class FaceSelectionPlains {
 
     <Spoiler title="Parameters">
 
-    -   **selection**: `Object`
+    - **selection**: `Object`
 
         Object containing details about the selection.
 
-        -   **face**: [`Direction`](https://learn.microsoft.com/minecraft/creator/scriptapi/minecraft/server/direction)
+        - **face**: [`Direction`](https://learn.microsoft.com/minecraft/creator/scriptapi/minecraft/server/direction)
 
             The selected face of the block.
 
-        -   **faceLocation**: [`Vector3`](https://learn.microsoft.com/minecraft/creator/scriptapi/minecraft/server/vector3)
+        - **faceLocation**: [`Vector3`](https://learn.microsoft.com/minecraft/creator/scriptapi/minecraft/server/vector3)
 
             Selection location relative to the bottom north-west corner of the block.
 
-    -   **options**?: `Object`
+    - **options**?: `Object`
 
         Optionally configure how the selected plain is calculated.
 
-        -   **invertU**?: `boolean`
+        - **invertU**?: `boolean`
 
             Horizontal axis goes `right -> left` rather than `left -> right` if true.
 
-        -   **invertV**?: `boolean`
+        - **invertV**?: `boolean`
 
             Vertical axis goes `bottom -> top` rather than `top -> bottom` if true.
 
@@ -309,7 +309,7 @@ export default class SelectionBoxes {
 
 ### Methods
 
--   #### constructor
+- #### constructor
 
     ```ts
     new SelectionBoxes(...boxes: { origin: [number, number, number]; size: [number, number, number]; name?: string }[])
@@ -319,25 +319,25 @@ export default class SelectionBoxes {
 
     <Spoiler title="Parameters">
 
-    -   **boxes**: `Object[]`
+    - **boxes**: `Object[]`
 
         Array defining the 3D areas within a block which may be selected.
 
-        -   **origin**: `[number, number, number]`
+        - **origin**: `[number, number, number]`
 
             [X, Y, Z] array defining the offset of the box from the block's horizontal middle and vertical bottom in pixels, extending from the north-east.
 
-        -   **size**: `[number, number, number]`
+        - **size**: `[number, number, number]`
 
             [X, Y, Z] array defining the size of the box in pixels, extending from the north-east.br>
 
-        -   **name**?: `string`
+        - **name**?: `string`
 
             Custom name to easily identify this box when it is selected.
 
     </Spoiler>
 
--   #### getSelected
+- #### getSelected
 
     ```ts
     getSelected(faceLocation: Vector3, options?: { invertX?: boolean; invertY?: boolean; invertZ?: boolean }): number | string | undefined
@@ -349,23 +349,23 @@ export default class SelectionBoxes {
 
     <Spoiler title="Parameters">
 
-    -   **faceLocation**: [`Vector3`](https://learn.microsoft.com/minecraft/creator/scriptapi/minecraft/server/vector3)
+    - **faceLocation**: [`Vector3`](https://learn.microsoft.com/minecraft/creator/scriptapi/minecraft/server/vector3)
 
         Selection location relative to the bottom north-west corner of the block.
 
-    -   **options**?: `Object`
+    - **options**?: `Object`
 
         Optionally configure how the selected box is calculated.
 
-        -   **invertX**?: `boolean`
+        - **invertX**?: `boolean`
 
             X axis extends `west -> east` rather than `east -> west` if true, following [Blockbench](https://blockbench.net)'s displayed positions.
 
-        -   **invertY**?: `boolean`
+        - **invertY**?: `boolean`
 
             Y axis extends `up -> down` rather than `down -> up` if true.
 
-        -   **invertZ**?: `boolean`
+        - **invertZ**?: `boolean`
 
             Z axis extends `south -> north` rather than `north -> south` if true.
 
@@ -474,10 +474,10 @@ Interacting with paper will fill the selected slot. Destroying the block release
                     "texture": "stripped_bamboo_block"
                 },
                 "empty_slot": {
-                    "texture": "pigeonholes_empty"
+                    "texture": "wiki:pigeonholes_empty"
                 },
                 "occupied_slot": {
-                    "texture": "pigeonholes_occupied"
+                    "texture": "wiki:pigeonholes_occupied"
                 }
             }
         },
@@ -679,12 +679,12 @@ Using our [SelectionBoxes](#selectionboxes-class) class, the player can interact
                 },
                 // Material instances defined in model:
                 "dirt": {
-                    "texture": "double_flower_pot_dirt", // Apply a darker tint to the dirt texture to replicate vanilla potted dirt
+                    "texture": "wiki:double_flower_pot_dirt", // Apply a darker tint to the dirt texture to replicate vanilla potted dirt
                     "render_method": "alpha_test",
                     "ambient_occlusion": false
                 },
                 "handle": {
-                    "texture": "double_flower_pot_handle",
+                    "texture": "wiki:double_flower_pot_handle",
                     "render_method": "alpha_test"
                 },
                 "dandelion": {

@@ -108,7 +108,7 @@ This will create a vanilla-like custom glazed terracotta.
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "purple_glazed_terracotta",
+                    "texture": "wiki:custom_glazed_terracotta",
                     "render_method": "opaque"
                 }
             }

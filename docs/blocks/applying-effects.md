@@ -156,7 +156,7 @@ And done! The code above will trigger the desired status effect as long as the e
             "minecraft:geometry": "geometry.wither_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "wither_block"
+                    "texture": "wiki:wither_block"
                 }
             },
             "minecraft:custom_components": ["wiki:detect_treaders"]

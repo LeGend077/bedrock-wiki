@@ -53,9 +53,9 @@ The list of available categories in a section can be found in the section's `ind
 
 Here are some of the common categories that you'll be able to use in most sections, check the page sidebar for others:
 
--   General
--   Tutorials
--   Documentation
+- General
+- Tutorials
+- Documentation
 
 #### Available Tags
 
@@ -63,20 +63,20 @@ Tags are defined in the `docs/.vitepress/tags.ts` file. If you'd like to add a n
 
 If you're just looking for existing tags, here is the list of tags that this wiki currently supports:
 
--   <Tag name="beginner" />
--   <Tag name="beta" />
--   <Tag name="deprecated" />
--   <Tag name="easy" />
--   <Tag name="experimental" />
--   <Tag name="expert" />
--   <Tag name="function" />
--   <Tag name="guide" />
--   <Tag name="help" />
--   <Tag name="info" />
--   <Tag name="intermediate" />
--   <Tag name="method" />
--   <Tag name="outdated" />
--   <Tag name="scripting" />
+- <Tag name="beginner" />
+- <Tag name="beta" />
+- <Tag name="deprecated" />
+- <Tag name="easy" />
+- <Tag name="experimental" />
+- <Tag name="expert" />
+- <Tag name="function" />
+- <Tag name="guide" />
+- <Tag name="help" />
+- <Tag name="info" />
+- <Tag name="intermediate" />
+- <Tag name="method" />
+- <Tag name="outdated" />
+- <Tag name="scripting" />
 
 ### Content
 
@@ -279,16 +279,16 @@ Every page that is inside a folder has to be accessed by writing the name of the
 A regular bullet-pointed list.
 
 ```md
--   This
--   Is
--   A
--   List
+- This
+- Is
+- A
+- List
 ```
 
--   This
--   Is
--   A
--   List
+- This
+- Is
+- A
+- List
 
 ---
 
@@ -315,16 +315,16 @@ A list with consecutive numbers in place of bullet points.
 A list where each item is either checked or unchecked. An `x` between the square brackets marks the item as checked.
 
 ```md
--   [x] This
--   [x] Is
--   [ ] A
--   [x] List
+- [x] This
+- [x] Is
+- [ ] A
+- [x] List
 ```
 
--   [x] This
--   [x] Is
--   [ ] A
--   [x] List
+- [x] This
+- [x] Is
+- [ ] A
+- [x] List
 
 ## Working with Components
 
@@ -341,11 +341,11 @@ We have snippets for our components. To see them, start typing `wiki.` in Markdo
 Some components support a `color` attribute which can be used to add more visual flair!
 Here are the values that the wiki currently supports:
 
--   <Label color="red">red</Label>
--   <Label color="orange">orange</Label>
--   <Label color="yellow">yellow</Label>
--   <Label color="green">green</Label>
--   <Label color="blue">blue</Label>
+- <Label color="red">red</Label>
+- <Label color="orange">orange</Label>
+- <Label color="yellow">yellow</Label>
+- <Label color="green">green</Label>
+- <Label color="blue">blue</Label>
 
 ### Button
 
@@ -475,13 +475,13 @@ Remember to format json. You can use [this](https://jsonformatter.curiousconcept
 
 The filepath goes between the two HTML-Tags. Make sure to follow our [Style-Guide](/meta/style-guide) when describing filepaths:
 
--   If you link inside a Behavior-Pack, place `BP` in front of all other files:
+- If you link inside a Behavior-Pack, place `BP` in front of all other files:
 
     ✔️ `BP/blocks/example.json`
 
     ❌ `YourBehaviorPack/blocks/example.json`
 
--   Same for the Resource-Pack, use `RP` in front of all other files:
+- Same for the Resource-Pack, use `RP` in front of all other files:
 
     ✔️ `RP/manifest.json`
 
@@ -655,8 +655,8 @@ Wrong:
 Correct:
 
 ````md
--   one
--   two
+- one
+- two
 
 <CodeHeader>BP/blocks/example.json</CodeHeader>
 
@@ -688,9 +688,9 @@ Title case is a casing style that must be used in page titles and headings.
 
 Some examples:
 
--   `Welcome to the Wiki!`
--   `Your First Add-On`
--   `How It Works`
+- `Welcome to the Wiki!`
+- `Your First Add-On`
+- `How It Works`
 
 ### Headings
 
@@ -701,19 +701,19 @@ Some examples:
 
 Some examples:
 
--   ✔️ `## A Page`
+- ✔️ `## A Page`
 
     ❌ `# A Page`
 
--   ✔️ `### Some Other Layer`
+- ✔️ `### Some Other Layer`
 
     ❌ `###### Some Other Layer`
 
--   ✔️ `## My Own Article`
+- ✔️ `## My Own Article`
 
     ❌ `## my own: article`
 
--   ✔️ `## Next Steps`
+- ✔️ `## Next Steps`
 
     ❌ `## Next Steps:`
 
@@ -721,7 +721,7 @@ Some examples:
 
 1.  Use CodeHeaders, unless it is illogical or not possible.
 2.  Fully extend JSON Code if it improves readability aka. as ["Prettified Code"](https://jsonformatter.curiousconcept.com/#).
-    -   Do not extend `.geo.json` files as it would be too long.
+    - Do not extend `.geo.json` files as it would be too long.
 3.  If the code is too long or not necessary, wrap it in a spoiler component.
 4.  Use `RP` and `BP` as root folders.
 5.  Make comments but not many.
@@ -745,18 +745,18 @@ Example:
         "components": {
             "minecraft:max_stack_size": 64, // Short description of a value/component.
             // Make notes about a group of specific components (icon and glint in our case) used below this way.
-            "minecraft:icon": "copper_coin",
+            "minecraft:icon": "wiki:copper_coin",
             "minecraft:glint": 3.5
         }
     }
 }
 ```
 
--   `minecraft:max_stack_size`
+- `minecraft:max_stack_size`
 
     ...
 
--   `minecraft:icon`
+- `minecraft:icon`
 
     ...
 
@@ -778,7 +778,7 @@ The above steps will be done automatically if you install the [Prettier](https:/
 ✔️
 
 ```md
--   list
+- list
 ```
 
 ❌

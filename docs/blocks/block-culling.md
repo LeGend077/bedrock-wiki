@@ -26,7 +26,7 @@ Culling rules are added in your resource pack's "block_culling" folder and appea
     "format_version": "1.21.40",
     "minecraft:block_culling_rules": {
         "description": {
-            "identifier": "wiki:lamp_culling" // Identifier to be referenced in block JSON geometry component.
+            "identifier": "wiki:culling.lamp" // Identifier to be referenced in block JSON geometry component.
         },
         "rules": [ ... ] // An array that can contain multiple culling rules.
     }
@@ -40,7 +40,7 @@ They are then applied to block models in your block's [`minecraft:geometry`](/bl
 ```json
 "minecraft:geometry": {
     "identifier": "geometry.lamp", // Model identifier
-    "culling": "wiki:lamp_culling" // Block culling rules identifier
+    "culling": "wiki:culling.lamp" // Block culling rules identifier
 }
 ```
 

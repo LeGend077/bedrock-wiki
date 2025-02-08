@@ -28,8 +28,8 @@ In this tutorial we are going to learn how to create a simple "ectoplasm" item, 
 
 Conceptually, items are made up of two parts:
 
--   The visuals (texture, name)
--   The behaviors (how the item should behave)
+- The visuals (texture, name)
+- The behaviors (how the item should behave)
 
 First, we will learn how to create a new simple item & define its behaviors. In the next section we will assign a texture to this item, so you can see it in game.
 
@@ -67,8 +67,8 @@ In order for the game to apply the correct components to the correct item, we ne
 
 An identifier is a name unique to this item. For a vanilla minecraft egg it's identifier is `minecraft:egg`. An identifier is made of two parts,
 
--   The namespace (`minecraft`)
--   The id (`egg`)
+- The namespace (`minecraft`)
+- The id (`egg`)
 
 The namespace is unique to your add-on and you will use it throughout the project. This is to reduce issues if someone adds two packs to your game which both add an ectoplasm item; the namespace reduces the chance of the identifier being the same.
 The namespace that Minecraft use is `minecraft`. Your namespace should be unique to you, for example the authors initials or an abbreviation of the pack name. We will use the namespace `wiki` in our example; for more information on making a namespace check out our page [here](/concepts/namespaces).
@@ -203,14 +203,14 @@ Under `texture_data` will our list of item shortname definitions. An example def
 <CodeHeader>RP/textures/item_texture.json/texture_data</CodeHeader>
 
 ```json
-"wiki_ectoplasm": {
+"wiki:ectoplasm": {
 	"textures": "textures/items/ectoplasm"
 }
 ```
 
-Here `wiki_ectoplasm` is our shortname and under `textures` we have the path to our item. Notice that this is relative to the resource pack, and does not include the file extension. Your shortname should be short and unique. We recommend setting it as the namespace and id for the item we are assigning it to.
+Here `wiki:ectoplasm` is our shortname and under `textures` we have the path to our item. Notice that this is relative to the resource pack, and does not include the file extension. Your shortname should be short and unique. We recommend setting it as the namespace and id for the item we are assigning it to.
 
-Now whenever we want to refer our image, we will use the shortname `wiki_ectoplasm`.
+Now whenever we want to refer our image, we will use the shortname `wiki:ectoplasm`.
 
 ### Icon
 
@@ -221,7 +221,7 @@ To finally apply our texture to our item, we add the `minecraft:icon` component 
 ```json
 "components": {
 	"minecraft:max_stack_size": 16,
-	"minecraft:icon": "wiki_ectoplasm"
+	"minecraft:icon": "wiki:ectoplasm"
 }
 ```
 
@@ -277,7 +277,7 @@ Your folder structure should look like this:
         },
         "components": {
             "minecraft:max_stack_size": 16,
-            "minecraft:icon": "wiki_ectoplasm"
+            "minecraft:icon": "wiki:ectoplasm"
         }
     }
 }
@@ -294,7 +294,7 @@ Your folder structure should look like this:
     "resource_pack_name": "Ghostly Guide",
     "texture_name": "atlas.items",
     "texture_data": {
-        "wiki_ectoplasm": {
+        "wiki:ectoplasm": {
             "textures": "textures/items/ectoplasm"
         }
     }
@@ -307,10 +307,10 @@ If you're having some trouble, check the [Troubleshooting page](/items/troublesh
 
 ## Your Progress So Far
 
--   [x] Setup your pack
--   [x] Create a custom item
--   [x] How to format the behavior and resource files for an item
--   [x] What components are and how to use them
--   [x] How to set an items texture
--   [ ] Create a custom entity
--   [ ] Create the entity's loot, spawn rules, and a custom recipe
+- [x] Setup your pack
+- [x] Create a custom item
+- [x] How to format the behavior and resource files for an item
+- [x] What components are and how to use them
+- [x] How to set an items texture
+- [ ] Create a custom entity
+- [ ] Create the entity's loot, spawn rules, and a custom recipe

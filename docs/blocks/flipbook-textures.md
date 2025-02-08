@@ -13,8 +13,8 @@ description: Flipbook (animated) textures for blocks.
 
 From this page you will learn:
 
--   How to apply flipbook textures to a block.
--   Which values you can apply in `RP/textures/flipbook_textures.json` and what they do.
+- How to apply flipbook textures to a block.
+- Which values you can apply in `RP/textures/flipbook_textures.json` and what they do.
 
 ## Applying Flipbook Textures
 
@@ -98,12 +98,12 @@ After making block have animated texture, it is time to figure out how it all wo
 
 ## Flipbook Texture Parameters
 
-While looking up for something in vanilla flipbook texture file, you may notice some additional paramters:
+While looking up for something in vanilla flipbook texture file, you may notice some additional parameters:
 
 | Component          | Type             | Description                                                                                                 |
 | ------------------ | ---------------- | ----------------------------------------------------------------------------------------------------------- |
 | flipbook_texture   | string           | Path to texture.                                                                                            |
-| atlas_tile         | string           | The shortname defined in the terrain_textures.json.                                                         |
+| atlas_tile         | string           | The shortname defined in the `terrain_texture.json` file.                                                   |
 | atlas_index        | integer          | The index of the texture array inside the definition of that shortname.                                     |
 | atlas_tile_variant | integer          | The variant of the block's texture array inside the shortname's block variation.                            |
 | ticks_per_frame    | integer          | How fast frames should be changed. 20 ticks = 1 second.                                                     |

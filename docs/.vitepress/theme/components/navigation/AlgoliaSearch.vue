@@ -6,9 +6,10 @@
 import { useRoute, useRouter } from "vitepress";
 import { onMounted, watch } from "vue";
 
+import useData from "../../composables/data";
+
 import docsearch from "@docsearch/js";
 import "@docsearch/css/dist/style.css";
-import useData from "../../composables/data";
 
 const { theme } = useData();
 
@@ -27,10 +28,6 @@ watch(
 onMounted(() => {
   initialize(options);
 });
-
-function isSpecialClick(event: MouseEvent) {
-  return event.button === 1 || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
-}
 
 const docsearchProps: Partial<Parameters<typeof docsearch>[0]> = {
   container: "#docsearch",
@@ -65,30 +62,6 @@ const docsearchProps: Partial<Parameters<typeof docsearch>[0]> = {
     }
 
     return transformedItems;
-  },
-  hitComponent: ({ hit, children }: { hit: any; children: any }) => {
-    return {
-      type: "a",
-      key: undefined,
-      constructor: undefined,
-      ref: undefined,
-      props: {
-        href: hit.url,
-        onClick: (event: MouseEvent) => {
-          // we rely on the native link scrolling when user is already on
-          // the right anchor because Router doesn't support duplicated
-          // history entries
-          if (isSpecialClick(event) || route.path === hit.url) return;
-
-          // if the hits goes to another page, we prevent the native link
-          // behavior to leverage the Router loading feature
-          event.preventDefault();
-          router.go(hit.url);
-        },
-        children,
-      },
-      __v: null,
-    };
   },
 };
 

@@ -1,5 +1,6 @@
 ---
 title: Overwriting Assets
+description: Overwriting assets explained.
 tags:
     - intermediate
 mentions:
@@ -7,7 +8,6 @@ mentions:
     - MedicalJewel105
     - Luthorius
     - SmokeyStack
-description: Overwriting assets explained.
 ---
 
 ## Add-on Layering
@@ -20,7 +20,7 @@ This layered structure is very useful, because it allows us to access the files 
 
 If the vanilla assets change, for example if [JAPPA](https://twitter.com/JasperBoerstra?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) updates the stone texture, your add-on will also receive the update, since you are relying on the actual dynamic, vanilla resources.
 
-You should try to use this system of layering as often as you can. If you don't *need* to copy/paste something into your add-on, don't.
+You should try to use this system of layering as often as you can. If you don't _need_ to copy/paste something into your add-on, don't.
 
 :::warning
 It is never OK to make an add-on inside of a copy of the vanilla resource/behavior pack. This will make the download for your add-on incredibly huge, and will reduce performance. Always begin with a blank add-on, then copy/paste the files you want to overwrite.
@@ -38,11 +38,11 @@ Different resources have different methods of overwriting, so be careful to use 
 
 Assets that are referenced by _path_, and do _not have an identifier_ can be overwritten by simply placing a new asset into the same path. The following can be overwritten in this way:
 
--   Functions
--   Loot tables
--   Textures
--   Sounds
--   Trade Tables
+- Functions
+- Loot tables
+- Textures
+- Sounds
+- Trade Tables
 
 When you overwrite these files, the overwriting is absolute: The new asset will fully replace the old asset.
 
@@ -54,15 +54,15 @@ When you overwrite these files, the overwriting is absolute: The new asset will 
 
 Many assets are defined not by their name, but by their identifier! To overwrite these assets, simply create a new file that shares the same identifier, regardless of file-path. The following can be overwritten in this way:
 
--   BP Entities
--   RP Entities
--   Animations
--   Models
--   Animation Controllers
--   Spawn Rules
--   Recipes
--   Particles
--   Render Controllers
+- BP Entities
+- RP Entities
+- Animations
+- Models
+- Animation Controllers
+- Spawn Rules
+- Recipes
+- Particles
+- Render Controllers
 
 When you overwrite these files, the overwriting is absolute: The new asset will fully replace the old asset.
 
@@ -78,32 +78,32 @@ Many assets can also be registered into some kind of "registration system" file.
 
 The following files work in this way:
 
--   All UI files
--   [All language files](/concepts/text-and-translations)
--   `item_textures.json`
--   `flipbook_textures.json`
--   `terrain_textures.json`
--   `sounds.json`
--   `music_definitions.json`
--   `sound_definitions.json`
+- All UI files
+- [All language files](/concepts/text-and-translations)
+- `item_texture.json`
+- `flipbook_textures.json`
+- `terrain_texture.json`
+- `sounds.json`
+- `music_definitions.json`
+- `sound_definitions.json`
 
 :::tip
-**Example:** Lets say you want to override the `sugar` texture, using the reference files. You can do so by creating a new `item_textures.json`, with the following contents:
+**Example:** Lets say you want to override the `sugar` texture, using the reference files. You can do so by creating a new `item_texture.json`, with the following contents:
 
 <CodeHeader></CodeHeader>
 
 ```json
 {
-	"resource_pack_name": "vanilla",
-	"texture_data": {
-		"sugar": {
-			"textures": "textures/path/to/my/sugar"
-		}
-	}
+    "resource_pack_name": "vanilla",
+    "texture_data": {
+        "sugar": {
+            "textures": "textures/path/to/my/sugar"
+        }
+    }
 }
 ```
 
-This _definition_ will be merged with the vanilla `item_textures.json`, and will override the short-name `sugar`. When the vanilla item accesses this short-name, it will get a reference to your custom texture path, instead of the actual texture path to sugar.
+This _definition_ will be merged with the vanilla `item_texture.json`, and will override the short-name `sugar`. When the vanilla item accesses this short-name, it will get a reference to your custom texture path, instead of the actual texture path to sugar.
 :::
 
 ## Overwriting Dangers
@@ -116,6 +116,6 @@ This is mostly a problem with `player.json` (in either the RP or the BP), since 
 
 Not everything can be overwritten, the following is a list of things that cannot be overwritten using any of the described methods:
 
--   Vanilla items (Not all)
--   Vanilla blocks
--   Vanilla fogs (create a fog with another namespace and change it everywhere it is used)
+- Vanilla items (Not all)
+- Vanilla blocks
+- Vanilla fogs (create a fog with another namespace and change it everywhere it is used)

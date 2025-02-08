@@ -16,10 +16,13 @@ mentions:
     - ThomasOrs
     - t3hero
     - QuazChick
+    - MaragiDev
 ---
 
 :::warning
 Modifying texture of vanilla emojis and symbols on this page are incompatible with Nintendo Switch platform!
+
+Emojis are not supported by Ore UI screens.
 :::
 
 Minecraft has a bunch of hard-coded [Private Use Unicode symbols](https://en.wikipedia.org/wiki/Private_Use_Areas) that it automatically converts to Emoji-like symbols.
@@ -28,6 +31,8 @@ These can be used anywhere where normal letters can - signs, books, item names, 
 Below you can find platform specific Emoji's, as well as general symbols. Copy/paste the "box" character under the Letter colum directly into Minecraft. You can also use the input key using /titleraw or /tellraw.
 
 There will be instructions for creating custom emoji at the bottom.
+
+## Vanilla Emojis
 
 ### HUD
 
@@ -240,7 +245,7 @@ Below are the results of default keybindings. All text below, including "Unassig
 | Drop             | :\_input_key.drop:           | Q                                                            | Unassigned                                                | ![](/assets/images/concepts/emojis/xbox/dpad_down.png)     | ![](/assets/images/concepts/emojis/switch/dpad_down.png)     | ![](/assets/images/concepts/emojis/playstation/dpad_down.png)     |
 | Code Builder     | :\_input_key.codeBuilder:    | Unassigned                                                   | Unassigned                                                | Unassigned                                                 | Unassigned                                                   | Unassigned                                                        |
 
-## Custom Emoji
+## Custom Emojis
 
 ::: warning
 This method is not officially supported. Use with caution on the Marketplace!
@@ -291,17 +296,12 @@ Your filepath should look like this:
 
 ### Using the Emojis In-Game
 
-Once you have your custom emojis inside the `glyph_E0.png` or `glyph_E1.png`, you need to obtain it's corresponding letter/symbol which you will be able to copy-paste to display the emoji in-game.
+Once you have your custom emojis inside the `glyph_E0.png` or `glyph_E1.png`, you need to obtain it's corresponding letter/symbol which you will be able to copy-paste to display the emoji in-game using the converter below.
 
-_You can obtain the letter/symbol with the help of this [Glyph Web Tool](https://nhanaz.github.io/glyph/) made by @NhanAZ_
+The first two characters of the input are either `E0` or `E1`, depending on which file you added emojis to.
 
-### Finding the Correct Hex
-
-Alternatively, you may insert the character "code" of the emoji into the converter below to obtain it's corresponding letter/symbol.
-
-The first two characters are either `E0` or `E1`, depending on which file you added emojis to.
-
-The next two characters are the position inside the image like `<row><column>`, where each character is a number in hexadecimal numeral system. You can find this number by referencing the images above. For example, the top-right square in `E0` is `0F`, and the bottom right is `FF`.
+The next two characters are the position inside the image in the format `<row><column>`, where each character is a number in hexadecimal numeral system.
+You can find this number by referencing the images above. For example, the top-right square in `E0` is `0F`, and the bottom right is `FF`.
 
 So after you are done, it might look like `E102` (`E1` + `02`).
 
@@ -333,14 +333,19 @@ Copy this code into the following field, and press **Convert**. The symbol on th
     </form>
 </div>
 
+_Alternatively, you can obtain the letter/symbol with the help of this [Glyph Web Tool](https://nhanaz.github.io/glyph/) made by @NhanAZ._
+
 ### Emoji Positioning
 
 -   To position an emoji upwards/downwards, simply move it up/down within its own emoji slot.
 -   To position an emoji towards the left or right, simply add any pixel of 5-10% opacity to its side (within its own slot), opposite to the direction you want to move it.
     -   Ex: to move an emoji to the right by 2 pixels, add any 5-10% opacity pixel connecting to it, anywhere on its left-most side and add another one to the left of that pixel.
 
-_Note: the following steps are only for emojis that are not fit to its slot width (smaller than its slot size.)_
+_Note: The following steps apply only to emojis that do not fill their slot width (i.e., are smaller than the slot size)._
 
 ### Glyph Separation Space
 
 Sometimes, it appears that if you put 2 glyphs near to each other, there will be a couple of empty pixels between them. The only fix for it is to scale the glyph (png file) itself. Ex: 256×256 → 512×512
+
+### Resizing the Emoji
+To resize the emoji, change the resolution of the glyph (PNG file) to 512×512. The reason for doubling the resolution is that it increases the number of pixels, providing more room for editing. Once you've done this, open an image editor of your choice, select the new emoji, resize it, and center it within the emoji slot. This will give the emoji more space around it when used in the game.

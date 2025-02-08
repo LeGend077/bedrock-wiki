@@ -21,7 +21,7 @@ Block texture variation is when a block type can have multiple textures that are
 
 **Issues:**
 
--   Variations referencing texture set files do not use the defined heightmap, MER or normal map files ([MCPE-126617](https://bugs.mojang.com/browse/MCPE-126617)).
+- Variations referencing texture set files do not use the defined heightmap, MER or normal map files ([MCPE-126617](https://bugs.mojang.com/browse/MCPE-126617)).
 
 ## Applying Texture Variation
 
@@ -31,9 +31,9 @@ This file contains a list of block textures. Variated block textures have a `var
 
 This is an example of how to create 3 texture variations for the vanilla dirt block:
 
--   Create or modify three dirt textures, name them `dirt0.png`, `dirt1.png`, and `dirt2.png`.
--   Copy the `dirt0.png`, `dirt1.png`, and `dirt2.png` to the location noted in the path variable. This could contain additional folders if you want to be orderly.
--   Add the following to dirt's texture entry:
+- Create or modify three dirt textures, name them `dirt0.png`, `dirt1.png`, and `dirt2.png`.
+- Copy the `dirt0.png`, `dirt1.png`, and `dirt2.png` to the location noted in the path variable. This could contain additional folders if you want to be orderly.
+- Add the following to dirt's texture entry:
 
 <CodeHeader>RP/textures/terrain_texture.json</CodeHeader>
 
@@ -59,7 +59,7 @@ This is an example of how to create 3 texture variations for the vanilla dirt bl
 
 ## Weighted Texture Variation
 
-After using the example above, you might want to adjust the weights, edit the `terrain_textures.json` to include a weight field as shown below.
+After using the example above, you might want to adjust the weights, edit the `terrain_texture.json` to include a weight field as shown below.
 
 To calculate how likely a texture variation is, add all of the weights together (in this case 70 + 20 + 10 = 100) and divide the weight by this total. For example, the probability of the `dirt0` variation being chosen is 70 &div; 100, so 70% of positions in the world will display `dirt0` if dirt is placed there.
 

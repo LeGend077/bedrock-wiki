@@ -31,7 +31,7 @@ Item components are used to change how your item appears and functions in the wo
         "components": {
             "minecraft:icon": {
                 "textures": {
-                    "default": "custom_item"
+                    "default": "wiki:custom_item"
                 }
             }
         }
@@ -67,11 +67,11 @@ When used in Survival Mode, the item will be consumed.
 
 Type: Object
 
--   `block`: String/Object
-    -   Defines the block that will be placed.
--   `use_on`: Array
-    -   List of block descriptors that contain blocks that this item can be used on. If left empty, all blocks will be allowed. See Custom Item Use Priority for more information on use behavior.
-    -   This applies to Creative Mode as well.
+- `block`: String/Object
+    - Defines the block that will be placed.
+- `use_on`: Array
+    - List of block descriptors that contain blocks that this item can be used on. If left empty, all blocks will be allowed. See Custom Item Use Priority for more information on use behavior.
+    - This applies to Creative Mode as well.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -94,9 +94,9 @@ _Released from experiment `Bundles` for format versions 1.21.40 and higher._
 
 Type: Object
 
--   `num_viewable_slots`: Integer (1-64)
-    -   Defines the maximum number of item stacks accessible from the top of the bundle.
-    -   Slots are accessed in rows filling from the bottom of the tooltip from right to left.
+- `num_viewable_slots`: Integer (1-64)
+    - Defines the maximum number of item stacks accessible from the top of the bundle.
+    - Slots are accessed in rows filling from the bottom of the tooltip from right to left.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -128,11 +128,11 @@ Requires `minecraft:use_modifiers`.
 
 Type: Object
 
--   `category`: String
-    -   The type of cool down for this item.
--   `duration`: Float
-    -   The duration of time (in seconds) items with a matching category will spend cooling down before becoming usable again.
-    -   If this value is a negative number, it renders the item unusable.
+- `category`: String
+    - The type of cool down for this item.
+- `duration`: Float
+    - The duration of time (in seconds) items with a matching category will spend cooling down before becoming usable again.
+    - If this value is a negative number, it renders the item unusable.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -186,8 +186,8 @@ Causes the item to absorb damage that would otherwise be dealt to its wearer. Fo
 
 Type: Object
 
--   `absorbable_causes`: Array
-    -   List of damage causes (such as `entity_attack` and `magma`) that can be absorbed by the item.
+- `absorbable_causes`: Array
+    - List of damage causes (such as `entity_attack` and `magma`) that can be absorbed by the item.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -203,16 +203,16 @@ Determine how quickly an item can dig specific blocks.
 
 Type: Object
 
--   `destroy_speeds`: Object - A list of blocks to dig, with correlating speeds of digging.
-    -   `block`: String/Object - What block the item will destroy.
-        -   `tags`: String
-            -   Molang query
-    -   `speed`: Int
-        -   How fast the block will be destroyed.
-        -   Can be negative. If negative, the item will not be able to destroy the block.
--   `use_efficiency`: Boolean
-    -   Determines whether the item should be impacted if the `efficiency` enchant is applied to it.
-    -   Does not seem to work.
+- `destroy_speeds`: Object - A list of blocks to dig, with correlating speeds of digging.
+    - `block`: String/Object - What block the item will destroy.
+        - `tags`: String
+            - Molang query
+    - `speed`: Int
+        - How fast the block will be destroyed.
+        - Can be negative. If negative, the item will not be able to destroy the block.
+- `use_efficiency`: Boolean
+    - Determines whether the item should be impacted if the `efficiency` enchant is applied to it.
+    - Does not seem to work.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -271,24 +271,24 @@ https://bugs.mojang.com/browse/MCPE-180112
 
 Type: Object
 
--   `damage_chance`: Object - Damage chance is the percentage chance of this item losing durability. Default is set at 100. Defined as an int range with min and max value.
-    -   `min`: Int
-        -   Minimum chance for durability to take damage. Range: [0, 100].
-    -   `max`: Int
-        -   Maximum chance for durability to take damage. Range: [0, 100].
--   `max_durability`: Int
-    -   Max durability is the amount of damage that this item can take before breaking. This is a required parameter with a minimum value of 0.
-    -   Uses signed 16-bit integer. 2’s complements creates negative range. `[32768-65536]` - gets treated as negative. The values given to the item will be `(-32768-0)`. So the negative ranges are `[256*(256x+128) - 256*(256(x+1)))` where x is an arbitrary number.
-    -   https://bugs.mojang.com/browse/MCPE-180112
+- `damage_chance`: Object - Damage chance is the percentage chance of this item losing durability. Default is set at 100. Defined as an int range with min and max value.
+    - `min`: Int
+        - Minimum chance for durability to take damage. Range: [0, 100].
+    - `max`: Int
+        - Maximum chance for durability to take damage. Range: [0, 100].
+- `max_durability`: Int
+    - Max durability is the amount of damage that this item can take before breaking. This is a required parameter with a minimum value of 0.
+    - Uses signed 16-bit integer. 2’s complements creates negative range. `[32768-65536]` - gets treated as negative. The values given to the item will be `(-32768-0)`. So the negative ranges are `[256*(256x+128) - 256*(256(x+1)))` where x is an arbitrary number.
+    - https://bugs.mojang.com/browse/MCPE-180112
 
 #### Damage Chance
 
 Used to calculate unbreaking chance.
 
--   No Unbreaking - 100% of the time regardless of the range
--   Unbreaking I - 50% of the range
--   Unbreaking II - 33% of the range
--   Unbreaking III - 25% of the range
+- No Unbreaking - 100% of the time regardless of the range
+- Unbreaking I - 50% of the range
+- Unbreaking II - 33% of the range
+- Unbreaking III - 25% of the range
 
 Max cannot be greater than min
 
@@ -310,20 +310,20 @@ Enables an item to emit effects when it receives damage.
 
 Type: Object
 
--   `durability_thresholds`: Array
-    -   Items define both the durability thresholds, and the effects emitted when each threshold is met.
-    -   When multiple thresholds are met, only the threshold with the lowest durability after applying the damage is considered.
+- `durability_thresholds`: Array
+    - Items define both the durability thresholds, and the effects emitted when each threshold is met.
+    - When multiple thresholds are met, only the threshold with the lowest durability after applying the damage is considered.
 
 #### Durability Threshold
 
 Type: Object
 
--   `durability`: Integer
-    -   The effects are emitted when the item durability value is less than or equal to this value.
--   `particle_type`: String
-    -   Particle effect to emit when the threshold is met.
--   `sound_event`: String
-    -   Sound effect to emit when the threshold is met.
+- `durability`: Integer
+    - The effects are emitted when the item durability value is less than or equal to this value.
+- `particle_type`: String
+    - Particle effect to emit when the threshold is met.
+- `sound_event`: String
+    - Sound effect to emit when the threshold is met.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -349,8 +349,8 @@ Allows the item to be dyed by cauldron water. Once dyed, the item will display t
 
 Type: Object
 
--   `default_color`: String
-    -   Optional color to use by default before the player has dyed the item.
+- `default_color`: String
+    - Optional color to use by default before the player has dyed the item.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -368,34 +368,34 @@ https://bugs.mojang.com/browse/MCPE-180331
 
 Type: Object
 
--   `slot`: String
-    -   What enchantments can be applied (ex. Using `bow` would allow this item to be enchanted as if it were a bow).
-    -   Required Field.
--   `value`: Int
-    -   The value of the enchantment (minimum of 0).
-    -   Required Field
-    -   Value is `value % 256`
+- `slot`: String
+    - What enchantments can be applied (ex. Using `bow` would allow this item to be enchanted as if it were a bow).
+    - Required Field.
+- `value`: Int
+    - The value of the enchantment (minimum of 0).
+    - Required Field
+    - Value is `value % 256`
 
 #### Slot
 
--   armor_feet
--   armor_torso
--   armor_head
--   armor_legs
--   axe
--   bow
--   cosmetic_head
--   crossbow
--   elytra
--   fishing_rod
--   flintsteel
--   hoe
--   pickaxe
--   shears
--   shield
--   shovel
--   sword
--   all
+- armor_feet
+- armor_torso
+- armor_head
+- armor_legs
+- axe
+- bow
+- cosmetic_head
+- crossbow
+- elytra
+- fishing_rod
+- flintsteel
+- hoe
+- pickaxe
+- shears
+- shield
+- shovel
+- sword
+- all
 
 #### Enchantability Value
 
@@ -431,13 +431,13 @@ Allows the item to place specified entities into the world. Released from experi
 
 Type: Object
 
--   `dispense_on`: Array
-    -   List of block descriptors that contain blocks that this item can be dispensed on. If left empty, all blocks will be allowed.
-    -   The mouth of the dispenser has to be pointing to either an air block or the block defined in this array. If it’s an air block, the game checks if the block below matches a block defined in this array
--   `entity`: String
-    -   The entity to be placed in the world.
--   `use_on`: Array
-    -   List of block descriptors that contain blocks that this item can be used on. If left empty, all blocks will be allowed. See Custom Item Use Priority for more information on use behavior.
+- `dispense_on`: Array
+    - List of block descriptors that contain blocks that this item can be dispensed on. If left empty, all blocks will be allowed.
+    - The mouth of the dispenser has to be pointing to either an air block or the block defined in this array. If it’s an air block, the game checks if the block below matches a block defined in this array
+- `entity`: String
+    - The entity to be placed in the world.
+- `use_on`: Array
+    - List of block descriptors that contain blocks that this item can be used on. If left empty, all blocks will be allowed. See Custom Item Use Priority for more information on use behavior.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -461,17 +461,17 @@ Will implicitly play the eating animation in third person. First person requires
 
 Type: Object
 
--   `can_always_eat`: Boolean
-    -   If `true` you can always eat this item (even when not hungry).
--   `nutrition`: Int
-    -   The value that is added to the actor's nutrition when the item is used.
-    -   Can be negative.
-    -   Max value is the 32-bit integer limit
--   `saturation_modifier`: Float
-    -   Saturation Modifier is used in this formula: `(nutrition * saturation_modifier * 2)` when applying the saturation buff.
-    -   Value must be greater than 0
--   `using_converts_to`: String
-    -   When used, converts to the item specified by the string in this field.
+- `can_always_eat`: Boolean
+    - If `true` you can always eat this item (even when not hungry).
+- `nutrition`: Int
+    - The value that is added to the actor's nutrition when the item is used.
+    - Can be negative.
+    - Max value is the 32-bit integer limit
+- `saturation_modifier`: Float
+    - Saturation Modifier is used in this formula: `(nutrition * saturation_modifier * 2)` when applying the saturation buff.
+    - Value must be greater than 0
+- `using_converts_to`: String
+    - When used, converts to the item specified by the string in this field.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -492,8 +492,8 @@ Max value is `107374180` inclusive. The reason for this number is because when t
 
 Type: Object
 
--   `duration`: Float
-    -   How long in seconds will this fuel cook items for. Minimum value: 0.05.
+- `duration`: Float
+    - How long in seconds will this fuel cook items for. Minimum value: 0.05.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -551,22 +551,22 @@ Determines the icon to represent the item in the UI and elsewhere. Released from
 
 Type: Object
 
--   `textures`: Object - This map contains the different textures that can be used for the item's icon. `default` will contain the actual icon texture. Armor trim textures and palettes can be specified here as well. The icon textures are the keys from the `resource_pack/textures/item_texture.json -> texture_data` object associated with the texture file.
-    -   `default`: String
-        -   The actual icon used for items
-    -   `dyed`: String
-        -   The icon used after the item is dyed in a cauldron.
-        -   This can only be displayed if the item has the `minecraft:dyeable` component.
-    -   `icon_trim`: String
-        -   The icon overlay for when your item has a trim on it.
-        -   `icon_trim` implicitly falls back to the type of slot in the `minecraft:wearable` component. Currently, the icon will only overlay if the shortname matches the item’s identifier. Whether this is a bug or feature is unknown yet.
+- `textures`: Object - This map contains the different textures that can be used for the item's icon. `default` will contain the actual icon texture. Armor trim textures and palettes can be specified here as well. The icon textures are the keys from the `resource_pack/textures/item_texture.json -> texture_data` object associated with the texture file.
+    - `default`: String
+        - The actual icon used for items
+    - `dyed`: String
+        - The icon used after the item is dyed in a cauldron.
+        - This can only be displayed if the item has the `minecraft:dyeable` component.
+    - `icon_trim`: String
+        - The icon overlay for when your item has a trim on it.
+        - `icon_trim` implicitly falls back to the type of slot in the `minecraft:wearable` component. Currently, the icon will only overlay if the shortname matches the item’s identifier. Whether this is a bug or feature is unknown yet.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
 ```json
-"minecraft:icon":{
+"minecraft:icon": {
     "textures": {
-        "default": "custom_item"
+        "default": "wiki:custom_item"
     }
 }
 ```
@@ -627,10 +627,10 @@ Projectile item component. Projectile items shoot out, like an arrow. Released f
 
 Type: Object
 
--   `minimum_critical_power`: Float
-    -   Defines the time a projectile needs to charge in order to critically hit.
--   `projectile_entity`: String
-    -   The entity to be fired as a projectile. If no namespace is specified, it is assumed to be `minecraft`.
+- `minimum_critical_power`: Float
+    - Defines the time a projectile needs to charge in order to critically hit.
+- `projectile_entity`: String
+    - The entity to be fired as a projectile. If no namespace is specified, it is assumed to be `minecraft`.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -651,10 +651,10 @@ An `epic` rarity item will remain unchanged when enchanted.
 
 Type: String
 
--   `common` results in a white name.
--   `uncommon` results in a yellow name.
--   `rare` results in an aqua name.
--   `epic` results in a light purple name.
+- `common` results in a white name.
+- `uncommon` results in a yellow name.
+- `rare` results in an aqua name.
+- `epic` results in a light purple name.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -668,16 +668,16 @@ The record item component allows the item to play a sound when used in a jukebox
 
 Type: Object
 
--   `comparator_signal`: Tnt
-    -   Signal strength for comparator blocks to use
-    -   While this value can be any number(even negative!), the comparator signal still locks itself between [0, 15].
--   `duration`: Float
-    -   Duration of sound event in seconds float value.
--   `sound_event`: String
-    -   Sound event types
-    -   If sound type is any of the vanilla music discs, the item will have the lore of the artist’s name. When played in a jukebox, an actionbar will appear on the player’s screen describing what record is being played.
-    -   Regardless of what sound type used, the item’s text color will change to aqua just like vanilla music discs
-    -   Only vanilla sound events are allowed
+- `comparator_signal`: Tnt
+    - Signal strength for comparator blocks to use
+    - While this value can be any number(even negative!), the comparator signal still locks itself between [0, 15].
+- `duration`: Float
+    - Duration of sound event in seconds float value.
+- `sound_event`: String
+    - Sound event types
+    - If sound type is any of the vanilla music discs, the item will have the lore of the artist’s name. When played in a jukebox, an actionbar will appear on the player’s screen describing what record is being played.
+    - Regardless of what sound type used, the item’s text color will change to aqua just like vanilla music discs
+    - Only vanilla sound events are allowed
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -701,13 +701,13 @@ By default, it can be repaired by itself. It will combine the two durabilities.
 
 Type: Object
 
--   `repair_items`: Array - List of repair item entries.
-    -   `repair_amount`: Int/String
-        -   How much durability is repaired
-        -   Molang can be used in the string type. `math.random` can be used. Use `context.other` to get the anvil’s second slot.
-    -   `items`: Array
-        -   The items used to repair the item
-        -   Required Field
+- `repair_items`: Array - List of repair item entries.
+    - `repair_amount`: Int/String
+        - How much durability is repaired
+        - Molang can be used in the string type. `math.random` can be used. Use `context.other` to get the anvil’s second slot.
+    - `items`: Array
+        - The items used to repair the item
+        - Required Field
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -760,18 +760,18 @@ Shooter Item Component. Must have the `minecraft:use_modifiers` component in o
 
 Type: Object
 
--   `ammunition`: Array
-    -   `item`: String - Denotes the item description identifier. Item must have the `minecraft:projectile` component.
-    -   `use_offhand`: Boolean - When set to `true`, ammunition can be used from the offhand.
-    -   `search_inventory`: Boolean - Determines whether the inventory can be searched for ammunition to use. Required to be `true` if used in Survival. In Creative, required to be true if `use_in_creative` is `false`. Will not consume ammunition if in Creative.
-    -   `use_in_creative`: Boolean - Determines whether the ammunition can be used in Creative mode.
--   `charge_on_draw`: Boolean
-    -   Sets if the item is charged when drawn
-    -   Item's `minecraft:use_modifiers` -> `use_duration` must be >= `max_draw_duration`.
--   `max_draw_duration`: Float
-    -   Determines how long can the weapon can be drawn before releasing automatically
--   `scale_power_by_draw_duration`: Boolean
-    -   When set to `true`, the longer the weapon is drawn, the more power it will have when released
+- `ammunition`: Array
+    - `item`: String - Denotes the item description identifier. Item must have the `minecraft:projectile` component.
+    - `use_offhand`: Boolean - When set to `true`, ammunition can be used from the offhand.
+    - `search_inventory`: Boolean - Determines whether the inventory can be searched for ammunition to use. Required to be `true` if used in Survival. In Creative, required to be true if `use_in_creative` is `false`. Will not consume ammunition if in Creative.
+    - `use_in_creative`: Boolean - Determines whether the ammunition can be used in Creative mode.
+- `charge_on_draw`: Boolean
+    - Sets if the item is charged when drawn
+    - Item's `minecraft:use_modifiers` -> `use_duration` must be >= `max_draw_duration`.
+- `max_draw_duration`: Float
+    - Determines how long can the weapon can be drawn before releasing automatically
+- `scale_power_by_draw_duration`: Boolean
+    - When set to `true`, the longer the weapon is drawn, the more power it will have when released
 
 #### Ammunition
 
@@ -830,22 +830,22 @@ _Released from experiment `Bundles` for format versions 1.21.40 and higher._
 
 Type: Object
 
--   `allow_nested_storage_items`: Boolean
-    -   Determines whether other storage items can be placed into the container.
--   `allowed_items`: Array
-    -   Defines the items that are exclusively allowed in the container.
-    -   If empty all items are allowed in the container.
--   `banned_items`: Array
-    -   Defines the items that are not allowed in the container.
--   `max_slots`: Integer (1-64)
-    -   Defines the number of slots in the container.
--   `max_weight_limit`: Integer
-    -   Defines the maximum allowed total weight of all items in the container.
-        -   To calculate the weight of an item, divide 64 by its max stack size.
-        -   Items that stack to 64 weigh 1 each, those that stack to 16 weigh 4 each and unstackable items weigh 64.
--   `weight_in_storage_item`: Integer (0-64)
-    -   Defines the additional weight the item adds when inside another storage item.
-        -   A value of 0 means that this item is not allowed inside another storage item.
+- `allow_nested_storage_items`: Boolean
+    - Determines whether other storage items can be placed into the container.
+- `allowed_items`: Array
+    - Defines the items that are exclusively allowed in the container.
+    - If empty all items are allowed in the container.
+- `banned_items`: Array
+    - Defines the items that are not allowed in the container.
+- `max_slots`: Integer (1-64)
+    - Defines the number of slots in the container.
+- `max_weight_limit`: Integer
+    - Defines the maximum allowed total weight of all items in the container.
+        - To calculate the weight of an item, divide 64 by its max stack size.
+        - Items that stack to 64 weigh 1 each, those that stack to 16 weigh 4 each and unstackable items weigh 64.
+- `weight_in_storage_item`: Integer (0-64)
+    - Defines the additional weight the item adds when inside another storage item.
+        - A value of 0 means that this item is not allowed inside another storage item.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -868,8 +868,8 @@ The `tags` component determines which tags are attached to an item.
 
 Type: Object
 
--   `tags`: Array
-    -   List of tags attached to the item.
+- `tags`: Array
+    - List of tags attached to the item.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -887,23 +887,23 @@ Throwable item component. Throwable items, such as a snowball. Released from exp
 
 Type: Object
 
--   `do_swing_animation`: Boolean
-    -   Whether the item should use the swing animation when thrown.
--   `launch_power_scale`: Float
-    -   The scale at which the power of the throw increases.
-    -   Can be negative. Negative values will launch the projectile the opposite way.
--   `max_draw_duration`: Float
-    -   The maximum duration to draw a throwable item.
-    -   Can be negative. Will shoot instantly.
-    -   No side effects if max is less than min from testing.
--   `max_launch_power`: Float
-    -   The maximum power to launch the throwable item.
-    -   Can be negative.
--   `min_draw_duration`: Float
-    -   The minimum duration to draw a throwable item.
-    -   Can be negative. Will shoot instantly.
--   `scale_power_by_draw_duration`: Boolean
-    -   Whether or not the power of the throw increases with duration charged. When `true`, The longer you hold, the more power it will have when released.
+- `do_swing_animation`: Boolean
+    - Whether the item should use the swing animation when thrown.
+- `launch_power_scale`: Float
+    - The scale at which the power of the throw increases.
+    - Can be negative. Negative values will launch the projectile the opposite way.
+- `max_draw_duration`: Float
+    - The maximum duration to draw a throwable item.
+    - Can be negative. Will shoot instantly.
+    - No side effects if max is less than min from testing.
+- `max_launch_power`: Float
+    - The maximum power to launch the throwable item.
+    - Can be negative.
+- `min_draw_duration`: Float
+    - The minimum duration to draw a throwable item.
+    - Can be negative. Will shoot instantly.
+- `scale_power_by_draw_duration`: Boolean
+    - Whether or not the power of the throw increases with duration charged. When `true`, The longer you hold, the more power it will have when released.
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -934,16 +934,16 @@ Type: String
 
 #### Known Animations
 
--   eat
--   drink
--   bow
--   block
--   camera
--   crossbow
--   none
--   brush
--   spear
--   spyglass
+- eat
+- drink
+- bow
+- block
+- camera
+- crossbow
+- none
+- brush
+- spear
+- spyglass
 
 ### Use Modifiers
 
@@ -951,12 +951,12 @@ Modifies use effects, including how long an item takes to use and the player's s
 
 Type: Object
 
--   `movement_modifier`: Float
-    -   Modifier value to scale the players movement speed when item is in use.
-    -   Range: [0, 1]
--   `use_duration`: Float
-    -   How long the item takes to use in seconds.
-    -   Required Field
+- `movement_modifier`: Float
+    - Modifier value to scale the players movement speed when item is in use.
+    - Range: [0, 1]
+- `use_duration`: Float
+    - How long the item takes to use in seconds.
+    - Required Field
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 
@@ -973,8 +973,8 @@ Determines where the item can be worn. If any non-hand slot is chosen, the max s
 
 Type: Object
 
--   `protection`: Int
--   `slot`: String
+- `protection`: Int
+- `slot`: String
 
 <CodeHeader>minecraft:item > components</CodeHeader>
 

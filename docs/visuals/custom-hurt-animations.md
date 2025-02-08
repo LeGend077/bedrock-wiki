@@ -4,6 +4,7 @@ tags:
     - intermediate
 mentions:
     - MedicalJewel105
+    - stekdev17
 category: Tutorials
 description: Tutorial on how to trigger custom animation when entity is hurt.
 ---
@@ -80,7 +81,7 @@ To call this event add `damage_sensor` to components:
     "triggers": {
         "cause": "all",
         "on_damage": {
-            "event": "nubs:on_hurt_event"
+            "event": "wiki:on_hurt_event"
         }
     }
 }

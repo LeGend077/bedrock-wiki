@@ -34,13 +34,13 @@ Alongside the Vanilla BDS offering, many community projects exist, in a variety 
 These other projects get separated into Custom Server Software (Custom) and BDS-Based.
 
 Types of Server Software:
-- Custom Server Software = Server Software that is build from completely scratch.
-- BDS-Based = Server Software that uses BDS as a base and modifies it.
+- Custom Server Software = Server software developed entirely from scratch.
+- BDS-Based = Server software built on top of BDS, with modifications.
 
-You might notice that there is a lot of Custom Server Software, compared to BDS-Based ones.
-This has plenty of reasons, the biggest being:
-- We did not have an official Server Software for a long time, the first Release of BDS was on August 28, 2018... about 7 years after the first release for Bedrock Edition in 2011
-- The Symbols (also referred to as Mappings) have first been stripped to reduce the amount of information contained and finally been removed from the game in 1.21.10, due to which a lot of BDS-Based software died
+You may observe a significant prevalence of Custom Server Software in comparison to BDS-Based solutions. This disparity can be attributed to several factors, the most notable of which are:
+
+- The lack of an official server software for an extended period, with the first release of BDS occurring on August 28, 2018, approximately seven years after the initial release of Bedrock Edition in 2011.
+- The removal of Symbols (also known as Mappings) in version 1.21.10, initially stripped to reduce the amount of information, which led to the decline of many BDS-Based software solutions.
 
 ## Active Software
 

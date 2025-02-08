@@ -82,4 +82,14 @@ export default defineConfigWithTheme<ThemeConfig>({
       md.use(taskListsPlugin, { label: true });
     },
   },
+
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: "modern",
+        },
+      },
+    },
+  },
 });

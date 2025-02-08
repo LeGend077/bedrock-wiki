@@ -24,8 +24,8 @@ Making crops is not as difficult as you may think, it just takes a little practi
 
 **Issues:**
 
--   Custom crops cannot be destroyed by flowing liquids ([see feedback post](https://discord.com/channels/1138536747932864532/1191224284765491230)).
--   Growth rate cannot be impacted by light level ([see feedback post](https://discord.com/channels/1138536747932864532/1231369171577602179)).
+- Custom crops cannot be destroyed by flowing liquids ([see feedback post](https://discord.com/channels/1138536747932864532/1191224284765491230)).
+- Growth rate cannot be impacted by light level ([see feedback post](https://discord.com/channels/1138536747932864532/1231369171577602179)).
 
 ## Crop Model
 
@@ -86,8 +86,8 @@ This code example also includes the base components of our crop which will be ac
 
 The events below do three important functions to make your crop work:
 
--   The [`onRandomTick`](/blocks/block-events#random-tick) event hook is used to increment the `wiki:growth` state at a random interval.
--   The [`onPlayerInteract`](/blocks/block-events#player-interact) event hook is for bone meal support, adding a random value to `wiki:growth` in survival mode or fully growing the crop in creative mode.
+- The [`onRandomTick`](/blocks/block-events#random-tick) event hook is used to increment the `wiki:growth` state at a random interval.
+- The [`onPlayerInteract`](/blocks/block-events#player-interact) event hook is for bone meal support, adding a random value to `wiki:growth` in survival mode or fully growing the crop in creative mode.
 
 <CodeHeader>BP/scripts/custom_crop.js</CodeHeader>
 
@@ -177,7 +177,7 @@ For example, if `wiki:growth` is 7, the texture is set to `custom_crop_3` and th
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "custom_crop_0",
+                    "texture": "wiki:custom_crop_0",
                     "render_method": "alpha_test",
                     "ambient_occlusion": false,
                     "face_dimming": false
@@ -208,7 +208,7 @@ For example, if `wiki:growth` is 7, the texture is set to `custom_crop_3` and th
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "custom_crop_1",
+                    "texture": "wiki:custom_crop_1",
                     "render_method": "alpha_test",
                     "ambient_occlusion": false,
                     "face_dimming": false
@@ -239,7 +239,7 @@ For example, if `wiki:growth` is 7, the texture is set to `custom_crop_3` and th
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "custom_crop_2",
+                    "texture": "wiki:custom_crop_2",
                     "render_method": "alpha_test",
                     "ambient_occlusion": false,
                     "face_dimming": false
@@ -279,7 +279,7 @@ For example, if `wiki:growth` is 7, the texture is set to `custom_crop_3` and th
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "custom_crop_3",
+                    "texture": "wiki:custom_crop_3",
                     "render_method": "alpha_test",
                     "ambient_occlusion": false,
                     "face_dimming": false
@@ -351,7 +351,7 @@ Here is the entire `wiki:custom_crop` file for reference.
                 "components": {
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "custom_crop_0",
+                            "texture": "wiki:custom_crop_0",
                             "render_method": "alpha_test",
                             "ambient_occlusion": false,
                             "face_dimming": false
@@ -391,7 +391,7 @@ Here is the entire `wiki:custom_crop` file for reference.
                 "components": {
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "custom_crop_1",
+                            "texture": "wiki:custom_crop_1",
                             "render_method": "alpha_test",
                             "ambient_occlusion": false,
                             "face_dimming": false
@@ -422,7 +422,7 @@ Here is the entire `wiki:custom_crop` file for reference.
                 "components": {
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "custom_crop_2",
+                            "texture": "wiki:custom_crop_2",
                             "render_method": "alpha_test",
                             "ambient_occlusion": false,
                             "face_dimming": false
@@ -453,7 +453,7 @@ Here is the entire `wiki:custom_crop` file for reference.
                 "components": {
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "custom_crop_3",
+                            "texture": "wiki:custom_crop_3",
                             "render_method": "alpha_test",
                             "ambient_occlusion": false,
                             "face_dimming": false
@@ -557,7 +557,7 @@ Holding a crop block in your hand wouldn't look right, so we place the crop with
             }
         },
         "components": {
-            "minecraft:icon": "custom_seeds",
+            "minecraft:icon": "wiki:custom_seeds",
             "minecraft:block_placer": {
                 "block": "wiki:custom_crop" // The block this item is placing.
             }
@@ -584,7 +584,7 @@ Your crop can't only drop seeds! Create a custom food using the template below.
             }
         },
         "components": {
-            "minecraft:icon": "custom_food",
+            "minecraft:icon": "wiki:custom_food",
             "minecraft:food": {
                 "nutrition": 4,
                 "saturation_modifier": 0.6

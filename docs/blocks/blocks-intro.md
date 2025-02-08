@@ -154,7 +154,7 @@ Now, we need to link the texture shortname to an image file path in `RP/textures
     "num_mip_levels": 4, // Quality of texture when viewed from a distance or at an angle
     "texture_data": {
         // Our texture shortname:
-        "custom_block": {
+        "wiki:custom_block": {
             "textures": "textures/blocks/custom_block" // Link to an image file name
         }
     }
@@ -218,12 +218,12 @@ The `blocks.json` entry would look like this:
     "format_version": "1.21.40",
     "wiki:compass_block": {
         "textures": {
-            "down": "compass_block_down",
-            "up": "compass_block_up",
-            "north": "compass_block_north",
-            "east": "compass_block_east",
-            "south": "compass_block_south",
-            "west": "compass_block_west"
+            "down": "wiki:compass_block_down",
+            "up": "wiki:compass_block_up",
+            "north": "wiki:compass_block_north",
+            "east": "wiki:compass_block_east",
+            "south": "wiki:compass_block_south",
+            "west": "wiki:compass_block_west"
         }
     }
 }
@@ -236,22 +236,22 @@ Or, if you're using [material instances](/blocks/block-components#material-insta
 ```json
 "minecraft:material_instances": {
   "*": {
-    "texture": "compass_block_down" // This texture appears in destruction particles
+    "texture": "wiki:compass_block_down" // This texture appears in destruction particles
   },
   "up": {
-    "texture": "compass_block_up"
+    "texture": "wiki:compass_block_up"
   },
   "north": {
-    "texture": "compass_block_north"
+    "texture": "wiki:compass_block_north"
   },
   "east": {
-    "texture": "compass_block_east"
+    "texture": "wiki:compass_block_east"
   },
   "south": {
-    "texture": "compass_block_south"
+    "texture": "wiki:compass_block_south"
   },
   "west": {
-    "texture": "compass_block_west"
+    "texture": "wiki:compass_block_west"
   }
 }
 ```
@@ -267,22 +267,22 @@ With the following `terrain_texture.json` data:
     "padding": 8,
     "num_mip_levels": 4,
     "texture_data": {
-        "compass_block_down": {
+        "wiki:compass_block_down": {
             "textures": "textures/blocks/compass_block_down"
         },
-        "compass_block_up": {
+        "wiki:compass_block_up": {
             "textures": "textures/blocks/compass_block_up"
         },
-        "compass_block_north": {
+        "wiki:compass_block_north": {
             "textures": "textures/blocks/compass_block_north"
         },
-        "compass_block_east": {
+        "wiki:compass_block_east": {
             "textures": "textures/blocks/compass_block_east"
         },
-        "compass_block_west": {
+        "wiki:compass_block_west": {
             "textures": "textures/blocks/compass_block_west"
         },
-        "compass_block_south": {
+        "wiki:compass_block_south": {
             "textures": "textures/blocks/compass_block_south"
         }
     }

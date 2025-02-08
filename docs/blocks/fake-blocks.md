@@ -66,9 +66,9 @@ To align your entity in rotation, you will need some Math.
 
 Apply that code on the core folder (that has all the other groups inside) of your model in an animation, make sure the pivot point is 0 in the X and Z Axis, to avoid visual bugs. And also you don't need to add components like:
 
--   `"minecraft:behavior.look_at_entity": {}`
--   `"minecraft:behavior.look_at_player": {}`
--   `"minecraft:behavior.look_at_target": {}`
+- `"minecraft:behavior.look_at_entity": {}`
+- `"minecraft:behavior.look_at_player": {}`
+- `"minecraft:behavior.look_at_target": {}`
 
 The reason why is because this will change the Target Y Rotation, causing it to move the Body Y Rotation so the Model will move. Don't add walk components too.
 
@@ -124,7 +124,7 @@ Block used to summon the dummy entity right on the block, and as the block is ce
             "minecraft:geometry": "geometry.empty",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "empty"
+                    "texture": "wiki:empty"
                 }
             },
             "minecraft:destructible_by_mining": {
